@@ -1,0 +1,44 @@
+.container-university-main{
+    display: flex;
+    width: 100%;
+    gap: 1%;
+}
+
+.container-university-main .container-logo-map{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.container-university-main .container-name-university-dash{
+    display: flex;
+    flex-direction: column;
+    width: 39%;
+}
+.container-name-university-dash .container-dash iframe{
+    width: 100%;
+}
+.container-name-university-dash .container-dash a{
+    text-decoration: none;
+    color: '#000000';
+}
+
+/*Responsive para mobile*/
+@media only screen and (max-width: 767px) {
+    .container-university-main{
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .container-university-main .container-name-university-dash{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .container-university-main .container-logo-map{
+        display: flex;
+        width: 100%;
+    }
+}

@@ -1,0 +1,74 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.container-main{
+    display: flex; 
+    position: relative;
+    gap: 1%;
+}
+
+.container-logo-time-aforo-dashboard{
+    display: flex; 
+    gap: 10px;
+    flex-direction: column; 
+    width: 29%; 
+    align-items: center;
+    padding-top: 10px;
+}
+
+.container-logo-time-aforo-dashboard img{
+    width: 70%;
+}
+
+.container-time{
+    width: 70%; 
+    border: solid 1px red;
+}
+
+.container-dashboard{
+    height: 200px;
+    width: 70%;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.container-dashboard-title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: solid 1px black;
+}
+
+.container-dashboard a{
+    text-decoration: none; 
+    color: black;
+    display: block;
+    padding-left: 10px;
+}
+
+.container-dashboard a:hover{
+    background: #B8D5D0;
+}
+
+.container-map-dashboard{
+    width: 70%; 
+    position: relative;
+}
+
+/*Responsive para mobile*/
+@media only screen and (max-width: 767px) {
+    .container-main{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-logo-time-aforo-dashboard{
+        width: 100%;
+    }
+
+    .container-map-dashboard{
+        width: 100%;
+    }
+}
+
