@@ -1,5 +1,6 @@
 import logo from './images/logosc.png'
 import './css/University.css'
+import logouni from './images/logouni.png'
 
 export default function University(){
     return(<>
@@ -18,11 +19,18 @@ export default function University(){
                 <iframe src="http://181.176.48.200:3000/d-solo/7bhq8tc4z/universidad-nacional-de-ingenieria?orgId=1&from=1675781192877&to=1675867592877&panelId=14" width="100%" height="800" frameborder="0"></iframe>
             </div>
             <div className='container-name-university-dash'>
-                <iframe src="http://181.176.48.200:3000/d-solo/7bhq8tc4z/universidad-nacional-de-ingenieria?orgId=1&from=1675781270493&to=1675867670493&panelId=12" width="450" height="200" frameborder="0"></iframe>
-                {/*<iframe src="http://181.176.48.200:3000/d-solo/7bhq8tc4z/universidad-nacional-de-ingenieria?orgId=1&from=1675781287540&to=1675867687540&panelId=6" width="450" height="200" frameborder="0"></iframe>*/}
-                {/*<iframe src="http://181.176.48.200:3000/d-solo/7bhq8tc4z/universidad-nacional-de-ingenieria?orgId=1&from=1675781299044&to=1675867699044&panelId=8" width="450" height="200" frameborder="0"></iframe>*/}
+                <div className='container-name-logo-university'>
+                    <img src={logouni} alt='imagen-logo'/>
+                    <div className='container-name-university'>
+                        <div>UNIVERSIDAD</div>
+                        <div>NACIONAL DE</div>
+                        <div>INGENIERIA</div>
+                    </div>
+                </div>
                 <div className='container-dash'>
+                    <div className='container-title-dash-2'>CARGA VIRAL</div>
                     <a href='/carga-viral-CTIC'>Carga Viral (CTIC)</a>
+                    <a href=''>Carga Viral (Comedor Universitario)</a>
                 </div>
             </div>
         </div>

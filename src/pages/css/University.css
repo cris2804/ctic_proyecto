@@ -7,20 +7,52 @@
 .container-university-main .container-logo-map{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 65%;
 }
 
 .container-university-main .container-name-university-dash{
     display: flex;
     flex-direction: column;
-    width: 39%;
-}
+    width: 34%;
+    align-items: center;
+    gap: 15px;
+}/*
 .container-name-university-dash .container-dash iframe{
     width: 100%;
+}*/
+.container-university-main .container-name-university-dash .container-name-logo-university{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.container-name-logo-university img{
+    width: 20%;
+}
+.container-name-university{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 2rem;
+    font-weight: 700;
 }
 .container-name-university-dash .container-dash a{
     text-decoration: none;
-    color: '#000000';
+    color: #000000;
+}
+
+.container-dash{
+    width: 80%;
+    padding: 10px;
+    border: solid 1px #000;
+    display: flex;
+    flex-direction: column;
+}
+.container-dash .container-title-dash-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 1px #000;
+    font-weight: 700;
 }
 
 /*Responsive para mobile*/
@@ -40,5 +72,6 @@
     .container-university-main .container-logo-map{
         display: flex;
         width: 100%;
+        margin-top: 20px;
     }
 }
