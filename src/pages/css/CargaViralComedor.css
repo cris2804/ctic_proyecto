@@ -72,3 +72,66 @@
 .container-historico{
     width: 100%;
 }
+
+@media only screen and (max-width: 767px) {
+    .container-main-comedor{
+        display: flex;
+        flex-direction: column;
+    }
+    .container-main-comedor .container-map-gauges{
+        width: 100%;
+        flex-direction: column;
+    }
+    .container-main-comedor .container-map-gauges .container-map-gauges-superior{
+        display: flex;
+        flex-direction: column;
+    }
+    .container-main-comedor .container-map-gauges .container-map-gauges-superior .container-map{
+        width: 100%;
+    }
+    .container-main-comedor .container-map-gauges .container-map-gauges-superior .gauges-superior{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .gauges-1{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .gauges-1 div{
+        width: 100%;
+    }
+
+    .gauges-2{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2%;
+    }
+    
+    .gauges-2 div{
+        width: 100%;
+    }
+
+    .gauges-3{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .gauges-3 div{
+        width: 100%;
+    }
+    
+    .gauges-4{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .gauges-4 div{
+        width: 100%;
+    }
+    .container-alertas{
+        width: 100%;
+    }
+}
