@@ -30,7 +30,7 @@ export default function University(){
                 <div className='container-dash'>
                     <div className='container-title-dash-2'>CARGA VIRAL</div>
                     <a href='/carga-viral-CTIC'>Carga Viral (CTIC)</a>
-                    <a href=''>Carga Viral (Comedor Universitario)</a>
+                    <a href='/carga-viral-comedor-universitario'>Carga Viral (Comedor Universitario)</a>
                 </div>
             </div>
         </div>

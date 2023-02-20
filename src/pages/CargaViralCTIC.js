@@ -6,7 +6,7 @@ export default function CargaViralCTIC(){
         <div>
             <div className="container-nav">
                 <div className='container-image'>
-                    <a href='/'><img src={logosc}/> </a>
+                    <a href='/'><img src={logosc} alt='imagen logo'/> </a>
                 </div>
                 <div className='container-ruta-university'>
                     <a href='/universidad-nacional-de-ingenieria'>UNIVERSIDAD NACIONAL DE INGENIERIA</a>

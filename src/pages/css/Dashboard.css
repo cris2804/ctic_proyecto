@@ -70,10 +70,3 @@ body{
         width: 100%;
     }
 }
-
-/*Responsive para tablet*/
-@media only screen and (max-width: 1024px) {
-    .container-logo-time-aforo-dashboard{
-
-    }
-}

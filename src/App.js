@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import University from './pages/University';
 import CargaViralCTIC from './pages/CargaViralCTIC';
+import CargaViralComedor from './pages/CargaViralComedor';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
             <Route path='/' element={<Dashboard/>}/>  
             <Route path='/universidad-nacional-de-ingenieria' element={<University/>}/> 
             <Route path='/carga-viral-CTIC' element={<CargaViralCTIC/>}/>
+            <Route path='/carga-viral-comedor-universitario' element={<CargaViralComedor/>}/>
           </Routes>
         </Router>       
       {/*</div>*/}

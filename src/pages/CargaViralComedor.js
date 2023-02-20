@@ -1,0 +1,62 @@
+import './css/CargaViralComedor.css';
+import logosc from './images/logosc.png'
+
+export default function CargaViralComedor(){
+    return(
+        <div>
+            <div className="container-nav">
+                <div className='container-image'>
+                    <a href='/'><img src={logosc} alt='imagen logo'/> </a>
+                </div>
+                <div className='container-ruta-university'>
+                    <a href='/universidad-nacional-de-ingenieria'>UNIVERSIDAD NACIONAL DE INGENIERIA</a>
+                </div>
+                <div className='container-ruta-ctic'>
+                    CARGA VIRAL(Comedor)
+                </div>
+                {/*<iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&from=1675784962255&to=1675871362255&panelId=6" width="100%" height="200" frameborder="0"></iframe>*/}
+            </div>
+            <div className='container-main-comedor'>
+                <div className='container-map-gauges'>
+                    <div className='container-map-gauges-superior'>
+                        <div className='container-map'>
+                            <iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=18" width="100%" height="400" frameborder="0"></iframe>
+                        </div>
+                        <div className='gauges-superior'>
+                            <div className='gauges-1'>
+                                <div><iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=16" width="100%" height="200" frameborder="0"></iframe></div>
+                                <div><iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=19" width="100%" height="200" frameborder="0"></iframe></div>
+                            </div>
+                            <div className='gauges-2'>
+                                <div><iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=14" width="100%" height="200" frameborder="0"></iframe></div>
+                                <div><iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=13" width="100%" height="200" frameborder="0"></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='gauges-inferior'>
+                        <div className='gauges-3'>
+                            <div><iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=15" width="100%" height="200" frameborder="0"></iframe></div>
+                            <div><iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=20" width="100%" height="200" frameborder="0"></iframe></div>
+                            <div><iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=22" width="100%" height="200" frameborder="0"></iframe></div>
+                            <div><iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=23" width="100%" height="200" frameborder="0"></iframe></div>
+                            <div><iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=24" width="100%" height="200" frameborder="0"></iframe></div>
+                        </div>
+                        <div className='gauges-4'>
+                            <div><iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=25" width="100%" height="200" frameborder="0"></iframe></div>
+                            <div><iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=26" width="100%" height="200" frameborder="0"></iframe></div>
+                            <div><iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=27" width="100%" height="200" frameborder="0"></iframe></div>
+                            <div><iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=28" width="100%" height="200" frameborder="0"></iframe></div>
+                            <div><iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=29" width="100%" height="200" frameborder="0"></iframe></div>
+                        </div>
+                    </div>
+                </div>
+                <div className='container-alertas'>
+                    <iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=38" width="100%" height="200" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div className='container-historico'>
+                <iframe src="http://181.176.48.200:3000/d-solo/fzvvo6vVk/carga-viral-comedor-universitario?orgId=1&refresh=5s&panelId=47" width="100%" height="300" frameborder="0"></iframe>
+            </div>
+        </div>
+    )
+}
