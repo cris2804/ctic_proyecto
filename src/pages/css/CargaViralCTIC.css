@@ -54,17 +54,19 @@
 
 .container-gauges .gauges{
     width: 49%;
-    border: solid 1px red;
+    /* border: solid 1px red; */
 }
 .container-gauges .gauges .co2{
     width: 100%;
+    padding-bottom: 2%;
 }
 .container-gauges .gauges .humedad-temperatura{
     width: 100%;
     display: flex;
 }
 .container-gauges .gauges .humedad-temperatura iframe{
-    width: 50%;
+    width: 48%;
+    margin-right: 3%;
 }
 /*
 .container-gauges iframe{
@@ -72,6 +74,11 @@
     height: 200;
     border: solid 1px rgba(0, 0, 0, 0.5);
 }*/
+
+.container-historico-1{
+    padding-top: 2.8%;
+    width: 100%;
+}
 
 .container-historico{
     width: 100%;
