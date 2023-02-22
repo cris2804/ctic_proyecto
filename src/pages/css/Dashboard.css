@@ -54,10 +54,10 @@ iframe {
     display: block;
     border-radius: 3px;
     padding: 2% 4% 2% 1%;
-}
+}   
 
 .container-dashboard a:hover{
-    background: #B8D5D0;
+    background: #dcdfdf;
 }
 
 .container-map-dashboard{

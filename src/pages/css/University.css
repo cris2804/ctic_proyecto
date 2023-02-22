@@ -54,6 +54,10 @@
     border:0px solid #eaebeb;
 }
 
+.container-name-university-dash .container-dash a:hover{
+    background: #dcdfdf;
+}
+
 .container-dash{
     width: 95%;
     padding: 10px;
