@@ -1,5 +1,6 @@
 import logov2 from './images/logo_version_grafana.png'
 import './css/Dashboard.css'
+import cuentapersonas from './images/cuenta_personas.png'
 
 export default function Dashboard(){
     return( 
@@ -13,8 +14,28 @@ export default function Dashboard(){
                     <div className='container-dashboard-title'>Dashboard</div>
                     <a href='/universidad-nacional-de-ingenieria'>Universidad Nacional de Ingeniería</a>
                 </div>
-                <iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&panelId=12" width="100%" height="20%" frameborder="0"></iframe>
-                <iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&panelId=14" width="100%" height="20%" frameborder="0"></iframe>
+                {/*<iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&panelId=12" width="100%" height="20%" frameborder="0"></iframe>
+                <iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&panelId=14" width="100%" height="20%" frameborder="0"></iframe>*/}
+                <div className='container-cuenta-personas'>
+                    <div className='cuenta-personas-imagen'>
+                        <img src={cuentapersonas} alt='imagen cuenta personas'/>
+                    </div>
+                    <div className='cuenta-personas-datos'>
+                        <div className='cuenta-personas-titulo'>AFORO</div>
+                        <div className='cuenta-personas-cantidad'>23</div>
+                        <div className='cuenta-personas-lugar'>CTIC</div>
+                    </div>
+                </div>
+                <div className='container-cuenta-personas'>
+                    <div className='cuenta-personas-imagen'>
+                        <img src={cuentapersonas} alt='imagen cuenta personas'/>
+                    </div>
+                    <div className='cuenta-personas-datos'>
+                        <div className='cuenta-personas-titulo'>AFORO</div>
+                        <div className='cuenta-personas-cantidad'>12</div>
+                        <div className='cuenta-personas-lugar'>Lab. Smart City</div>
+                    </div>
+                </div>
             </div>
             <div className='container-map-dashboard'>
                 <iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&from=1675696115267&to=1675782515267&panelId=2" width="100%" height="900" frameborder="0"></iframe>

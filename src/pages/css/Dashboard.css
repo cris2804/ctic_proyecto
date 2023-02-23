@@ -10,7 +10,7 @@ body{
 
 .container-logo-time-aforo-dashboard{
     display: flex; 
-    gap: 10px;
+    gap: 20px;
     flex-direction: column; 
     width: 29%; 
     align-items: center;
@@ -18,9 +18,8 @@ body{
 }
 
 .container-logo-time-aforo-dashboard img{
-    width: 90%;
+    width: 100%;
     padding-top: 1%;
-    padding-bottom: 10%;
 }
 
 iframe {
@@ -29,7 +28,8 @@ iframe {
 }  
 
 .container-dashboard{
-    height: 25%;
+    /*height: 25%;*/
+    height: 200px;
     width: 95.5%;
     border:1px solid #eaebeb;
     background-color: white;
@@ -63,6 +63,57 @@ iframe {
 .container-map-dashboard{
     width: 70%; 
     position: relative;
+}
+
+/*CUENTA PERSONAS*/
+.container-cuenta-personas{
+    display: flex;
+    background: linear-gradient(#35DBFF, #B0B1A6);
+    border-radius: 10px;
+    position: relative;
+    /*box-shadow:
+       inset 0 -1em 1em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(255,255,255),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);*/
+    box-shadow: #717171 2px 2px;
+}
+
+.container-cuenta-personas .cuenta-personas-imagen{
+    width: 60%;
+    padding: 0;
+}
+
+.container-cuenta-personas .cuenta-personas-imagen img{
+    height: 100%;
+    /*object-fit: cover;*/
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+}
+
+.cuenta-personas-datos{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.cuenta-personas-titulo{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.cuenta-personas-cantidad{
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.cuenta-personas-lugar{
+    font-size: 1.1rem;
+
 }
 
 /*Responsive para mobile*/

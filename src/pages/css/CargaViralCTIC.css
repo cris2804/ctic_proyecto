@@ -54,6 +54,7 @@
 
 .container-gauges .gauges{
     width: 49%;
+    margin-bottom: 20px;
     border: solid 1px red;
 }
 .container-gauges .gauges .co2{
