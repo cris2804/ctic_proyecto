@@ -38,7 +38,7 @@ export default function Dashboard(){
                 </div>
             </div>
             <div className='container-map-dashboard'>
-                <iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&from=1675696115267&to=1675782515267&panelId=2" width="100%" height="900" frameborder="0"></iframe>
+                <iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&from=1675696115267&to=1675782515267&panelId=2" width="100%" height="100%" frameborder="0"></iframe>
             </div>
         </div>
     </div>);
