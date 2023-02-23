@@ -24,13 +24,13 @@ export default function University(){
                 </div>
                 <div className='container-dash'>
                     <div className='container-title-dash-2'>Calidad de Aire</div>
-                    <a href='/carga-viral-CTIC'>Calidad de Aire (CTIC)</a>
-                    <a href='/carga-viral-comedor-universitario'>Calidad de Aire (Puerta 3)</a>
-                    <a href='/carga-viral-CTIC'>Calidad de Aire (Puerta 5)</a>
+                    <a href='/calidad-de-aire-ctic'>Calidad de Aire (CTIC)</a>
+                    <a href='/calidad-de-aire-puerta-3'>Calidad de Aire (Puerta 3)</a>
+                    <a href='/calidad-de-aire-puerta-5'>Calidad de Aire (Puerta 5)</a>
                 </div>
                 <div className='container-dash'>
                     <div className='container-title-dash-2'>Smart Parking</div>
-                    <a href='/carga-viral-CTIC'>Smart Parking (CTIC)</a>
+                    <a href='/smart-parking'>Smart Parking (CTIC)</a>
                 </div>
             </div>
         </div>
