@@ -101,7 +101,7 @@ iframe {
 }
 
 .cuenta-personas-titulo{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
@@ -113,7 +113,7 @@ iframe {
 
 .cuenta-personas-lugar{
     font-size: 1.1rem;
-
+    font-weight: 600;
 }
 
 /*Responsive para mobile*/

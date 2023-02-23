@@ -18,7 +18,7 @@ export default function CargaViralCTIC(){
             </div>
             <div className='container-map-gauge'>
                 <div className='container-map'>
-                    <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=2" width="100%" height="1350" frameborder="0"></iframe>
+                    <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=2" width="100%" height="1420" frameborder="0"></iframe>
                 </div>
                 <div className='container-gauges'>
                     <div className='gauges'>
@@ -66,13 +66,28 @@ export default function CargaViralCTIC(){
                             <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=35" width="100%" height="200" frameborder="0"></iframe>
                         </div>
                     </div>
-                    <div>
-                        <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&from=1675785885527&to=1675872285527&panelId=16" width="100%" height="400" frameborder="0"></iframe>
+                    <div className='gauges'>
+                        <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&from=1675785885527&to=1675872285527&panelId=16" width="100%" height="99.6%" frameborder="0"></iframe>
                     </div>
                 </div>
             </div>
-            <div className='container-historico'>
+            <div className='container-historico-1'>
                 <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=18" width="100%" height="450" frameborder="0"></iframe>
+            </div>
+            <div className='container-historico'>
+                <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=19" width="100%" height="450" frameborder="0"></iframe>
+            </div>
+            <div className='container-historico'>
+                <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=41" width="100%" height="450" frameborder="0"></iframe>
+            </div>
+            <div className='container-historico'>
+                <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=43" width="100%" height="450" frameborder="0"></iframe>
+            </div>
+            <div className='container-historico'>
+                <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=45" width="100%" height="450" frameborder="0"></iframe>
+            </div>
+            <div className='container-historico'>
+                <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=47" width="100%" height="450" frameborder="0"></iframe>
             </div>
         </div>
     )
