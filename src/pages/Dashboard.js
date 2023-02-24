@@ -7,34 +7,40 @@ export default function Dashboard(){
     <div>
         <div className='container-main'>
             <div className='container-logo-time-aforo-dashboard'>
-                <img src={logov2} alt="logov2"/>
-                {/*<iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&panelId=4" width="100%" height="17%" frameborder="0"></iframe>*/}
-                <iframe src="http://192.168.52.232:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&panelId=4" width="100%" height="17%" frameborder="0"></iframe>
-                {/*<iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&from=1675695935699&to=1675782335699&panelId=10" width="450" height="200" frameborder="0"></iframe>*/}
-                <div className='container-dashboard'>
-                    <div className='container-dashboard-title'>Dashboard</div>
-                    <a href='/universidad-nacional-de-ingenieria'>Universidad Nacional de Ingeniería</a>
+                <div className='container-logo-time'>
+                    <img src={logov2} alt="logov2"/>
+                    {/*<iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&panelId=4" width="100%" height="17%" frameborder="0"></iframe>*/}
+                    <div className='container-time'><iframe src="http://192.168.52.232:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&panelId=4" width="100%" height="17%" frameborder="0"></iframe></div>
+                    {/*<iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&from=1675695935699&to=1675782335699&panelId=10" width="450" height="200" frameborder="0"></iframe>*/}
                 </div>
-                {/*<iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&panelId=12" width="100%" height="20%" frameborder="0"></iframe>
-                <iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&panelId=14" width="100%" height="20%" frameborder="0"></iframe>*/}
-                <div className='container-cuenta-personas'>
-                    <div className='cuenta-personas-imagen'>
-                        <img src={cuentapersonas} alt='imagen cuenta personas'/>
+                <div className='container-dash-cuenta-personas'>
+                    <div className='container-dashboard'>
+                        <div className='container-dashboard-title'>Dashboard</div>
+                        <a href='/universidad-nacional-de-ingenieria'>Universidad Nacional de Ingeniería</a>
                     </div>
-                    <div className='cuenta-personas-datos'>
-                        <div className='cuenta-personas-titulo'>AFORO</div>
-                        <div className='cuenta-personas-cantidad'>23</div>
-                        <div className='cuenta-personas-lugar'>CTIC</div>
-                    </div>
-                </div>
-                <div className='container-cuenta-personas'>
-                    <div className='cuenta-personas-imagen'>
-                        <img src={cuentapersonas} alt='imagen cuenta personas'/>
-                    </div>
-                    <div className='cuenta-personas-datos'>
-                        <div className='cuenta-personas-titulo'>AFORO</div>
-                        <div className='cuenta-personas-cantidad'>12</div>
-                        <div className='cuenta-personas-lugar'>Lab. Smart City</div>
+                    {/*<iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&panelId=12" width="100%" height="20%" frameborder="0"></iframe>
+                    <iframe src="http://181.176.48.200:3000/d-solo/XS78ahc4k/home?orgId=1&refresh=1s&panelId=14" width="100%" height="20%" frameborder="0"></iframe>*/}
+                    <div className='container-2-cuenta-personas'>
+                        <div className='container-cuenta-personas'>
+                            <div className='cuenta-personas-imagen'>
+                                <img src={cuentapersonas} alt='imagen cuenta personas'/>
+                            </div>
+                            <div className='cuenta-personas-datos'>
+                                <div className='cuenta-personas-titulo'>AFORO</div>
+                                <div className='cuenta-personas-cantidad'>23</div>
+                                <div className='cuenta-personas-lugar'>CTIC</div>
+                            </div>
+                        </div>
+                        <div className='container-cuenta-personas'>
+                            <div className='cuenta-personas-imagen'>
+                                <img src={cuentapersonas} alt='imagen cuenta personas'/>
+                            </div>
+                            <div className='cuenta-personas-datos'>
+                                <div className='cuenta-personas-titulo'>AFORO</div>
+                                <div className='cuenta-personas-cantidad'>12</div>
+                                <div className='cuenta-personas-lugar'>Lab. Smart City</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

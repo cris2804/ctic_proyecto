@@ -1,26 +1,52 @@
 /*navbar*/
 .nav-calidad-aire{
     width: 100%;
-    height: 60px;
+    height: 120px;
     top: 0;
     left: 0;
     position: fixed;
-    background-color: #067f7f;
+    /*background-color: #067f7f;*/
+    background-color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+.nav-superior{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-superior div img{
+    height: 45px;
+}
+
+.container-tematica{
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 .nav-calidad-aire ul{
+    height: 100%;
     display: flex;
+    align-items: center;
     gap: 20px;
     list-style: none;
 }
 
 .nav-calidad-aire ul li a{
     text-decoration: none;
-    color: white;
-    font-size: 1.3rem;
+    color: #5e715b;
+    font-size: 1.4rem;
 }
+
+.nav-calidad-aire ul li a:hover{
+    color: #6ba7b7;
+}
+
 .item{
-    scroll-margin-top: 8ex;
+    scroll-margin-top: 15ex;
 }
 
 html{
@@ -28,19 +54,22 @@ html{
 }
 /*---------------------*/
 .titulo-categoria{
-    height: 50px;
+    height: 80px;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
     padding-left: 20px;
     font-weight: 600;
     font-size: 1.5rem;
-    background-color: #574411;
-    color: #ffff00;
+    background-color: #70806d;
+    color: #fefefe;
 }
 .container-concentracion-de-gases{
-    margin-top: 60px;
+    margin-top: 120px;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .container-concentracion-de-gases-ctic{
@@ -65,6 +94,7 @@ html{
     height: 5%;
     font-weight: 600;
     font-size: 1.5rem;
+    color: #f84e01;
 }
 .container-2-gauges{
     height: 30%;
@@ -106,4 +136,13 @@ html{
 }
 .peligroso{
     background-color:peru;
+}
+
+.container-concentracion-de-gases .container-historico{
+    height: 500px;
+}
+
+.container-aire{
+    background-color: #e6e4e0;
+    padding: 10px;
 }

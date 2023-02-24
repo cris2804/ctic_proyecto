@@ -4,14 +4,15 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    background-color: none;
+    background-color: #fefefe;
+    margin-bottom: 20px;
 }
 .container-nav .container-image{
     padding-right: 10px;
     border-right: 1px #fff solid;
 }
 
-.container-nav .container-image img{
+.container-nav .container-logo img{
     height: 30px;
 }
 
@@ -20,13 +21,13 @@
     color: black;
     font-size: 1.5rem;
     padding-right: 10px;
-    border-right: 1px #fff solid;
-    color: white;
+    border-right: 1px #5e715b solid;
+    color: #5e715b;
 }
 
 .container-nav .container-ruta-ctic{
     font-size: 1.5rem;
-    color: #ffffff;
+    color: #5e715b;
     font-weight: 700;
 }
 /*-------------------------------------------*/
@@ -55,7 +56,7 @@
 .container-gauges .gauges{
     width: 49%;
     margin-bottom: 20px;
-    border: solid 1px red;
+    border: solid 1px #fefefe;
 }
 .container-gauges .gauges .co2{
     width: 100%;

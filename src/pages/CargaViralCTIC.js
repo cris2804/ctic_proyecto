@@ -5,7 +5,7 @@ export default function CargaViralCTIC(){
     return(
         <div>
             <div className="container-nav">
-                <div className='container-image'>
+                <div className='container-logo'>
                     <a href='/'><img src={logosc} alt='imagen logo'/> </a>
                 </div>
                 <div className='container-ruta-university'>
@@ -18,43 +18,56 @@ export default function CargaViralCTIC(){
             </div>
             <div className='container-map-gauge'>
                 <div className='container-map'>
-                    <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=2" width="100%" height="1420" frameborder="0"></iframe>
+                    {/*<iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=2" width="100%" height="1420" frameborder="0"></iframe>*/}
+                    <iframe src="http://192.168.52.232:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=2" width="100%" height="1420" frameborder="0"></iframe>
                 </div>
                 <div className='container-gauges'>
                     <div className='gauges'>
                         <div className='co2'>
-                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=4" width="100%" height="250" frameborder="0"></iframe>
+                            {/*<iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=4" width="100%" height="250" frameborder="0"></iframe>*/}
+                            <iframe src="http://192.168.52.232:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=4" width="100%" height="250" frameborder="0"></iframe>
                         </div>
                         <div className='humedad-temperatura'>
-                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=21" width="100%" height="200" frameborder="0"></iframe>
-                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=23" width="100%" height="200" frameborder="0"></iframe>
+                            {/*<iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=21" width="100%" height="200" frameborder="0"></iframe>
+                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=23" width="100%" height="200" frameborder="0"></iframe>*/}
+                            <iframe src="http://192.168.52.232:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=21" width="100%" height="200" frameborder="0"></iframe>
+                            <iframe src="http://192.168.52.232:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=23" width="100%" height="200" frameborder="0"></iframe>
                         </div>
                     </div>
                     <div className='gauges'>
                         <div className='co2'>
-                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=8" width="100%" height="250" frameborder="0"></iframe>
+                            {/*<iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=8" width="100%" height="250" frameborder="0"></iframe>*/}
+                            <iframe src="http://192.168.52.232:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=8" width="100%" height="250" frameborder="0"></iframe>
                         </div>
                         <div className='humedad-temperatura'>
-                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=25" width="100%" height="200" frameborder="0"></iframe>
-                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=37" width="100%" height="200" frameborder="0"></iframe>
+                            {/*<iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=25" width="100%" height="200" frameborder="0"></iframe>
+                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=37" width="100%" height="200" frameborder="0"></iframe>*/}
+                            <iframe src="http://192.168.52.232:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=25" width="100%" height="200" frameborder="0"></iframe>
+                            <iframe src="http://192.168.52.232:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=37" width="100%" height="200" frameborder="0"></iframe>
                         </div>
                     </div>
                     <div className='gauges'>
                         <div className='co2'>
-                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=10" width="100%" height="250" frameborder="0"></iframe>
+                            {/*<iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=10" width="100%" height="250" frameborder="0"></iframe>*/}
+                            <iframe src="http://192.168.52.232:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=10" width="100%" height="250" frameborder="0"></iframe>
                         </div>
                         <div className='humedad-temperatura'>
-                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=27" width="100%" height="200" frameborder="0"></iframe>
-                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=33" width="100%" height="200" frameborder="0"></iframe>
+                            {/*<iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=27" width="100%" height="200" frameborder="0"></iframe>
+                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=33" width="100%" height="200" frameborder="0"></iframe>*/}
+                            <iframe src="http://192.168.52.232:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=10" width="100%" height="200" frameborder="0"></iframe>
+                            <iframe src="http://192.168.52.232:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=33" width="100%" height="200" frameborder="0"></iframe>
                         </div>
                     </div>
                     <div className='gauges'>
                         <div className='co2'>
-                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=12" width="100%" height="250" frameborder="0"></iframe>
+                            {/*<iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=12" width="100%" height="250" frameborder="0"></iframe>*/}
+                            <iframe src="http://192.168.52.232:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=12" width="100%" height="250" frameborder="0"></iframe>
                         </div>
                         <div className='humedad-temperatura'>
-                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=29" width="100%" height="200" frameborder="0"></iframe>
-                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=39" width="100%" height="200" frameborder="0"></iframe>
+                            {/*<iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=29" width="100%" height="200" frameborder="0"></iframe>
+                            <iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=39" width="100%" height="200" frameborder="0"></iframe>*/}
+                            <iframe src="http://192.168.52.232:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=29" width="100%" height="200" frameborder="0"></iframe>
+                            <iframe src="http://192.168.52.232:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&panelId=39" width="100%" height="200" frameborder="0"></iframe>
                         </div>
                     </div>
                     <div className='gauges'>
