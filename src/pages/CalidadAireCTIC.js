@@ -71,7 +71,15 @@ export default function CalidadAireCTIC(){
                 </div>
             </div>
             <div className="container-aire item" id='aire'>
-                <div>AIRE</div>
+                <div className='titulo-categoria'>AIRE</div>
+                <div>
+                <div><iframe src="http://181.176.48.200:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=10" width="450" height="200" frameborder="0"></iframe></div>
+                <div><iframe src="http://181.176.48.200:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=12" width="450" height="200" frameborder="0"></iframe></div>
+                <div><iframe src="http://181.176.48.200:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=20" width="450" height="200" frameborder="0"></iframe></div>
+                <div><iframe src="http://181.176.48.200:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=34" width="450" height="200" frameborder="0"></iframe></div>
+                <div><iframe src="http://181.176.48.200:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=65" width="450" height="200" frameborder="0"></iframe></div>
+                <div><iframe src="http://181.176.48.200:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=40" width="450" height="200" frameborder="0"></iframe></div>
+                </div>
             </div>
         </div>
     )
