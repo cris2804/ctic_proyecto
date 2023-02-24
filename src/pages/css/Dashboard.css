@@ -67,6 +67,7 @@ iframe {
 
 /*CUENTA PERSONAS*/
 .container-cuenta-personas{
+    width: 100%;
     display: flex;
     background: linear-gradient(#35DBFF, #B0B1A6);
     border-radius: 10px;
