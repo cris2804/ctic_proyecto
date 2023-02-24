@@ -3,16 +3,26 @@ import './css/CalidadAireCTIC.css';
 export default function CalidadAireCTIC(){
     return(
         <div>
-            <div className="container-datos-meteorologicos">
-
+            <div className='nav-calidad-aire'>
+                <ul>
+                    <li><a href='#concentracion'>Concentración de gases</a></li>
+                    <li><a href='#meteorologico'>Datos Meteorológicos</a></li>
+                    <li><a href='#aire'>Aire</a></li>
+                </ul>
             </div>
-            <div className="container-concentracion-de-gases">
+            {/*<div className="container-datos-meteorologicos" id='meteorologico'>
+                <div>DATOS METEOROLOGICOS</div>
+            </div>*/}
+            <div className="container-concentracion-de-gases item" id='concentracion'>
                 <div className="titulo-categoria">CONCENTRACIÓN DE GASES</div>
                 <div className="container-concentracion-de-gases-ctic">
                     <div className='container-mapa'>
                         <iframe src="http://181.176.48.200:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=73" width="100%" height="100%" frameborder="0"></iframe>
                     </div>
                     <div className='container-gauges-ca-ctic'>
+                        <div className='indice-calidad-aire'>
+                            INDICE DE CALIDAD DE AIRE
+                        </div>
                         <div className='container-2-gauges'>
                             <div>
                                 <iframe src="http://181.176.48.200:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=48" width="100%" height="100%" frameborder="0"></iframe>
@@ -60,8 +70,8 @@ export default function CalidadAireCTIC(){
                     </div>
                 </div>
             </div>
-            <div className="container-aire">
-
+            <div className="container-aire item" id='aire'>
+                <div>AIRE</div>
             </div>
         </div>
     )
