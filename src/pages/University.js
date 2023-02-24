@@ -11,7 +11,8 @@ export default function University(){
         <div className="container-university-main">
             <div className='container-logo-map'>
                 {/*<a href='/'><img src={logo} alt="logo"/></a>*/}
-                <iframe src="http://181.176.48.200:3000/d-solo/7bhq8tc4z/universidad-nacional-de-ingenieria?orgId=1&from=1675781192877&to=1675867592877&panelId=14" width="100%" height="100%" frameborder="0"></iframe>
+                {/*<iframe src="http://181.176.48.200:3000/d-solo/7bhq8tc4z/universidad-nacional-de-ingenieria?orgId=1&from=1675781192877&to=1675867592877&panelId=14" width="100%" height="100%" frameborder="0"></iframe>*/}
+                <iframe src="http://192.168.52.232:3000/d-solo/7bhq8tc4z/universidad-nacional-de-ingenieria?orgId=1&panelId=14" width="100%" height="100%" frameborder="0"></iframe>
             </div>
             <div className='container-name-university-dash'>
                 <div className='container-name-logo-university'>
