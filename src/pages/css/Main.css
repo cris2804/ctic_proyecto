@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container__main{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;*/
+    position: relative;
+  }
+
+  .nav__main{
+    width: 100%;
+    height: 75px;
+  }
+  
+  .container__main .container__map{
+    position: relative;
+    width: 100%;
+    height: calc(100% - 75px);
+  }
+
+  
+  .leaflet-container{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .container__leyenda{
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    padding: 10px;
+    background-color: aquamarine;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }

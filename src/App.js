@@ -8,6 +8,7 @@ import CalidadAireCTIC from './pages/CalidadAireCTIC';
 import CalidadAirePuerta5 from './pages/CalidadAirePuerta5';
 import CalidadAirePuerta3 from './pages/CalidadAirePuerta3';
 import SmartParking from './pages/SmartParking';
+import Main from './pages/Main'
 
 function App() {
   return (
@@ -15,7 +16,13 @@ function App() {
       {/*<div className='container-main'>*/}
         <Router>
           <Routes>
-            <Route path='/' element={<Dashboard/>}/>  
+
+          <Route path='/' element={<Main/>}/>
+
+
+
+
+            <Route path='/dashboard' element={<Dashboard/>}/>  
             <Route path='/universidad-nacional-de-ingenieria' element={<University/>}/> 
             <Route path='/carga-viral-CTIC' element={<CargaViralCTIC/>}/>
             <Route path='/carga-viral-comedor-universitario' element={<CargaViralComedor/>}/>
