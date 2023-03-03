@@ -24,7 +24,7 @@ export const ubicaciones = [
             -77.04797475459107
         ],
         "logo": Icon,
-    },
+    }/*,
     {
         "nombre": "Comedor Universitario",
         "coordenadas": [
@@ -32,5 +32,5 @@ export const ubicaciones = [
             -77.049183
         ],
         "logo": Icon,
-    }
+    }*/
 ]

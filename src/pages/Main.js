@@ -13,6 +13,16 @@ function Main() {
       {/*<div className='container__leyenda'>
           <Legend/>
   </div>*/}
+    <div className='container__ica'>
+      <div className='container__ica__'>
+        <span>Bueno</span>
+        <span>Moderado</span>
+        <span>Perjudicial para grupos sensibles</span>
+        <span>Perjudicial</span>
+        <span>Muy Perjudicial</span>
+        <span>Peligroso</span>
+      </div>
+    </div>
     </div>
   </div>
   );

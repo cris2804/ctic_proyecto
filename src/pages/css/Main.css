@@ -40,3 +40,42 @@ body{
     margin-left: 10px;
     margin-bottom: 10px;
   }
+
+  .container__ica{
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    text-align: center;
+  }
+
+  .container__ica__{
+    display: flex;
+    justify-content: center;
+  }
+  .container__ica__ span{
+    padding: 5px;
+  }
+  .container__ica__ span:nth-child(1){
+    background-color: #9AD64D;
+    border-radius: 5px 0 0 5px;
+  }
+  .container__ica__ span:nth-child(2){
+    background-color: #F8CD38;
+  }
+  .container__ica__ span:nth-child(3){
+    background-color: #F88F48;
+  }
+  .container__ica__ span:nth-child(4){
+    background-color: #F55D5E;
+    color: #ffffff;
+  }
+  .container__ica__ span:nth-child(5){
+    background-color: #A070B6;
+    color: #ffffff;
+  }
+  .container__ica__ span:nth-child(6){
+    background-color: #A06A7B;
+    color: #ffffff;
+    border-radius: 0 5px 5px 0;
+  }
