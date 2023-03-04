@@ -38,6 +38,35 @@ body{
     margin-bottom: 10px;
   }
 
+  /*opciones*/
+.calidad__del__aire__carga__viral{
+ position: absolute;
+ bottom: 40%;
+ z-index: 2;
+ margin-left: 30px;
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+}
+
+.calidad__del__aire__carga__viral div{
+  background-color: #ffffff;
+  border-radius: 0 10px 10px 0;
+  padding: 5px 10px 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.calidad__del__aire__carga__viral div:hover{
+  cursor: pointer;
+}
+
+.calidad__del__aire__carga__viral div img{
+  height: 25px;
+}
+
+/*indice de calidad del aire*/
   .container__ica{
     width: 100%;
     position: absolute;
