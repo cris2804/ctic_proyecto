@@ -57,7 +57,7 @@
     justify-content: center;
 }
 
-.container-cuenta-personas-bottom a{
+.container-cuenta-personas-bottom span{
     display: flex;
     justify-content: center;
     font-size: 16px;

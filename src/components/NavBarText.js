@@ -18,7 +18,7 @@ export default function NavPage() {
                 <div>25</div>
             </div>
             <div className='container-cuenta-personas-bottom'>
-                <a>CTIC</a>
+                <span>CTIC</span>
             </div>
           </div>
           <div className='containter-cuenta-personas'>
@@ -27,7 +27,7 @@ export default function NavPage() {
                 <div>25</div>
             </div>
             <div className='container-cuenta-personas-bottom'>
-            <a>LAB. SMART CITY</a>
+            <span>LAB. SMART CITY</span>
             </div>
           </div>
           
