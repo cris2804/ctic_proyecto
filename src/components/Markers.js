@@ -19,7 +19,7 @@ const Markers = (props) => {
                         iconSize: [60, 60],
                         className: "leaflet-venue-icon",
                     })}
-                    eventHandlers={{ click: () => console.log(ubicacion.clave) }} />
+                    eventHandlers={{ click: ()=>console.log(ubicacion.clave) }} />
     })}
     </>;
 };

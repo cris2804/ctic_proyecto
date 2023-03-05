@@ -1,10 +1,13 @@
 import './css/Main.css';
-import MapView from '../components/MapView';
 import { ubicaciones } from '../assets/ubicaciones';
 import { ubicacionesCV } from '../assets/ubicacionesCV';
 import { useState } from 'react';
 import calidad from '../assets/calidad.png';
 import carga from '../assets/carga.png';
+import {MapContainer, TileLayer} from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
+import { Marker } from "react-leaflet"
+import L from "leaflet";
 
 import NavBarText from '../components/NavBarText'
 
@@ -12,10 +15,13 @@ const ubiCentro = ['-12.018323979405162','-77.04974594903862']
 
 function Main() {
   const [ubi, setUbi] = useState(ubicaciones);
+  /*-- */
   const [estadoCA, setEstadoCA] = useState(true);
   const [estadoCV, setEstadoCV] = useState(false);
+  /*--- */
+  const [prueba, setPrueba] = useState('');
 
-
+  /*-- */
   const handleCambiarCA = () => {
     setUbi(ubicaciones)
 
@@ -24,7 +30,6 @@ function Main() {
       setEstadoCV(false);
     }
   }
-
   const handleCambiarCV = () => {
     setUbi(ubicacionesCV)
 
@@ -40,8 +45,28 @@ function Main() {
       <NavBarText/>
     </div>
     <div className='cont container__map'>
-
-      <MapView className='view__map' centro={ubiCentro} ubicaciones={ubi}/>
+      <MapContainer center={ubiCentro} zoom={16}>
+          <TileLayer
+            url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' 
+          />
+          {ubi.map((ubicacion) =>{
+            return <Marker 
+              key={ubicacion.clave}    
+              position={ubicacion.coordenadas} 
+              icon={L.icon({
+              iconUrl: ubicacion.logo,
+              iconRetinaUrl: ubicacion.logo,
+              iconAnchor: null,
+              shadowUrl: null,
+              shadowSize: null,
+              shadowAnchor: null,
+              iconSize: [60, 60],
+              className: "leaflet-venue-icon",
+              })}
+              eventHandlers={{ click: ()=>setPrueba(ubicacion.clave) }} />
+            })}
+      </MapContainer>
 
       <div className='calidad__del__aire__carga__viral'>
           <div className={estadoCA ? 'ca-cv-2':'ca-cv'} onClick={handleCambiarCA}>
@@ -65,6 +90,10 @@ function Main() {
         </div>
       </div>
 
+      <div className='container__datos__ca__cv'>
+            <div>{prueba}</div>
+      </div>
+    
     </div>
     
   </div>

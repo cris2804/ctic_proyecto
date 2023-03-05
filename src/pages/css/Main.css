@@ -1,52 +1,52 @@
 body{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .container__main{
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    position: relative;
-  }
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+}
 
-  .nav__main{
-    width: 100%;
-    height: 75px;
-  }
+.nav__main{
+  width: 100%;
+  height: 75px;
+}
   
-  .container__main .container__map{
-    position: relative;
-    width: 100%;
-    height: calc(100% - 75px);
-  }
+.container__main .container__map{
+  position: relative;
+  width: 100%;
+  height: calc(100% - 75px);
+}
 
   
-  .leaflet-container{
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
+.leaflet-container{
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
   
-  .container__leyenda{
-    width: 150px;
-    position: absolute;
-    bottom: 0;
-    z-index: 2;
-    padding: 10px;
-    background-color: aquamarine;
-    margin-left: 10px;
-    margin-bottom: 10px;
-  }
+.container__leyenda{
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  padding: 10px;
+  background-color: aquamarine;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
 
-  /*opciones para cambiar a calidad del aire o carga viral*/
+/*opciones para cambiar a calidad del aire o carga viral*/
 .calidad__del__aire__carga__viral{
- position: absolute;
- bottom: 30%;
- z-index: 2;
- margin-left: 30px;
- display: flex;
- flex-direction: column;
- gap: 20px;
+  position: absolute;
+  bottom: 30%;
+  z-index: 2;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .calidad__del__aire__carga__viral .ca-cv{
@@ -56,6 +56,7 @@ body{
   display: flex;
   align-items: center;
   gap: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
 }
 
 .calidad__del__aire__carga__viral .ca-cv-2{
@@ -65,6 +66,7 @@ body{
   display: flex;
   align-items: center;
   gap: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
 }
 
 .calidad__del__aire__carga__viral div:hover{
@@ -76,41 +78,54 @@ body{
 }
 
 /*indice de calidad del aire*/
-  .container__ica{
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-    bottom: 20px;
-    text-align: center;
-  }
+.container__ica{
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  bottom: 20px;
+  text-align: center;
+}
 
-  .container__ica__{
-    display: flex;
-    justify-content: center;
-  }
-  .container__ica__ span{
-    padding: 3px 5px 3px 5px;
-  }
-  .container__ica__ span:nth-child(1){
-    background-color: #9AD64D;
-    border-radius: 5px 0 0 5px;
-  }
-  .container__ica__ span:nth-child(2){
-    background-color: #F8CD38;
-  }
-  .container__ica__ span:nth-child(3){
-    background-color: #F88F48;
-  }
-  .container__ica__ span:nth-child(4){
-    background-color: #F55D5E;
-    color: #ffffff;
-  }
-  .container__ica__ span:nth-child(5){
-    background-color: #A070B6;
-    color: #ffffff;
-  }
-  .container__ica__ span:nth-child(6){
-    background-color: #A06A7B;
-    color: #ffffff;
-    border-radius: 0 5px 5px 0;
-  }
+.container__ica__{
+  display: flex;
+  justify-content: center;
+}
+.container__ica__ span{
+  padding: 3px 5px 3px 5px;
+}
+.container__ica__ span:nth-child(1){
+  background-color: #9AD64D;
+  border-radius: 5px 0 0 5px;
+}
+.container__ica__ span:nth-child(2){
+  background-color: #F8CD38;
+}
+.container__ica__ span:nth-child(3){
+  background-color: #F88F48;
+}
+.container__ica__ span:nth-child(4){
+  background-color: #F55D5E;
+  color: #ffffff;
+}
+.container__ica__ span:nth-child(5){
+  background-color: #A070B6;
+  color: #ffffff;
+}
+.container__ica__ span:nth-child(6){
+  background-color: #A06A7B;
+  color: #ffffff;
+  border-radius: 0 5px 5px 0;
+}
+
+/*Mostrar datos al dar click en las ubicaciones*/
+.container__datos__ca__cv{
+  width: 232px;
+  border-radius: 4px;
+  padding: 16px;
+  position: absolute;
+  max-height: 90vh;
+  background-color: #ffffff;
+  top: 100px;
+  right: 30px;
+  z-index: 4;
+}
