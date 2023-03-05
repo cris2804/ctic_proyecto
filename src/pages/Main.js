@@ -6,6 +6,8 @@ import { useState } from 'react';
 import calidad from '../assets/calidad.png';
 import carga from '../assets/carga.png';
 
+import NavBarText from '../components/NavBarText'
+
 const ubiCentro = ['-12.018323979405162','-77.04974594903862']
 
 function Main() {
@@ -14,7 +16,7 @@ function Main() {
   return (
   <div className='container__main'>
     <div className='nav__main'>
-
+      <NavBarText/>
     </div>
     <div className='cont container__map'>
 
