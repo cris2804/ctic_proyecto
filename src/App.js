@@ -30,6 +30,7 @@ function App() {
             <Route path='/calidad-de-aire-puerta-5' element={<CalidadAirePuerta5/>}/>
             <Route path='/calidad-de-aire-puerta-3' element={<CalidadAirePuerta3/>}/>
             <Route path='/smart-parking' element={<SmartParking/>}/>
+            <Route path='/localización/101' element={<SmartParking/>}/>
           </Routes>
         </Router>       
       {/*</div>*/}
