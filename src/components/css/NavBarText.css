@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+
+.container-navbar{
+    background: #fff;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 100%;
+}
+
+.container-logo-footer img {
+    padding-top: 7px;
+    height: 45px;
+}
+
+.container-secciones-nb{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.container-secciones-nb a{
+    text-decoration: none;
+    color: #30363c;
+}
+
+.container-secciones-nb a:hover{
+    color: #198CFF;
+}
+
+
+.containter-cuenta-personas{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-cuenta-personas-top{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.container-cuenta-personas-top div:nth-child(1){
+    text-align: center;
+}
+
+.container-cuenta-personas-bottom{
+    display: flex;
+    justify-content: center;
+}
+
+.container-cuenta-personas-bottom a{
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.container-cuenta-personas-bottom a:hover{
+    color: #30363c;
+}
+
+/* .container-secciones-nb{
+    display: flex;
+    justify-content: space-around;
+}
+.container-navbar a{
+    color: #30363c;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.container-navbar a:hover{
+    color: red;
+}
+.container-contactanos-nb{
+    background: red;
+    padding: 0 10px 0 10px;
+}
+.container-contactanos-nb:hover{
+    background-color: white;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .container-navbar{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        z-index: 2;
+    }
+    .container-secciones-nb{
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+} */
