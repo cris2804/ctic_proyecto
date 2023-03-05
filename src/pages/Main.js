@@ -12,6 +12,27 @@ const ubiCentro = ['-12.018323979405162','-77.04974594903862']
 
 function Main() {
   const [ubi, setUbi] = useState(ubicaciones);
+  const [estadoCA, setEstadoCA] = useState(true);
+  const [estadoCV, setEstadoCV] = useState(false);
+
+
+  const handleCambiarCA = () => {
+    setUbi(ubicaciones)
+
+    if(estadoCA === false && estadoCV === true){
+      setEstadoCA(true);
+      setEstadoCV(false);
+    }
+  }
+
+  const handleCambiarCV = () => {
+    setUbi(ubicacionesCV)
+
+    if(estadoCV === false && estadoCA === true){
+      setEstadoCV(true);
+      setEstadoCA(false);
+    }
+  }
 
   return (
   <div className='container__main'>
@@ -23,11 +44,11 @@ function Main() {
       <MapView className='view__map' centro={ubiCentro} ubicaciones={ubi}/>
 
       <div className='calidad__del__aire__carga__viral'>
-          <div className='calidad__del__aire' onClick={()=>setUbi(ubicaciones)}>
+          <div className={estadoCA ? 'ca-cv-2':'ca-cv'} onClick={handleCambiarCA}>
             <img src={calidad} alt="logo calidad del aire" />
             <span>Calidad del Aire</span>
           </div>
-          <div className='carga__viral' onClick={()=>setUbi(ubicacionesCV)}>
+          <div className={estadoCV ? 'ca-cv-2':'ca-cv'} onClick={handleCambiarCV}>
             <img src={carga} alt="carga viral"/>
             <span>Carga Viral</span>
           </div>

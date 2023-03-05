@@ -2,6 +2,7 @@ import Icon from '../assets/icon.svg';
 
 export const ubicacionesCV = [
     {
+        "clave": "cv-ctic",
         "nombre": "CTIC",
         "coordenadas": [
             -12.016460,
@@ -10,6 +11,7 @@ export const ubicacionesCV = [
         "logo": Icon,
     },
     {
+        "clave": "cv-comedor",
         "nombre": "Comedor Universitario",
         "coordenadas": [
             -12.018866,

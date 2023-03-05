@@ -38,10 +38,10 @@ body{
     margin-bottom: 10px;
   }
 
-  /*opciones*/
+  /*opciones para cambiar a calidad del aire o carga viral*/
 .calidad__del__aire__carga__viral{
  position: absolute;
- bottom: 40%;
+ bottom: 30%;
  z-index: 2;
  margin-left: 30px;
  display: flex;
@@ -49,8 +49,17 @@ body{
  gap: 20px;
 }
 
-.calidad__del__aire__carga__viral div{
+.calidad__del__aire__carga__viral .ca-cv{
   background-color: #ffffff;
+  border-radius: 0 10px 10px 0;
+  padding: 5px 10px 5px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.calidad__del__aire__carga__viral .ca-cv-2{
+  background-color: #2EF9FF;
   border-radius: 0 10px 10px 0;
   padding: 5px 10px 5px 10px;
   display: flex;

@@ -2,6 +2,7 @@ import Icon from '../assets/icon.svg';
 
 export const ubicaciones = [
     {
+        "clave": "ca-ctic",
         "nombre": "CTIC",
         "coordenadas": [
             -12.016460,
@@ -10,6 +11,7 @@ export const ubicaciones = [
         "logo": Icon,
     },
     {
+        "clave": "ca-puerta5",
         "nombre": "Puerta 5",
         "coordenadas": [
             -12.017942,
@@ -18,6 +20,7 @@ export const ubicaciones = [
         "logo": Icon,
     },
     {
+        "clave": "ca-puerta3",
         "nombre": "Puerta 3",
         "coordenadas": [
             -12.024657179121226,

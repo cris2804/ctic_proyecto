@@ -5,9 +5,9 @@ const Markers = (props) => {
     const {ubicaciones} = props;
    
     return <>
-    {ubicaciones.map((ubicacion, i) =>{
+    {ubicaciones.map((ubicacion) =>{
        return <Marker 
-                    key={ubicacion.nombre}    
+                    key={ubicacion.clave}    
                     position={ubicacion.coordenadas} 
                     icon={L.icon({
                         iconUrl: ubicacion.logo,
@@ -19,7 +19,7 @@ const Markers = (props) => {
                         iconSize: [60, 60],
                         className: "leaflet-venue-icon",
                     })}
-                    eventHandlers={{ click: () => console.log(ubicacion.nombre) }} />
+                    eventHandlers={{ click: () => console.log(ubicacion.clave) }} />
     })}
     </>;
 };
