@@ -135,3 +135,14 @@ body{
 .container__datos__ca__cv2{
   display:none !important;
 }
+.container__logo__close{
+  display: flex;
+  justify-content: flex-end;
+}
+.container__logo__close img{
+  height: 30px;
+}
+
+.container__logo__close img:hover{
+  cursor: pointer;
+}

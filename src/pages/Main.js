@@ -8,6 +8,7 @@ import {MapContainer, TileLayer} from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { Marker } from "react-leaflet"
 import L from "leaflet";
+import logoclose from './images/logoclose.png';
 
 import NavBarText from '../components/NavBarText'
 
@@ -41,6 +42,9 @@ function Main() {
   }
 
   /*--- */
+  const handleCerrar = ( )=> {
+    setBol(false);
+  }
   const handleMostrar = (e) => {
     setId(e)
     setBol(true)
@@ -98,7 +102,8 @@ function Main() {
       </div>
 
       <div className={bol ? 'container__datos__ca__cv':'container__datos__ca__cv2'}>
-            <div>{id}</div>
+        <div className='container__logo__close'><img src={logoclose} alt="logo-close" onClick={handleCerrar}/></div>
+        <div>{id}</div>
       </div>
     
     </div>
