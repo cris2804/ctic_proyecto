@@ -119,7 +119,7 @@ body{
 
 /*Mostrar datos al dar click en las ubicaciones*/
 .container__datos__ca__cv{
-  width: 232px;
+  width: 400px;
   border-radius: 4px;
   padding: 16px;
   position: absolute;

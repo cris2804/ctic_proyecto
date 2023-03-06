@@ -1,0 +1,48 @@
+.container__detalles{
+    display: flex;
+    flex-direction: column;
+}
+
+.container__titulo__detalles{
+    text-align: center;
+}
+
+.container__ciudad__pais{
+    text-align: center;
+}
+
+.container__hora__fecha{
+    text-align: center;
+}
+
+.eslogan__top{
+    text-align: center;
+}
+
+/*-------*/
+.container__detalles__estado{
+    display: flex;
+    background-color: #9ad64d;
+}
+
+.container__estado img{
+    height: 80px;
+}
+
+.container__promedio{
+    display: flex;
+    flex-direction: column;
+}
+
+.container__tiempo__pm{
+    display: flex;
+    flex-direction: column;
+}
+
+.container__tiempo{
+    display: flex;
+}
+
+.container__tiempo .container__temp__uv{
+    display: flex;
+}

@@ -9,10 +9,10 @@ import 'leaflet/dist/leaflet.css'
 import { Marker } from "react-leaflet"
 import L from "leaflet";
 import logoclose from './images/logoclose.png';
-
+import Detalles from '../components/Detalles';
 import NavBarText from '../components/NavBarText'
 
-const ubiCentro = ['-12.018323979405162','-77.04974594903862']
+const ubiCentro = ['-12.020381', '-77.049178']
 
 function Main() {
   const [ubi, setUbi] = useState(ubicaciones);
@@ -103,7 +103,7 @@ function Main() {
 
       <div className={bol ? 'container__datos__ca__cv':'container__datos__ca__cv2'}>
         <div className='container__logo__close'><img src={logoclose} alt="logo-close" onClick={handleCerrar}/></div>
-        <div>{id}</div>
+        <Detalles id= {id}/>
       </div>
     
     </div>
