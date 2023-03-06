@@ -19,7 +19,8 @@ function Main() {
   const [estadoCA, setEstadoCA] = useState(true);
   const [estadoCV, setEstadoCV] = useState(false);
   /*--- */
-  const [prueba, setPrueba] = useState('');
+  const [id, setId] = useState('');
+  const [bol, setBol] = useState(false);
 
   /*-- */
   const handleCambiarCA = () => {
@@ -32,11 +33,17 @@ function Main() {
   }
   const handleCambiarCV = () => {
     setUbi(ubicacionesCV)
-
+    
     if(estadoCV === false && estadoCA === true){
       setEstadoCV(true);
       setEstadoCA(false);
     }
+  }
+
+  /*--- */
+  const handleMostrar = (e) => {
+    setId(e)
+    setBol(true)
   }
 
   return (
@@ -64,7 +71,7 @@ function Main() {
               iconSize: [60, 60],
               className: "leaflet-venue-icon",
               })}
-              eventHandlers={{ click: ()=>setPrueba(ubicacion.clave) }} />
+              eventHandlers={{ click: ()=>handleMostrar(ubicacion.clave) }} />
             })}
       </MapContainer>
 
@@ -90,8 +97,8 @@ function Main() {
         </div>
       </div>
 
-      <div className='container__datos__ca__cv'>
-            <div>{prueba}</div>
+      <div className={bol ? 'container__datos__ca__cv':'container__datos__ca__cv2'}>
+            <div>{id}</div>
       </div>
     
     </div>
