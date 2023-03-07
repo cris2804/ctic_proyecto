@@ -57,10 +57,10 @@ export default function Detalles(props){
                 <img src={happy} alt='imagen-happy'/>
             </div>
             <div className='container__promedio'>
-                <div>promedio</div>
-                <div>
-                    <span>40</span>
-                    <span>INCA</span>
+                <div>Promedio</div>
+                <div className='container__inca__valor'>
+                    <div>40</div>
+                    <div>INCA</div>
                 </div>
             </div>
             <div className='container__tiempo__pm'>
@@ -79,7 +79,41 @@ export default function Detalles(props){
                 </div>
             </div>
         </div>
-        
+        <div className='container__actividades'>
+            <div className='actividades__1'>
+                <div>| DEPORTES AL AIRE LIBRE</div> <div>| COMER AFUERA</div>
+            </div>
+            <div className='actividades__2'>
+                | EVENTOS AL AIRE LIBRE
+            </div>
+        </div>
+        <div className='datos__'>
+            <div>Humedad</div>
+            <div>59%</div>
+        </div>
+        <div className='datos__'>
+            <div>Viento</div>
+            <div>20.4 kmh</div>
+        </div>
+        <div className='datos__'>
+            <div>NO2</div>
+            <div>10 µg/m3</div>
+        </div>
+        <div className='datos__'>
+            <div>O3</div>
+            <div>3 µg/m3</div>
+        </div>
+        <div className='datos__'>
+            <div>H2S</div>
+            <div>40 µg/m3</div>
+        </div>
+        <div className='datos__'>
+            <div>CO</div>
+            <div>20 µg/m3</div>
+        </div>
+        <div className='container__btn__mas__detalles'>
+            <div className='container__btn'>MÁS DETALLES</div>
+        </div>
     </div>
     )
 }
