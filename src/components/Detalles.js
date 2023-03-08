@@ -16,7 +16,10 @@ const obtenerhora = () => {
     const horaActual = fechaActual.getHours();
     const minutosActuales = fechaActual.getMinutes();
 
-    return `${horaActual}:${minutosActuales}`;
+    let min = '';
+    (minutosActuales < 10) ? min = '0'+minutosActuales: min = minutosActuales;
+
+    return `${horaActual}:${min}`;
 }
 
 const obtenerfecha = () => {
