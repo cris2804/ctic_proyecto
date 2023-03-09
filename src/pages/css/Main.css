@@ -85,7 +85,9 @@ body{
   bottom: 20px;
   text-align: center;
 }
-
+.container__ica2{
+  display: none !important;
+}
 .container__ica__{
   display: flex;
   justify-content: center;

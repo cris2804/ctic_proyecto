@@ -9,6 +9,7 @@ import CalidadAirePuerta5 from './pages/CalidadAirePuerta5';
 import CalidadAirePuerta3 from './pages/CalidadAirePuerta3';
 import SmartParking from './pages/SmartParking';
 import Main from './pages/Main'
+import DetalleCA from './pages/DetalleCA';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           <Routes>
 
           <Route path='/' element={<Main/>}/>
-
+          <Route path='/detalle-calidad-del-aire' element={<DetalleCA/>}/>
 
 
 

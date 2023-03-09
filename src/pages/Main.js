@@ -90,7 +90,7 @@ function Main() {
           </div>
       </div>
 
-      <div className='container__ica'>
+      <div className={estadoCA ? 'container__ica' : 'container__ica2'}>
         <div className='container__ica__'>
           <span>Bueno</span>
           <span>Moderado</span>

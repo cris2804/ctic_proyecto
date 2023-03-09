@@ -115,7 +115,7 @@ export default function Detalles(props){
             <div>20 µg/m3</div>
         </div>
         <div className='container__btn__mas__detalles'>
-            <div className='container__btn'>MÁS DETALLES</div>
+            <div className='container__btn'><a href='detalle-calidad-del-aire'>MÁS DETALLES</a></div>
         </div>
     </div>
     )
