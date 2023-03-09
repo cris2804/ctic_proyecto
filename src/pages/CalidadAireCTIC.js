@@ -81,7 +81,7 @@ export default function CalidadAireCTIC(){
                         </div>
                     </div>
                 </div>
-                <div className='container-historico'>
+                <div className='container-historico-cg'>
                     <iframe src="http://192.168.52.232:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=22" width="100%" height="100%" frameborder="0"></iframe>
                 </div>
             </div>

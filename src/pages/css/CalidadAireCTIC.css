@@ -138,7 +138,10 @@ html{
     background-color:peru;
 }
 
-.container-concentracion-de-gases .container-historico{
+.container-concentracion-de-gases .container-historico-cg{
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
     height: 500px;
 }
 
