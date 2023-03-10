@@ -81,6 +81,7 @@
     z-index: 4;
     padding: 5px;
     box-shadow: 0 0 5px #333;
+    background-color: white;
 }
 .container__ica__rango__nombre{
     display: flex;
@@ -100,4 +101,63 @@
 }
 .container__detalles__ica2{
     display: none !important;
+}
+
+/*------------ */
+.container__grafico__rangos__tipos__gases{
+    box-shadow: 0 2px 20px 0 rgb(0 0 0 / 8%);
+    margin-top: 80px;
+    width: 100%;
+}
+.container__rango__tiempo{
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 5px 5px -5px #333;
+    margin-bottom: 20px;
+}
+.container__rango__tiempo div{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0 5px 0;
+}
+.tiempo__seleccionado{
+    border-bottom: solid 2px blue;
+}
+.container__rango__tiempo div:hover{
+    cursor: pointer;
+}
+.container__porcentaje__anual__dias{
+    position: relative;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.container__porcentaje__anual__dias span{
+    margin-left: 50px;
+}
+
+.dias__al__año{
+    height: 150px;
+}
+
+.container__tipos__gases__ca{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.container__tipos__gases__ca div{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid 1px green;
+    margin-bottom: 10px;
+}
+.container__tipos__gases__ca div:hover{
+    cursor: pointer;
 }
