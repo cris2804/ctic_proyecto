@@ -5,7 +5,8 @@
 }
 .container__detalle__ca__main{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 20px;
 }
 .container__detalle__ca__main .container__detalle__ca__left{
     width: 20%;
@@ -18,13 +19,14 @@
 }
 
 .container__detalle__ca__main .container__detalle__ca__right{
-    width: 75%;
+    width: 60%;
 }
 .container__estado__ca{
     display: flex;
     justify-content: space-between;
     padding: 20px 40px 20px 40px;
     background-color: #9AD64D;
+    position: relative;
 }
 .container__valor__tipo{
     display: flex;
@@ -41,6 +43,9 @@
     justify-content: center;
     font-size: 1.8rem;
     color: #ffffff;
+}
+.container__valor__tipo .container__valor:hover{
+    cursor: pointer;
 }
 .container__indice__tipo{
     width: 83%;
@@ -63,5 +68,36 @@
 }
 .logo__imagen img{
     height: 80px;
+}
 
+/*--para ica*/
+.container__detalles__ica{
+    position: absolute;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 10%;
+    z-index: 4;
+    padding: 5px;
+    box-shadow: 0 0 5px #333;
+}
+.container__ica__rango__nombre{
+    display: flex;
+    justify-content: space-between;
+}
+.container__ica__rango__nombre div:nth-child(1){
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0 5px 0;
+}
+.container__ica__rango__nombre div:nth-child(2){
+    width: 65%;
+    display: flex;
+    align-items: center;
+}
+.container__detalles__ica2{
+    display: none !important;
 }
