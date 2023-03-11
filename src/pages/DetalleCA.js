@@ -55,29 +55,31 @@ export default function DetalleCA(){
             <div className='container__detalle__ca__main'>
                 <div className='container__detalle__ca__left'>
                     <div>
-                        <div>CLIMA</div>
-                        <div>¿Cuál es el clima actual?</div>
-                    </div>
-                    <div>
-                        <div className='container__prop__valor'>
+                        <div>
                             <div>CLIMA</div>
-                            <div>Parcialmente nublado</div>
+                            <div>¿Cuál es el clima actual?</div>
                         </div>
-                        <div className='container__prop__valor'>
-                            <div>TEMPERATURA</div>
-                            <div>26 ºC</div>
-                        </div>
-                        <div className='container__prop__valor'>
-                            <div>VIENTO</div>
-                            <div>12.6 km/h</div>
-                        </div>
-                        <div className='container__prop__valor'>
-                            <div>PRESIÓN</div>
-                            <div>1014 mbar</div>
+                        <div>
+                            <div className='container__prop__valor'>
+                                <div>CLIMA</div>
+                                <div>Parcialmente nublado</div>
+                            </div>
+                            <div className='container__prop__valor'>
+                                <div>TEMPERATURA</div>
+                                <div>26 ºC</div>
+                            </div>
+                            <div className='container__prop__valor'>
+                                <div>VIENTO</div>
+                                <div>12.6 km/h</div>
+                            </div>
+                            <div className='container__prop__valor'>
+                                <div>PRESIÓN</div>
+                                <div>1014 mbar</div>
+                            </div>
                         </div>
                     </div>
-                    <div>
-
+                    <div style={{marginTop:'100px'}}>
+                        Descargar datos
                     </div>
                 </div>
                 <div className='container__detalle__ca__right'>
