@@ -12,12 +12,14 @@ body{
 .nav__main{
   width: 100%;
   height: 75px;
+  z-index: 20;
 }
   
 .container__main .container__map{
   position: relative;
   width: 100%;
   height: calc(100% - 75px);
+  z-index: 0;
 }
 
   

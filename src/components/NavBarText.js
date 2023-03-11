@@ -9,9 +9,28 @@ export default function NavPage() {
     <div className='container-navbar'>
         <div className='container-logo-footer'><img src={logosc} alt='logo-imagen' href='/'></img></div>
         <div className='container-secciones-nb'>
-          <a href='./calidad-de-aire-ctic'>Calidad de Aire</a>
-          <a href='./carga-viral-CTIC'>Carga Viral</a>
-          <a href='./smart-parking'>Smart Parking</a>
+          <div className='dropdown'>
+            <button class="dropbtn">Calidad de Aire</button>
+              <div class="dropdown-content">
+                <a href="./calidad-de-aire-ctic">Calidad de Aire (CTIC)</a>
+                <a href="/calidad-de-aire-puerta-3">Calidad de Aire (Puerta 3)</a>
+                <a href="/calidad-de-aire-puerta-5">Calidad de Aire (Puerta 5)</a>
+              </div>
+          </div>
+          <div className='dropdown'>
+          <button class="dropbtn">Carga Viral</button>
+            <div class="dropdown-content">
+              <a href="./carga-viral-CTIC">Carga Viral (CTIC)</a>
+              <a href="/carga-viral-comedor-universitario">Carga Viral (Comedor Universitario)</a>
+            </div>
+          </div>
+          <div className='menu'><a href='./smart-parking'>Smart Parking</a>
+            {/* <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div> */}
+          </div>
           <div className='containter-cuenta-personas'>
             <div className='container-cuenta-personas-top'>
                 <div><img src={personas} alt='persona'></img></div>
