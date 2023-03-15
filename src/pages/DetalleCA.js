@@ -3,6 +3,7 @@ import happy from '../components/images/happy.png';
 import { useState } from 'react';
 import { Ica } from '../assets/Ica';
 import Grafico from '../components/Grafico';
+import Grafico2 from '../components/Grafico2';
 
 const gases = [
     {
@@ -30,6 +31,16 @@ const gases = [
         "nombre": "NO",
     }
 ]
+
+function Graficar(opc){
+    if(opc === 0){
+        return <Grafico/>
+    }else if(opc === 1){
+        return <Grafico2 cantidad={100}/>
+    }else if(opc === 2){
+        return <Grafico2 cantidad={500}/>
+    }
+}
 
 export default function DetalleCA(){
     const [isHovered, setIsHovered] = useState(false);
@@ -112,7 +123,7 @@ export default function DetalleCA(){
                             <div className={seleccionado === 2 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(2)}>SEMANA</div>
                         </div>
                         <div className='container__grafico'>
-                            <Grafico />
+                            {Graficar(seleccionado)}
                         </div>
                         <div className='container__porcentaje__anual__dias'>
                            <span>---</span> Porcentaje anual 33 ICA
