@@ -91,18 +91,20 @@ const Grafico = () => {
             left: 20,
             bottom: 25,
           }}
-          >
-          <XAxis dataKey="time" reversed={false}><Label value="Mes" offset={0} position="bottom" fill="#000" /></XAxis>
-          <YAxis>
+        >
+          <CartesianGrid stroke="#eee" />
+          <XAxis dataKey="time" reversed={false}>
+            <Label value="Fecha" offset={0} position="bottom" fill="#000" />
+          </XAxis>
+          <YAxis domain={[0, 600]}>
             <Label
-                value="Cantidad"
+                value="Gases"
                 offset={5}
                 angle={-90}
                 position="insideLeft"
                 fill="#000"
               />
           </YAxis>
-          <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
           <Line type="monotone" dataKey="value" stroke="#000" strokeWidth={1} dot={<CustomDot />} isAnimationActive={false} />
           <Tooltip />
           {/*<Legend />*/}
