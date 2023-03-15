@@ -36,9 +36,9 @@ function Graficar(opc){
     if(opc === 0){
         return <Grafico/>
     }else if(opc === 1){
-        return <Grafico2 cantidad={100}/>
+        return <Grafico2 cantidad={96}/>
     }else if(opc === 2){
-        return <Grafico2 cantidad={500}/>
+        return <Grafico2 cantidad={480}/>
     }
 }
 

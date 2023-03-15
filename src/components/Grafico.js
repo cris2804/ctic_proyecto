@@ -4,25 +4,25 @@ import './css/Grafico.css';
 
 const initialData = [
   { time: '10:00', value: 150 },
-  { time: '10:01', value: 180 },
-  { time: '10:02', value: 200 },
-  { time: '10:03', value: 220 },
-  { time: '10:04', value: 230 },
-  { time: '10:05', value: 240 },
-  { time: '10:06', value: 250 },
-  { time: '10:07', value: 260 },
-  { time: '10:08', value: 270 },
-  { time: '10:09', value: 280 },
-  { time: '10:10', value: 290 },
-  { time: '10:11', value: 300 },
-  { time: '10:12', value: 310 },
-  { time: '10:13', value: 320 },
-  { time: '10:14', value: 330 },
-  { time: '10:15', value: 340 },
-  { time: '10:16', value: 350 },
-  { time: '10:17', value: 360 },
-  { time: '10:18', value: 370 },
-  { time: '10:19', value: 380 },
+  { time: '10:03', value: 180 },
+  { time: '10:06', value: 200 },
+  { time: '10:09', value: 220 },
+  { time: '10:12', value: 230 },
+  { time: '10:15', value: 240 },
+  { time: '10:18', value: 250 },
+  { time: '10:21', value: 260 },
+  { time: '10:24', value: 270 },
+  { time: '10:27', value: 280 },
+  { time: '10:30', value: 290 },
+  { time: '10:33', value: 300 },
+  { time: '10:36', value: 310 },
+  { time: '10:39', value: 320 },
+  { time: '10:42', value: 330 },
+  { time: '10:45', value: 340 },
+  { time: '10:48', value: 350 },
+  { time: '10:51', value: 360 },
+  { time: '10:54', value: 370 },
+  { time: '10:57', value: 380 },
 ];
 
 const Grafico = () => {
@@ -73,7 +73,7 @@ const Grafico = () => {
       // Genera un nuevo punto aleatorio
       const newPoint = { time: new Date().toLocaleTimeString(), value: Math.floor(Math.random() * 500) };
       setData(prevData => [...prevData.slice(-19), newPoint]);
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
