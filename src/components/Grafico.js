@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Label } from 'recharts';
 import './css/Grafico.css';
 
 const initialData = [
@@ -81,9 +81,27 @@ const Grafico = () => {
   return (
     <div className='grafico'>
       <ResponsiveContainer width="100%" aspect={3}>
-        <LineChart width={300} height={300} data={data}>
-          <XAxis dataKey="time" reversed={false} />
-          <YAxis />
+        <LineChart 
+          width={300} 
+          height={300} 
+          data={data}
+          margin={{
+            top: 15,
+            right: 30,
+            left: 20,
+            bottom: 25,
+          }}
+          >
+          <XAxis dataKey="time" reversed={false}><Label value="Mes" offset={0} position="bottom" fill="#000" /></XAxis>
+          <YAxis>
+            <Label
+                value="Cantidad"
+                offset={5}
+                angle={-90}
+                position="insideLeft"
+                fill="#000"
+              />
+          </YAxis>
           <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
           <Line type="monotone" dataKey="value" stroke="#000" strokeWidth={1} dot={<CustomDot />} isAnimationActive={false} />
           <Tooltip />
