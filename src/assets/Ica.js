@@ -15,7 +15,7 @@ export const Ica = [
         "nombre": "Perjudicial para grupos sensibles",
         "color": "#F88F48",
         "rango": "100-150",
-        "valor": 32,
+        "valor": 52,
     },
     {
         "nombre": "Perjudicial",
