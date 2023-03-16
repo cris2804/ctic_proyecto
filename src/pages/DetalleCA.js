@@ -126,7 +126,7 @@ export default function DetalleCA(){
                             {Graficar(seleccionado)}
                         </div>
                         <div className='container__porcentaje__anual__dias'>
-                           <span>---</span> <span>Porcentaje anual 33 ICA</span>
+                           <span>---</span> Porcentaje anual 33 ICA
                         </div>
                         <div className='container__porcentaje__anual__dias dias__al__año'>
                             <div><span>Días al año en este nivel</span></div>
