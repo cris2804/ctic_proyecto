@@ -126,10 +126,18 @@ export default function DetalleCA(){
                             {Graficar(seleccionado)}
                         </div>
                         <div className='container__porcentaje__anual__dias'>
-                           <span>---</span> Porcentaje anual 33 ICA
+                           <span>---</span> <span>Porcentaje anual 33 ICA</span>
                         </div>
                         <div className='container__porcentaje__anual__dias dias__al__año'>
-                            <span>Días al año en este nivel</span>
+                            <div><span>Días al año en este nivel</span></div>
+                            {Ica.map((element) =>{
+                                return( 
+                                    <div className='container__porcentaje__cantidad'>
+                                        <div className='container__porcentaje'><div className='porcentaje' style={{width: `${(element.valor/365)*100}%`,background: `${element.color}`}}></div></div>
+                                        <div className='container__cantidad'>{element.valor}</div>
+                                    </div>)
+                            })}
+                            
                         </div>
                         <div className='container__tipos__gases__ca'>
                             {gases.map((gas)=>{

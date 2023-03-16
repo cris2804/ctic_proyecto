@@ -131,18 +131,41 @@
 .container__porcentaje__anual__dias{
     position: relative;
     width: 100%;
-    height: 80px;
     display: flex;
-    align-items: center;
+    flex-direction: column; 
 }
 .container__porcentaje__anual__dias span{
     margin-left: 50px;
 }
 
 .dias__al__año{
-    height: 150px;
+ margin-bottom: 20px;
+ display: flex;
+ flex-direction: column;
 }
 
+.container__porcentaje__cantidad{
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    gap: 10px;
+    height: 30px;
+}
+.container__porcentaje__cantidad .container__porcentaje{
+    width: 80%;
+    height: 60%;
+}
+.container__porcentaje__cantidad .container__porcentaje .porcentaje{
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+}
+.container__porcentaje__cantidad .container__cantidad{
+    width: 8%;
+    display: flex;
+    justify-content: center;
+}
+/*----------------*/
 .container__tipos__gases__ca{
     display: flex;
     justify-content: center;
