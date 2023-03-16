@@ -45,6 +45,7 @@ function Graficar(opc){
 export default function DetalleCA(){
     const [isHovered, setIsHovered] = useState(false);
     const [seleccionado, setSeleccionado] = useState(0);
+    const [opcion, setOpcion] = useState(1);
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -56,6 +57,10 @@ export default function DetalleCA(){
     
     const Seleccionar = (indice) => {
         setSeleccionado(indice);
+    }
+
+    const handleOpcion = (opc) => {
+        setOpcion(opc);
     }
 
     return (
@@ -117,6 +122,11 @@ export default function DetalleCA(){
                     </div>
 
                     <div className='container__grafico__rangos__tipos__gases'>
+                        <div className='container__tipos__gases__ca'>
+                            {gases.map((gas)=>{
+                                return <div key={gas.key} onClick={()=>handleOpcion(gas.key)} className={opcion === gas.key ? 'seleccionado':''}>{gas.nombre}</div>
+                            })}
+                        </div>
                         <div className='container__rango__tiempo'>
                             <div className={seleccionado === 0 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(0)}>EN VIVO</div>
                             <div className={seleccionado === 1 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(1)}>DÍA</div>
@@ -138,11 +148,6 @@ export default function DetalleCA(){
                                     </div>)
                             })}
                             
-                        </div>
-                        <div className='container__tipos__gases__ca'>
-                            {gases.map((gas)=>{
-                                return <div key={gas.key}>{gas.nombre}</div>
-                            })}
                         </div>
                     </div>
                 </div>

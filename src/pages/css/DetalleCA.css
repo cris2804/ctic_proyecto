@@ -108,6 +108,7 @@
     box-shadow: 0 2px 20px 0 rgb(0 0 0 / 8%);
     margin-top: 80px;
     width: 100%;
+    padding-top: 20px;
 }
 .container__rango__tiempo{
     display: flex;
@@ -167,8 +168,9 @@
 /*----------------*/
 .container__tipos__gases__ca{
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .container__tipos__gases__ca div{
     width: 100px;
@@ -182,4 +184,8 @@
 }
 .container__tipos__gases__ca div:hover{
     cursor: pointer;
+}
+
+.container__tipos__gases__ca .seleccionado{
+    background-color:aquamarine;
 }
