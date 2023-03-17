@@ -185,6 +185,7 @@
 }
 .container__tipos__gases__ca div:hover{
     cursor: pointer;
+    background-color: aquamarine;
 }
 
 .container__tipos__gases__ca .seleccionado{
