@@ -3,7 +3,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import './css/Grafico.css';
 
 const initialData = [
-  { time: '10:00', value: 150 },
+  { time: '10:00', value: 150.5 },
   { time: '10:03', value: 180 },
   { time: '10:06', value: 200 },
   { time: '10:09', value: 220 },

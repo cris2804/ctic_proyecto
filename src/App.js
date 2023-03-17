@@ -10,6 +10,7 @@ import CalidadAirePuerta3 from './pages/CalidadAirePuerta3';
 import SmartParking from './pages/SmartParking';
 import Main from './pages/Main'
 import DetalleCA from './pages/DetalleCA';
+import Grafico3 from './components/Grafico3';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path='/' element={<Main/>}/>
           <Route path='/detalle-calidad-del-aire' element={<DetalleCA/>}/>
           <Route path='/detalle-carga-viral' element={<DetalleCA/>}/>
-
+          <Route path='/grafico-semana' element={<Grafico3/>}/>
 
             <Route path='/dashboard' element={<Dashboard/>}/>  
             <Route path='/universidad-nacional-de-ingenieria' element={<University/>}/> 
