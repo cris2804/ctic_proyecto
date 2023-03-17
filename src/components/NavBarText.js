@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './css/NavBarText.css';
-import logosc from '../pages/images/logosc.png'
+/* import logosc from '../pages/images/logosc.png' */
+import logosc from '../pages/images/logosc.svg';
 import personas from '../pages/images/blue_persons.png'
 
 export default function NavPage() {
