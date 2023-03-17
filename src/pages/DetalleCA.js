@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Ica } from '../assets/Ica';
 import Grafico from '../components/Grafico';
 import Grafico2 from '../components/Grafico2';
+import NavBarText from '../components/NavBarText'
 
 const gases = [
     {
@@ -65,12 +66,12 @@ export default function DetalleCA(){
 
     return (
         <div className='container__detalle__ca'>
-            <div>
-
+            <div className='nav__main' style={{marginBottom: "10px"}}>
+                <NavBarText/>
             </div>
             <div className='container__detalle__ca__main'>
                 <div className='container__detalle__ca__left'>
-                    <div>
+                    <div /* style={{marginTop: "20%"}} */>
                         <div>
                             <div>CLIMA</div>
                             <div>¿Cuál es el clima actual?</div>
