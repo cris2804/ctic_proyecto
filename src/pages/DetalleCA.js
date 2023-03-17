@@ -32,20 +32,20 @@ const gases = [
     }
 ]
 
-function Graficar(opc){
+function Graficar(opc, nom){
     if(opc === 0){
-        return <Grafico/>
+        return <Grafico nombre={nom}/>
     }else if(opc === 1){
-        return <Grafico2 cantidad={96}/>
+        return <Grafico2 cantidad={96} nombre={nom}/>
     }else if(opc === 2){
-        return <Grafico2 cantidad={672}/>
+        return <Grafico2 cantidad={672} nombre={nom}/>
     }
 }
 
 export default function DetalleCA(){
     const [isHovered, setIsHovered] = useState(false);
     const [seleccionado, setSeleccionado] = useState(0);
-    const [opcion, setOpcion] = useState(1);
+    const [opcion, setOpcion] = useState("PM2.5");
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -124,7 +124,7 @@ export default function DetalleCA(){
                     <div className='container__grafico__rangos__tipos__gases'>
                         <div className='container__tipos__gases__ca'>
                             {gases.map((gas)=>{
-                                return <div key={gas.key} onClick={()=>handleOpcion(gas.key)} className={opcion === gas.key ? 'seleccionado':''}>{gas.nombre}</div>
+                                return <div key={gas.nombre} onClick={()=>handleOpcion(gas.nombre)} className={opcion === gas.nombre ? 'seleccionado':''}>{gas.nombre}</div>
                             })}
                         </div>
                         <div className='container__rango__tiempo'>
@@ -133,7 +133,7 @@ export default function DetalleCA(){
                             <div className={seleccionado === 2 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(2)}>SEMANA</div>
                         </div>
                         <div className='container__grafico'>
-                            {Graficar(seleccionado)}
+                            {Graficar(seleccionado, opcion)}
                         </div>
                         <div className='container__porcentaje__anual__dias'>
                            <span>---</span> Porcentaje anual 33 ICA

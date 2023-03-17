@@ -25,7 +25,7 @@ const initialData = [
   { time: '10:57', value: 380 },
 ];
 
-const Grafico = () => {
+const Grafico = ({nombre}) => {
   const [data, setData] = useState(initialData);
 
   const CustomDot = ({ cx, cy, stroke, fill, payload, value }) => {
@@ -98,7 +98,7 @@ const Grafico = () => {
           </XAxis>
           <YAxis domain={[0, 600]}>
             <Label
-                value="Gases"
+                value={nombre}
                 offset={5}
                 angle={-90}
                 position="insideLeft"

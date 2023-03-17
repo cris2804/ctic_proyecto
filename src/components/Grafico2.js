@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Label } from 'recharts';
 import './css/Grafico.css';
 
-const Grafico2 = ({cantidad}) => {
+const Grafico2 = ({cantidad, nombre}) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -72,7 +72,7 @@ const Grafico2 = ({cantidad}) => {
         </XAxis>
         <YAxis>
           <Label
-                  value="Gases"
+                  value={nombre}
                   offset={5}
                   angle={-90}
                   position="insideLeft"

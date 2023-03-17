@@ -22,8 +22,8 @@ export default function CalidadAireCTIC(){
                 <div className="titulo-categoria">CONCENTRACIÓN DE GASES</div>
                 <div className="container-concentracion-de-gases-ctic">
                     <div className='container-mapa'>
-                        <iframe src="http://181.176.48.200:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=73" width="100%" height="100%" frameborder="0"></iframe>
-                        {/*<iframe src="http://192.168.52.232:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=73" width="100%" height="100%" frameborder="0"></iframe>*/}
+                        {/*<iframe src="http://181.176.48.200:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=73" width="100%" height="100%" frameborder="0"></iframe>*/}
+                        <iframe src="http://192.168.52.232:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=73" width="100%" height="100%" frameborder="0"></iframe>
                     </div>
                     <div className='container-gauges-ca-ctic'>
                         <div className='indice-calidad-aire'>
