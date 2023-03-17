@@ -143,7 +143,12 @@ export default function DetalleCA(){
                             {Ica.map((element) =>{
                                 return( 
                                     <div className='container__porcentaje__cantidad'>
-                                        <div className='container__porcentaje'><div className='porcentaje' style={{width: `${(element.valor/365)*100}%`,background: `${element.color}`}}></div></div>
+                                        <div className='container__porcentaje'>
+                                            <div className='cien__por__ciento'>
+                                                <div className='porcentaje' style={{width: `${(element.valor/365)*100}%`,background: `${element.color}`}}>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div className='container__cantidad'>{element.valor}</div>
                                     </div>)
                             })}
