@@ -1,0 +1,38 @@
+.container__rango__fechas__seleccionar{
+    display: flex;
+    position:relative;
+    align-items: center;
+    gap: 20px;
+}
+.container__rango__fechas__seleccionar div:nth-child(2){
+    z-index: 1;
+}
+.container__rango__fechas__seleccionar div:nth-child(4){
+    z-index: 2;
+}
+.react-calendar{
+    border-radius: 0 10px 10px 10px;
+    /*box-shadow: 0 0 3px #333333;*/
+    position: absolute;
+}
+.react-calendar__month-view__weekdays__weekday {
+    border-bottom: none;
+}
+abbr {
+    border-bottom: none;
+  }
+.container__btn__calendar{
+    width: 150px;
+    height: 30px;
+}
+.container__btn__calendar:hover{
+    cursor: pointer;
+}
+
+.container__btn__aceptar{
+    height: 30px;
+    width: 150px;
+}
+.container__btn__aceptar:hover{
+    cursor: pointer;
+}
