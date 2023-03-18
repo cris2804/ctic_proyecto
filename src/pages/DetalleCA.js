@@ -5,6 +5,7 @@ import { Ica } from '../assets/Ica';
 import Grafico from '../components/Grafico';
 import Grafico2 from '../components/Grafico2';
 import NavBarText from '../components/NavBarText'
+import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 
 const gases = [
     {
@@ -132,17 +133,17 @@ export default function DetalleCA(){
                             <input type="checkbox" id="cbox1" value="first_checkbox"></input>
                         </div>
                         <div className='container__detalle__descargar' style={{paddingTop: "20px", paddingBottom: "30px", textAlign: "center"}}>
-                            <button style={{backgroundColor: "#7EDAE5", fontFamily: "'Space Grotesk', sans-serif",color: "#2086D8", fontSize:"20px", fontWeight: "500", borderColor:"#2086D8", borderRadius: "20px", padding: "10px 20px 10px 20px", cursor: "pointer"}}>Descargar CSV</button>
+                            <button style={{backgroundColor: "#7EDAE5", fontFamily: "'Space Grotesk', sans-serif",color: "#2086D8", fontSize:"20px", fontWeight: "500", borderColor:"#2086D8", borderRadius: "20px", padding: "10px 20px 10px 20px", cursor: "pointer"}}>Descargar CSV <CloudDownloadIcon /></button>
                         </div>
                     </div>
                 </div>
                 <div className='container__detalle__ca__right'>
-                    <div className='container__estado__ca'>
+                    <div className='container__estado__ca' style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 5px 5px"}}>
                         <div className='container__valor__tipo'>
                             <div className='container__valor' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>40</div>
                             <div className='container__indice__tipo'>
-                                <div className='indice'>ÍNDICE ICA EN VIVO</div>
-                                <div className='tipo'>Bueno</div>
+                                <div className='indice' style={{fontSize: "16px"}}>ÍNDICE ICA EN VIVO</div>
+                                <div className='tipo' style={{fontSize: "30px",fontWeight: "500"}}>Bueno</div>
                             </div>
                         </div>
                         <div className='logo__imagen'>
@@ -159,7 +160,7 @@ export default function DetalleCA(){
                         </div>
                     </div>
 
-                    <div className='container__grafico__rangos__tipos__gases'>
+                    <div className='container__grafico__rangos__tipos__gases' style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 5px 5px"}}>
                         <div className='container__tipos__gases__ca'>
                             {gases.map((gas)=>{
                                 return <div key={gas.nombre} onClick={()=>handleOpcion(gas.nombre)} className={opcion === gas.nombre ? 'seleccionado':''}>{gas.nombre}</div>

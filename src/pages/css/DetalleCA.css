@@ -60,6 +60,7 @@
     justify-content: center;
     font-size: 1.8rem;
     color: #ffffff;
+    border-radius: 5px;
 }
 .container__valor__tipo .container__valor:hover{
     cursor: pointer;
@@ -70,12 +71,13 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    
 }
 .container__indice__tipo .indice{
-    font-size: 0.8rem;
+    color: #607631;
 }
 .container__indice__tipo .tipo{
-    font-size: 1.8rem;
+    color: #607631;
 }
 
 .logo__imagen{
@@ -199,20 +201,22 @@
     margin-bottom: 20px;
 }
 .container__tipos__gases__ca div{
+    font-size: 18px;
     width: 100px;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    border: solid 1px green;
+    border: solid 1px #2086D8;
     margin-bottom: 10px;
+    background-color: #f3f7fb;
 }
 .container__tipos__gases__ca div:hover{
     cursor: pointer;
-    background-color: aquamarine;
+    background-color: #009AF2;
 }
 
 .container__tipos__gases__ca .seleccionado{
-    background-color:aquamarine;
+    background-color: #009AF2;
 }
