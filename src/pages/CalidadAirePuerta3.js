@@ -31,7 +31,7 @@ export default function CalidadAirePuerta3(){
 
     return(
         <div className='container__rango__fechas__seleccionar'>
-            <div>De: </div>
+            <div>DE: </div>
             <div>
                 <button onClick={toggleCalendar1} className='container__btn__calendar'>
                     {date1.toLocaleDateString()}
@@ -43,7 +43,7 @@ export default function CalidadAirePuerta3(){
                 />
                 )}
             </div>
-            <div>Hasta: </div>
+            <div>HASTA: </div>
             <div>
                 <button onClick={toggleCalendar2} className='container__btn__calendar'>
                     {date2.toLocaleDateString()}
