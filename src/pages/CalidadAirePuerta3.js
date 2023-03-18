@@ -10,16 +10,32 @@ export default function CalidadAirePuerta3(){
   }
 
     return(
-        <div>
-            <Calendar
-            onChange={onChange}
-            value={date}
-            />
-
+        <div className='container__rango__fechas__seleccionar'>
+            <div>DE: </div>
             <div>
-            Fecha seleccionada: {date.toLocaleDateString()}
+                <button onClick={toggleCalendar1} className='container__btn__calendar'>
+                    {date1.toLocaleDateString()}
+                </button>
+                {showCalendar1 && (
+                <Calendar
+                    onChange={onChange1}
+                    value={date1}
+                />
+                )}
             </div>
-            <button className='container__btn__aceptar' onClick={handleMostrar}>Aceptar</button>
+            <div>HASTA: </div>
+            <div>
+                <button onClick={toggleCalendar2} className='container__btn__calendar'>
+                    {date2.toLocaleDateString()}
+                </button>
+                {showCalendar2 && (
+                <Calendar
+                    onChange={onChange2}
+                    value={date2}
+                />
+                )}
+            </div>
+            <button className='container__btn__aceptar' onClick={handleMostrar}>ACEPTAR</button>
             {/*showCalendar && (
             <p>Fecha seleccionada: {date.toLocaleDateString()}</p>
             )*/}
