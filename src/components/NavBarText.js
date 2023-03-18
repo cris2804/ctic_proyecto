@@ -1,13 +1,14 @@
 import * as React from 'react';
 import './css/NavBarText.css';
-import logosc from '../pages/images/logosc.png'
+/* import logosc from '../pages/images/logosc.png' */
+import logosc from '../pages/images/logosc.svg';
 import personas from '../pages/images/blue_persons.png'
 
 export default function NavPage() {
 
   return (
     <div className='container-navbar'>
-        <div className='container-logo-footer'><img src={logosc} alt='logo-imagen' href='/'></img></div>
+        <div className='container-logo-footer'><a href='/'><img src={logosc} alt='logo-imagen'></img></a></div>
         <div className='container-secciones-nb'>
           <div className='dropdown'>
             <button class="dropbtn">Calidad de Aire</button>

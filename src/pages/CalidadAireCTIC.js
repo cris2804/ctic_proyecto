@@ -1,13 +1,13 @@
 import './css/CalidadAireCTIC.css';
 import logov2 from './images/logo_version_grafana.png'
+import NavBarText from '../components/NavBarText'
 
 export default function CalidadAireCTIC(){
     return(
         <div>
             <div className='nav-calidad-aire'>
-                <div className='nav-superior'>
-                    <div><a href='/'><img src={logov2} alt='imagen-logo'/></a></div>
-                    <div className='container-tematica'>Calidad de Aire - CTIC</div>
+                <div className='nav__main' style={{marginBottom: "10px"}}>
+                    <NavBarText/>
                 </div>
                 <ul>
                     <li><a href='#concentracion'>Concentración de gases</a></li>

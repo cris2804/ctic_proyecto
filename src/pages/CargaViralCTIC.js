@@ -1,18 +1,13 @@
 import './css/CargaViralCTIC.css';
 import logosc from './images/logosc.png'
+import NavBarText from '../components/NavBarText'
 
 export default function CargaViralCTIC(){
     return(
         <div>
             <div className="container-nav">
-                <div className='container-logo'>
-                    <a href='/'><img src={logosc} alt='imagen logo'/> </a>
-                </div>
-                <div className='container-ruta-university'>
-                    <a href='/universidad-nacional-de-ingenieria'>UNIVERSIDAD NACIONAL DE INGENIERIA</a>
-                </div>
-                <div className='container-ruta-ctic'>
-                    CARGA VIRAL(CTIC)
+                <div className='nav__main' style={{marginBottom: "10px"}}>
+                    <NavBarText/>
                 </div>
                 {/*<iframe src="http://181.176.48.200:3000/d-solo/2-sxtM24k/carga-viral-ctic?orgId=1&from=1675784962255&to=1675871362255&panelId=6" width="100%" height="200" frameborder="0"></iframe>*/}
             </div>
