@@ -133,7 +133,7 @@ export default function DetalleCA(){
                             <input type="checkbox" id="cbox1" value="first_checkbox"></input>
                         </div>
                         <div className='container__detalle__descargar' style={{paddingTop: "20px", paddingBottom: "30px", textAlign: "center"}}>
-                            <button style={{backgroundColor: "#7EDAE5", fontFamily: "'Space Grotesk', sans-serif",color: "#2086D8", fontSize:"20px", fontWeight: "500", borderColor:"#2086D8", borderRadius: "20px", padding: "10px 20px 10px 20px", cursor: "pointer"}}>Descargar CSV <CloudDownloadIcon /></button>
+                            <button style={{backgroundColor: "#7EDAE5", display: "flex",alignItems: "center", flexWrap: "wrap", fontFamily: "'Space Grotesk', sans-serif",color: "#2086D8", fontSize:"20px", fontWeight: "500", borderColor:"#2086D8", borderRadius: "20px", padding: "10px 20px 10px 20px", cursor: "pointer"}}>Descargar CSV&nbsp;&nbsp; <CloudDownloadIcon /></button>
                         </div>
                     </div>
                 </div>
