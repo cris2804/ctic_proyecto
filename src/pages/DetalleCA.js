@@ -66,37 +66,74 @@ export default function DetalleCA(){
 
     return (
         <div className='container__detalle__ca'>
-            <div className='nav__main' style={{marginBottom: "10px"}}>
+            <div className='nav__main' style={{marginBottom: "30px"}}>
                 <NavBarText/>
             </div>
             <div className='container__detalle__ca__main'>
                 <div className='container__detalle__ca__left'>
-                    <div /* style={{marginTop: "20%"}} */>
-                        <div>
-                            <div>CLIMA</div>
-                            <div>¿Cuál es el clima actual?</div>
+                    <div style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 10px 10px"}}>
+                        <div style={{backgroundColor: "#f3f7fb", paddingBottom: "25px", paddingTop: "25px", borderRadius: "2px 2px 0px 0px"}}>
+                            <div style={{color: "#198CFF", fontSize: "15px", fontWeight: "500", paddingBottom: "4px", marginLeft: "10px"}}>CLIMA</div>
+                            <div style={{marginLeft: "10px", fontSize: "20px"}}>¿Cuál es el clima actual en el laboratorio Calidad de Aire (CTIC)?</div>
                         </div>
-                        <div>
-                            <div className='container__prop__valor'>
-                                <div>CLIMA</div>
-                                <div>Parcialmente nublado</div>
+                        <div style={{backgroundColor: "white", borderRadius: "0px 0px 10px 10px", paddingBottom: "30px"}}>
+                            <div className='container__prop__valor' style={{paddingTop: "30px"}}>
+                                <div style={{color: "#3c3c3c"}}>CLIMA</div>
+                                <div style={{fontWeight: "500"}}>Parcialmente nublado</div>
                             </div>
                             <div className='container__prop__valor'>
-                                <div>TEMPERATURA</div>
-                                <div>26 ºC</div>
+                                <div style={{color: "#3c3c3c"}}>TEMPERATURA</div>
+                                <div style={{fontWeight: "500"}}>26 ºC</div>
                             </div>
                             <div className='container__prop__valor'>
-                                <div>VIENTO</div>
-                                <div>12.6 km/h</div>
+                                <div style={{color: "#3c3c3c"}}>VIENTO</div>
+                                <div style={{fontWeight: "500"}}>12.6 km/h</div>
                             </div>
                             <div className='container__prop__valor'>
-                                <div>PRESIÓN</div>
-                                <div>1014 mbar</div>
+                                <div style={{color: "#3c3c3c"}}>PRESIÓN</div>
+                                <div style={{fontWeight: "500"}}>1014 mbar</div>
                             </div>
                         </div>
                     </div>
-                    <div style={{marginTop:'100px'}}>
-                        Descargar datos
+                    <div style={{marginTop:'30px', backgroundColor: "white", boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 10px 10px"}}>
+                        <div className='container__detalle__descargar' style={{backgroundColor: "#f3f7fb",paddingTop: "30px",paddingBottom: "30px", fontSize: "15px", fontWeight: "500"}}>
+                            <div style={{color: "#198CFF", paddingBottom: "4px"}}>DESCARGAR DATOS (CSV)</div>
+                            <div style={{fontSize: "20px", fontWeight: "400", paddingRight: "40px"}}> Aqui podra descargar distintos datos de nuestra plataforma, podra escoger el rango de fechas y los sensores a analizar.</div>
+                        </div>
+                        <div className='container__detalle__descargar' style={{fontWeight: "500"}}>
+                            Fecha Inicial:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="date" id="start" name="trip-start"
+                            value="2023-02-22"
+                            min="2023-01-01" max="2023-12-31"></input>
+                        </div>
+                        <div className='container__detalle__descargar' style={{fontWeight: "500"}}>
+                            Fecha Final:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="date" id="start" name="trip-start"
+                            value="2023-02-28"
+                            min="2023-01-01" max="2023-12-31"></input>
+                        </div>
+                        <div className='container__detalle__descargar' style={{paddingTop: "25px"}}>
+                            PM 2.5 μg/m³ &nbsp;&nbsp;<input type="checkbox" id="cbox1" value="first_checkbox"></input>
+                        </div>
+                        <div className='container__detalle__descargar'>
+                            SO₂ μg/m³ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" id="cbox1" value="first_checkbox"></input>
+                        </div>
+                        <div className='container__detalle__descargar'>
+                            NO₂ μg/m³ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" id="cbox1" value="first_checkbox"></input>
+                        </div>
+                        <div className='container__detalle__descargar'>
+                            H₂S μg/m³ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" id="cbox1" value="first_checkbox"></input>
+                        </div>
+                        <div className='container__detalle__descargar'>
+                            NO μg/m³ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" id="cbox1" value="first_checkbox"></input>
+                        </div>
+                        <div className='container__detalle__descargar' style={{paddingTop: "20px", paddingBottom: "30px", textAlign: "center"}}>
+                            <button style={{backgroundColor: "#7EDAE5", fontFamily: "'Space Grotesk', sans-serif",color: "#2086D8", fontSize:"20px", fontWeight: "500", borderColor:"#2086D8", borderRadius: "20px", padding: "10px 20px 10px 20px", cursor: "pointer"}}>Descargar CSV</button>
+                        </div>
                     </div>
                 </div>
                 <div className='container__detalle__ca__right'>
