@@ -55,7 +55,7 @@ export default function CalidadAirePuerta3(){
                 />
                 )}
             </div>
-            <button className='container__btn__aceptar' onClick={handleMostrar}>Aceptar</button>
+            <button className='container__btn__aceptar' onClick={handleMostrar}>ACEPTAR</button>
             {/*showCalendar && (
             <p>Fecha seleccionada: {date.toLocaleDateString()}</p>
             )*/}
