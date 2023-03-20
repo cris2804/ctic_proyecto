@@ -25,13 +25,13 @@ export default function NavPage() {
               <a href="/carga-viral-comedor-universitario">Carga Viral (Comedor Universitario)</a>
             </div>
           </div>
-          <div className='menu'><a href='./smart-parking'>Smart Parking</a>
-            {/* <div class="dropdown-content">
+          {/*<div className='menu'><a href='./smart-parking'>Smart Parking</a>
+             <div class="dropdown-content">
               <a href="#">Link 1</a>
               <a href="#">Link 2</a>
               <a href="#">Link 3</a>
-            </div> */}
-          </div>
+            </div> 
+          </div>*/}
           <div className='containter-cuenta-personas'>
             <div className='container-cuenta-personas-top'>
                 <div><img src={personas} alt='persona'></img></div>

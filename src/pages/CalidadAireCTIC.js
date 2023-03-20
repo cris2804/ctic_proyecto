@@ -52,10 +52,10 @@ export default function CalidadAireCTIC(){
                         <div className='container-2-gauges'>
                             <div>
                                 {/*<iframe src="http://181.176.48.200:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=32" width="100%" height="100%" frameborder="0"></iframe>*/}
-                                <iframe src="http://192.168.52.232:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=32" width="100%" height="100%" frameborder="0" title='gauge-5'></iframe>
+                                <iframe src="http://192.168.52.232:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=109" width="100%" height="100%" frameborder="0" title='gauge-5'></iframe>
                             </div>
                             <div>
-                                <iframe src="http://181.176.48.200:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=44" width="100%" height="100%" frameborder="0" title='gauge-6'></iframe>
+                                <iframe src="http://192.168.52.232:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=44" width="100%" height="100%" frameborder="0" title='gauge-6'></iframe>
                                 {/*<iframe src="http://192.168.52.232:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=44" width="100%" height="100%" frameborder="0"></iframe>*/}
                             </div>
                         </div>
@@ -97,9 +97,7 @@ export default function CalidadAireCTIC(){
                 <div><iframe src="http://192.168.52.232:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=10" width="450" height="200" frameborder="0" title='gauge-1-ca'></iframe></div>
                 <div><iframe src="http://192.168.52.232:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=12" width="450" height="200" frameborder="0" title='guage-2-ca'></iframe></div>
                 <div><iframe src="http://192.168.52.232:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=20" width="450" height="200" frameborder="0" title='gauge-3-ca'></iframe></div>
-                <div><iframe src="http://192.168.52.232:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=34" width="450" height="200" frameborder="0" title='gauge-4-ca'></iframe></div>
                 <div><iframe src="http://192.168.52.232:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=65" width="450" height="200" frameborder="0" title='gauge-5-ca'></iframe></div>
-                <div><iframe src="http://192.168.52.232:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=40" width="450" height="200" frameborder="0" title='gauge-6-ca'></iframe></div>
                 </div>
             </div>
             <div className="container-datos-meteorologicos item" id='meteorologico'>
