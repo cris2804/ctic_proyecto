@@ -1,5 +1,5 @@
 import './css/CalidadAireCTIC.css';
-import logov2 from './images/logo_version_grafana.png'
+//import logov2 from './images/logo_version_grafana.png'
 import NavBarText from '../components/NavBarText'
 
 export default function CalidadAireCTIC(){

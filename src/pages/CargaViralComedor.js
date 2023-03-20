@@ -1,5 +1,5 @@
 import './css/CargaViralComedor.css';
-import logosc from './images/logosc.png'
+//import logosc from './images/logosc.png'
 import NavBarText from '../components/NavBarText'
 
 export default function CargaViralComedor(){
