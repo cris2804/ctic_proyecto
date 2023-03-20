@@ -56,7 +56,7 @@ export default function CalidadAirePuerta(){
                             </div>
                             <div>
                                 {/*<iframe src="http://181.176.48.200:3000/d-solo/r3ZhIQ74cd/calidad-de-aire-ctic?orgId=1&panelId=44" width="100%" height="100%" frameborder="0"></iframe>*/}
-                                <iframe src="http://192.168.52.232:3000/d-solo/6NlOZeDVk/calidad-de-aire-puerta-5?orgId=1&panelId=90" width="450" height="200" frameborder="0"></iframe>
+                                <iframe src="http://192.168.52.232:3000/d-solo/6NlOZeDVk/calidad-de-aire-puerta-5?orgId=1&panelId=90" width="450" height="200" frameborder="0" title='gauge-6'></iframe>
                             </div>
                         </div>
                     </div>

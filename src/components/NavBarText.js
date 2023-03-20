@@ -7,14 +7,14 @@ import personas from '../pages/images/blue_persons.png'
 export default function NavPage() {
 
   return (
-    <div className='container-navbar'>
+    <div className='container-navbar' >
         <div className='container-logo-footer'><a href='/'><img src={logosc} alt='logo-imagen'></img></a></div>
         <div className='container-secciones-nb'>
           <div className='dropdown'>
             <button class="dropbtn">Calidad de Aire</button>
               <div class="dropdown-content">
                 <a href="./calidad-de-aire-ctic">Calidad de Aire (CTIC)</a>
-                <a href="#">Calidad de Aire (Puerta 3)</a>
+                <a href="/#">Calidad de Aire (Puerta 3)</a>
                 <a href="/calidad-de-aire-puerta-5">Calidad de Aire (Puerta 5)</a>
               </div>
           </div>

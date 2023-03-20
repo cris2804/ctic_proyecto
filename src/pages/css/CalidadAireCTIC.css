@@ -10,7 +10,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10px;
+    z-index: 1;
+
 }
 .nav-superior{
     width: 100%;
@@ -143,6 +144,11 @@ html{
     width: 90%;
     margin-left: 5%;
     height: 500px;
+    z-index: 0;
+}
+
+.container-concentracion-de-gases .container-historico-cg iframe{
+    z-index: 0;
 }
 
 .container-aire{

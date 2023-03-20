@@ -67,7 +67,7 @@ export default function DetalleCA(){
 
     return (
         <div className='container__detalle__ca'>
-            <div className='nav__main' style={{marginBottom: "30px"}}>
+            <div className='nav__main' style={{marginBottom: "30px", position:"fixed"}}>
                 <NavBarText/>
             </div>
             <div className='container__detalle__ca__main'>
