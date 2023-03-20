@@ -14,7 +14,7 @@ export default function NavPage() {
             <button class="dropbtn">Calidad de Aire</button>
               <div class="dropdown-content">
                 <a href="./calidad-de-aire-ctic">Calidad de Aire (CTIC)</a>
-                <a href="/calidad-de-aire-puerta-3">Calidad de Aire (Puerta 3)</a>
+                <a href="#">Calidad de Aire (Puerta 3)</a>
                 <a href="/calidad-de-aire-puerta-5">Calidad de Aire (Puerta 5)</a>
               </div>
           </div>
