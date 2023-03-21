@@ -10,7 +10,7 @@ import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 const gases = [
     {
         "key": 1,
-        "nombre": "PM2.5",
+        "nombre": "PM2.5",     
     },
     {
         "key": 2,
@@ -35,8 +35,11 @@ const gases = [
 ]
 
 function Graficar(opc, nom){
+    const datos = Array.from({ length: 20 }, () => {
+        return { time: new Date().toLocaleTimeString(), value: Math.floor(Math.random() * 500) }
+      });
     if(opc === 0){
-        return <Grafico nombre={nom}/>
+        return <Grafico nombre={nom} datos={datos}/>
     }else if(opc === 1){
         return <Grafico2 cantidad={96} nombre={nom}/>
     }else if(opc === 2){
@@ -61,7 +64,7 @@ export default function DetalleCA(){
         setSeleccionado(indice);
     }
 
-    const handleOpcion = (opc) => {
+    const handleOpcion = (opc, dat) => {
         setOpcion(opc);
     }
 
