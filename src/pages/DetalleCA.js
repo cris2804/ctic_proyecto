@@ -6,6 +6,9 @@ import Grafico from '../components/Grafico';
 import Grafico2 from '../components/Grafico2';
 import NavBarText from '../components/NavBarText'
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 const gases = [
     {
@@ -51,6 +54,30 @@ export default function DetalleCA(){
     const [isHovered, setIsHovered] = useState(false);
     const [seleccionado, setSeleccionado] = useState(0);
     const [opcion, setOpcion] = useState("PM2.5");
+    const [date1, setDate1] = useState(new Date());
+  const [date2, setDate2] = useState(new Date());
+  const [showCalendar1, setShowCalendar1] = useState(false);
+  const [showCalendar2, setShowCalendar2] = useState(false);
+
+  const onChange1 = (date) => {
+    setDate1(date);
+    setShowCalendar1(!showCalendar1);
+  }
+  const onChange2 = (date) => {
+    setDate2(date);
+    setShowCalendar2(!showCalendar2);
+  }
+
+  const toggleCalendar1 = () => {
+    setShowCalendar1(!showCalendar1);
+  }
+  const toggleCalendar2 = () => {
+    setShowCalendar2(!showCalendar2);
+  }
+
+  const handleMostrar = () => {
+    console.log("De: "+date1.toLocaleDateString(),"Hasta: "+date2.toLocaleDateString());
+  }
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -104,17 +131,35 @@ export default function DetalleCA(){
                             <div style={{color: "#198CFF", paddingBottom: "4px"}}>DESCARGAR DATOS (CSV)</div>
                             <div style={{fontSize: "20px", fontWeight: "400", paddingRight: "40px"}}> Aqui podra descargar distintos datos de nuestra plataforma, podra escoger el rango de fechas y los sensores a analizar.</div>
                         </div>
-                        <div className='container__detalle__descargar' style={{fontWeight: "500"}}>
-                            Fecha Inicial:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="date" id="start" name="trip-start"
-                            value="2023-02-22"
-                            min="2023-01-01" max="2023-12-31"></input>
+                        <div className='container__detalle__descargar container__rango__fecha__descargar' style={{fontWeight: "500"}}>
+                            <div>Fecha Inicial: </div>
+                            <div>
+                                <button onClick={toggleCalendar1} className='container__btn__calendar'>
+                                <div><CalendarMonthIcon/></div>
+                                <div>{date1.toLocaleDateString()}</div>
+                                </button>
+                                {showCalendar1 && (
+                                <Calendar
+                                    onChange={onChange1}
+                                    value={date1}
+                                />
+                                )}
+                            </div>
                         </div>
-                        <div className='container__detalle__descargar' style={{fontWeight: "500"}}>
-                            Fecha Final:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="date" id="start" name="trip-start"
-                            value="2023-02-28"
-                            min="2023-01-01" max="2023-12-31"></input>
+                        <div className='container__detalle__descargar container__rango__fecha__descargar' style={{fontWeight: "500"}}>
+                            <div>Fecha Final: </div>
+                            <div>
+                                <button onClick={toggleCalendar2} className='container__btn__calendar'>
+                                <div><CalendarMonthIcon/></div>
+                                <div>{date2.toLocaleDateString()}</div>                    
+                                </button>
+                                {showCalendar2 && (
+                                <Calendar
+                                    onChange={onChange2}
+                                    value={date2}
+                                />
+                                )}
+                            </div>
                         </div>
                         <div className='container__detalle__descargar' style={{paddingTop: "25px"}}>
                             PM 2.5 μg/m³ &nbsp;&nbsp;<input type="checkbox" id="cbox1" value="first_checkbox"></input>
@@ -136,7 +181,7 @@ export default function DetalleCA(){
                             <input type="checkbox" id="cbox1" value="first_checkbox"></input>
                         </div>
                         <div className='container__detalle__descargar' style={{paddingTop: "20px", paddingBottom: "30px", textAlign: "center"}}>
-                            <button style={{backgroundColor: "#7EDAE5", display: "flex",alignItems: "center", flexWrap: "wrap", fontFamily: "'Space Grotesk', sans-serif",color: "#2086D8", fontSize:"20px", fontWeight: "500", borderColor:"#2086D8", borderRadius: "20px", padding: "10px 20px 10px 20px", cursor: "pointer"}}>Descargar CSV&nbsp;&nbsp; <CloudDownloadIcon /></button>
+                            <button onClick={handleMostrar} style={{backgroundColor: "#7EDAE5", display: "flex",alignItems: "center", flexWrap: "wrap", fontFamily: "'Space Grotesk', sans-serif",color: "#2086D8", fontSize:"20px", fontWeight: "500", borderColor:"#2086D8", borderRadius: "20px", padding: "10px 20px 10px 20px", cursor: "pointer"}}>Descargar CSV&nbsp;&nbsp; <CloudDownloadIcon /></button>
                         </div>
                     </div>
                 </div>
@@ -182,9 +227,9 @@ export default function DetalleCA(){
                         </div>
                         <div className='container__porcentaje__anual__dias dias__al__año'>
                             <div><span>Días al año en este nivel</span></div>
-                            {Ica.map((element) =>{
+                            {Ica.map((element, i) =>{
                                 return( 
-                                    <div className='container__porcentaje__cantidad'>
+                                    <div className='container__porcentaje__cantidad' key={i}>
                                         <div className='container__porcentaje'>
                                             <div className='cien__por__ciento'>
                                                 <div className='porcentaje' style={{width: `${(element.valor/365)*100}%`,background: `${element.color}`}}>
