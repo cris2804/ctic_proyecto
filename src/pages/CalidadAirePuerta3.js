@@ -2,6 +2,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { useState } from 'react';
 import './css/CalidadAirePuerta3.css';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 export default function CalidadAirePuerta3(){
   const [date1, setDate1] = useState(new Date());
@@ -34,7 +35,8 @@ export default function CalidadAirePuerta3(){
             <div>DE: </div>
             <div>
                 <button onClick={toggleCalendar1} className='container__btn__calendar'>
-                    {date1.toLocaleDateString()}
+                  <div><CalendarMonthIcon/></div>
+                  <div>{date1.toLocaleDateString()}</div>
                 </button>
                 {showCalendar1 && (
                 <Calendar
@@ -46,7 +48,8 @@ export default function CalidadAirePuerta3(){
             <div>HASTA: </div>
             <div>
                 <button onClick={toggleCalendar2} className='container__btn__calendar'>
-                    {date2.toLocaleDateString()}
+                  <div><CalendarMonthIcon/></div>
+                  <div>{date2.toLocaleDateString()}</div>                    
                 </button>
                 {showCalendar2 && (
                 <Calendar
