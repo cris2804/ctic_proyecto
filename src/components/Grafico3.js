@@ -23,7 +23,29 @@ const initialData = [
   { time: 19, value: 350 },
   { time: 20, value: 170 },
 ];
-
+/*
+const initialData = [
+  { time: "10:00", value: 450 },
+  { time: "10:03", value: 239 },
+  { time: "10:06", value: 137 },
+  { time: "10:09", value: 116 },
+  { time: "10:12", value: 229 },
+  { time: "10:15", value: 350 },
+  { time: "10:18", value: 353 },
+  { time: "10:21", value: 252 },
+  { time: "10:24", value: 179 },
+  { time: "10:27", value: 294 },
+  { time: "10:30", value: 343 },
+  { time: "10:33", value: 441 },
+  { time: "10:36", value: 221 },
+  { time: "10:39", value: 280 },
+  { time: "10:42", value: 100 },
+  { time: "10:45", value: 390 },
+  { time: "10:48", value: 300 },
+  { time: "10:51", value: 200 },
+  { time: "10:54", value: 350 },
+  { time: "10:57", value: 170 },
+];*/
 const initialState = {
   data: initialData,
   left: 'dataMin',
@@ -82,7 +104,7 @@ export default class Grafico3 extends PureComponent {
     return (
       <div classtime="highlight-bar-charts" style={{ userSelect: 'none', width: '100%', textAlign:"center", paddingTop:"20px" }}>
         <button type="button" classtime="btn update" onClick={this.zoomOut.bind(this)}>
-          Gráfico Sin Zoom
+          ver Gráfico Sin Zoom
         </button>
 
         <ResponsiveContainer width="100%" height={400}>
@@ -95,7 +117,7 @@ export default class Grafico3 extends PureComponent {
             onMouseUp={this.zoom.bind(this)}
           >
             <CartesianGrid strokeDasharray="3 3" vertical="" horizontal=""/>
-            <XAxis allowDataOverflow dataKey="time" domain={[left, right]} type="number" />
+            <XAxis allowDataOverflow dataKey="time" domain={[left, right]} type="number"/>
             <YAxis allowDataOverflow domain={[0, 500]} type="number" yAxisId="1" />
             <Tooltip />
             <Line yAxisId="1" type="natural" dataKey="value" stroke="#8884d8" animationDuration={300} />
