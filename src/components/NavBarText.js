@@ -11,18 +11,18 @@ export default function NavPage() {
         <div className='container-logo-footer'><a href='/'><img src={logosc} alt='logo-imagen'></img></a></div>
         <div className='container-secciones-nb'>
           <div className='dropdown'>
-            <button class="dropbtn">Calidad de Aire</button>
+            <button class="dropbtn">Calidad del Aire en Exteriores</button>
               <div class="dropdown-content">
-                <a href="./calidad-de-aire-ctic">Calidad de Aire (CTIC)</a>
-                <a href="/#">Calidad de Aire (Puerta 3)</a>
-                <a href="/calidad-de-aire-puerta-5">Calidad de Aire (Puerta 5)</a>
+                <a href="./calidad-de-aire-ctic">Calidad del Aire (CTIC)</a>
+                <a href="/#">Calidad del Aire (Puerta 3)</a>
+                <a href="/calidad-de-aire-puerta-5">Calidad del Aire (Puerta 5)</a>
               </div>
           </div>
           <div className='dropdown'>
-          <button class="dropbtn">Carga Viral</button>
+          <button class="dropbtn">Calidad del Aire en Interiores</button>
             <div class="dropdown-content">
-              <a href="./carga-viral-CTIC">Carga Viral (CTIC)</a>
-              <a href="/carga-viral-comedor-universitario">Carga Viral (Comedor Universitario)</a>
+              <a href="./carga-viral-CTIC">Calidad del Aire (CTIC)</a>
+              <a href="/carga-viral-comedor-universitario">Calidad del Aire (Comedor Universitario)</a>
             </div>
           </div>
           {/*<div className='menu'><a href='./smart-parking'>Smart Parking</a>
