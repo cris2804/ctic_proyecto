@@ -53,12 +53,12 @@
     justify-content: space-around;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 1rem;
     align-items: center;
     padding-left: 10%;
     border: none;
     background-color: white;
-    padding: 8%;
+    /*padding: 8%;*/
     /* border: solid 1px red; */
     /* border-radius: 5px; */
   }
