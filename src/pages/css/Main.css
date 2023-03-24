@@ -20,6 +20,7 @@ body{
   width: 100%;
   height: calc(100% - 75px);
   z-index: 0;
+  box-shadow: 0 -5px 5px -5px #333333;
 }
 
   

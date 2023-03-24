@@ -7,6 +7,14 @@
     font-family: 'Space Grotesk', sans-serif;
     background-color: #fcfcfc;
 }
+.container__detalle__ca .nav__main__{
+    width: 100%;
+    height: 75px;
+    z-index: 5;
+    margin-bottom: 30px; 
+    position: fixed;
+    box-shadow: 0 5px 5px -5px #333333;
+}
 .container__detalle__ca__main{
     display: flex;
     justify-content: center;
