@@ -10,6 +10,7 @@ import { Marker } from "react-leaflet"
 import L from "leaflet";
 import logoclose from './images/logoclose.png';
 import Detalles from '../components/Detalles';
+import DetallesI from '../components/DetallesI';
 import NavBarText from '../components/NavBarText'
 
 const ubiCentro = ['-12.020381', '-77.049178']
@@ -82,11 +83,11 @@ function Main() {
       <div className='calidad__del__aire__carga__viral'>
           <div className={estadoCA ? 'ca-cv-2':'ca-cv'} onClick={handleCambiarCA}>
             <img src={calidad} alt="logo calidad del aire" />
-            <span>Calidad del Aire</span>
+            <span>Calidad del Aire en Exteriores</span>
           </div>
           <div className={estadoCV ? 'ca-cv-2':'ca-cv'} onClick={handleCambiarCV}>
             <img src={carga} alt="carga viral"/>
-            <span>Carga Viral</span>
+            <span>Calidad del Aire en Interiores</span>
           </div>
       </div>
 
@@ -103,7 +104,7 @@ function Main() {
 
       <div className={bol ? 'container__datos__ca__cv':'container__datos__ca__cv2'}>
         <div className='container__logo__close'><img src={logoclose} alt="logo-close" onClick={handleCerrar}/></div>
-        <Detalles id= {id}/>
+        {estadoCA ? <Detalles id= {id}/> : <DetallesI id={id}/>}
       </div>
     
     </div>

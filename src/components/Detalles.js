@@ -2,49 +2,13 @@ import './css/Detalles.css';
 import happy from './images/happy.png';
 import cloud from './images/cloud.png';
 import sun from './images/sun.png';
+import { obtenerhora } from './obtenerhora';
+import { obtenerfecha } from './obtenerfecha';
 
 const nombrelugar = (e) =>{
     if(e === "ca-ctic") return "Calidad del Aire (CTIC)";
     else if(e === "ca-puerta5") return "Calidad del Aire (PUERTA 5)";
     else if(e === "ca-puerta3") return "Calidad del Aire (PUERTA 3)";
-    else if(e === "cv-comedor") return "Carga Viral (Comedor Universitario)";
-    else if(e === "cv-ctic") return "Carga Viral (CTIC)";
-}
-
-const obtenerhora = () => {
-    const fechaActual = new Date();
-    const horaActual = fechaActual.getHours();
-    const minutosActuales = fechaActual.getMinutes();
-
-    let min = '';
-    (minutosActuales < 10) ? min = '0'+minutosActuales: min = minutosActuales;
-
-    return `${horaActual}:${min}`;
-}
-
-const obtenerfecha = () => {
-    const fechaActual = new Date();
-    const diaActual = fechaActual.getDate();
-    const mesActual = fechaActual.getMonth() + 1; // Los meses en JavaScript empiezan en 0, por lo que debemos agregar 1
-    let mes="";
-
-    switch(mesActual){
-        case 1: mes = "Ene"; break;
-        case 2: mes = "Feb"; break;
-        case 3: mes = "Mar"; break;
-        case 4: mes = "Abr"; break;
-        case 5: mes = "May"; break;
-        case 6: mes = "Jun"; break;
-        case 7: mes = "Jul"; break;
-        case 8: mes = "Ago"; break;
-        case 9: mes = "Set"; break;
-        case 10: mes = "Oct"; break;
-        case 11: mes = "Nov"; break;
-        case 12: mes = "Dic"; break;
-        default: mes = "";
-    }
-
-    return `${mes} ${diaActual}`;
 }
 
 export default function Detalles(props){
