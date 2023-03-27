@@ -13,15 +13,27 @@ import happy from './images/happy.png';
 const data = [
     {
         "nombre": "ADMINISTRACIÓN",
-        "contenido": "Este es el area de adminitración donde veremos los datos de la calidad de aire en interiores",
+        "valor": 700,
+        "temperatura": 30,
+        "humedad": 20,
+        "estado": "Buena",
+        "color":  "#9AD64D",
     },
     {
         "nombre": "LABORATORIO SMARTCITY",
-        "contenido": "Este es el area de smart city donde veremos los datos de la calidad del aire en interiores"
+        "valor": 700,
+        "temperatura": 30,
+        "humedad": 20,
+        "estado": "Buena",
+        "color":  "#9AD64D",
     },
     {
         "nombre": "CALIDAD UNIVERSITARIA",
-        "contenido": "Este es el area de calidad universitaria donde veremos los datos de la calidad del aire en interiores",
+        "valor": 700,
+        "temperatura": 30,
+        "humedad": 20,
+        "estado": "Buena",
+        "color":  "#9AD64D",
     }
 ]
 
@@ -66,27 +78,27 @@ return(
                 data.map((item, i)=>{
                    return <div className='item' key={i}>
                         <div className='nombre' onClick={() => toggle(i)}>
-                            <div>{item.nombre}</div>
+                            <div className=''>{item.nombre}</div>
                             <span>{selected === i ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</span>
                         </div>
                         <div className={selected === i ? 'contenido show' : 'contenido'}>
-                            <div className='container__datos__cvthbg'>
+                            <div className='container__datos__cvthbg' style={{background:`${item.color}`}}>
                                 <div className='container__datos__cvthb'>
                                     <div className='container__datos__c'>
                                         <img src={happy} alt='logo'/>
                                     </div>
                                     <div className='container__datos__vthb'>
                                         <div className='container__datos__vth'>
-                                            <div className='container__datos__v'>CO2 700ppm</div>
+                                            <div className='container__datos__v'>CO2 {item.valor} ppm</div>
                                             <div className='container__datos__t'>
-                                                <DeviceThermostatIcon className='icon__t'/> 30ºC
+                                                <DeviceThermostatIcon className='icon__t'/> {item.temperatura} ºC
                                             </div>
                                             <div className='container__datos__h'>
-                                                <OpacitySharpIcon className='icon__h'/> 20%
+                                                <OpacitySharpIcon className='icon__h'/> {item.humedad} %
                                             </div>
                                         </div>
                                         <div className='container__datos__b'>
-                                            Calidad del aire: BUENA
+                                            Calidad del aire: {item.estado}
                                         </div>
                                     </div>
                                 </div>

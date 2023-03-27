@@ -3,6 +3,8 @@
 }
 .container__main__detalles__i .container__titulo{
     text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
 }
 .container__main__detalles__i .container__search__{
     position: relative;
@@ -75,7 +77,6 @@
     display: flex;
     flex-direction: column;
     padding: 10px 30px;
-    background-color: #9AD64D;
     border-radius: 0px 0px 20px 20px;
 }
 .container__datos__cvthb{
@@ -155,4 +156,5 @@
 
 .container__btn__ver__mas:hover{
     cursor: pointer;
+    color: cyan;
 }
