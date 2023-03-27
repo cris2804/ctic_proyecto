@@ -5,6 +5,7 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { useState } from 'react';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import happy from './images/happy.png';
 
 const data = [
     {
@@ -66,7 +67,26 @@ return(
                             <span>{selected === i ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</span>
                         </div>
                         <div className={selected === i ? 'contenido show' : 'contenido'}>
-                            {item.contenido}
+                            <div className='container__datos__cvthbg'>
+                                <div className='container__datos__cvthb'>
+                                    <div className='container__datos__c'>
+                                        <img src={happy} alt='logo'/>
+                                    </div>
+                                    <div className='container__datos__vthb'>
+                                        <div className='container__datos__vth'>
+                                            <div className='container__datos__v'>CO2 700ppm</div>
+                                            <div className='container__datos__t'>30ºC</div>
+                                            <div className='container__datos__h'>20%</div>
+                                        </div>
+                                        <div className='container__datos__b'>
+                                            Calidad del aire: BUENA
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='container__btn__vermas'>
+                                    <div className='container__btn__ver__mas'>VER GRAFICA</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 })

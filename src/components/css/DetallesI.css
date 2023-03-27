@@ -64,3 +64,50 @@
     max-height: 9999px;
     transition: all 0.5s cubic-bezier(1,0,1,0);
 }
+
+/*------------------------- contenido del acordeon*/
+.container__datos__cvthbg{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 50px;
+    background-color: #9AD64D;
+    border-radius: 0px 0px 20px 20px;
+}
+.container__datos__cvthb{
+    display: flex;
+    justify-content: space-between;
+}
+.container__datos__c img{
+    height: 80px;
+}
+.container__datos__vthb{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.container__datos__vth{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container__datos__v{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+
+.container__btn__vermas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container__btn__ver__mas{
+    border: solid 1px #000;
+    margin-top: 20px;
+    padding: 5px 20px;
+}
+.container__btn__ver__mas:hover{
+    cursor: pointer;
+}
