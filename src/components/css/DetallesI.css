@@ -153,8 +153,15 @@
     align-items: center;
     justify-content: center;
 }
-
-.container__btn__ver__mas:hover{
+.container__btn__ver__mas a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+}
+.container__btn__ver__mas a:hover{
     cursor: pointer;
     color: cyan;
+    text-shadow: 0 0 16px cyan;
 }

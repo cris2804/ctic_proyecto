@@ -104,7 +104,7 @@ return(
                                 </div>
                                 <div className='container__btn__vermas'>
                                     <div className='container__btn__ver__mas'>
-                                        <BarChartSharpIcon/> VER GRAFICA
+                                        <a href='/detalle-calidad-del-aire-interiores'><BarChartSharpIcon/> VER GRAFICA</a>
                                     </div>
                                 </div>
                             </div>
