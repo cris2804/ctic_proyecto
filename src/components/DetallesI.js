@@ -5,6 +5,9 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { useState } from 'react';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
+import OpacitySharpIcon from '@mui/icons-material/OpacitySharp';
+import BarChartSharpIcon from '@mui/icons-material/BarChartSharp';
 import happy from './images/happy.png';
 
 const data = [
@@ -55,7 +58,7 @@ return(
         <div className="container__ciudad__pais">Lima, Perú</div>
         <div className="container__hora__fecha">{`${obtenerhora()}, ${obtenerfecha()}`}</div>
         <div className='container__search__'>
-            <input type="text" value={inputValue} onChange={handleInputChange}/> 
+            <input type="text" value={inputValue} onChange={handleInputChange} placeholder="Buscar"/> 
             <SearchOutlinedIcon className='icon__search' onClick={handleButtonClick}/>
         </div>
         <div className='accordion'>
@@ -63,7 +66,7 @@ return(
                 data.map((item, i)=>{
                    return <div className='item' key={i}>
                         <div className='nombre' onClick={() => toggle(i)}>
-                            <h4>{item.nombre}</h4>
+                            <div>{item.nombre}</div>
                             <span>{selected === i ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</span>
                         </div>
                         <div className={selected === i ? 'contenido show' : 'contenido'}>
@@ -75,8 +78,12 @@ return(
                                     <div className='container__datos__vthb'>
                                         <div className='container__datos__vth'>
                                             <div className='container__datos__v'>CO2 700ppm</div>
-                                            <div className='container__datos__t'>30ºC</div>
-                                            <div className='container__datos__h'>20%</div>
+                                            <div className='container__datos__t'>
+                                                <DeviceThermostatIcon className='icon__t'/> 30ºC
+                                            </div>
+                                            <div className='container__datos__h'>
+                                                <OpacitySharpIcon className='icon__h'/> 20%
+                                            </div>
                                         </div>
                                         <div className='container__datos__b'>
                                             Calidad del aire: BUENA
@@ -84,7 +91,9 @@ return(
                                     </div>
                                 </div>
                                 <div className='container__btn__vermas'>
-                                    <div className='container__btn__ver__mas'>VER GRAFICA</div>
+                                    <div className='container__btn__ver__mas'>
+                                        <BarChartSharpIcon/> VER GRAFICA
+                                    </div>
                                 </div>
                             </div>
                         </div>
