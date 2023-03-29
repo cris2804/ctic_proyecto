@@ -11,7 +11,7 @@ import L from "leaflet";
 import logoclose from './images/logoclose.png';
 import Detalles from '../components/Detalles';
 import DetallesI from '../components/DetallesI';
-import NavBarText from '../components/NavBarText'
+//import NavBarText from '../components/NavBarText'
 
 const ubiCentro = ['-12.020381', '-77.049178']
 
@@ -57,9 +57,6 @@ function Main() {
 
   return (
   <div className='container__main'>
-    <div className='nav__main'>
-      <NavBarText/>
-    </div>
     <div className='cont container__map'>
       <MapContainer center={ubiCentro} zoom={16}>
           <TileLayer
