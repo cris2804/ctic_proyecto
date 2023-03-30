@@ -34,8 +34,8 @@
 	position: relative;
 	color: #ffffff;
 	position: fixed;
-	transition: 0.4s;/*
-	box-shadow: 5px 0 5px -5px #333;*/
+	transition: 0.4s;
+	box-shadow: 5px 0 5px -5px #333;
 }
 .side-nav-container-NX {
 	width: 85px;
@@ -156,8 +156,8 @@
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0,1,0,1);
 	opacity: 0.9;
-	margin-left: 30px;
-	margin-right: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
 	background: rgb(4, 156, 131);
 }
 .content.show2{

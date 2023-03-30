@@ -21,6 +21,7 @@ import logo from './images/logo.png';
 function App() {
   const [isExpanded, setExpendState] = useState(false);
 	const [selected, setSelected] = useState(null);
+  const [actual, setActual] = useState(0);
 
 
   const toggle = (i) => {
@@ -32,6 +33,7 @@ function App() {
 		}else{
       setSelected(i)
     }
+    setActual(i)
   }
   useEffect(() => {
 		if(!isExpanded) setSelected(null)
@@ -58,16 +60,16 @@ function App() {
 					</div>
 					<div className="nav-menu">
 						
-						<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/">
+						<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} style={{background: `${actual === 0 ? "#2DBBAE":"none"}`}} onClick={() => toggle(0)} href="/">
 							<img className="menu-item-icon" src={Inicio} alt=""/>
 							{isExpanded && <p>Inicio</p>}
 						</a>
 						
-						<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} onClick={() => toggle(0)}>
+						<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} style={{background: `${actual === 1 ? "#2DBBAE":"none"}`}} onClick={() => toggle(1)}>
 							<img className="menu-item-icon" src={cae} alt=""/>
 							{isExpanded && <p>Calidad del aire en interiores</p>}
 						</div>
-						<div className={selected === 0 ? 'content show2' : 'content'}>
+						<div className={selected === 1 ? 'content show2' : 'content'}>
 							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-aire-interiores-ctic">
 								{isExpanded && <p>CTIC</p>}
 							</a>
@@ -76,11 +78,11 @@ function App() {
 							</a>
 						</div>
 
-						<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} onClick={() => toggle(1)}>
+						<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} style={{background: `${actual === 2 ? "#2DBBAE":"none"}`}} onClick={() => toggle(2)}>
 							<img className="menu-item-icon" src={carga} alt=""/>
 							{isExpanded && <p>Calidad del aire en exteriores</p>}
 						</div>
-						<div className={selected === 1 ? 'content show2' : 'content'}>
+						<div className={selected === 2 ? 'content show2' : 'content'}>
 							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-aire-exteriores-ctic">
 								{isExpanded && <p>CTIC</p>}
 							</a>
