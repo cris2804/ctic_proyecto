@@ -5,9 +5,7 @@
 
 .container__main__cai__left{
     width: 28%;
-    border: solid 1px blue;
 }
 .container__main__cai__right{
     width: 65%;
-    border: solid 1px green;
 }
