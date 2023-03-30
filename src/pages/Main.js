@@ -9,9 +9,13 @@ import 'leaflet/dist/leaflet.css'
 import { Marker } from "react-leaflet"
 import L from "leaflet";
 import logoclose from './images/logoclose.png';
-import Detalles from '../components/Detalles';
+/* import Detalles from '../components/Detalles'; */
+import AyudaCAE from '../components/AyudaCAE';
+/* import AyudaCAE from '../components/AyudaCAE';
+import AyudaCAI from '../components/AyudaCAI'; */
 import DetallesI from '../components/DetallesI';
 import NavBarText from '../components/NavBarText'
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 const ubiCentro = ['-12.020381', '-77.049178']
 
@@ -92,20 +96,46 @@ function Main() {
       </div>
 
       <div className={estadoCA ? 'container__ica' : 'container__ica2'}>
-        <div className='container__ica__'>
-          <span>Bueno</span>
-          <span>Moderado</span>
-          <span>Perjudicial para grupos sensibles</span>
-          <span>Perjudicial</span>
-          <span>Muy Perjudicial</span>
-          <span>Peligroso</span>
+        <div className='container__ica_body'>
+          <div className='container__ica_legend_section'>
+            <div className='map-legend-title'>
+              <span class="type-subtitle-3 text-smoke-120"> INCA (µg/m³) </span>
+              <span class="type-subtitle-3 text-smoke-60"> Mediciones más recientes</span>
+            </div>
+            <div className='map-legend-bar'>
+              <div style={{ flex: "1 1 0%", backgroundColor: "#9AD64D" }}></div>
+              <div style={{ flex: "1 1 0%", backgroundColor: "#F8CD38" }}></div>
+              <div style={{ flex: "1 1 0%", backgroundColor: "#F88F48" }}></div>
+              <div style={{ flex: "1 1 0%", backgroundColor: "#F55D5E" }}></div>
+              <div style={{ flex: "1 1 0%", backgroundColor: "#A070B6" }}></div>
+              <div style={{ flex: "1 1 0%", backgroundColor: "#A06A7B" }}></div>
+              <div style={{ flex: "1 1 0%", backgroundColor: "#564f51" }}></div>
+            </div>
+            <div className='map-legend-bar-labels'>
+              <span class="type-body-4" style={{flex: "1 1 0%"}}>0</span>
+              <span class="type-body-4" style={{flex: "1 1 0%"}}>50</span>
+              <span class="type-body-4" style={{flex: "1 1 0%"}}>100</span>
+              <span class="type-body-4" style={{flex: "1 1 0%"}}>150</span>
+              <span class="type-body-4" style={{flex: "1 1 0%"}}>200</span>
+              <span class="type-body-4" style={{flex: "1 1 0%"}}>300</span>
+              <span class="type-body-4" style={{flex: "1 1 0%"}}>500+</span>
+            </div>
+          </div>
+          <div className='container__ica_help_section'>
+            <button class="button-reset">
+              <span class="legend-help"><HelpOutlineIcon/></span>
+              <span> Ayuda </span>
+            </button>
+          </div>
         </div>
       </div>
 
       <div className={bol ? 'container__datos__ca__cv':'container__datos__ca__cv2'}>
         <div className='container__logo__close'><img src={logoclose} alt="logo-close" onClick={handleCerrar}/></div>
-        {estadoCA ? <Detalles id= {id}/> : <DetallesI id={id}/>}
+        {estadoCA ? <AyudaCAE id= {id}/> : <DetallesI id={id}/>}
       </div>
+
+      
     
     </div>
     
