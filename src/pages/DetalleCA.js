@@ -236,7 +236,6 @@ export default function DetalleCA(){
                                         <div className='container__cantidad'>{element.valor}</div>
                                     </div>)
                             })}
-                            
                         </div>
                     </div>
                 </div>

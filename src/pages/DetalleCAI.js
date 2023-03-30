@@ -73,10 +73,12 @@ export default function DetalleCAI(){
     return(
         <div className='container__detalle__ca__main'>
                 <div className='container__detalle__ca__left'>
-                    <div style={{ backgroundColor: "white", boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 10px 10px"}}>
-                        <div className='container__detalle__descargar' style={{backgroundColor: "#f3f7fb",paddingTop: "30px",paddingBottom: "30px", fontSize: "15px", fontWeight: "500"}}>
-                            <div style={{color: "#198CFF", paddingBottom: "4px"}}>DESCARGAR DATOS (CSV)</div>
-                            <div style={{fontSize: "20px", fontWeight: "400", paddingRight: "40px"}}> Aqui podra descargar distintos datos de nuestra plataforma, podra escoger el rango de fechas y los sensores a analizar.</div>
+                    <div  style={{ backgroundColor: "white", height:"90vh", boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 10px 10px"}}>
+                        <div className='container__detalle__descargar cdd'>
+                            <div style={{color: "#198CFF", paddingBottom: "4px", fontSize: "1.4rem"}}>DESCARGAR DATOS (CSV)</div>
+                            <div style={{fontSize: "20px", fontWeight: "400", paddingRight: "1rem"}}> 
+                                En esta plataforma, podrás descargar diversos datos seleccionando el rango de fechas y los sensores que desees analizar.
+                            </div>
                         </div>
                         <div className='container__detalle__descargar container__rango__fecha__descargar' style={{fontWeight: "500"}}>
                             <div>Fecha Inicial: </div>
@@ -137,8 +139,8 @@ export default function DetalleCAI(){
                         </div>
                     </div>
 
-                    <div className='container__grafico__rangos__tipos__gases' style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 5px 5px"}}>
-                        <div className='container__tipos__gases__ca'>
+                    <div className='container__grafico__rangos__tipos__gases__' style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 5px 5px"}}>
+                        <div className='container__tipos__gases__cai'>
                             {gases.map((gas)=>{
                                 return <div key={gas.nombre} onClick={()=>handleOpcion(gas.nombre)} className={opcion === gas.nombre ? 'seleccionado':''}>{gas.nombre}</div>
                             })}
