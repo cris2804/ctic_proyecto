@@ -5,19 +5,35 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { useState } from 'react';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
+import OpacitySharpIcon from '@mui/icons-material/OpacitySharp';
+import BarChartSharpIcon from '@mui/icons-material/BarChartSharp';
+import happy from './images/happy.png';
 
 const data = [
     {
         "nombre": "ADMINISTRACIÓN",
-        "contenido": "Este es el area de adminitración donde veremos los datos de la calidad de aire en interiores",
+        "valor": 700,
+        "temperatura": 30,
+        "humedad": 20,
+        "estado": "Buena",
+        "color":  "#9AD64D",
     },
     {
         "nombre": "LABORATORIO SMARTCITY",
-        "contenido": "Este es el area de smart city donde veremos los datos de la calidad del aire en interiores"
+        "valor": 500,
+        "temperatura": 25,
+        "humedad": 26,
+        "estado": "Buena",
+        "color":  "#9AD64D",
     },
     {
         "nombre": "CALIDAD UNIVERSITARIA",
-        "contenido": "Este es el area de calidad universitaria donde veremos los datos de la calidad del aire en interiores",
+        "valor": 600,
+        "temperatura": 28,
+        "humedad": 21,
+        "estado": "Buena",
+        "color":  "#9AD64D",
     }
 ]
 
@@ -54,7 +70,7 @@ return(
         <div className="container__ciudad__pais">Lima, Perú</div>
         <div className="container__hora__fecha">{`${obtenerhora()}, ${obtenerfecha()}`}</div>
         <div className='container__search__'>
-            <input type="text" value={inputValue} onChange={handleInputChange}/> 
+            <input type="text" value={inputValue} onChange={handleInputChange} placeholder="Buscar"/> 
             <SearchOutlinedIcon className='icon__search' onClick={handleButtonClick}/>
         </div>
         <div className='accordion'>
@@ -62,11 +78,36 @@ return(
                 data.map((item, i)=>{
                    return <div className='item' key={i}>
                         <div className='nombre' onClick={() => toggle(i)}>
-                            <h4>{item.nombre}</h4>
+                            <div className=''>{item.nombre}</div>
                             <span>{selected === i ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</span>
                         </div>
                         <div className={selected === i ? 'contenido show' : 'contenido'}>
-                            {item.contenido}
+                            <div className='container__datos__cvthbg' style={{background:`${item.color}`}}>
+                                <div className='container__datos__cvthb'>
+                                    <div className='container__datos__c'>
+                                        <img src={happy} alt='logo'/>
+                                    </div>
+                                    <div className='container__datos__vthb'>
+                                        <div className='container__datos__vth'>
+                                            <div className='container__datos__v'>CO2 {item.valor} ppm</div>
+                                            <div className='container__datos__t'>
+                                                <DeviceThermostatIcon className='icon__t'/> {item.temperatura} ºC
+                                            </div>
+                                            <div className='container__datos__h'>
+                                                <OpacitySharpIcon className='icon__h'/> {item.humedad} %
+                                            </div>
+                                        </div>
+                                        <div className='container__datos__b'>
+                                            Calidad del aire: {item.estado}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='container__btn__vermas'>
+                                    <div className='container__btn__ver__mas'>
+                                        <a href='/detalle-calidad-del-aire-interiores'><BarChartSharpIcon/> VER GRAFICA</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 })

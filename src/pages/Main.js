@@ -36,6 +36,8 @@ function Main() {
       setEstadoCA(true);
       setEstadoCV(false);
     }
+    //se oculta el panel cuando pasamos de cae a cai
+    setBol(false);
   }
   const handleCambiarCV = () => {
     setUbi(ubicacionesCV)
@@ -44,6 +46,8 @@ function Main() {
       setEstadoCV(true);
       setEstadoCA(false);
     }
+    //se oculta el panel cuando pasamos de cai a cae
+    setBol(false);
   }
 
   /*--- */
