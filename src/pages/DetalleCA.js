@@ -97,9 +97,6 @@ export default function DetalleCA(){
 
     return (
         <div className='container__detalle__ca'>
-            {/*<div className='nav__main__'>
-                <NavBarText/>
-            </div>*/}
             <div className='container__detalle__ca__main'>
                 <div className='container__detalle__ca__left'>
                     <div style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 10px 10px"}}>

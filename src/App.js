@@ -27,12 +27,12 @@ function App() {
   const toggle = (i) => {
     if(selected ===  i){
     	setSelected(null)
-    }else if(!isExpanded){
-			setExpendState(true)
-			setSelected(i)
-		}else{
+	}else if((i === 1 || i === 2) && !isExpanded){
       setSelected(i)
-    }
+	  setExpendState(true)
+    }else{
+		setSelected(i)
+	}
     setActual(i)
   }
   useEffect(() => {
