@@ -21,19 +21,19 @@ const data = [
     },
     {
         "nombre": "LABORATORIO SMARTCITY",
-        "valor": 700,
+        "valor": 900,
         "temperatura": 30,
         "humedad": 20,
         "estado": "Buena",
-        "color":  "#9AD64D",
+        "color":  "orange",
     },
     {
         "nombre": "CALIDAD UNIVERSITARIA",
-        "valor": 700,
+        "valor": 1200,
         "temperatura": 30,
         "humedad": 20,
         "estado": "Buena",
-        "color":  "#9AD64D",
+        "color":  "#FF4242",
     }
 ]
 
