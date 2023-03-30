@@ -65,7 +65,7 @@ export default function Accordion(){
     </>
   );
 }
-      {/* <div className='help-content-container'>
+      /* <div className='help-content-container'>
           <h1 className='type-display-1 gradient-title'>FAQ - Calidad de Aire en exteriores</h1>
           
           <section className="help-items">
@@ -82,5 +82,5 @@ export default function Accordion(){
               </div>
             </div>
           </section>
-      </div> */}
-    {/* </div> */}
+      </div> */
+    /* </div> */
