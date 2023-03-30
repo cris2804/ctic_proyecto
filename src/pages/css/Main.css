@@ -82,44 +82,113 @@ body{
 
 /*indice de calidad del aire*/
 .container__ica{
-  width: 100%;
   position: absolute;
   z-index: 2;
-  bottom: 20px;
-  text-align: center;
+  background: #ffffff;
+  box-shadow: 0 7px 20px #00000026;
+  border-radius: 16px;
+  position: absolute;
+  width: 400px;
+  height: 90px;
+  bottom: 36px;
+  left: calc(50% - 200px);
 }
-.container__ica2{
-  display: none !important;
-}
-.container__ica__{
+
+.container__ica_body{
   display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.container__ica_legend_section{
+  margin: 6px 18px;
+}
+
+.map-legend-title{
+  display: flex;
+  gap: 35px;
+}
+
+.type-subtitle-3 {
+  font-family: Space Grotesk,sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  color: #30363c;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.text-smoke-120 {
+  color: #5a6672!important;
+}
+
+.text-smoke-60 {
+  color: #a9b0bb!important;
+}
+
+.container__ica_legend_section .map-legend-bar {
+  width: 297px;
+  margin: 6px 0;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  height: 16px;
+}
+
+.color1{
+  flex: 1 1 0%;
+  background-color: rgb(206, 199, 255);
+}
+
+.container__ica_legend_section .map-legend-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0px;
+}
+
+.type-body-4 {
+  font-family: Space Grotesk,sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  color: #30363c;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.container__ica_help_section {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px dashed #e5e6eb;
+  width: 66px;
+  height: 100%;
+  align-items: center;
   justify-content: center;
 }
-.container__ica__ span{
-  padding: 3px 5px 3px 5px;
+
+.button-reset {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
-.container__ica__ span:nth-child(1){
-  background-color: #9AD64D;
-  border-radius: 5px 0 0 5px;
+
+.legend-help-section span {
+    padding: 4px;
 }
-.container__ica__ span:nth-child(2){
-  background-color: #F8CD38;
-}
-.container__ica__ span:nth-child(3){
-  background-color: #F88F48;
-}
-.container__ica__ span:nth-child(4){
-  background-color: #F55D5E;
-  color: #ffffff;
-}
-.container__ica__ span:nth-child(5){
-  background-color: #A070B6;
-  color: #ffffff;
-}
-.container__ica__ span:nth-child(6){
-  background-color: #A06A7B;
-  color: #ffffff;
-  border-radius: 0 5px 5px 0;
+  
+.container__ica2{
+  display: none !important;
 }
 
 /*Mostrar datos al dar click en las ubicaciones*/
