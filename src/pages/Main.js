@@ -15,6 +15,7 @@ import AyudaCAE from '../components/AyudaCAE';
 import AyudaCAI from '../components/AyudaCAI'; */
 import DetallesI from '../components/DetallesI';
 //import NavBarText from '../components/NavBarText'
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 const ubiCentro = ['-12.020381', '-77.049178']
 
