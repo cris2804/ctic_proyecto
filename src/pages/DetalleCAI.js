@@ -36,12 +36,13 @@ function Graficar(opc, nom){
 
 export default function DetalleCAI(){
 
-    const [seleccionado, setSeleccionado] = useState(0);
-    const [opcion, setOpcion] = useState("PM2.5");
-    const [date1, setDate1] = useState(new Date());
-  const [date2, setDate2] = useState(new Date());
-  const [showCalendar1, setShowCalendar1] = useState(false);
-  const [showCalendar2, setShowCalendar2] = useState(false);
+const [seleccionado, setSeleccionado] = useState(0);
+const [opcion, setOpcion] = useState("PM2.5");
+const [date1, setDate1] = useState(new Date());
+const [date2, setDate2] = useState(new Date());
+const [showCalendar1, setShowCalendar1] = useState(false);
+const [showCalendar2, setShowCalendar2] = useState(false);
+const [selectedOption, setSelectedOption] = useState('');
 
   const onChange1 = (date) => {
     setDate1(date);
@@ -70,6 +71,13 @@ export default function DetalleCAI(){
         setOpcion(opc);
     }
 
+    //para el select
+
+  const handleSelectChange = (event) => {
+    setSelectedOption(event.target.value);
+    console.log(selectedOption);
+  };
+
     return(
         <div className='container__detalle__ca__main'>
                 <div className='container__detalle__ca__left'>
@@ -79,6 +87,13 @@ export default function DetalleCAI(){
                             <div style={{fontSize: "20px", fontWeight: "400", paddingRight: "1rem"}}> 
                                 En esta plataforma, podrás descargar diversos datos seleccionando el rango de fechas y los sensores que desees analizar.
                             </div>
+                        </div>
+                        <div className='selector__de__lugar__cai'>
+                            <select value={selectedOption} onChange={handleSelectChange}>
+                                <option value="option1">ADMINISTRACION</option>
+                                <option value="option2">LABORATORIO SMARTCITY</option>
+                                <option value="option3">CALIDAD UNIVERSITARIA</option>
+                            </select>
                         </div>
                         <div className='container__detalle__descargar container__rango__fecha__descargar' style={{fontWeight: "500"}}>
                             <div>Fecha Inicial: </div>

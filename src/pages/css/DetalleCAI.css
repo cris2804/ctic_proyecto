@@ -3,6 +3,27 @@
     height: 90vh;
     margin-top: 5vh;
 }
+
+.selector__de__lugar__cai{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    height: 35px;
+}
+.selector__de__lugar__cai select{
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1rem;
+}
+
+
+
+
+
+
+
 .container__detalle__ca__right{
     display: flex;
     flex-direction: column;
@@ -27,7 +48,7 @@
 }
 
 .container__tipos__gases__cai div{
-    width: 15%;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
