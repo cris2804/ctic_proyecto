@@ -9,6 +9,7 @@ export const ubicacionesCV = [
             -77.049896
         ],
         "logo": Icon,
+        "i": 1,
     },
     {
         "clave": "cv-comedor",
@@ -18,5 +19,6 @@ export const ubicacionesCV = [
             -77.049183
         ],
         "logo": Icon,
+        "i": 1,
     }
 ]

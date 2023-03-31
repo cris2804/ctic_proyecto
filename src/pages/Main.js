@@ -69,9 +69,10 @@ function Main() {
   const handleCerrar = ( )=> {
     setBol(false);
   }
-  const handleMostrar = (e) => {
+  const handleMostrar = (e,i) => {
     setId(e)
     setBol(true)
+    setI(i)
   }
 
   return (
@@ -99,7 +100,7 @@ function Main() {
               iconSize: [60, 60],
               className: "leaflet-venue-icon",
               })}
-              eventHandlers={{ click: ()=>handleMostrar(ubicacion.clave) }} />
+              eventHandlers={{ click: ()=>handleMostrar(ubicacion.clave, ubicacion.i) }} />
             })}
       </MapContainer>
 
@@ -149,7 +150,7 @@ function Main() {
         </div>
       </div>
 
-      <div className={bol ? 'container__datos__ca__cv':'container__datos__ca__cv2'}>
+      <div className={bol || i === 2 ? 'container__datos__ca__cv':'container__datos__ca__cv2'}>
         <div className='container__logo__close'><img src={logoclose} alt="logo-close" onClick={handleCerrar}/></div>
         {changeOption(i, id)}
       </div>

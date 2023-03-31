@@ -9,6 +9,7 @@ export const ubicaciones = [
             -77.049896
         ],
         "logo": Icon,
+        "i": 0,
     },
     {
         "clave": "ca-puerta5",
@@ -18,6 +19,7 @@ export const ubicaciones = [
             -77.050863
         ],
         "logo": Icon,
+        "i": 0,
     },
     {
         "clave": "ca-puerta3",
@@ -27,5 +29,6 @@ export const ubicaciones = [
             -77.04797475459107
         ],
         "logo": Icon,
+        "i": 0,
     }
 ]
