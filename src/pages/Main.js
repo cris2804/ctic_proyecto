@@ -14,8 +14,7 @@ import AyudaCAE from '../components/AyudaCAE';
 /* import AyudaCAE from '../components/AyudaCAE';
 import AyudaCAI from '../components/AyudaCAI'; */
 import DetallesI from '../components/DetallesI';
-import NavBarText from '../components/NavBarText'
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+//import NavBarText from '../components/NavBarText'
 
 const ubiCentro = ['-12.020381', '-77.049178']
 
@@ -77,9 +76,6 @@ function Main() {
 
   return (
   <div className='container__main'>
-    <div className='nav__main'>
-      <NavBarText/>
-    </div>
     <div className='cont container__map'>
       <MapContainer center={ubiCentro} zoom={16}>
           <TileLayer

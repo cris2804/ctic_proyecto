@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Ica } from '../assets/Ica';
 import Grafico from '../components/Grafico';
 import Grafico2 from '../components/Grafico2';
-import NavBarText from '../components/NavBarText'
+//import NavBarText from '../components/NavBarText'
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -97,9 +97,6 @@ export default function DetalleCA(){
 
     return (
         <div className='container__detalle__ca'>
-            <div className='nav__main__'>
-                <NavBarText/>
-            </div>
             <div className='container__detalle__ca__main'>
                 <div className='container__detalle__ca__left'>
                     <div style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 10px 10px"}}>
@@ -239,7 +236,6 @@ export default function DetalleCA(){
                                         <div className='container__cantidad'>{element.valor}</div>
                                     </div>)
                             })}
-                            
                         </div>
                     </div>
                 </div>
