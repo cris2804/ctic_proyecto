@@ -11,21 +11,24 @@ import L from "leaflet";
 import logoclose from './images/logoclose.png';
 import Detalles from '../components/Detalles'; 
 import AyudaCAE from '../components/AyudaCAE';
-/* import AyudaCAE from '../components/AyudaCAE';
-import AyudaCAI from '../components/AyudaCAI'; */
+/* import AyudaCAE from '../components/AyudaCAE';*/
+import AyudaCAI from '../components/AyudaCAI'; 
 import DetallesI from '../components/DetallesI';
 //import NavBarText from '../components/NavBarText'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import { rangoscae } from '../assets/rangoscae';
+import { rangoscai } from '../assets/rangoscai';
 
 const ubiCentro = ['-12.020381', '-77.049178']
 
-function changeOption(i, id){
+function changeOption(i, id, estado){
   if(i === 0){
     return <Detalles id={id}/>
   }else if(i === 1){
     return <DetallesI id={id}/>
   }else if(i === 2){
-    return <AyudaCAE id={id}/>
+    if(estado) return <AyudaCAE/>
+    else return <AyudaCAI/> 
   }
 }
 
@@ -41,9 +44,13 @@ function Main() {
   /*--- */
   const [i, setI] = useState(0);
 
+  /*--- */
+  const [rangos, setRangos] = useState(rangoscae)
+
   /*-- */
   const handleCambiarCA = (i) => {
     setUbi(ubicaciones)
+    setRangos(rangoscae)
 
     if(estadoCA === false && estadoCV === true){
       setEstadoCA(true);
@@ -55,6 +62,7 @@ function Main() {
   }
   const handleCambiarCV = (i) => {
     setUbi(ubicacionesCV)
+    setRangos(rangoscai)
     
     if(estadoCV === false && estadoCA === true){
       setEstadoCV(true);
@@ -66,7 +74,10 @@ function Main() {
   }
 
   /*--- */
-  const handleCerrar = ( )=> {
+  const handleCerrar = ()=> {
+    if(i === 2){ //para cerrar el panel cuando estamos en ayuda
+      setI(5)
+    }
     setBol(false);
   }
   const handleMostrar = (e,i) => {
@@ -112,33 +123,25 @@ function Main() {
           </div>
       </div>
 
-      <div className={estadoCA ? 'container__ica' : 'container__ica2'}>
+      <div className='container__ica'>
         <div className='container__ica_body'>
           <div className='container__ica_legend_section'>
             <div className='map-legend-title'>
-              <span class="type-subtitle-3 text-smoke-120"> INCA (µg/m³) </span>
+              <span class="type-subtitle-3 text-smoke-120"> {estadoCA ? "INCA (µg/m³)" : "ppm"} </span>
               <span class="type-subtitle-3 text-smoke-60"> Mediciones más recientes</span>
             </div>
             <div className='map-legend-bar'>
-              <div style={{ flex: "1 1 0%", backgroundColor: "#9AD64D" }}></div>
-              <div style={{ flex: "1 1 0%", backgroundColor: "#F8CD38" }}></div>
-              <div style={{ flex: "1 1 0%", backgroundColor: "#F88F48" }}></div>
-              <div style={{ flex: "1 1 0%", backgroundColor: "#F55D5E" }}></div>
-              <div style={{ flex: "1 1 0%", backgroundColor: "#A070B6" }}></div>
-              <div style={{ flex: "1 1 0%", backgroundColor: "#A06A7B" }}></div>
-              <div style={{ flex: "1 1 0%", backgroundColor: "#564f51" }}></div>
+              {rangos.map((rang,i)=>{
+                return <div style={{ flex: "1 1 0%", backgroundColor: `${rang.color}` }}></div>
+              })}
             </div>
             <div className='map-legend-bar-labels'>
-              <span class="type-body-4" style={{flex: "1 1 0%"}}>0</span>
-              <span class="type-body-4" style={{flex: "1 1 0%"}}>50</span>
-              <span class="type-body-4" style={{flex: "1 1 0%"}}>100</span>
-              <span class="type-body-4" style={{flex: "1 1 0%"}}>150</span>
-              <span class="type-body-4" style={{flex: "1 1 0%"}}>200</span>
-              <span class="type-body-4" style={{flex: "1 1 0%"}}>300</span>
-              <span class="type-body-4" style={{flex: "1 1 0%"}}>500+</span>
+            {rangos.map((rang,i)=>{
+                return <span class="type-body-4" style={{flex: "1 1 0%"}}>{rang.valor}</span>
+              })}
             </div>
           </div>
-          <div className='container__ica_help_section' onClick={()=>handleCambiarCA(2)}>
+          <div className='container__ica_help_section' onClick={()=>setI(2)}>
             <button class="button-reset">
               <span class="legend-help"><HelpOutlineIcon/></span>
               <span> Ayuda </span>
@@ -149,7 +152,7 @@ function Main() {
 
       <div className={bol || i === 2 ? 'container__datos__ca__cv':'container__datos__ca__cv2'}>
         <div className='container__logo__close'><img src={logoclose} alt="logo-close" onClick={handleCerrar}/></div>
-        {changeOption(i, id)}
+        {changeOption(i, id,estadoCA)}
       </div>
     </div>
     

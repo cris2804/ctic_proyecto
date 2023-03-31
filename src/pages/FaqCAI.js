@@ -38,9 +38,9 @@ export default function Accordion(){
   return(
     <>
     {/* <div className='help-content'> */}
-    <div className='nav__main'>
+    {/*<div className='nav__main'>
       <NavBarText/>
-    </div>
+    </div>*/}
     <div className="container">
         <div>
           {/* <span className="accordion__title">Frequently asked questions</span> */}

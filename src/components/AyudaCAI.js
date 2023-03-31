@@ -11,9 +11,9 @@ export default function Detalles(props){
 
         <div className='container__lista'>
             <ul type=''>
-                <li>Bien: 0 - 50</li>
-                <li>Moderado:  51 - 100</li>
-                <li>Perjudicial para grupos sensibles: 101 - 150</li>
+                <li>Bien: 0 - 800</li>
+                <li>Moderado:  801 - 1000</li>
+                <li>Perjudicial para grupos sensibles: 1001 - +</li>
             </ul>
         </div>
 
