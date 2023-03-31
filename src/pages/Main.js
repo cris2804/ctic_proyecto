@@ -10,7 +10,7 @@ import { Marker } from "react-leaflet"
 import L from "leaflet";
 import logoclose from './images/logoclose.png';
 import Detalles from '../components/Detalles'; 
-//import AyudaCAE from '../components/AyudaCAE';
+import AyudaCAE from '../components/AyudaCAE';
 /* import AyudaCAE from '../components/AyudaCAE';
 import AyudaCAI from '../components/AyudaCAI'; */
 import DetallesI from '../components/DetallesI';
@@ -18,6 +18,16 @@ import NavBarText from '../components/NavBarText'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 const ubiCentro = ['-12.020381', '-77.049178']
+
+function changeOption(i, id){
+  if(i === 0){
+    return <Detalles id={id}/>
+  }else if(i === 1){
+    return <DetallesI id={id}/>
+  }else if(i === 2){
+    return <AyudaCAE id={id}/>
+  }
+}
 
 function Main() {
   const [ubi, setUbi] = useState(ubicaciones);
@@ -28,8 +38,11 @@ function Main() {
   const [id, setId] = useState('');
   const [bol, setBol] = useState(false);
 
+  /*--- */
+  const [i, setI] = useState(0);
+
   /*-- */
-  const handleCambiarCA = () => {
+  const handleCambiarCA = (i) => {
     setUbi(ubicaciones)
 
     if(estadoCA === false && estadoCV === true){
@@ -37,9 +50,10 @@ function Main() {
       setEstadoCV(false);
     }
     //se oculta el panel cuando pasamos de cae a cai
-    setBol(false);
+    if (i !== 2) setBol(false);
+    setI(i);
   }
-  const handleCambiarCV = () => {
+  const handleCambiarCV = (i) => {
     setUbi(ubicacionesCV)
     
     if(estadoCV === false && estadoCA === true){
@@ -47,7 +61,8 @@ function Main() {
       setEstadoCA(false);
     }
     //se oculta el panel cuando pasamos de cai a cae
-    setBol(false);
+    if(i!==2) setBol(false);
+    setI(i);
   }
 
   /*--- */
@@ -89,11 +104,11 @@ function Main() {
       </MapContainer>
 
       <div className='calidad__del__aire__carga__viral'>
-          <div className={estadoCA ? 'ca-cv-2':'ca-cv'} onClick={handleCambiarCA}>
+          <div className={estadoCA ? 'ca-cv-2':'ca-cv'} onClick={()=>handleCambiarCA(0)}>
             <img src={calidad} alt="logo calidad del aire" />
             <span>Calidad del Aire en Exteriores</span>
           </div>
-          <div className={estadoCV ? 'ca-cv-2':'ca-cv'} onClick={handleCambiarCV}>
+          <div className={estadoCV ? 'ca-cv-2':'ca-cv'} onClick={()=>handleCambiarCV(1)}>
             <img src={carga} alt="carga viral"/>
             <span>Calidad del Aire en Interiores</span>
           </div>
@@ -125,7 +140,7 @@ function Main() {
               <span class="type-body-4" style={{flex: "1 1 0%"}}>500+</span>
             </div>
           </div>
-          <div className='container__ica_help_section'>
+          <div className='container__ica_help_section' onClick={()=>handleCambiarCA(2)}>
             <button class="button-reset">
               <span class="legend-help"><HelpOutlineIcon/></span>
               <span> Ayuda </span>
@@ -136,9 +151,8 @@ function Main() {
 
       <div className={bol ? 'container__datos__ca__cv':'container__datos__ca__cv2'}>
         <div className='container__logo__close'><img src={logoclose} alt="logo-close" onClick={handleCerrar}/></div>
-        {estadoCA ? <Detalles id= {id}/> : <DetallesI id={id}/>}
+        {changeOption(i, id)}
       </div>
-
     </div>
     
   </div>
