@@ -11,10 +11,8 @@ import L from "leaflet";
 import logoclose from './images/logoclose.png';
 import Detalles from '../components/Detalles'; 
 import AyudaCAE from '../components/AyudaCAE';
-/* import AyudaCAE from '../components/AyudaCAE';*/
 import AyudaCAI from '../components/AyudaCAI'; 
 import DetallesI from '../components/DetallesI';
-//import NavBarText from '../components/NavBarText'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { rangoscae } from '../assets/rangoscae';
 import { rangoscai } from '../assets/rangoscai';

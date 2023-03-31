@@ -1,6 +1,5 @@
 import './css/FaqCAE.css';
 import React, {useState} from 'react';
-//import NavBarText from '../components/NavBarText'
 
 const dataCollection = [
   {
