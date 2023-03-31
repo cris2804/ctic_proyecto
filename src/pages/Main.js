@@ -9,8 +9,8 @@ import 'leaflet/dist/leaflet.css'
 import { Marker } from "react-leaflet"
 import L from "leaflet";
 import logoclose from './images/logoclose.png';
-/* import Detalles from '../components/Detalles'; */
-import AyudaCAE from '../components/AyudaCAE';
+import Detalles from '../components/Detalles'; 
+//import AyudaCAE from '../components/AyudaCAE';
 /* import AyudaCAE from '../components/AyudaCAE';
 import AyudaCAI from '../components/AyudaCAI'; */
 import DetallesI from '../components/DetallesI';
@@ -136,11 +136,9 @@ function Main() {
 
       <div className={bol ? 'container__datos__ca__cv':'container__datos__ca__cv2'}>
         <div className='container__logo__close'><img src={logoclose} alt="logo-close" onClick={handleCerrar}/></div>
-        {estadoCA ? <AyudaCAE id= {id}/> : <DetallesI id={id}/>}
+        {estadoCA ? <Detalles id= {id}/> : <DetallesI id={id}/>}
       </div>
 
-      
-    
     </div>
     
   </div>
