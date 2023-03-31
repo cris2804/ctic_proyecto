@@ -16,6 +16,10 @@
     padding-left: 10px;
     padding-right: 10px;
     font-size: 1rem;
+    font-family: 'Space Grotesk', sans-serif;;
+}
+.selector__de__lugar__cai select:hover{
+    cursor: pointer;
 }
 
 .container__detalle__ca__right{
