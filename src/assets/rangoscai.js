@@ -1,7 +1,7 @@
 export const rangoscai =[
     {
         "valor": 0,
-        "color": "red",
+        "color": "green",
     },
     {
         "valor": 800,
@@ -9,6 +9,6 @@ export const rangoscai =[
     },
     {
         "valor": "1000+",
-        "color": "rojo"
+        "color": "red"
     }
 ]

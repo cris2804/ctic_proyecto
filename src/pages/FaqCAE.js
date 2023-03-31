@@ -65,22 +65,3 @@ export default function Accordion(){
     </>
   );
 }
-      /* <div className='help-content-container'>
-          <h1 className='type-display-1 gradient-title'>FAQ - Calidad de Aire en exteriores</h1>
-          
-          <section className="help-items">
-            <div className='tab'>
-              <input type='checkbox' id="chck0"/>
-              <label class='tab-label' for="chck0">
-                How can the OpenAQ Platform be accessed?
-                <span class='material-symbols-outlined expand-icon'>
-                  expand_more
-                </span>
-              </label>
-              <div className='tab-content'>
-                <p>OpenAQ provides a REST API for programmatic access of the entire data set. Bulk data downloads are also available via Amazon Web Services S3 object storage downloads. OpenAQ also provides an interactive web application for browsing and searching the database from a graphical user interface.</p>
-              </div>
-            </div>
-          </section>
-      </div> */
-    /* </div> */
