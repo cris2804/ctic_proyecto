@@ -15,6 +15,7 @@ import FaqCAI from './pages/FaqCAI';
 import FaqCAE from './pages/FaqCAE';
 import Grafico3 from './components/Grafico3';
 import DetalleCAI from './pages/DetalleCAI';
+import CSV from './pages/CSV';
 import Inicio from './images/grid.svg';
 import carga from './images/carga.png';
 import cae from './images/cae3.png';
@@ -110,6 +111,7 @@ function App() {
           <Route path='/faq-calidad-de-aire' element={<FaqCAE/>}/>
           <Route path='/detalle-carga-viral' element={<DetalleCA/>}/>
           <Route path='/grafico-semana' element={<Grafico3/>}/>
+		  <Route path='/csv' element={<CSV/>}/>
 
             <Route path='/dashboard' element={<Dashboard/>}/>  
             <Route path='/universidad-nacional-de-ingenieria' element={<University/>}/> 

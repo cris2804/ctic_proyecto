@@ -42,7 +42,7 @@ export default function Detalles(props){
                     </div>
                 </div>
                 <div className='container__pm'>
-                    PM2.5 5.9 µg/m3
+                    PM2.5 5.9 µg/m³
                 </div>
             </div>
         </div>
@@ -64,19 +64,19 @@ export default function Detalles(props){
         </div>
         <div className='datos__'>
             <div>NO2</div>
-            <div>10 µg/m3</div>
+            <div>10 µg/m³</div>
         </div>
         <div className='datos__'>
             <div>O3</div>
-            <div>3 µg/m3</div>
+            <div>3 µg/m³</div>
         </div>
         <div className='datos__'>
             <div>H2S</div>
-            <div>40 µg/m3</div>
+            <div>40 µg/m³</div>
         </div>
         <div className='datos__'>
             <div>CO</div>
-            <div>20 µg/m3</div>
+            <div>20 µg/m³</div>
         </div>
         <div className='container__btn__mas__detalles'>
             <div className='container__btn'><a href='detalle-calidad-del-aire'>MÁS DETALLES</a></div>
