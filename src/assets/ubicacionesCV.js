@@ -1,4 +1,6 @@
-import Icon from '../assets/icon.svg';
+/* import Icon from '../assets/icon.svg'; */
+import Bien from './images/Bien.png';
+import Moderado from './images/Moderado.png';
 
 export const ubicacionesCV = [
     {
@@ -8,7 +10,7 @@ export const ubicacionesCV = [
             -12.016460,
             -77.049896
         ],
-        "logo": Icon,
+        "logo": Bien,
         "i": 1,
     },
     {
@@ -18,7 +20,7 @@ export const ubicacionesCV = [
             -12.018866,
             -77.049183
         ],
-        "logo": Icon,
+        "logo": Moderado,
         "i": 1,
     }
 ]

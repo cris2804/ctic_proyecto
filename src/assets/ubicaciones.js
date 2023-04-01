@@ -1,5 +1,11 @@
-import Icon from '../assets/icon.svg';
-
+/* import Icon from '../assets/icon.svg'; */
+import Bien from './images/Bien.png';
+import Moderado from './images/Moderado.png';
+import PerjudicialSensible from './images/PerjudicialSensibles.png';
+/* import Perjudicial from './images/Perjudicial.png';
+import MuyPerjudicial from './images/MuyPerjudicial.png';
+import ErrorColor from './images/ErrorColor.png';
+ */
 export const ubicaciones = [
     {
         "clave": "ca-ctic",
@@ -8,7 +14,7 @@ export const ubicaciones = [
             -12.016460,
             -77.049896
         ],
-        "logo": Icon,
+        "logo": Bien,
         "i": 0,
     },
     {
@@ -18,7 +24,7 @@ export const ubicaciones = [
             -12.017942,
             -77.050863
         ],
-        "logo": Icon,
+        "logo": Moderado,
         "i": 0,
     },
     {
@@ -28,7 +34,7 @@ export const ubicaciones = [
             -12.024657179121226,
             -77.04797475459107
         ],
-        "logo": Icon,
+        "logo": PerjudicialSensible,
         "i": 0,
     }
 ]

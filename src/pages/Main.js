@@ -9,6 +9,7 @@ import 'leaflet/dist/leaflet.css'
 import { Marker } from "react-leaflet"
 import L from "leaflet";
 import logoclose from './images/logoclose.png';
+
 import Detalles from '../components/Detalles'; 
 import AyudaCAE from '../components/AyudaCAE';
 import AyudaCAI from '../components/AyudaCAI'; 
@@ -99,10 +100,6 @@ function Main() {
               icon={L.icon({
               iconUrl: ubicacion.logo,
               iconRetinaUrl: ubicacion.logo,
-              iconAnchor: null,
-              shadowUrl: null,
-              shadowSize: null,
-              shadowAnchor: null,
               iconSize: [60, 60],
               className: "leaflet-venue-icon",
               })}
