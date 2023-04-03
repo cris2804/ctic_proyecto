@@ -83,7 +83,6 @@ export default function DetalleCAI(){
     }
 
     //para el select
-
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
   };
