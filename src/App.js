@@ -62,17 +62,17 @@ function App() {
 					</div>
 					<div className="nav-menu">
 						
-						<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} style={{background: `${actual === 0 ? "#2DBBAE":"none"}`}} onClick={() => toggle(0)} href="/">
+						<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} style={{background: `${actual === 0 ? "none":"none"}`}} onClick={() => toggle(0)} href="/">
 							<img className="menu-item-icon" src={Inicio} alt=""/>
 							{isExpanded && <p>Inicio</p>}
 						</a>
 						
-						<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} style={{background: `${actual === 1 ? "#2DBBAE":"none"}`}} onClick={() => toggle(1)}>
+						<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} style={{background: `${actual === 1 ? "none":"none"}`}} onClick={() => toggle(1)}>
 							<img className="menu-item-icon" src={cae} alt=""/>
 							{isExpanded && <p>Calidad del aire en interiores</p>}
 						</div>
 						<div className={selected === 1 ? 'content show2' : 'content'}>
-							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-aire-interiores-ctic">
+							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-del-aire-interiores-ctic?id=ADMINISTRACIÓN">
 								{isExpanded && <p>CTIC</p>}
 							</a>
 							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-aire-interiores-comedor">
@@ -80,18 +80,18 @@ function App() {
 							</a>
 						</div>
 
-						<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} style={{background: `${actual === 2 ? "#2DBBAE":"none"}`}} onClick={() => toggle(2)}>
+						<div className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} style={{background: `${actual === 2 ? "none":"none"}`}} onClick={() => toggle(2)}>
 							<img className="menu-item-icon" src={carga} alt=""/>
 							{isExpanded && <p>Calidad del aire en exteriores</p>}
 						</div>
 						<div className={selected === 2 ? 'content show2' : 'content'}>
-							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-aire-exteriores-ctic">
+							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-del-aire-exteriores?id=ctic">
 								{isExpanded && <p>CTIC</p>}
 							</a>
-							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-aire-exteriores-puerta-3">
+							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-del-aire-exteriores?id=puerta-3">
 								{isExpanded && <p>Puerta 3</p>}
 							</a>
-							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-aire-exteriores-puerta-5">
+							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-del-aire-exteriores?id=puerta-5">
 								{isExpanded && <p>Puerta 5</p>}
 							</a>
 						</div>
@@ -104,8 +104,8 @@ function App() {
           <Routes>
 
           <Route path='/' element={<Main/>}/>
-          <Route path='/detalle-calidad-del-aire' element={<DetalleCA/>}/>
-          <Route path='/detalle-calidad-del-aire-interiores' element={<DetalleCAI/>}/>
+          <Route path='/calidad-del-aire-exteriores' element={<DetalleCA/>}/>
+          <Route path='/calidad-del-aire-interiores-ctic' element={<DetalleCAI/>}/>
           <Route path='/faq-carga-viral' element={<FaqCAI/>}/>	
           <Route path='/faq-calidad-de-aire' element={<FaqCAE/>}/>
           <Route path='/detalle-carga-viral' element={<DetalleCA/>}/>
