@@ -64,3 +64,10 @@
     margin-bottom: none;
     height: 70vh;
 }
+
+.container__tipos__gases__cai .seleccionado{
+    background-color: #009AF2;
+}
+
+
+/*Funcinalidades*/

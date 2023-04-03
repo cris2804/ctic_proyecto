@@ -37,12 +37,18 @@ function Graficar(opc, nom){
 export default function DetalleCAI(){
 
 const [seleccionado, setSeleccionado] = useState(0);
-const [opcion, setOpcion] = useState("PM2.5");
+const [opcion, setOpcion] = useState(null);
 const [date1, setDate1] = useState(new Date());
 const [date2, setDate2] = useState(new Date());
 const [showCalendar1, setShowCalendar1] = useState(false);
 const [showCalendar2, setShowCalendar2] = useState(false);
 const [selectedOption, setSelectedOption] = useState('');
+const [dat, setDat] = useState(gases);
+
+/*--- */
+const [isChecked, setIsChecked] = useState(true);
+const [isCheckedt, setIsCheckedt] = useState(true);
+const [isCheckedh, setIsCheckedh] = useState(true);
 
   const onChange1 = (date) => {
     setDate1(date);
@@ -67,16 +73,48 @@ const [selectedOption, setSelectedOption] = useState('');
         setSeleccionado(indice);
     }
 
-    const handleOpcion = (opc, dat) => {
+    const handleOpcion2 = (opc) => {
         setOpcion(opc);
+        console.log(opc);
     }
 
     //para el select
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
-    console.log(selectedOption);
   };
+
+  /*--- */
+  function handleCheckboxChange(event) {
+    setIsChecked(event.target.checked);
+    if(isChecked){ 
+        const newArray = dat.filter(obj => obj.key !== 1);
+        setDat(newArray);
+    }else{
+        const newArray = dat;
+        newArray.unshift({ key: 1, nombre: "Co2" });
+    }
+  }
+  function handleCheckboxChanget(event){
+    setIsCheckedt(event.target.checked);
+    if(isCheckedt){
+        const newArray = dat.filter(obj => obj.key !== 2);
+        setDat(newArray);
+    }else{
+        const newArray = dat;
+        newArray.push({ key: 2, nombre: "Temperatura" });
+    }
+  }
+  function handleCheckboxChangeh(event){
+    setIsCheckedh(event.target.checked);
+    if(isCheckedh){ 
+        const newArray = dat.filter(obj => obj.key !== 3);
+        setDat(newArray);
+    }else{
+        const newArray = dat;
+        newArray.push({ key: 3, nombre: "Humedad" });
+    }
+  }
 
     return(
         <div className='container__detalle__ca__main'>
@@ -126,15 +164,16 @@ const [selectedOption, setSelectedOption] = useState('');
                             </div>
                         </div>
                         <div className='container__detalle__descargar' style={{paddingTop: "25px"}}>
-                            CO2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="cbox1" value="first_checkbox"></input>
+                            CO2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="checkbox" id="cbox1" value="first_checkbox" checked={isChecked} onChange={handleCheckboxChange}></input>
                         </div>
                         <div className='container__detalle__descargar'>
                             Temperatura &nbsp;&nbsp;&nbsp;&nbsp;    
-                            <input type="checkbox" id="cbox1" value="first_checkbox"></input>
+                            <input type="checkbox" id="cbox1" value="first_checkbox" checked={isCheckedt} onChange={handleCheckboxChanget}></input>
                         </div>
                         <div className='container__detalle__descargar'>
                             Humedad &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="checkbox" id="cbox1" value="first_checkbox"></input>
+                            <input type="checkbox" id="cbox1" value="first_checkbox" checked={isCheckedh} onChange={handleCheckboxChangeh}></input>
                         </div>
                         <div className='container__detalle__descargar' style={{paddingTop: "20px", paddingBottom: "30px", textAlign: "center"}}>
                             <button onClick={handleMostrar} style={{backgroundColor: "#7EDAE5", display: "flex",alignItems: "center", flexWrap: "wrap", fontFamily: "'Space Grotesk', sans-serif",color: "#2086D8", fontSize:"20px", fontWeight: "500", borderColor:"#2086D8", borderRadius: "20px", padding: "10px 20px 10px 20px", cursor: "pointer"}}>Descargar CSV&nbsp;&nbsp; <CloudDownloadIcon /></button>
@@ -156,8 +195,8 @@ const [selectedOption, setSelectedOption] = useState('');
 
                     <div className='container__grafico__rangos__tipos__gases__' style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 5px 5px"}}>
                         <div className='container__tipos__gases__cai'>
-                            {gases.map((gas)=>{
-                                return <div key={gas.nombre} onClick={()=>handleOpcion(gas.nombre)} className={opcion === gas.nombre ? 'seleccionado':''}>{gas.nombre}</div>
+                            {dat.map((gas)=>{
+                                return <div key={gas.nombre} onClick={()=>handleOpcion2(gas.nombre)} className={opcion === gas.nombre ? 'seleccionado':''}>{gas.nombre}</div>
                             })}
                         </div>
                         <div className='container__rango__tiempo'>
