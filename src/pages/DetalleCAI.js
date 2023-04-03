@@ -35,20 +35,24 @@ function Graficar(opc, nom){
 }
 
 export default function DetalleCAI(){
+    // para obtener el id de la ruta donde nos encontramos
+    const searchParams = new URLSearchParams(window.location.search);
+    const id = searchParams.get("id");
 
-const [seleccionado, setSeleccionado] = useState(0);
-const [opcion, setOpcion] = useState(null);
-const [date1, setDate1] = useState(new Date());
-const [date2, setDate2] = useState(new Date());
-const [showCalendar1, setShowCalendar1] = useState(false);
-const [showCalendar2, setShowCalendar2] = useState(false);
-const [selectedOption, setSelectedOption] = useState('');
-const [dat, setDat] = useState(gases);
 
-/*--- */
-const [isChecked, setIsChecked] = useState(true);
-const [isCheckedt, setIsCheckedt] = useState(true);
-const [isCheckedh, setIsCheckedh] = useState(true);
+    const [seleccionado, setSeleccionado] = useState(0);
+    const [opcion, setOpcion] = useState(null);
+    const [date1, setDate1] = useState(new Date());
+    const [date2, setDate2] = useState(new Date());
+    const [showCalendar1, setShowCalendar1] = useState(false);
+    const [showCalendar2, setShowCalendar2] = useState(false);
+    const [selectedOption, setSelectedOption] = useState('');
+    const [dat, setDat] = useState(gases);
+
+    /*--- */
+    const [isChecked, setIsChecked] = useState(true);
+    const [isCheckedt, setIsCheckedt] = useState(true);
+    const [isCheckedh, setIsCheckedh] = useState(true);
 
   const onChange1 = (date) => {
     setDate1(date);
@@ -128,7 +132,7 @@ const [isCheckedh, setIsCheckedh] = useState(true);
                         </div>
                         <div className='selector__de__lugar__cai'>
                             <select value={selectedOption} onChange={handleSelectChange}>
-                                <option value="option1">ADMINISTRACION</option>
+                                <option value="option1">ADMINISTRACIÓN</option>
                                 <option value="option2">LABORATORIO SMARTCITY</option>
                                 <option value="option3">CALIDAD UNIVERSITARIA</option>
                             </select>
@@ -184,7 +188,7 @@ const [isCheckedh, setIsCheckedh] = useState(true);
                     <div className='container__estado__ca' style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 5px 5px"}}>
                         <div className='container__valor__tipo'>
                             <div className='container__indice__tipo'>
-                                <div className='indice' style={{fontSize: "2rem",fontWeight: "700", color: "#000000"}}>ADMINISTRACIÓN</div>
+                                <div className='indice' style={{fontSize: "2rem",fontWeight: "700", color: "#000000"}}>{id}</div>
                                 <div className='tipo' style={{fontSize: "1.5rem", color:"#000000"}}>Calidad del aire: BUENA</div>
                             </div>
                         </div>

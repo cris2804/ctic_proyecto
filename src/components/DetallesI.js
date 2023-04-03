@@ -24,7 +24,7 @@ const data = [
         "valor": 900,
         "temperatura": 30,
         "humedad": 20,
-        "estado": "Buena",
+        "estado": "Moderada",
         "color":  "orange",
     },
     {
@@ -32,7 +32,7 @@ const data = [
         "valor": 1200,
         "temperatura": 30,
         "humedad": 20,
-        "estado": "Buena",
+        "estado": "Perjudicial",
         "color":  "#FF4242",
     }
 ]
@@ -104,7 +104,7 @@ return(
                                 </div>
                                 <div className='container__btn__vermas'>
                                     <div className='container__btn__ver__mas'>
-                                        <a href='/detalle-calidad-del-aire-interiores'><BarChartSharpIcon/> VER GRAFICA</a>
+                                        <a href={`/calidad-del-aire-interiores-ctic?id=${item.nombre}`}><BarChartSharpIcon/> VER GRAFICA</a>
                                     </div>
                                 </div>
                             </div>

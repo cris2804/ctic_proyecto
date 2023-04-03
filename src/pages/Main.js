@@ -24,7 +24,8 @@ function changeOption(i, id, estado){
   if(i === 0){
     return <Detalles id={id}/>
   }else if(i === 1){
-    return <DetallesI id={id}/>
+    if(id === "cv-ctic") return <DetallesI id={id}/>
+    else return "comedor universitario"
   }else if(i === 2){
     if(estado) return <AyudaCAE/>
     else return <AyudaCAI/> 

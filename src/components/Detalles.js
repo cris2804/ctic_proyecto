@@ -6,9 +6,9 @@ import { obtenerhora } from './obtenerhora';
 import { obtenerfecha } from './obtenerfecha';
 
 const nombrelugar = (e) =>{
-    if(e === "ca-ctic") return "Calidad del Aire (CTIC)";
-    else if(e === "ca-puerta5") return "Calidad del Aire (PUERTA 5)";
-    else if(e === "ca-puerta3") return "Calidad del Aire (PUERTA 3)";
+    if(e === "ca-ctic") return "CTIC";
+    else if(e === "ca-puerta5") return "PUERTA 5";
+    else if(e === "ca-puerta3") return "PUERTA 3";
 }
 
 export default function Detalles(props){
@@ -79,7 +79,7 @@ export default function Detalles(props){
             <div>20 µg/m³</div>
         </div>
         <div className='container__btn__mas__detalles'>
-            <div className='container__btn'><a href='detalle-calidad-del-aire'>MÁS DETALLES</a></div>
+            <div className='container__btn'><a href={`calidad-del-aire-exteriores?id=${nombrelugar(props.id)}`}>MÁS DETALLES</a></div>
         </div>
     </div>
     )
