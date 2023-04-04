@@ -1,6 +1,6 @@
 import Icon from '../assets/icon.svg';
 
-const ubicaciones1 = require('./ubicaciones1.json');
+//const ubicaciones1 = require('./ubicaciones1.json');
 
 export const ubicaciones = [
     {
