@@ -7,6 +7,9 @@ import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import CustomSelect from "../components/CustomSelect";
+
+const options = ["ADMINISTRACIÓN", "LABORATORIO SMARTCITY", "CALIDAD UNIVERSITARIA"];
 
 const gases = [
     {
@@ -46,7 +49,7 @@ export default function DetalleCAI(){
     const [date2, setDate2] = useState(new Date());
     const [showCalendar1, setShowCalendar1] = useState(false);
     const [showCalendar2, setShowCalendar2] = useState(false);
-    const [selectedOption, setSelectedOption] = useState('');
+    //const [selectedOption, setSelectedOption] = useState('');
     const [dat, setDat] = useState(gases);
 
     /*--- */
@@ -83,10 +86,9 @@ export default function DetalleCAI(){
     }
 
     //para el select
-  const handleSelectChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
-
+    const handleChange = (option) => {
+        console.log(`Selected option: ${option}`);
+      };
   /*--- */
   function handleCheckboxChange(event) {
     setIsChecked(event.target.checked);
@@ -130,11 +132,9 @@ export default function DetalleCAI(){
                             </div>
                         </div>
                         <div className='selector__de__lugar__cai'>
-                            <select value={selectedOption} onChange={handleSelectChange}>
-                                <option value="option1">ADMINISTRACIÓN</option>
-                                <option value="option2">LABORATORIO SMARTCITY</option>
-                                <option value="option3">CALIDAD UNIVERSITARIA</option>
-                            </select>
+                            <div className='select'>
+                                <CustomSelect options={options} onChange={handleChange} id={id}/>
+                            </div>
                         </div>
                         <div className='container__detalle__descargar container__rango__fecha__descargar' style={{fontWeight: "500"}}>
                             <div>Fecha Inicial: </div>
