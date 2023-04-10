@@ -2,15 +2,16 @@ import './css/DetallesI.css';
 import {obtenerhora} from './obtenerhora';
 import {obtenerfecha} from './obtenerfecha'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 import OpacitySharpIcon from '@mui/icons-material/OpacitySharp';
 import BarChartSharpIcon from '@mui/icons-material/BarChartSharp';
 import happy from './images/happy.png';
+import { Server } from '../server/Server';
 
-const data = [
+const datos = [
     {
         "nombre": "ADMINISTRACIÓN",
         "valor": 700,
@@ -63,6 +64,17 @@ export default function DetallesI({id}){
     }
   }
 
+  /*--- */
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('http://192.168.52.232:9090/carga-viral/1102?last=1')
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.error(error));
+  }, []);
+
+  console.log(Server)
   
 return(
     <div className='container__main__detalles__i'>
@@ -75,7 +87,7 @@ return(
         </div>
         <div className='accordion'>
             {
-                data.map((item, i)=>{
+                datos.map((item, i)=>{
                    return <div className='item' key={i}>
                         <div className='nombre' onClick={() => toggle(i)}>
                             <div className=''>{item.nombre}</div>
@@ -94,7 +106,7 @@ return(
                                                 <DeviceThermostatIcon className='icon__t'/> {item.temperatura} ºC
                                             </div>
                                             <div className='container__datos__h'>
-                                                <OpacitySharpIcon className='icon__h'/> {item.humedad} %
+                                                <OpacitySharpIcon className='icon__h'/> {data[0].humedad} %
                                             </div>
                                         </div>
                                         <div className='container__datos__b'>
