@@ -64,17 +64,6 @@ export default function DetallesI({id}){
     }
   }
 
-  /*--- */
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch('http://192.168.52.232:9090/carga-viral/1102?last=1')
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.error(error));
-  }, []);
-
-  console.log(Server)
   
 return(
     <div className='container__main__detalles__i'>
@@ -106,7 +95,7 @@ return(
                                                 <DeviceThermostatIcon className='icon__t'/> {item.temperatura} ºC
                                             </div>
                                             <div className='container__datos__h'>
-                                                <OpacitySharpIcon className='icon__h'/> {data[0].humedad} %
+                                                <OpacitySharpIcon className='icon__h'/> {item.humedad} %
                                             </div>
                                         </div>
                                         <div className='container__datos__b'>
