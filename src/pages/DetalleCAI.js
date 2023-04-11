@@ -13,7 +13,8 @@ const options = ["Oficina de Administración",
                  "Laboratorio SmartCity", 
                  "Oficina de Calidad Universitaria",
                  "Oficina de Capacitación",
-                 "Secretaría"];
+                 "Secretaría"
+                ];
 
 const gases = [
     {
