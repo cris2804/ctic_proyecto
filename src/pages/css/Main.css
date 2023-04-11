@@ -88,10 +88,10 @@ body{
   box-shadow: 0 7px 20px #00000026;
   border-radius: 16px;
   position: absolute;
-  width: 400px;
+  width: 500px;
   height: 90px;
   bottom: 36px;
-  left: calc(50% - 200px);
+  left: calc(50% - 250px);
 }
 
 .container__ica_body{
@@ -131,7 +131,7 @@ body{
 }
 
 .container__ica_legend_section .map-legend-bar {
-  width: 297px;
+  width: 397px;
   margin: 6px 0;
   border-radius: 4px;
   overflow: hidden;
