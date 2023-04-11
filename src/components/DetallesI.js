@@ -97,7 +97,7 @@ return(
         <div className='accordion'>
             {
                 data.map((item, i)=>{
-                   return <div className='item' key={i}>
+                   return <div className='item' key={i} style={selected === i ? {}:{border: `solid 5px ${item.color}`}}>
                         <div className='nombre' onClick={() => toggle(i)}>
                             <div className=''>{item.lugar}</div>
                             <span>{selected === i ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</span>
@@ -110,7 +110,7 @@ return(
                                     </div>
                                     <div className='container__datos__vthb'>
                                         <div className='container__datos__vth'>
-                                            <div className='container__datos__v'>CO2 {item.co2} ppm</div>
+                                            <div className='container__datos__v'>CO2: {item.co2} ppm</div>
                                             <div className='container__datos__t'>
                                                 <DeviceThermostatIcon className='icon__t'/> {item.temperatura} ºC
                                             </div>
