@@ -46,9 +46,9 @@ export default function DetallesI({id}){
                 } 
                 const d2 = {
                   lugar: d.lugar,
-                  co2: data[0].dioxido_de_carbono,
-                  temperatura: data[0].temperatura,
-                  humedad: data[0].humedad,
+                  co2: Math.round(data[0].dioxido_de_carbono),
+                  temperatura: Math.round(data[0].temperatura),
+                  humedad: Math.round(data[0].humedad),
                   estado: est,
                   color: col,
                 };
