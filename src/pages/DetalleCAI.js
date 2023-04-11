@@ -9,7 +9,11 @@ import 'react-calendar/dist/Calendar.css';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import CustomSelect from "../components/CustomSelect";
 
-const options = ["ADMINISTRACIÓN", "LABORATORIO SMARTCITY", "CALIDAD UNIVERSITARIA"];
+const options = ["Oficina de Administración", 
+                 "Laboratorio SmartCity", 
+                 "Oficina de Calidad Universitaria",
+                 "Oficina de Capacitación",
+                 "Secretaría"];
 
 const gases = [
     {
@@ -187,7 +191,7 @@ export default function DetalleCAI(){
                     <div className='container__estado__ca' style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 5px 5px"}}>
                         <div className='container__valor__tipo'>
                             <div className='container__indice__tipo'>
-                                <div className='indice' style={{fontSize: "2rem",fontWeight: "700", color: "#000000"}}>{id}</div>
+                                <div className='indice' style={{fontSize: "2rem",fontWeight: "700", color: "#000000", textTransform: "uppercase"}}>{id}</div>
                                 <div className='tipo' style={{fontSize: "1.5rem", color:"#000000"}}>Calidad del aire: BUENA</div>
                             </div>
                         </div>
