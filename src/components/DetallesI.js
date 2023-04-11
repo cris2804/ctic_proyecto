@@ -9,33 +9,13 @@ import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 import OpacitySharpIcon from '@mui/icons-material/OpacitySharp';
 import BarChartSharpIcon from '@mui/icons-material/BarChartSharp';
 import happy from './images/happy.png';
-import { Server } from '../server/Server';
 
-const datos = [
-    {
-        "nombre": "ADMINISTRACIÓN",
-        "valor": 700,
-        "temperatura": 30,
-        "humedad": 20,
-        "estado": "Buena",
-        "color":  "#9AD64D",
-    },
-    {
-        "nombre": "LABORATORIO SMARTCITY",
-        "valor": 900,
-        "temperatura": 30,
-        "humedad": 20,
-        "estado": "Moderada",
-        "color":  "orange",
-    },
-    {
-        "nombre": "CALIDAD UNIVERSITARIA",
-        "valor": 1200,
-        "temperatura": 30,
-        "humedad": 20,
-        "estado": "Perjudicial",
-        "color":  "#FF4242",
-    }
+const dat = [
+    {"idb": "1102", "lugar": "Oficina de Administración"},
+    {"idb": "1201", "lugar": "Laboratorio SmartCity"},
+    {"idb": "1202", "lugar": "Oficina de Calidad Universitaria"},
+    {"idb": "1203", "lugar": "Oficina de Capacitación"},
+    {"idb": "1204", "lugar": "Secretaría"}
 ]
 
 const nombrelugar = (e) =>{
@@ -44,6 +24,46 @@ const nombrelugar = (e) =>{
 }
 
 export default function DetallesI({id}){
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+          const promises = dat.map((d) => {
+            return fetch(`http://192.168.52.232:9090/carga-viral/${d.idb}?last=1`)
+              .then((response) => response.json())
+              .then((data) => {
+                let col=0;
+                let est = "";
+                if(data[0].dioxido_de_carbono < 800){  
+                    col = "#9AD64D";
+                    est = "Buena";
+                }else if(data[0].dioxido_de_carbono > 800 && data[0].dioxido_de_carbono < 1000){ 
+                    col = "orange";
+                    est = "Moderada";
+                }else if(data[0].dioxido_de_carbono > 1000){
+                    col = "#FF4242";
+                    est = "Perjudicial";
+                } 
+                const d2 = {
+                  lugar: d.lugar,
+                  co2: data[0].dioxido_de_carbono,
+                  temperatura: data[0].temperatura,
+                  humedad: data[0].humedad,
+                  estado: est,
+                  color: col,
+                };
+                return d2;
+              })
+              .catch((error) => console.error(error));
+          });
+      
+          const data = await Promise.all(promises);
+          setData(data);
+        };
+      
+        fetchData();
+      }, []);
+
     const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (event) => {
@@ -76,10 +96,10 @@ return(
         </div>
         <div className='accordion'>
             {
-                datos.map((item, i)=>{
+                data.map((item, i)=>{
                    return <div className='item' key={i}>
                         <div className='nombre' onClick={() => toggle(i)}>
-                            <div className=''>{item.nombre}</div>
+                            <div className=''>{item.lugar}</div>
                             <span>{selected === i ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</span>
                         </div>
                         <div className={selected === i ? 'contenido show' : 'contenido'}>
@@ -90,7 +110,7 @@ return(
                                     </div>
                                     <div className='container__datos__vthb'>
                                         <div className='container__datos__vth'>
-                                            <div className='container__datos__v'>CO2 {item.valor} ppm</div>
+                                            <div className='container__datos__v'>CO2 {item.co2} ppm</div>
                                             <div className='container__datos__t'>
                                                 <DeviceThermostatIcon className='icon__t'/> {item.temperatura} ºC
                                             </div>
@@ -105,7 +125,7 @@ return(
                                 </div>
                                 <div className='container__btn__vermas'>
                                     <div className='container__btn__ver__mas'>
-                                        <a href={`/calidad-del-aire-interiores-ctic?id=${item.nombre}`}><BarChartSharpIcon/> VER GRAFICA</a>
+                                        <a href={`/calidad-del-aire-interiores-ctic?id=${item.lugar}`}><BarChartSharpIcon/> VER GRAFICA</a>
                                     </div>
                                 </div>
                             </div>
