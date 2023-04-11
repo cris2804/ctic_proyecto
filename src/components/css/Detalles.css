@@ -43,29 +43,36 @@
 }
 
 .container__promedio{
-    display: flex;
-    flex-direction: column;
-    color: #607631;
-    font-weight: 700;
+    padding: 0 10px;
+    border-radius: 10px;
+    background-color: #d7efb8;
 }
 
 .container__inca__valor{
     display: flex;
-    gap: 10px;
-    color: #607631;
-    font-weight: 700;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-weight: 400;
+}
+.container__inca__valor div:nth-child(1){
+    font-size: 3rem;
 }
 
 .container__tiempo__pm{
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .container__tiempo{
     display: flex;
     gap: 10px;
 }
-
+.container__tiempo__pm .icon__t{
+    color: white;
+}
 .container__tiempo .container__temp__uv{
     display: flex;
     align-items: center;
@@ -73,17 +80,17 @@
     font-weight: 600;
     gap: 5px;
 }
-
+.container__cp{
+    text-decoration: underline;
+    color: #607631;
+    font-weight: 500;
+}
 .container__pm{
-    margin-top: 10px;
-    padding: 10px 5px 10px 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffffff;
-    color: #000000;
-    font-weight: 600;
-    border-radius: 10px;
+    font-weight: 500;
+    color: #607631;
 }
 
 /*-----*/

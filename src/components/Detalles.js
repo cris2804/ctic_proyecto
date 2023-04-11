@@ -1,9 +1,10 @@
 import './css/Detalles.css';
 import happy from './images/happy.png';
-import cloud from './images/cloud.png';
+//import cloud from './images/cloud.png';
 import sun from './images/sun.png';
 import { obtenerhora } from './obtenerhora';
 import { obtenerfecha } from './obtenerfecha';
+import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 
 const nombrelugar = (e) =>{
     if(e === "ca-ctic") return "CTIC";
@@ -24,16 +25,16 @@ export default function Detalles(props){
                 <img src={happy} alt='imagen-happy'/>
             </div>
             <div className='container__promedio'>
-                <div>Promedio</div>
                 <div className='container__inca__valor'>
                     <div>40</div>
-                    <div>INCA</div>
+                    <div>ICA</div>
                 </div>
             </div>
             <div className='container__tiempo__pm'>
                 <div className='container__tiempo'>
                     <div className='container__temp__uv'>
-                        <img src={cloud} alt='imagen-cloud'/>
+                        {/*<img src={cloud} alt='imagen-cloud'/>*/}
+                        <DeviceThermostatIcon className='icon__t'/>
                         <div>20 ºC</div>
                     </div>
                     <div className='container__temp__uv'>
@@ -41,27 +42,13 @@ export default function Detalles(props){
                         <div>10UV</div>
                     </div>
                 </div>
+                <div className='container__cp'>Contaminante principal</div>
                 <div className='container__pm'>
                     PM2.5 5.9 µg/m³
                 </div>
             </div>
         </div>
-        <div className='container__actividades'>
-            <div className='actividades__1'>
-                <div>| DEPORTES AL AIRE LIBRE</div> <div>| COMER AFUERA</div>
-            </div>
-            <div className='actividades__2'>
-                | EVENTOS AL AIRE LIBRE
-            </div>
-        </div>
-        <div className='datos__'>
-            <div>Humedad</div>
-            <div>59%</div>
-        </div>
-        <div className='datos__'>
-            <div>Viento</div>
-            <div>20.4 kmh</div>
-        </div>
+
         <div className='datos__'>
             <div>NO2</div>
             <div>10 µg/m³</div>
@@ -78,6 +65,23 @@ export default function Detalles(props){
             <div>CO</div>
             <div>20 µg/m³</div>
         </div>
+        <div className='datos__'>
+            <div>PM 10</div>
+            <div>40 µg/m³</div>
+        </div>
+        <div className='datos__'>
+            <div>PM 2.5</div>
+            <div>20 µg/m³</div>
+        </div>
+        <div className='datos__'>
+            <div>Humedad</div>
+            <div>59%</div>
+        </div>
+        <div className='datos__'>
+            <div>Viento</div>
+            <div>20.4 kmh</div>
+        </div>
+        
         <div className='container__btn__mas__detalles'>
             <div className='container__btn'><a href={`calidad-del-aire-exteriores?id=${nombrelugar(props.id)}`}>MÁS DETALLES</a></div>
         </div>

@@ -123,12 +123,12 @@ function Main() {
         <div className='container__ica_body'>
           <div className='container__ica_legend_section'>
             <div className='map-legend-title'>
-              <span class="type-subtitle-3 text-smoke-120"> {estadoCA ? "INCA (µg/m³)" : "ppm"} </span>
-              <span class="type-subtitle-3 text-smoke-60"> Mediciones más recientes</span>
+              <span class="type-subtitle-3 text-smoke-120"> {estadoCA ? "INCA" : "ppm"} </span>
+              {/*<span class="type-subtitle-3 text-smoke-60"> Mediciones más recientes</span>*/}
             </div>
             <div className='map-legend-bar'>
               {rangos.map((rang,i)=>{
-                return <div style={{ flex: "1 1 0%", backgroundColor: `${rang.color}` }}></div>
+                return <div style={{ flex: "1 1 0%", borderRight: `solid 1px #dedede`, backgroundImage: `linear-gradient(to right, ${rang.color1}, ${rang.color2})`}}></div>
               })}
             </div>
             <div className='map-legend-bar-labels'>
