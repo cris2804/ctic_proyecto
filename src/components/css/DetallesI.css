@@ -76,7 +76,7 @@
 .container__datos__cvthbg{
     display: flex;
     flex-direction: column;
-    padding: 10px 30px;
+    padding: 10px 10px;
     border-radius: 0px 0px 20px 20px;
 }
 .container__datos__cvthb{
@@ -99,13 +99,15 @@
 }
 .container__datos__v{
     background-color: white;
-    padding: 10px;
+    padding: 10px 5px;
     border-radius: 10px;
+    font-size: 0.9rem;
 }
 .container__datos__t{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 0.9rem;
 }
 .icon__t{
     color: #FF3131;
@@ -114,6 +116,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 0.9rem;
 }
 .icon__h{
     color: #5DADEC;
