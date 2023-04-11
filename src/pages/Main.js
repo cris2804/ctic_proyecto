@@ -101,7 +101,7 @@ function Main() {
               icon={L.icon({
               iconUrl: ubicacion.logo,
               iconRetinaUrl: ubicacion.logo,
-              iconSize: [60, 60],
+              iconSize: [40, 40],
               className: "leaflet-venue-icon",
               })}
               eventHandlers={{ click: ()=>handleMostrar(ubicacion.clave, ubicacion.i) }} />
