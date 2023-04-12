@@ -9,6 +9,8 @@ import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 import OpacitySharpIcon from '@mui/icons-material/OpacitySharp';
 import BarChartSharpIcon from '@mui/icons-material/BarChartSharp';
 import happy from './images/happy.png';
+import serio from './images/serio.png';
+import triste from './images/triste.png';
 
 const dat = [
     {"idb": "1102", "lugar": "Oficina de Administración"},
@@ -32,17 +34,21 @@ export default function DetallesI({id}){
             return fetch(`http://192.168.52.232:9090/carga-viral/${d.idb}?last=1`)
               .then((response) => response.json())
               .then((data) => {
-                let col=0;
+                let col = "";
                 let est = "";
+                let imag = "";
                 if(data[0].dioxido_de_carbono < 800){  
                     col = "#9AD64D";
                     est = "Buena";
+                    imag = happy;
                 }else if(data[0].dioxido_de_carbono > 800 && data[0].dioxido_de_carbono < 1000){ 
                     col = "orange";
                     est = "Moderada";
+                    imag = serio;
                 }else if(data[0].dioxido_de_carbono > 1000){
                     col = "#FF4242";
                     est = "Perjudicial";
+                    imag = triste;
                 } 
                 const d2 = {
                   lugar: d.lugar,
@@ -51,6 +57,7 @@ export default function DetallesI({id}){
                   humedad: Math.round(data[0].humedad),
                   estado: est,
                   color: col,
+                  imagen: imag,
                 };
                 return d2;
               })
@@ -106,7 +113,7 @@ return(
                             <div className='container__datos__cvthbg' style={{background:`${item.color}`}}>
                                 <div className='container__datos__cvthb'>
                                     <div className='container__datos__c'>
-                                        <img src={happy} alt='logo'/>
+                                        <img src={item.imagen} alt='logo'/>
                                     </div>
                                     <div className='container__datos__vthb'>
                                         <div className='container__datos__vth'>

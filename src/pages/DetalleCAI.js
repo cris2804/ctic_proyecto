@@ -1,5 +1,7 @@
 import './css/DetalleCAI.css';
 import happy from '../components/images/happy.png';
+import serio from '../components/images/serio.png';
+import triste from '../components/images/triste.png';
 import { useState, useEffect } from 'react';
 import Grafico from '../components/Grafico';
 import Grafico2 from '../components/Grafico2';
@@ -63,16 +65,20 @@ export default function DetalleCAI(){
   
           let col = "";
           let est = "";
+          let imag = "";
   
           if (data[0].dioxido_de_carbono < 800) {
             col = "#9AD64D";
             est = "Buena";
+            imag = happy;
           } else if (data[0].dioxido_de_carbono > 800 && data[0].dioxido_de_carbono < 1000) {
             col = "orange";
             est = "Moderada";
+            imag = serio;
           } else if (data[0].dioxido_de_carbono > 1000) {
             col = "#FF4242";
             est = "Perjudicial";
+            imag = triste;
           }
   
           const formattedData = {
@@ -82,6 +88,7 @@ export default function DetalleCAI(){
             humedad: Math.round(data[0].humedad),
             estado: est,
             color: col,
+            imagen: imag,
           };
   
           setData(formattedData);
@@ -236,7 +243,7 @@ export default function DetalleCAI(){
                     </div>
                 </div>
                 <div className='container__detalle__ca__right'>
-                    <div className='container__estado__ca' style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 5px 5px", background: `${data.color}`}}>
+                    <div className='container__estado__cai' style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 5px 5px", background: `${data.color}`}}>
                         <div className='container__valor__tipo'>
                             <div className='container__indice__tipo'>
                                 <div className='indice' style={{fontSize: "2rem",fontWeight: "700", color: "#000000", textTransform: "uppercase"}}>{id}</div>
@@ -244,7 +251,7 @@ export default function DetalleCAI(){
                             </div>
                         </div>
                         <div className='logo__imagen'>
-                            <img src={happy} alt='logo-happy'/>
+                            <img src={data.imagen} alt='logo-happy'/>
                         </div>
                     </div>
 

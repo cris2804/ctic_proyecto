@@ -4,6 +4,13 @@
     margin-top: 5vh;
 }
 
+.container__estado__cai{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px 20px 40px;
+    position: relative;
+}
+
 .selector__de__lugar__cai{
     display: flex;
     align-items: center;
