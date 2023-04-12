@@ -1,6 +1,6 @@
 import './css/DetalleCAI.css';
 import happy from '../components/images/happy.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Grafico from '../components/Grafico';
 import Grafico2 from '../components/Grafico2';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
@@ -46,6 +46,53 @@ export default function DetalleCAI(){
     // para obtener el id de la ruta donde nos encontramos
     const searchParams = new URLSearchParams(window.location.search);
     const id = searchParams.get("id");
+
+    const [data, setData] = useState({});
+
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+            let idb = "";
+            if(id === "Oficina de Administración") idb = 1102;
+            else if(id === "Laboratorio SmartCity") idb = 1201;
+            else if(id === "Oficina de Calidad Universitaria") idb = 1202;
+            else if(id === "Oficina de Capacitación") idb = 1203;
+            else if(id === "Secretaría") idb = 1204;
+          const response = await fetch(`http://192.168.52.232:9090/carga-viral/${idb}?last=1`);
+          const data = await response.json();
+  
+          let col = "";
+          let est = "";
+  
+          if (data[0].dioxido_de_carbono < 800) {
+            col = "#9AD64D";
+            est = "Buena";
+          } else if (data[0].dioxido_de_carbono > 800 && data[0].dioxido_de_carbono < 1000) {
+            col = "orange";
+            est = "Moderada";
+          } else if (data[0].dioxido_de_carbono > 1000) {
+            col = "#FF4242";
+            est = "Perjudicial";
+          }
+  
+          const formattedData = {
+            lugar: data[0].lugar,
+            co2: Math.round(data[0].dioxido_de_carbono),
+            temperatura: Math.round(data[0].temperatura),
+            humedad: Math.round(data[0].humedad),
+            estado: est,
+            color: col,
+          };
+  
+          setData(formattedData);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+  
+      fetchData();
+    }, [id]);
+  
 
 
     const [seleccionado, setSeleccionado] = useState(0);
@@ -189,11 +236,11 @@ export default function DetalleCAI(){
                     </div>
                 </div>
                 <div className='container__detalle__ca__right'>
-                    <div className='container__estado__ca' style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 5px 5px"}}>
+                    <div className='container__estado__ca' style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 5px 5px", background: `${data.color}`}}>
                         <div className='container__valor__tipo'>
                             <div className='container__indice__tipo'>
                                 <div className='indice' style={{fontSize: "2rem",fontWeight: "700", color: "#000000", textTransform: "uppercase"}}>{id}</div>
-                                <div className='tipo' style={{fontSize: "1.5rem", color:"#000000"}}>Calidad del aire: BUENA</div>
+                                <div className='tipo' style={{fontSize: "1.5rem", color:"#000000"}}>Calidad del aire: {data.estado}</div>
                             </div>
                         </div>
                         <div className='logo__imagen'>
@@ -216,6 +263,6 @@ export default function DetalleCAI(){
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
     )
 }

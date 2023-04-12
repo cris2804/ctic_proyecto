@@ -33,7 +33,6 @@ export default function Detalles(props){
             <div className='container__tiempo__pm'>
                 <div className='container__tiempo'>
                     <div className='container__temp__uv'>
-                        {/*<img src={cloud} alt='imagen-cloud'/>*/}
                         <DeviceThermostatIcon className='icon__t'/>
                         <div>20 ºC</div>
                     </div>
