@@ -7,9 +7,9 @@ import { obtenerfecha } from './obtenerfecha';
 import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
 
 const nombrelugar = (e) =>{
-    if(e === "ca-ctic") return "CTIC";
-    else if(e === "ca-puerta5") return "PUERTA 5";
-    else if(e === "ca-puerta3") return "PUERTA 3";
+    if(e === "ca-ctic") return "ctic";
+    else if(e === "ca-puerta5") return "puerta 5";
+    else if(e === "ca-puerta3") return "puerta 3";
 }
 
 export default function Detalles(props){

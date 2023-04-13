@@ -89,10 +89,10 @@ function App() {
 							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-del-aire-exteriores?id=ctic">
 								{isExpanded && <p>CTIC</p>}
 							</a>
-							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-del-aire-exteriores?id=puerta-3">
+							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-del-aire-exteriores?id=puerta 3">
 								{isExpanded && <p>Puerta 3</p>}
 							</a>
-							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-del-aire-exteriores?id=puerta-5">
+							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-del-aire-exteriores?id=puerta 5">
 								{isExpanded && <p>Puerta 5</p>}
 							</a>
 						</div>

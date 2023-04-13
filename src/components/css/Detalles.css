@@ -6,7 +6,9 @@
 
 .container__titulo__detalles{
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .container__ciudad__pais{

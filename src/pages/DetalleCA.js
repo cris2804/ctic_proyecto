@@ -39,8 +39,8 @@ const gases = [
 
 function obtenerNombre(id){
     if(id === "ctic") return "ctic"
-    else if(id === "puerta-3") return "puerta 3"
-    else if(id === "puerta-5") return "puerta 5"
+    else if(id === "puerta 3") return "puerta 3"
+    else if(id === "puerta 5") return "puerta 5"
 }
 
 function Graficar(opc, nom){
