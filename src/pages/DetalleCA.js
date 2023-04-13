@@ -52,7 +52,7 @@ function Graficar(opc, nom){
 
 export default function DetalleCA(){
     const [isHovered, setIsHovered] = useState(false);
-    const [seleccionado, setSeleccionado] = useState(0);
+    //const [seleccionado, setSeleccionado] = useState(0);
     const [opcion, setOpcion] = useState("PM2.5");
     const [date1, setDate1] = useState(new Date());
   const [date2, setDate2] = useState(new Date());
@@ -87,9 +87,9 @@ export default function DetalleCA(){
         setIsHovered(false);
     };
     
-    const Seleccionar = (indice) => {
-        setSeleccionado(indice);
-    }
+    //const Seleccionar = (indice) => {
+      //  setSeleccionado(indice);
+    //}
 
     const handleOpcion = (opc, dat) => {
         setOpcion(opc);
@@ -211,13 +211,13 @@ export default function DetalleCA(){
                                 return <div key={gas.nombre} onClick={()=>handleOpcion(gas.nombre)} className={opcion === gas.nombre ? 'seleccionado':''}>{gas.nombre}</div>
                             })}
                         </div>
-                        <div className='container__rango__tiempo'>
+                        {/*<div className='container__rango__tiempo'>
                             <div className={seleccionado === 0 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(0)}>EN VIVO</div>
                             <div className={seleccionado === 1 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(1)}>DÍA</div>
                             <div className={seleccionado === 2 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(2)}>SEMANA</div>
-                        </div>
+                        </div>*/}
                         <div className='container__grafico'>
-                            {Graficar(seleccionado, opcion)}
+                            {Graficar(0, opcion)}
                         </div>
                         <div className='container__porcentaje__anual__dias'>
                            <span>---</span> Porcentaje anual 33 ICA
