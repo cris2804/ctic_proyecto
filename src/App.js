@@ -73,7 +73,7 @@ function App() {
 							{isExpanded && <p>Calidad del aire en interiores</p>}
 						</div>
 						<div className={selected === 1 ? 'content show2' : 'content'}>
-							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-del-aire-interiores-ctic?id=ADMINISTRACIÓN">
+							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-del-aire-interiores-ctic?id=Oficina de Administración">
 								{isExpanded && <p>CTIC</p>}
 							</a>
 							<a className={isExpanded ? "menu-item" : "menu-item menu-item-NX"} href="/calidad-aire-interiores-comedor">

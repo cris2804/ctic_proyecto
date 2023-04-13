@@ -37,6 +37,12 @@ const gases = [
     }
 ]
 
+function obtenerNombre(id){
+    if(id === "ctic") return "ctic"
+    else if(id === "puerta-3") return "puerta 3"
+    else if(id === "puerta-5") return "puerta 5"
+}
+
 function Graficar(opc, nom){
     const datos = Array.from({ length: 20 }, () => {
         return { time: new Date().toLocaleTimeString(), value: Math.floor(Math.random() * 500) }
@@ -51,6 +57,9 @@ function Graficar(opc, nom){
 }
 
 export default function DetalleCA(){
+    const searchParams = new URLSearchParams(window.location.search);
+    const id = searchParams.get("id");
+
     const [isHovered, setIsHovered] = useState(false);
     //const [seleccionado, setSeleccionado] = useState(0);
     const [opcion, setOpcion] = useState("PM2.5");
@@ -158,6 +167,7 @@ export default function DetalleCA(){
                                 )}
                             </div>
                         </div>
+                        <div className='container__eh'><div>Evolución:</div><div>Horaria</div></div>
                         <div className='container__detalle__descargar' style={{paddingTop: "25px"}}>
                             PM 2.5 μg/m³ &nbsp;&nbsp;<input type="checkbox" id="cbox1" value="first_checkbox"></input>
                         </div>
@@ -183,9 +193,11 @@ export default function DetalleCA(){
                     </div>
                 </div>
                 <div className='container__detalle__ca__right'>
-                    <div className='container__estado__ca' style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 5px 5px"}}>
+                    <div  style={{boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)", borderRadius: "2px 2px 5px 5px"}}>
+                        <div className='container__lugar__ubicacion' style={{backgroundColor: "#9AD64D"}}>{obtenerNombre(id)}</div>
+                        <div className='container__estado__ca' style={{backgroundColor: "#9AD64D"}}>
                         <div className='container__valor__tipo'>
-                            <div className='container__valor' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>40</div>
+                            <div className='container__valor' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{backgroundColor: "#8ac241"}}>40</div>
                             <div className='container__indice__tipo'>
                                 <div className='indice' style={{fontSize: "16px"}}>ÍNDICE ICA EN VIVO</div>
                                 <div className='tipo' style={{fontSize: "30px",fontWeight: "500"}}>Bueno</div>
@@ -202,6 +214,7 @@ export default function DetalleCA(){
                                     </div>
                                 )
                             })}
+                        </div>
                         </div>
                     </div>
 
