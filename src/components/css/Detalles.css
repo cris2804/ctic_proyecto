@@ -147,9 +147,14 @@
 
 .container__btn:hover{
     cursor: pointer;
+    color: cyan;
+    border: solid 1px cyan;
 }
 
 .container__btn a{
     text-decoration: none;
     color: #ffffff;
+}
+.container__btn a:hover{
+    color: cyan;
 }

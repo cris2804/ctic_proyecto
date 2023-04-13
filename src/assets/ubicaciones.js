@@ -14,7 +14,7 @@ export const ubicaciones = [
       "clave": "ca-puerta5",
       "nombre": "Puerta 5",
       "coordenadas": [-12.017942, -77.050863],
-      "logo": "/Bien.png",
+      "logo": "/Moderado.png",
       "i": 0,
     },
     {

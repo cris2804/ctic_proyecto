@@ -48,7 +48,7 @@ export default function Detalles(props){
             </div>
         </div>
 
-        <div className='datos__'>
+        <div className='datos__' style={{marginTop: "30px"}}>
             <div>NO2</div>
             <div>10 µg/m³</div>
         </div>
@@ -76,7 +76,7 @@ export default function Detalles(props){
             <div>Humedad</div>
             <div>59%</div>
         </div>
-        <div className='datos__'>
+        <div className='datos__' style={{marginBottom: "30px"}}>
             <div>Viento</div>
             <div>20.4 kmh</div>
         </div>
