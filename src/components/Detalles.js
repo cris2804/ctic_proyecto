@@ -1,10 +1,12 @@
 import './css/Detalles.css';
 import happy from './images/happy.png';
-//import cloud from './images/cloud.png';
+//import serio from './images/serio.png';
+//import triste from './images/triste.png';
 import sun from './images/sun.png';
 import { obtenerhora } from './obtenerhora';
 import { obtenerfecha } from './obtenerfecha';
 import DeviceThermostatIcon from '@mui/icons-material/DeviceThermostat';
+import { useState, useEffect } from 'react';
 
 const nombrelugar = (e) =>{
     if(e === "ca-ctic") return "ctic";
@@ -12,7 +14,32 @@ const nombrelugar = (e) =>{
     else if(e === "ca-puerta3") return "puerta 3";
 }
 
+const obtenerid = (e) => {
+    if(e === "ca-ctic") return "beegons:rak-3272s-e";
+    else if(e === "ca-puerta5") return "beegons:rak-3272s-h";
+    else if(e === "ca-puerta3") return "beegons:rak-3272s-f";
+}
+
 export default function Detalles(props){
+
+    const [data, setData] = useState(null);
+  
+    useEffect(() => {
+    const fetchData = async () => {
+        try {
+        const response = await fetch(`http://192.168.52.232:9090/calidad-de-aire/${obtenerid(props.id)}?last=1`);
+        const jsonData = await response.json();
+
+        const d2 = jsonData[0]
+        setData(d2);
+
+        } catch (error) {
+        console.error(error);
+        }
+    };
+
+    fetchData();
+    }, [props.id]);
 
     return(<div className="container__detalles">
         <div className="container__titulo__detalles">{nombrelugar(props.id)}</div>
@@ -34,11 +61,11 @@ export default function Detalles(props){
                 <div className='container__tiempo'>
                     <div className='container__temp__uv'>
                         <DeviceThermostatIcon className='icon__t'/>
-                        <div>20 ºC</div>
+                        <div>{data ?  Math.round(data.temperatura_2) :"" } ªC</div>
                     </div>
                     <div className='container__temp__uv'>
                         <img src={sun} alt='imagen-sun'/>
-                        <div>10UV</div>
+                        <div>{data ? Math.round(data.indice_uv) : ""} UV</div>
                     </div>
                 </div>
                 <div className='container__cp'>Contaminante principal</div>
@@ -50,19 +77,19 @@ export default function Detalles(props){
 
         <div className='datos__' style={{marginTop: "30px"}}>
             <div>NO2</div>
-            <div>10 µg/m³</div>
+            <div>{data ? data.dioxido_de_nitrogeno : ""} µg/m³</div>
         </div>
         <div className='datos__'>
             <div>O3</div>
-            <div>3 µg/m³</div>
+            <div>{data ? data.ozono : ""} µg/m³</div>
         </div>
         <div className='datos__'>
             <div>H2S</div>
-            <div>40 µg/m³</div>
+            <div>{data ? data.sulfuro_de_hidrogeno : ""} µg/m³</div>
         </div>
         <div className='datos__'>
             <div>CO</div>
-            <div>20 µg/m³</div>
+            <div>{data ? data.monoxido_de_carbono : ""} µg/m³</div>
         </div>
         <div className='datos__'>
             <div>PM 10</div>
@@ -74,11 +101,11 @@ export default function Detalles(props){
         </div>
         <div className='datos__'>
             <div>Humedad</div>
-            <div>59%</div>
+            <div>{data ? data.humedad : ""}%</div>
         </div>
         <div className='datos__' style={{marginBottom: "30px"}}>
             <div>Viento</div>
-            <div>20.4 kmh</div>
+            <div>{data ? data.velocidad_del_viento : ""} kmh</div>
         </div>
         
         <div className='container__btn__mas__detalles'>
