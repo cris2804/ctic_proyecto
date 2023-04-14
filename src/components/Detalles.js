@@ -93,11 +93,11 @@ export default function Detalles(props){
         </div>
         <div className='datos__'>
             <div>PM 10</div>
-            <div>40 µg/m³</div>
+            <div>{data ? data.dioxido_de_carbono : ""} µg/m³</div>
         </div>
         <div className='datos__'>
             <div>PM 2.5</div>
-            <div>20 µg/m³</div>
+            <div>{data ? data.calidad_de_aire : ""} µg/m³</div>
         </div>
         <div className='datos__'>
             <div>Humedad</div>
