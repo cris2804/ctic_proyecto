@@ -157,8 +157,23 @@ function Main() {
               <div className="map-legend-bar-labels">
                 {rangos.map((rang, i) => {
                   return (
-                    <div class="type-body-4" style={{ flex: "1 1 0%", position: "relative", height: "20px"}}>
-                      <span style={{position: "absolute", height: "100%", transform: "translateX(-50%)"}}>{rang.valor}</span>
+                    <div
+                      class="type-body-4"
+                      style={{
+                        flex: "1 1 0%",
+                        position: "relative",
+                        height: "20px",
+                      }}
+                    >
+                      <span
+                        style={{
+                          position: "absolute",
+                          height: "100%",
+                          transform: "translateX(-50%)",
+                        }}
+                      >
+                        {rang.valor}
+                      </span>
                     </div>
                   );
                 })}
