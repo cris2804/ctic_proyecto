@@ -145,14 +145,19 @@ export default function DetalleCAI() {
   };
 
   const handleMostrar = () => {
-    console.log(
+    /*console.log(
       "De: " + date1.toLocaleDateString(),
       "Hasta: " + date2.toLocaleDateString(),
       "Id: " + id
     );
 
+    console.log("utc-0: "+Number(date1),
+    "utc-0: " + Number(date2))*/
+
     fetch(
-      `http://192.168.52.232:9090/carga-viral/descargar/${retornaidb(id)}?maxDate=1670270736469&minDate=1670270259722`
+      `http://192.168.52.232:9090/carga-viral/descargar/${retornaidb(
+        id
+      )}?maxDate=${Number(date2)}&minDate=${Number(date1)}`
     )
       .then((response) => {
         if (response.ok) {
