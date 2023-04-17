@@ -48,6 +48,17 @@ function Graficar(opc, nom) {
   }
 }
 
+function retornaidb(id) {
+  let idb = "";
+  if (id === "Oficina de Administración") idb = 1102;
+  else if (id === "Laboratorio SmartCity") idb = 1201;
+  else if (id === "Oficina de Calidad Universitaria") idb = 1202;
+  else if (id === "Oficina de Capacitación") idb = 1203;
+  else if (id === "Secretaría") idb = 1204;
+
+  return idb;
+}
+
 export default function DetalleCAI() {
   // para obtener el id de la ruta donde nos encontramos
   const searchParams = new URLSearchParams(window.location.search);
@@ -58,14 +69,8 @@ export default function DetalleCAI() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let idb = "";
-        if (id === "Oficina de Administración") idb = 1102;
-        else if (id === "Laboratorio SmartCity") idb = 1201;
-        else if (id === "Oficina de Calidad Universitaria") idb = 1202;
-        else if (id === "Oficina de Capacitación") idb = 1203;
-        else if (id === "Secretaría") idb = 1204;
         const response = await fetch(
-          `http://192.168.52.232:9090/carga-viral/${idb}?last=1`
+          `http://192.168.52.232:9090/carga-viral/${retornaidb(id)}?last=1`
         );
         const data = await response.json();
 
@@ -142,8 +147,30 @@ export default function DetalleCAI() {
   const handleMostrar = () => {
     console.log(
       "De: " + date1.toLocaleDateString(),
-      "Hasta: " + date2.toLocaleDateString()
+      "Hasta: " + date2.toLocaleDateString(),
+      "Id: " + id
     );
+
+    fetch(
+      `http://192.168.52.232:9090/carga-viral/descargar/${retornaidb(id)}?maxDate=1670270736469&minDate=1670270259722`
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.blob();
+        } else {
+          throw new Error("Error en la respuesta de la API");
+        }
+      })
+      .then((blob) => {
+        // Crea un enlace de descarga
+        const downloadLink = document.createElement("a");
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = "archivo.csv";
+        downloadLink.click();
+      })
+      .catch((error) => {
+        console.error("Error al llamar a la API:", error);
+      });
   };
   const Seleccionar = (indice) => {
     setSeleccionado(indice);

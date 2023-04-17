@@ -145,6 +145,7 @@ function Main() {
                 {rangos.map((rang, i) => {
                   return (
                     <div
+                    key={i}
                       style={{
                         flex: "1 1 0%",
                         borderRight: `solid 1px #dedede`,
@@ -158,6 +159,7 @@ function Main() {
                 {rangos.map((rang, i) => {
                   return (
                     <div
+                    key={i}
                       class="type-body-4"
                       style={{
                         flex: "1 1 0%",
