@@ -311,7 +311,7 @@ export default function DetalleCA() {
           >
             <div
               className="container__lugar__ubicacion"
-              style={{ backgroundColor: "#9AD64D" }}
+              style={{ backgroundColor: "#9AD64D", textAlign: "center" }}
             >
               {obtenerNombre(id)}
             </div>
@@ -336,7 +336,7 @@ export default function DetalleCA() {
                     className="tipo"
                     style={{ fontSize: "30px", fontWeight: "500" }}
                   >
-                    Bueno
+                    Perjudicial Para Grupos Sensibles
                   </div>
                 </div>
               </div>
