@@ -27,7 +27,7 @@ export default function Detalles(props) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://192.168.52.232:9090/calidad-de-aire/${obtenerid(
+          `http://181.176.48.200:9090/calidad-de-aire/${obtenerid(
             props.id
           )}?last=1`
         );
