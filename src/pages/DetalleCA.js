@@ -59,6 +59,15 @@ function Graficar(opc, nom) {
   }
 }
 
+function retornaidb(id) {
+  let idb = "";
+  if (id === "ctic") idb = "beegons:rak-3272s-e";
+  else if (id === "puerta 3") idb = "beegons:rak-3272s-f";
+  else if (id === "puerta 5") idb = "beegons:rak-3272s-h";
+
+  return idb;
+}
+
 export default function DetalleCA() {
   const searchParams = new URLSearchParams(window.location.search);
   const id = searchParams.get("id");
@@ -88,10 +97,28 @@ export default function DetalleCA() {
   };
 
   const handleMostrar = () => {
-    console.log(
-      "De: " + date1.toLocaleDateString(),
-      "Hasta: " + date2.toLocaleDateString()
-    );
+    fetch(
+      `http://192.168.52.232:9090/calidad-de-aire/descargar/${retornaidb(
+        id
+      )}?maxDate=${Number(date2)}&minDate=${Number(date1)}`
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.blob();
+        } else {
+          throw new Error("Error en la respuesta de la API");
+        }
+      })
+      .then((blob) => {
+        // Crea un enlace de descarga
+        const downloadLink = document.createElement("a");
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = "archivo.csv";
+        downloadLink.click();
+      })
+      .catch((error) => {
+        console.error("Error al llamar a la API:", error);
+      });
   };
 
   const handleMouseEnter = () => {

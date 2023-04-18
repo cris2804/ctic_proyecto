@@ -145,12 +145,12 @@ export default function DetalleCAI() {
   };
 
   const handleMostrar = () => {
-    const currentUrl = window.location.href;
+    //const currentUrl = window.location.href;
 
-    console.log(currentUrl)
-
+    //console.log(currentUrl)
+    //181.176.48.200:9090
     fetch(
-      `http://192.168.52.232:9090/carga-viral/descargar/${retornaidb( //181.176.48.200:9090
+      `http://192.168.52.232:9090/carga-viral/descargar/${retornaidb(
         id
       )}?maxDate=${Number(date2)}&minDate=${Number(date1)}`
     )
