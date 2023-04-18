@@ -352,11 +352,11 @@ export default function DetalleCA() {
               >
                 {Ica.map((element, i) => {
                   return (
-                    <div className="container__ica__rango__nombre">
+                    <div className="container__ica__rango__nombre" key={i}>
                       <div style={{ background: element.color }}>
                         {element.rango}
                       </div>
-                      <div key={i}>{element.nombre}</div>
+                      <div>{element.nombre}</div>
                     </div>
                   );
                 })}
