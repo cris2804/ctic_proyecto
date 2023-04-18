@@ -150,7 +150,7 @@ export default function DetalleCAI() {
     console.log(currentUrl)
 
     fetch(
-      `http://181.176.48.200:9090/carga-viral/descargar/${retornaidb( //181.176.48.200:9090
+      `http://192.168.52.232:9090/carga-viral/descargar/${retornaidb( //181.176.48.200:9090
         id
       )}?maxDate=${Number(date2)}&minDate=${Number(date1)}`
     )
