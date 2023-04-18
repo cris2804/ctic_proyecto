@@ -70,7 +70,7 @@ export default function DetalleCAI() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://192.168.52.232:9090/carga-viral/${retornaidb(id)}?last=1`
+          `http://181.176.48.200:9090/carga-viral/${retornaidb(id)}?last=1`
         );
         const data = await response.json();
 
