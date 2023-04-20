@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+
+select{
+    width: 40%;
+    text-align: center;
+    background-color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+}
+select:hover{
+    cursor: pointer;
+}

@@ -4,11 +4,15 @@ import { useState } from "react";
 import { Ica } from "../assets/Ica";
 import Grafico from "../components/Grafico";
 import Grafico2 from "../components/Grafico2";
-//import NavBarText from '../components/NavBarText'
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import Select from "../components/Select";
+import { GiWindow } from "react-icons/gi";
+import { MdMasks } from "react-icons/md";
+import { MdOutlineWindPower } from "react-icons/md";
+import { MdOutlineSportsHandball } from "react-icons/md";
 
 const gases = [
   {
@@ -129,9 +133,18 @@ export default function DetalleCA() {
     setIsHovered(false);
   };
 
-  //const Seleccionar = (indice) => {
-  //  setSeleccionado(indice);
-  //}
+  /*---- */
+  const options = [
+    { label: "Horario", value: "1" },
+    { label: "Diario(24h)", value: "2" },
+    { label: "Mensual", value: "3" },
+  ];
+
+  const [selectedValue, setSelectedValue] = useState("1");
+
+  const handleSelectChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
 
   const handleOpcion = (opc, dat) => {
     setOpcion(opc);
@@ -274,7 +287,11 @@ export default function DetalleCA() {
             </div>
             <div className="container__eh">
               <div>Evolución:</div>
-              <div>Horaria</div>
+              <Select
+                options={options}
+                value={selectedValue}
+                onChange={handleSelectChange}
+              />
             </div>
             <div
               className="container__detalle__descargar"
@@ -417,31 +434,57 @@ export default function DetalleCA() {
                             <div className={seleccionado === 2 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(2)}>SEMANA</div>
                         </div>*/}
             <div className="container__grafico">{Graficar(0, opcion)}</div>
-            <div className="container__porcentaje__anual__dias">
-              <span>---</span> Porcentaje anual 33 ICA
-            </div>
-            <div className="container__porcentaje__anual__dias dias__al__año">
-              <div>
-                <span>Días al año en este nivel</span>
+
+            <div className="container__contaminante__principal">
+              <div className="container__c__p">
+                <div className="container__c__p__cv">
+                  <div>Contaminantes</div>
+                  <div>PM2.5</div>
+                </div>
+                <div className="container__c__p__b">
+                  <div></div>
+                  <div></div>
+                </div>
+                <div className="container__c__p__cov">
+                  <div>Concentración</div>
+                  <div>36 ug/m3</div>
+                </div>
               </div>
-              {Ica.map((element, i) => {
-                return (
-                  <div className="container__porcentaje__cantidad" key={i}>
-                    <div className="container__porcentaje">
-                      <div className="cien__por__ciento">
-                        <div
-                          className="porcentaje"
-                          style={{
-                            width: `${(element.valor / 365) * 100}%`,
-                            background: `${element.color}`,
-                          }}
-                        ></div>
+              <div className="container__recomendaciones__salud">
+                <div>RECOMENDACIONES DE SALUD</div>
+                <div>¿Cómo protegerse de la contaminación del aire?</div>
+                <div className="container__recomendacion__logo">
+                  <div className="container__2">
+                    <div className="container__rel">
+                      <MdMasks style={{ color: "orange", fontSize: "3em" }} />
+                      <div>
+                        Los grupos sensibles deben usar una máscara al aire
+                        libre
                       </div>
                     </div>
-                    <div className="container__cantidad">{element.valor}</div>
+                    <div className="container__rel">
+                      <MdOutlineWindPower
+                        style={{ color: "orange", fontSize: "3em" }}
+                      />
+                      <div>Utilice un purificador de aire</div>
+                    </div>
                   </div>
-                );
-              })}
+                  <div className="container__2">
+                    <div className="container__rel">
+                      <GiWindow style={{ color: "orange", fontSize: "3em" }} />
+                      <div>
+                        Cierra las ventanas para evitar el aire exterior sucio
+                      </div>
+                    </div>
+                    <div className="container__rel">
+                      <MdOutlineSportsHandball
+                        style={{ color: "orange", fontSize: "3em" }}
+                      />
+                      <div>Reducir el ejercicio al aire libre</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
