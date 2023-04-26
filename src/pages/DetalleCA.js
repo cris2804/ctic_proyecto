@@ -106,9 +106,9 @@ export default function DetalleCA() {
         id
       )}?maxDate=${Number(date2)}&minDate=${Number(date1)}&columns=00000${
         checkboxes.Humedad ? "1" : "0"
-      }00000011${checkboxes.PM25 ? "1" : "0"}${
+      }00000${checkboxes.PM10 ? "1" : "0"}00${checkboxes.PM25 ? "1" : "0"}${
         checkboxes.Viento ? "1" : "0"
-      }00${checkboxes.CO ? "1" : "0"}${checkboxes.PM10 ? "1" : "0"}0${
+      }00${checkboxes.CO ? "1" : "0"}${checkboxes.NO2 ? "1" : "0"}0${
         checkboxes.H2S ? "1" : "0"
       }${checkboxes.O3 ? "1" : "0"}0`
     )
