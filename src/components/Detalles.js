@@ -79,15 +79,15 @@ export default function Detalles(props) {
       </div>
 
       <div className="datos__" style={{ marginTop: "30px" }}>
-        <div>NO2</div>
+        <div>NO₂</div>
         <div>{data ? data.dioxido_de_nitrogeno : ""} µg/m³</div>
       </div>
       <div className="datos__">
-        <div>O3</div>
+        <div>O₃</div>
         <div>{data ? data.ozono : ""} µg/m³</div>
       </div>
       <div className="datos__">
-        <div>H2S</div>
+        <div>H₂S</div>
         <div>{data ? data.sulfuro_de_hidrogeno : ""} µg/m³</div>
       </div>
       <div className="datos__">

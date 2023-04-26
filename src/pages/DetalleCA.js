@@ -104,7 +104,13 @@ export default function DetalleCA() {
     fetch(
       `http://192.168.52.232:9090/calidad-de-aire/descargar/${retornaidb(
         id
-      )}?maxDate=${Number(date2)}&minDate=${Number(date1)}`
+      )}?maxDate=${Number(date2)}&minDate=${Number(date1)}&columns=00000${
+        checkboxes.Humedad ? "1" : "0"
+      }00000011${checkboxes.PM25 ? "1" : "0"}${
+        checkboxes.Viento ? "1" : "0"
+      }00${checkboxes.CO ? "1" : "0"}${checkboxes.PM10 ? "1" : "0"}0${
+        checkboxes.H2S ? "1" : "0"
+      }${checkboxes.O3 ? "1" : "0"}0`
     )
       .then((response) => {
         if (response.ok) {
@@ -149,6 +155,22 @@ export default function DetalleCA() {
   const handleOpcion = (opc, dat) => {
     setOpcion(opc);
   };
+
+  /*---- para el checbox para elegir  */
+  const [checkboxes, setCheckboxes] = useState({
+    NO2: false,
+    O3: false,
+    H2S: false,
+    CO: false,
+    PM10: false,
+    PM25: false,
+    Humedad: false,
+    Viento: false,
+  });
+  function handleCheckboxChange(event) {
+    const { name, checked } = event.target;
+    setCheckboxes({ ...checkboxes, [name]: checked });
+  }
 
   return (
     <div className="container__detalle__ca">
@@ -294,27 +316,95 @@ export default function DetalleCA() {
               />
             </div>
             <div
-              className="container__detalle__descargar"
+              className="container__detalle__descargar2"
               style={{ paddingTop: "25px" }}
             >
-              PM 2.5 μg/m³ &nbsp;&nbsp;
-              <input type="checkbox" id="cbox1" value="first_checkbox"></input>
+              <div>NO₂ μg/m³</div>
+              <input
+                type="checkbox"
+                name="NO2"
+                checked={checkboxes.NO2}
+                onChange={handleCheckboxChange}
+                id="cbox1"
+                value="first_checkbox"
+              ></input>
             </div>
-            <div className="container__detalle__descargar">
-              SO₂ μg/m³ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="checkbox" id="cbox1" value="first_checkbox"></input>
+            <div className="container__detalle__descargar2">
+              <div>O₃ μg/m³</div>
+              <input
+                type="checkbox"
+                name="O3"
+                checked={checkboxes.O3}
+                onChange={handleCheckboxChange}
+                id="cbox1"
+                value="first_checkbox"
+              ></input>
             </div>
-            <div className="container__detalle__descargar">
-              NO₂ μg/m³ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="checkbox" id="cbox1" value="first_checkbox"></input>
+            <div className="container__detalle__descargar2">
+              <div>H₂S μg/m³</div>
+              <input
+                type="checkbox"
+                name="H2S"
+                checked={checkboxes.H2S}
+                onChange={handleCheckboxChange}
+                id="cbox1"
+                value="first_checkbox"
+              ></input>
             </div>
-            <div className="container__detalle__descargar">
-              H₂S μg/m³ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="checkbox" id="cbox1" value="first_checkbox"></input>
+            <div className="container__detalle__descargar2">
+              <div>CO μg/m³</div>
+              <input
+                type="checkbox"
+                name="CO"
+                checked={checkboxes.CO}
+                onChange={handleCheckboxChange}
+                id="cbox1"
+                value="first_checkbox"
+              ></input>
             </div>
-            <div className="container__detalle__descargar">
-              NO μg/m³ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <input type="checkbox" id="cbox1" value="first_checkbox"></input>
+            <div className="container__detalle__descargar2">
+              <div>PM 10 μg/m³</div>
+              <input
+                type="checkbox"
+                name="PM10"
+                checked={checkboxes.PM10}
+                onChange={handleCheckboxChange}
+                id="cbox1"
+                value="first_checkbox"
+              ></input>
+            </div>
+            <div className="container__detalle__descargar2">
+              <div>PM 2.5 μg/m³</div>
+              <input
+                type="checkbox"
+                name="PM25"
+                checked={checkboxes.PM25}
+                onChange={handleCheckboxChange}
+                id="cbox1"
+                value="first_checkbox"
+              ></input>
+            </div>
+            <div className="container__detalle__descargar2">
+              <div>Humedad μg/m³</div>
+              <input
+                type="checkbox"
+                name="Humedad"
+                checked={checkboxes.Humedad}
+                onChange={handleCheckboxChange}
+                id="cbox1"
+                value="first_checkbox"
+              ></input>
+            </div>
+            <div className="container__detalle__descargar2">
+              <div>Viento μg/m³</div>
+              <input
+                type="checkbox"
+                name="Viento"
+                checked={checkboxes.Viento}
+                onChange={handleCheckboxChange}
+                id="cbox1"
+                value="first_checkbox"
+              ></input>
             </div>
             <div
               className="container__detalle__descargar"
