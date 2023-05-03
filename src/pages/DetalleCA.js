@@ -102,7 +102,7 @@ export default function DetalleCA() {
 
   const handleMostrar = () => {
     fetch(
-      `http://192.168.52.232:9090/calidad-de-aire/descargar/${retornaidb(
+      `http://192.168.52.232:9090/api/v1/calidad-de-aire/descargar/${retornaidb(
         id
       )}?maxDate=${Number(date2)}&minDate=${Number(date1)}&columns=00000${
         checkboxes.Humedad ? "1" : "0"

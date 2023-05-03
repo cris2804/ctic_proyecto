@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import University from "./pages/University";
@@ -24,24 +24,6 @@ import {SiWindicss} from 'react-icons/si';
 import {MdCo2} from 'react-icons/md';
 
 function App() {
-  const [isExpanded, setExpendState] = useState(false);
-  const [selected, setSelected] = useState(null);
-  const [actual, setActual] = useState(0);
-
-  const toggle = (i) => {
-    if (selected === i) {
-      setSelected(null);
-    } else if ((i === 1 || i === 2) && !isExpanded) {
-      setSelected(i);
-      setExpendState(true);
-    } else {
-      setSelected(i);
-    }
-    setActual(i);
-  };
-  useEffect(() => {
-    if (!isExpanded) setSelected(null);
-  }, [isExpanded]);
 
   const [open, setOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(0);
@@ -68,8 +50,6 @@ function App() {
         { title: "Puerta 5"},
       ],
     },
-    //{ title: "Profile", spacing: true },
-    //{ title: "Setting" },
   ];
 
   return (
