@@ -16,10 +16,12 @@ import FaqCAE from "./pages/FaqCAE";
 import Grafico3 from "./components/Grafico3";
 import DetalleCAI from "./pages/DetalleCAI";
 //import CSV from "./pages/CSV";
-import Inicio from "./images/grid.svg";
-import carga from "./images/carga.png";
-import cae from "./images/cae3.png";
-import logo from "./images/logo.png";
+
+import { BsArrowLeftShort, BsChevronDown } from "react-icons/bs";
+import { RiDashboardFill } from "react-icons/ri";
+import icono from "./favicon.ico";
+import {SiWindicss} from 'react-icons/si';
+import {MdCo2} from 'react-icons/md';
 
 function App() {
   const [isExpanded, setExpendState] = useState(false);
@@ -41,117 +43,107 @@ function App() {
     if (!isExpanded) setSelected(null);
   }, [isExpanded]);
 
+  const [open, setOpen] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(0);
+
+  const Menus = [
+    { title: "Dashboard", spacing: true, icon: <RiDashboardFill/> },
+    {
+      title: "Calidad del aire Interiores",
+      icon: <SiWindicss/>,
+      spacing: true,
+      submenu: true,
+      submenuItems: [
+        { title: "CTIC" },
+        { title: "Comedor" },
+      ],
+    },
+    {
+      title: "Calidad del aire Exteriores",
+      icon: <MdCo2/>,
+      submenu: true,
+      submenuItems: [
+        { title: "CTIC" },
+        { title: "Puerta 3" },
+        { title: "Puerta 5"},
+      ],
+    },
+    //{ title: "Profile", spacing: true },
+    //{ title: "Setting" },
+  ];
+
   return (
-    <div className="main">
+    <div className={`flex duration-300 ${open ? "pl-72":"pl-20" }`}>
       <div
-        className={
-          isExpanded ? "container__sidebar__" : "container__sidebar__nx"
-        }
+        className={`sidebar bg-dark-purple h-screen p-5 pt-8 ${
+          open ? "w-72" : "w-20"
+        } duration-300  relative`}
       >
-        <div
-          className={
-            isExpanded
-              ? "side-nav-container"
-              : "side-nav-container side-nav-container-NX"
-          }
-        >
-          <div className="nav-upper">
-            <div className="nav-heading">
-              {isExpanded && (
-                <div className="nav-brand">
-                  <img src={logo} alt="" />
-                </div>
-              )}
-              <button
-                className={
-                  isExpanded
-                    ? "hamburger hamburger-in"
-                    : "hamburger hamburger-out"
-                }
-                onClick={() => setExpendState(!isExpanded)}
-              >
-                <span></span>
-                <span></span>
-                <span></span>
-              </button>
-            </div>
-            <div className="nav-menu">
-              <a
-                className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}
-                style={{ background: `${actual === 0 ? "none" : "none"}` }}
-                onClick={() => toggle(0)}
-                href="/"
-              >
-                <img className="menu-item-icon" src={Inicio} alt="" />
-                {isExpanded && <p>Inicio</p>}
-              </a>
+        <BsArrowLeftShort
+          className={`bg-white text-dark-purple text-3xl 
+          rounded-full absolute -right-3 top-9 border
+          border-dark-purple cursor-pointer ${!open && "rotate-180"}`}
+          onClick={() => setOpen(!open)}
+        />
 
-              <div
-                className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}
-                style={{ background: `${actual === 1 ? "none" : "none"}` }}
-                onClick={() => toggle(1)}
-              >
-                <img className="menu-item-icon" src={cae} alt="" />
-                {isExpanded && <p>Calidad del aire en interiores</p>}
-              </div>
-              <div className={selected === 1 ? "content show2" : "content"}>
-                <a
-                  className={
-                    isExpanded ? "menu-item" : "menu-item menu-item-NX"
-                  }
-                  href="/calidad-del-aire-interiores-ctic?id=Oficina de Administración"
-                >
-                  {isExpanded && <p>CTIC</p>}
-                </a>
-                <a
-                  className={
-                    isExpanded ? "menu-item" : "menu-item menu-item-NX"
-                  }
-                  href="/calidad-aire-interiores-comedor"
-                >
-                  {isExpanded && <p>Comedor Universitario</p>}
-                </a>
-              </div>
-
-              <div
-                className={isExpanded ? "menu-item" : "menu-item menu-item-NX"}
-                style={{ background: `${actual === 2 ? "none" : "none"}` }}
-                onClick={() => toggle(2)}
-              >
-                <img className="menu-item-icon" src={carga} alt="" />
-                {isExpanded && <p>Calidad del aire en exteriores</p>}
-              </div>
-              <div className={selected === 2 ? "content show2" : "content"}>
-                <a
-                  className={
-                    isExpanded ? "menu-item" : "menu-item menu-item-NX"
-                  }
-                  href="/calidad-del-aire-exteriores?id=ctic"
-                >
-                  {isExpanded && <p>CTIC</p>}
-                </a>
-                <a
-                  className={
-                    isExpanded ? "menu-item" : "menu-item menu-item-NX"
-                  }
-                  href="/calidad-del-aire-exteriores?id=puerta 3"
-                >
-                  {isExpanded && <p>Puerta 3</p>}
-                </a>
-                <a
-                  className={
-                    isExpanded ? "menu-item" : "menu-item menu-item-NX"
-                  }
-                  href="/calidad-del-aire-exteriores?id=puerta 5"
-                >
-                  {isExpanded && <p>Puerta 5</p>}
-                </a>
-              </div>
-            </div>
-          </div>
+        <div className="inline-flex">
+          <img
+            src={icono}
+            alt="icono"
+            style={{height: "30px"}}
+            className={`bg-amber-300 p-1 rounded cursor-pointer block float-left mr-2 duration-700 ${
+              open && "rotate-[360deg]"
+            }`}
+          />
+          <h1
+            className={`text-white origin-left font-medium text-2xl duration-300 ${
+              !open && "scale-0"
+            }`}
+          >
+            SmartCity
+          </h1>
         </div>
+
+        <ul className="pt-2">
+          {Menus.map((menu, index) => {
+            return (
+              <>
+                <li
+                  key={index}
+                  className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-light-white rounded-md 
+                  ${menu.spacing ? "mt-9" : "mt-2"}`}
+                >
+                  <span className="text-2xl block float-left">
+                    {menu.icon ? menu.icon : <RiDashboardFill />}
+                  </span>
+                  <span
+                    className={`text-base font-medium flex-1 ${
+                      !open && "hidden"
+                    }`}
+                    onClick={()=>setSubmenuOpen(index)}
+                  >
+                    {menu.title}
+                  </span>
+                  {menu.submenu && open && (
+                    <BsChevronDown className={`${submenuOpen===index && "rotate-180"}`} onClick={()=>setSubmenuOpen(index)}/>
+                  )}
+                </li>
+                {menu.submenu && submenuOpen===index && open && (
+                  <ul>
+                    {menu.submenuItems.map((submenuItem, index) => {
+                      return <li key={index} className="text-gray-300 text-sm flex items-center gap-x-4
+                      cursor-pointer p-2 px-5 hover:bg-light-white rounded-md">
+                        {submenuItem.title}
+                      </li>
+                    })}
+                  </ul>
+                )}
+              </>
+            );
+          })}
+        </ul>
       </div>
-      <div className={isExpanded ? "container__main__" : "container__main__nx"}>
+      <div className={open ? "container__main__" : "container__main__nx"}>
         <Router>
           <Routes>
             <Route path="/" element={<Main />} />

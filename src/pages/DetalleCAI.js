@@ -70,7 +70,7 @@ export default function DetalleCAI() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://192.168.52.232:9090/carga-viral/${retornaidb(id)}?last=1`
+          `http://192.168.52.232:9090/api/v1/carga-viral/${retornaidb(id)}?last=1`
         );
         const data = await response.json();
 
@@ -158,7 +158,7 @@ export default function DetalleCAI() {
     else t = 0 
 
     fetch(
-      `http://192.168.52.232:9090/carga-viral/descargar/${retornaidb(
+      `http://192.168.52.232:9090/api/v1/carga-viral/descargar/${retornaidb(
         id
       )}?maxDate=${Number(date2)}&minDate=${Number(date1)}&columns=100000${c}${h}${t}11111`
     )

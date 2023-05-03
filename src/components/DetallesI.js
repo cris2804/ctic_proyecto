@@ -31,7 +31,7 @@ export default function DetallesI({ id }) {
   useEffect(() => {
     const fetchData = async () => {
       const promises = dat.map((d) => {
-        return fetch(`http://192.168.52.232:9090/carga-viral/${d.idb}?last=1`)
+        return fetch(`http://192.168.52.232:9090/api/v1/carga-viral/${d.idb}?last=1`)
           .then((response) => response.json())
           .then((data) => {
             let col = "";
