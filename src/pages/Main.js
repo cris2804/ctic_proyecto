@@ -2,8 +2,11 @@ import "./css/Main.css";
 import { ubicaciones } from "../assets/ubicaciones";
 import { ubicacionesCV } from "../assets/ubicacionesCV";
 import { useState } from "react";
-import calidad from "../assets/calidad.png";
-import carga from "../assets/carga.png";
+//import calidad from "../assets/calidad.png";
+//import carga from "../assets/carga.png";
+import {SiWindicss} from 'react-icons/si';
+import {MdCo2} from 'react-icons/md';
+import {AiOutlineCheck} from 'react-icons/ai';
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { Marker } from "react-leaflet";
@@ -119,15 +122,19 @@ function Main() {
             className={estadoCA ? "ca-cv-2" : "ca-cv"}
             onClick={() => handleCambiarCA(0)}
           >
-            <img src={calidad} alt="logo calidad del aire" />
+            {/*<img src={calidad} alt="logo calidad del aire" />*/}
+            <SiWindicss/>
             <span>Calidad del Aire en Exteriores</span>
+            {estadoCA ? <AiOutlineCheck/> : ""}
           </div>
           <div
             className={estadoCV ? "ca-cv-2" : "ca-cv"}
             onClick={() => handleCambiarCV(1)}
           >
-            <img src={carga} alt="carga viral" />
+            {/*<img src={carga} alt="carga viral" />*/}
+            <MdCo2/>
             <span>Calidad del Aire en Interiores</span>
+            {estadoCV ? <AiOutlineCheck/> : ""}
           </div>
         </div>
 

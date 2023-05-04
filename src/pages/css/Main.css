@@ -53,23 +53,27 @@ body{
 }
 
 .calidad__del__aire__carga__viral .ca-cv{
-  background-color: #ffffff;
+  /*background-color: #fff;*/
+  background-color: #081a51;
+  color: #fff;
   border-radius: 0 10px 10px 0;
   padding: 5px 10px 5px 10px;
   display: flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+  /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);*/
 }
 
 .calidad__del__aire__carga__viral .ca-cv-2{
-  background-color: #2EF9FF;
+  /*background-color: #2EF9FF;*/
+  background-color: #081a51;
+  color: #fff;
   border-radius: 0 10px 10px 0;
   padding: 5px 10px 5px 10px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+  gap: 10px;/*
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);*/
 }
 
 .calidad__del__aire__carga__viral div:hover{

@@ -382,7 +382,7 @@ export default function DetalleCAI() {
                   textTransform: "uppercase",
                 }}
               >
-                {id}
+                {"ctic: "+id}
               </div>
               <div
                 className="tipo"
