@@ -29,15 +29,15 @@ function App() {
   const [submenuOpen, setSubmenuOpen] = useState(0);
 
   const Menus = [
-    { title: "Dashboard", spacing: true, icon: <RiDashboardFill/> },
+    { title: "Dashboard", spacing: true, icon: <RiDashboardFill/>, link: "/" },
     {
       title: "Calidad del aire Interiores",
       icon: <SiWindicss/>,
       spacing: true,
       submenu: true,
       submenuItems: [
-        { title: "CTIC" },
-        { title: "Comedor" },
+        { title: "CTIC", link: "/calidad-del-aire-interiores-ctic?id=Oficina de Administración" },
+        { title: "Comedor", link: "#" },
       ],
     },
     {
@@ -45,9 +45,9 @@ function App() {
       icon: <MdCo2/>,
       submenu: true,
       submenuItems: [
-        { title: "CTIC" },
-        { title: "Puerta 3" },
-        { title: "Puerta 5"},
+        { title: "CTIC", link: "/calidad-del-aire-exteriores?id=ctic" },
+        { title: "Puerta 3", link: "/calidad-del-aire-exteriores?id=puerta 3" },
+        { title: "Puerta 5", link: "/calidad-del-aire-exteriores?id=puerta 5"},
       ],
     },
   ];
@@ -102,7 +102,7 @@ function App() {
                     }`}
                     onClick={()=>setSubmenuOpen(index)}
                   >
-                    {menu.title}
+                    {menu.submenu ? menu.title : <a href={menu.link} style={{display:"block", width:"100%", height: "100%"}}>{menu.title}</a>}
                   </span>
                   {menu.submenu && open && (
                     <BsChevronDown className={`${submenuOpen===index && "rotate-180"}`} onClick={()=>setSubmenuOpen(index)}/>
@@ -113,7 +113,7 @@ function App() {
                     {menu.submenuItems.map((submenuItem, index) => {
                       return <li key={index} className="text-gray-300 text-sm flex items-center gap-x-4
                       cursor-pointer p-2 px-5 hover:bg-light-white rounded-md">
-                        {submenuItem.title}
+                        <a href={submenuItem.link} style={{display: "block", width:"100%", height: "100%"}}>{submenuItem.title}</a>
                       </li>
                     })}
                   </ul>
