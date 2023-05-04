@@ -78,15 +78,24 @@ export default function DetallesI({ id }) {
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+    const value = event.target.value;
+    setInputValue(value);
+    if(!value){
+      setResults(dat);
+    }else{
+      const filteredResults = dat.filter(
+        (item) => item.lugar.toLowerCase().includes(inputValue.toLowerCase())
+      );
+      setResults(filteredResults);
+    }
   };
 
   const handleButtonClick = () => {
     //console.log(inputValue);
-    const filteredResults = dat.filter(
-      (item) => item.lugar.toLowerCase().includes(inputValue.toLowerCase())
-    );
-    setResults(filteredResults);
+    //const filteredResults = dat.filter(
+      //(item) => item.lugar.toLowerCase().includes(inputValue.toLowerCase())
+    //);
+    //setResults(filteredResults);
   };
 
   //acordeon
