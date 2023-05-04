@@ -27,10 +27,11 @@ const nombrelugar = (e) => {
 
 export default function DetallesI({ id }) {
   const [data, setData] = useState([]);
+  const [results, setResults] = useState(dat);
 
   useEffect(() => {
     const fetchData = async () => {
-      const promises = dat.map((d) => {
+      const promises = results.map((d) => {
         return fetch(`http://192.168.52.232:9090/api/v1/carga-viral/${d.idb}?last=1`)
           .then((response) => response.json())
           .then((data) => {
@@ -72,7 +73,7 @@ export default function DetallesI({ id }) {
     };
 
     fetchData();
-  }, []);
+  }, [results]);
 
   const [inputValue, setInputValue] = useState("");
 
@@ -81,7 +82,11 @@ export default function DetallesI({ id }) {
   };
 
   const handleButtonClick = () => {
-    console.log(inputValue);
+    //console.log(inputValue);
+    const filteredResults = dat.filter(
+      (item) => item.lugar.toLowerCase().includes(inputValue.toLowerCase())
+    );
+    setResults(filteredResults);
   };
 
   //acordeon
