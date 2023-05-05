@@ -22,7 +22,7 @@ export default function Detalles(props){
         </div>
 
         <div className='container__btn__mas__detalles'>
-            <div className='container__btn'><a href='faq-carga-viral'>MÁS DETALLES</a></div>
+            <div className='container__btn2'><a href='faq-carga-viral'>MÁS DETALLES</a></div>
         </div>
     </div>
     )

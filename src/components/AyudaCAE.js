@@ -30,7 +30,7 @@ export default function Detalles(props) {
       </div>
 
       <div className="container__btn__mas__detalles">
-        <div className="container__btn">
+        <div className="container__btn2">
           <a href="faq-calidad-de-aire">MÁS DETALLES</a>
         </div>
       </div>
