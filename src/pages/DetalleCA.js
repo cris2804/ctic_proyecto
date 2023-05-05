@@ -174,6 +174,11 @@ export default function DetalleCA() {
 
   return (
     <div className="container__detalle__ca">
+      <div className="forma">
+    <span className="forma__titulo__lugar">{obtenerNombre(id)}</span> <br></br>
+    <span className="forma__subtitulo">Calidad del aire en exteriores</span> <br></br>
+    <span className="forma__linea">aaaaaaaaaaaaa</span>
+</div>
       <div className="container__detalle__ca__main">
         <div className="container__detalle__ca__left">
           <div
@@ -443,12 +448,12 @@ export default function DetalleCA() {
               borderRadius: "2px 2px 5px 5px",
             }}
           >
-            <div
+            {/*<div
               className="container__lugar__ubicacion"
               style={{ backgroundColor: "#9AD64D", textAlign: "center" }}
             >
               {obtenerNombre(id)}
-            </div>
+            </div>*/}
             <div
               className="container__estado__ca"
               style={{ backgroundColor: "#9AD64D" }}
