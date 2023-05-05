@@ -12,7 +12,7 @@ import Select from "../components/Select";
 import { GiWindow } from "react-icons/gi";
 import { MdMasks } from "react-icons/md";
 import { MdOutlineWindPower } from "react-icons/md";
-import { MdOutlineSportsHandball } from "react-icons/md";
+import { MdOutlineSportsHandball, MdWaterDrop } from "react-icons/md";
 
 const gases = [
   {
@@ -175,10 +175,11 @@ export default function DetalleCA() {
   return (
     <div className="container__detalle__ca">
       <div className="forma">
-    <span className="forma__titulo__lugar">{obtenerNombre(id)}</span> <br></br>
-    <span className="forma__subtitulo">Calidad del aire en exteriores</span> <br></br>
-    <span className="forma__linea">aaaaaaaaaaaaa</span>
-</div>
+        <span className="forma__titulo__lugar">{obtenerNombre(id)}</span> <br></br>
+        <span className="forma__subtitulo">Calidad del aire en exteriores</span> <br></br>
+        <span className="forma__linea">aaaaaaaaaaaaa</span>
+      </div>
+      <div className="container__gota__agua"><MdWaterDrop className="gota__agua"/></div>
       <div className="container__detalle__ca__main">
         <div className="container__detalle__ca__left">
           <div

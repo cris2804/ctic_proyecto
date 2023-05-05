@@ -13,6 +13,7 @@
 /**/
 
 .forma{
+  position: relative;
   width: 100%;
   height: 130px;
   background-color: #1cbacc;
@@ -32,7 +33,14 @@
   color: #1cbacc;
   border-bottom: solid 2px #fff;
 }
-
+.container__gota__agua{
+  text-align: center;
+}
+.gota__agua{
+  color: #1cbacc;
+  font-size: 2rem;
+  margin: 0 auto;
+}
 
 /**/
 
