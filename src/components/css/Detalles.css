@@ -74,6 +74,8 @@
 }
 .container__tiempo__pm .icon__t{
     color: white;
+    font-size: 1.7rem;
+    font-weight: 900;
 }
 .container__tiempo .container__temp__uv{
     display: flex;
@@ -81,6 +83,11 @@
     color: #607631;
     font-weight: 600;
     gap: 5px;
+}
+.container__tiempo__pm .icon__uv{
+    color: yellow;
+    font-size: 1.7rem;
+    font-weight: 900;
 }
 .container__cp{
     text-decoration: underline;
@@ -140,21 +147,22 @@
     justify-content: center;
 }
 
-.container__btn{
+.container__btn2{
     border: solid 1px #ffffff;
-    padding: 8px 35px 8px 35px;
 }
 
-.container__btn:hover{
+.container__btn2:hover{
     cursor: pointer;
     color: cyan;
     border: solid 1px cyan;
 }
 
-.container__btn a{
+.container__btn2 a{
     text-decoration: none;
     color: #ffffff;
+    display: block;
+    padding: 10px 35px;
 }
-.container__btn a:hover{
+.container__btn2 a:hover{
     color: cyan;
 }

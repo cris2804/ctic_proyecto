@@ -2,11 +2,10 @@ import "./css/Detalles.css";
 import happy from "./images/happy.png";
 //import serio from './images/serio.png';
 //import triste from './images/triste.png';
-import sun from "./images/sun.png";
 import { obtenerhora } from "./obtenerhora";
 import { obtenerfecha } from "./obtenerfecha";
-import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
 import { useState, useEffect } from "react";
+import {BsThermometerHalf, BsSunFill} from 'react-icons/bs';
 
 const nombrelugar = (e) => {
   if (e === "ca-ctic") return "ctic";
@@ -65,11 +64,13 @@ export default function Detalles(props) {
         <div className="container__tiempo__pm">
           <div className="container__tiempo">
             <div className="container__temp__uv">
-              <DeviceThermostatIcon className="icon__t" />
+              {/*<DeviceThermostatIcon className="icon__t" />*/}
+              <BsThermometerHalf className="icon__t"/>
               <div>{data ? Math.round(data.temperatura_2) : ""} ªC</div>
             </div>
             <div className="container__temp__uv">
-              <img src={sun} alt="imagen-sun" />
+              {/*<img src={sun} alt="imagen-sun" />*/}
+              <BsSunFill className="icon__uv"/>
               <div>{data ? Math.round(data.indice_uv) : ""} UV</div>
             </div>
           </div>
@@ -112,7 +113,7 @@ export default function Detalles(props) {
       </div>
 
       <div className="container__btn__mas__detalles">
-        <div className="container__btn">
+        <div className="container__btn2">
           <a href={`calidad-del-aire-exteriores?id=${nombrelugar(props.id)}`}>
             MÁS DETALLES
           </a>
