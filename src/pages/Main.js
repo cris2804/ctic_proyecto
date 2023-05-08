@@ -11,7 +11,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { Marker } from "react-leaflet";
 import L from "leaflet";
-import logoclose from "./images/logoclose.png";
+//import logoclose from "./images/logoclose.png";
 import {RiCloseCircleFill} from "react-icons/ri";
 import Detalles from "../components/Detalles";
 import AyudaCAE from "../components/AyudaCAE";
