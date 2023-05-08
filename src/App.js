@@ -15,6 +15,7 @@ import FaqCAI from "./pages/FaqCAI";
 import FaqCAE from "./pages/FaqCAE";
 import Grafico3 from "./components/Grafico3";
 import DetalleCAI from "./pages/DetalleCAI";
+import ComedorCAI from "./pages/ComedorCAI";
 //import CSV from "./pages/CSV";
 
 import { BsArrowLeftShort, BsChevronDown } from "react-icons/bs";
@@ -37,7 +38,7 @@ function App() {
       submenu: true,
       submenuItems: [
         { title: "CTIC", link: "/calidad-del-aire-interiores-ctic?id=Oficina de Administración" },
-        { title: "Comedor", link: "#" },
+        { title: "Comedor", link: "/calidad-del-aire-interiores-comedor-universitario" },
       ],
     },
     {
@@ -127,14 +128,10 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route
-              path="/calidad-del-aire-exteriores"
-              element={<DetalleCA />}
-            />
-            <Route
-              path="/calidad-del-aire-interiores-ctic"
-              element={<DetalleCAI />}
-            />
+            <Route path="/calidad-del-aire-exteriores" element={<DetalleCA />} />
+            <Route path="/calidad-del-aire-interiores-ctic" element={<DetalleCAI />} />
+            <Route path="/calidad-del-aire-interiores-comedor-universitario" element={<ComedorCAI/>}/>
+
             <Route path="/faq-carga-viral" element={<FaqCAI />} />
             <Route path="/faq-calidad-de-aire" element={<FaqCAE />} />
             <Route path="/detalle-carga-viral" element={<DetalleCA />} />
