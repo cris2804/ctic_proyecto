@@ -70,6 +70,9 @@
   margin-left: 15px;
   gap: 10px;
 }
+.container__eh select{
+  border: solid 1px #000;
+}
 .container__detalle__descargar {
   margin-bottom: 20px;
   padding-left: 15px;

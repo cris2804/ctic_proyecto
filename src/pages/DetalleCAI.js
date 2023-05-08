@@ -381,12 +381,8 @@ export default function DetalleCAI() {
               ></input>
             </div>
             <div
-              className="container__detalle__descargar"
-              style={{
-                paddingTop: "20px",
-                paddingBottom: "30px",
-                textAlign: "center",
-              }}
+              className="container__detalle__descargar__btn"
+              
             >
               <button
                 onClick={handleMostrar}

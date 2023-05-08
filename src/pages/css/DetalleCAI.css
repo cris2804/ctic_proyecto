@@ -80,4 +80,9 @@
   background-color: #009af2;
 }
 
+.container__detalle__descargar__btn{
+  display: flex;
+  justify-content: center;
+}
+
 /*Funcinalidades*/
