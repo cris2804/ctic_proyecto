@@ -12,7 +12,7 @@ import "leaflet/dist/leaflet.css";
 import { Marker } from "react-leaflet";
 import L from "leaflet";
 import logoclose from "./images/logoclose.png";
-
+import {RiCloseCircleFill} from "react-icons/ri";
 import Detalles from "../components/Detalles";
 import AyudaCAE from "../components/AyudaCAE";
 import AyudaCAI from "../components/AyudaCAI";
@@ -210,7 +210,8 @@ function Main() {
           }
         >
           <div className="container__logo__close">
-            <img src={logoclose} alt="logo-close" onClick={handleCerrar} />
+            {/*<img src={logoclose} alt="logo-close" onClick={handleCerrar} />*/}
+            <RiCloseCircleFill className="img" onClick={handleCerrar}/>
           </div>
           {changeOption(i, id, estadoCA)}
         </div>

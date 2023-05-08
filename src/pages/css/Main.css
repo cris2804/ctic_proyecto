@@ -217,10 +217,12 @@ body{
   display: flex;
   justify-content: flex-end;
 }
-.container__logo__close img{
-  height: 30px;
+.container__logo__close .img{
+  font-size: 2rem;
+  color: #e0e0e2;
 }
 
-.container__logo__close img:hover{
+.container__logo__close .img:hover{
   cursor: pointer;
+  color: white;
 }
