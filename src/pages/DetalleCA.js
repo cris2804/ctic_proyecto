@@ -414,7 +414,7 @@ export default function DetalleCA() {
               ></input>
             </div>
             <div
-              className="container__detalle__descargar"
+              className="container__detalle__descargar__btn"
               style={{
                 paddingTop: "20px",
                 paddingBottom: "30px",
