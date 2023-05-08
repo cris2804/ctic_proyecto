@@ -9,15 +9,6 @@ import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import CustomSelect from "../components/CustomSelect";
-
-const options = [
-  "Oficina de Administración",
-  "Laboratorio SmartCity",
-  "Oficina de Calidad Universitaria",
-  "Oficina de Capacitación",
-  "Secretaría",
-];
 
 const gases = [
   {
@@ -190,9 +181,10 @@ export default function DetalleCAI() {
   };
 
   //para el select
-  const handleChange = (option) => {
-    console.log(`Selected option: ${option}`);
-  };
+  function handleChange(event) {
+    const url = event.target.value;
+    window.location.href = url;
+  }
   /*--- */
   function handleCheckboxChange(event) {
     setIsChecked(event.target.checked);
@@ -264,9 +256,13 @@ export default function DetalleCAI() {
             </div>
           </div>
           <div className="selector__de__lugar__cai">
-            <div className="select">
-              <CustomSelect options={options} onChange={handleChange} id={id} />
-            </div>
+            <select value={"/calidad-del-aire-interiores-ctic?id="+id} onChange={handleChange} className="container__select__paginas__cai">
+              <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración">Oficina de Administración</option>
+              <option value="/calidad-del-aire-interiores-ctic?id=Laboratorio SmartCity">Laboratorio SmartCity</option>
+              <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Calidad Universitaria">Oficina de Calidad Universitaria</option>
+              <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Capacitación">Oficina de Capacitación</option>
+              <option value="/calidad-del-aire-interiores-ctic?id=Secretaría">Secretaria</option>
+            </select>
           </div>
           <div
             className="container__detalle__descargar container__rango__fecha__descargar"

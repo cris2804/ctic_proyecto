@@ -4,6 +4,17 @@
     margin-top: 5vh;
 }
 
+/*----------------------------------*/
+.container__select__paginas__cai{
+    width: 300px;
+    padding: 5px 20px 5px 20px;
+    background-color: #fff;
+    border: solid 1px #000;
+}
+.container__select__paginas__cai:hover{
+    cursor: pointer;
+}
+
 .container__estado__cai{
     display: flex;
     justify-content: space-between;
@@ -18,6 +29,7 @@
     margin-bottom: 30px;
     height: 35px;
 }
+/*
 .selector__de__lugar__cai .select{
     height: 100%;
     width: 70%;
@@ -62,8 +74,8 @@
 }
 .options a:hover{
     color: #333333;
-}
-
+}*/
+/*--------------------*/
 
 .container__detalle__ca__right{
     display: flex;
