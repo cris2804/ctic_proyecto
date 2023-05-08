@@ -9,6 +9,7 @@ import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import { MdLocationPin } from "react-icons/md";
 
 const gases = [
   {
@@ -242,6 +243,24 @@ export default function DetalleCAI() {
             }}
           >
             <div className="container__detalle__descargar cdd">
+              <div
+                className="selector__de__lugar__cai"
+                style={{ marginTop: "20px" }}
+              >
+                <MdLocationPin style={{ fontSize: "2rem", color: "#1cbacc" }} />
+                <select
+                  value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración"
+                  onChange={handleChange}
+                  className="container__select__paginas__cai"
+                >
+                  <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración">
+                    CTIC
+                  </option>
+                  <option value="/calidad-del-aire-interiores-comedor-universitario">
+                    Comedor Universitario
+                  </option>
+                </select>
+              </div>
               <div
                 style={{
                   color: "#198CFF",

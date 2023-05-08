@@ -1,84 +1,83 @@
-.container__detalle__ca__main{
-    display: flex;
-    height: 90vh;
-    margin-top: 5vh;
+.container__detalle__ca__main {
+  display: flex;
+  height: 90vh;
+  margin-top: 5vh;
 }
 
 /*----------------------------------*/
 
-.selector__de__lugar__cai{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-    height: 35px;
+.selector__de__lugar__cai {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  height: 35px;
 }
 
-.container__select__paginas__cai{
-    width: 300px;
-    padding: 5px 20px 5px 20px;
-    background-color: #fff;
-    border: solid 1px #000;
-    text-align: left;
+.container__select__paginas__cai {
+  width: 300px;
+  padding: 5px 20px 5px 20px;
+  background-color: #fff;
+  border: solid 1px #000;
+  text-align: left;
 }
-.container__select__paginas__cai:hover{
-    cursor: pointer;
+.container__select__paginas__cai:hover {
+  cursor: pointer;
 }
 
 /*--------------------*/
-.container__estado__cai{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px 20px 40px;
-    position: relative;
+.container__estado__cai {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px 20px 40px;
+  position: relative;
 }
 
-.container__detalle__ca__right{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.container__detalle__ca__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.cdd{
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    background-color: #f3f7fb;
-    padding-top: 30px;
-    padding-bottom: 30px; 
-    font-size: 15px; 
-    height:20vh;
+.cdd {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f3f7fb;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 15px;
+  height: 25vh;
 }
-.container__tipos__gases__cai{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-bottom:50px;
-    margin-top: 50px;
-}
-
-.container__tipos__gases__cai div{
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0;
-    border-radius: 20px;
-    text-transform:uppercase;
-    border: solid 1px #2086D8;
-    background-color: #f3f7fb;
-}
-.container__tipos__gases__cai div:hover{
-    cursor: pointer;
-    background-color: #009AF2;
-}
-.container__grafico__rangos__tipos__gases__{
-    margin-bottom: none;
-    height: 70vh;
+.container__tipos__gases__cai {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
-.container__tipos__gases__cai .seleccionado{
-    background-color: #009AF2;
+.container__tipos__gases__cai div {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  border-radius: 20px;
+  text-transform: uppercase;
+  border: solid 1px #2086d8;
+  background-color: #f3f7fb;
+}
+.container__tipos__gases__cai div:hover {
+  cursor: pointer;
+  background-color: #009af2;
+}
+.container__grafico__rangos__tipos__gases__ {
+  margin-bottom: none;
+  height: 70vh;
 }
 
+.container__tipos__gases__cai .seleccionado {
+  background-color: #009af2;
+}
 
 /*Funcinalidades*/
