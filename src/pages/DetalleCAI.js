@@ -61,7 +61,9 @@ export default function DetalleCAI() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://192.168.52.232:9090/api/v1/carga-viral/${retornaidb(id)}?last=1`
+          `http://192.168.52.232:9090/api/v1/carga-viral/${retornaidb(
+            id
+          )}?last=1`
         );
         const data = await response.json();
 
@@ -140,18 +142,20 @@ export default function DetalleCAI() {
 
     //console.log(currentUrl)
     //181.176.48.200:9090
-    let c,t,h;
-    if(isChecked) c = 1
-    else c = 0
-    if(isCheckedh) h = 1
-    else h = 0
-    if(isCheckedt) t = 1
-    else t = 0 
+    let c, t, h;
+    if (isChecked) c = 1;
+    else c = 0;
+    if (isCheckedh) h = 1;
+    else h = 0;
+    if (isCheckedt) t = 1;
+    else t = 0;
 
     fetch(
       `http://192.168.52.232:9090/api/v1/carga-viral/descargar/${retornaidb(
         id
-      )}?maxDate=${Number(date2)}&minDate=${Number(date1)}&columns=100000${c}${h}${t}11111`
+      )}?maxDate=${Number(date2)}&minDate=${Number(
+        date1
+      )}&columns=100000${c}${h}${t}11111`
     )
       .then((response) => {
         if (response.ok) {
@@ -221,225 +225,247 @@ export default function DetalleCAI() {
     <div className="container__detalle__ca__main__">
       <div className="forma">
         <span className="forma__titulo__lugar">CTIC</span> <br></br>
-        <span className="forma__subtitulo">Calidad del aire en interiores</span> <br></br>
+        <span className="forma__subtitulo">
+          Calidad del aire en interiores
+        </span>{" "}
+        <br></br>
         <span className="forma__linea">aaaaaaaaaaaaa</span>
       </div>
-    <div className="container__detalle__ca__main">
-      <div className="container__detalle__ca__left">
-        <div
-          style={{
-            backgroundColor: "white",
-            height: "90vh",
-            boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)",
-            borderRadius: "2px 2px 10px 10px",
-          }}
-        >
-          <div className="container__detalle__descargar cdd">
-            <div
-              style={{
-                color: "#198CFF",
-                paddingBottom: "4px",
-                fontSize: "1.4rem",
-              }}
-            >
-              DESCARGAR DATOS (CSV)
-            </div>
-            <div
-              style={{
-                fontSize: "20px",
-                fontWeight: "400",
-                paddingRight: "1rem",
-              }}
-            >
-              En esta plataforma, podrás descargar diversos datos seleccionando
-              el rango de fechas y los sensores que desees analizar.
-            </div>
-          </div>
-          <div className="selector__de__lugar__cai">
-            <select value={"/calidad-del-aire-interiores-ctic?id="+id} onChange={handleChange} className="container__select__paginas__cai">
-              <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración">Oficina de Administración</option>
-              <option value="/calidad-del-aire-interiores-ctic?id=Laboratorio SmartCity">Laboratorio SmartCity</option>
-              <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Calidad Universitaria">Oficina de Calidad Universitaria</option>
-              <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Capacitación">Oficina de Capacitación</option>
-              <option value="/calidad-del-aire-interiores-ctic?id=Secretaría">Secretaria</option>
-            </select>
-          </div>
+      <div className="container__detalle__ca__main">
+        <div className="container__detalle__ca__left">
           <div
-            className="container__detalle__descargar container__rango__fecha__descargar"
-            style={{ fontWeight: "500" }}
-          >
-            <div>Fecha Inicial: </div>
-            <div>
-              <button
-                onClick={toggleCalendar1}
-                className="container__btn__calendar"
-              >
-                <div>
-                  <CalendarMonthIcon />
-                </div>
-                <div>{date1.toLocaleDateString()}</div>
-              </button>
-              {showCalendar1 && <Calendar onChange={onChange1} value={date1} />}
-            </div>
-          </div>
-          <div
-            className="container__detalle__descargar container__rango__fecha__descargar"
-            style={{ fontWeight: "500" }}
-          >
-            <div>Fecha Final:&nbsp;&nbsp; </div>
-            <div>
-              <button
-                onClick={toggleCalendar2}
-                className="container__btn__calendar"
-              >
-                <div>
-                  <CalendarMonthIcon />
-                </div>
-                <div>{date2.toLocaleDateString()}</div>
-              </button>
-              {showCalendar2 && <Calendar onChange={onChange2} value={date2} />}
-            </div>
-          </div>
-          <div
-            className="container__detalle__descargar"
-            style={{ paddingTop: "25px" }}
-          >
-            CO2
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input
-              type="checkbox"
-              id="cbox1"
-              value="first_checkbox"
-              checked={isChecked}
-              onChange={handleCheckboxChange}
-            ></input>
-          </div>
-          <div className="container__detalle__descargar">
-            Temperatura &nbsp;&nbsp;&nbsp;&nbsp;
-            <input
-              type="checkbox"
-              id="cbox1"
-              value="first_checkbox"
-              checked={isCheckedt}
-              onChange={handleCheckboxChanget}
-            ></input>
-          </div>
-          <div className="container__detalle__descargar">
-            Humedad &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input
-              type="checkbox"
-              id="cbox1"
-              value="first_checkbox"
-              checked={isCheckedh}
-              onChange={handleCheckboxChangeh}
-            ></input>
-          </div>
-          <div
-            className="container__detalle__descargar"
             style={{
-              paddingTop: "20px",
-              paddingBottom: "30px",
-              textAlign: "center",
+              backgroundColor: "white",
+              height: "90vh",
+              boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)",
+              borderRadius: "2px 2px 10px 10px",
             }}
           >
-            <button
-              onClick={handleMostrar}
-              style={{
-                backgroundColor: "#7EDAE5",
-                display: "flex",
-                alignItems: "center",
-                flexWrap: "wrap",
-                fontFamily: "'Space Grotesk', sans-serif",
-                color: "#2086D8",
-                fontSize: "20px",
-                fontWeight: "500",
-                borderColor: "#2086D8",
-                borderRadius: "20px",
-                padding: "10px 20px 10px 20px",
-                cursor: "pointer",
-              }}
-            >
-              Descargar CSV&nbsp;&nbsp; <CloudDownloadIcon />
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="container__detalle__ca__right">
-        <div
-          className="container__estado__cai"
-          style={{
-            boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)",
-            borderRadius: "2px 2px 5px 5px",
-            background: `${data.color}`,
-          }}
-        >
-          <div className="container__valor__tipo">
-            <div className="container__indice__tipo">
+            <div className="container__detalle__descargar cdd">
               <div
-                className="indice"
                 style={{
-                  fontSize: "2rem",
-                  fontWeight: "700",
-                  color: "#000000",
-                  textTransform: "uppercase",
+                  color: "#198CFF",
+                  paddingBottom: "4px",
+                  fontSize: "1.4rem",
                 }}
               >
-                {id}
+                DESCARGAR DATOS (CSV)
               </div>
               <div
-                className="tipo"
-                style={{ fontSize: "1.5rem", color: "#000000" }}
+                style={{
+                  fontSize: "20px",
+                  fontWeight: "400",
+                  paddingRight: "1rem",
+                }}
               >
-                Calidad del aire: {data.estado}
+                En esta plataforma, podrás descargar diversos datos
+                seleccionando el rango de fechas y los sensores que desees
+                analizar.
               </div>
             </div>
-          </div>
-          <div className="logo__imagen">
-            <img src={data.imagen} alt="logo-happy" />
+            <div className="selector__de__lugar__cai">
+              <select
+                value={"/calidad-del-aire-interiores-ctic?id=" + id}
+                onChange={handleChange}
+                className="container__select__paginas__cai"
+              >
+                <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración">
+                  Oficina de Administración
+                </option>
+                <option value="/calidad-del-aire-interiores-ctic?id=Laboratorio SmartCity">
+                  Laboratorio SmartCity
+                </option>
+                <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Calidad Universitaria">
+                  Oficina de Calidad Universitaria
+                </option>
+                <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Capacitación">
+                  Oficina de Capacitación
+                </option>
+                <option value="/calidad-del-aire-interiores-ctic?id=Secretaría">
+                  Secretaria
+                </option>
+              </select>
+            </div>
+            <div
+              className="container__detalle__descargar container__rango__fecha__descargar"
+              style={{ fontWeight: "500" }}
+            >
+              <div>Fecha Inicial: </div>
+              <div>
+                <button
+                  onClick={toggleCalendar1}
+                  className="container__btn__calendar"
+                >
+                  <div>
+                    <CalendarMonthIcon />
+                  </div>
+                  <div>{date1.toLocaleDateString()}</div>
+                </button>
+                {showCalendar1 && (
+                  <Calendar onChange={onChange1} value={date1} />
+                )}
+              </div>
+            </div>
+            <div
+              className="container__detalle__descargar container__rango__fecha__descargar"
+              style={{ fontWeight: "500" }}
+            >
+              <div>Fecha Final:&nbsp;&nbsp; </div>
+              <div>
+                <button
+                  onClick={toggleCalendar2}
+                  className="container__btn__calendar"
+                >
+                  <div>
+                    <CalendarMonthIcon />
+                  </div>
+                  <div>{date2.toLocaleDateString()}</div>
+                </button>
+                {showCalendar2 && (
+                  <Calendar onChange={onChange2} value={date2} />
+                )}
+              </div>
+            </div>
+            <div
+              className="container__detalle__descargar"
+              style={{ paddingTop: "25px" }}
+            >
+              CO2
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="checkbox"
+                id="cbox1"
+                value="first_checkbox"
+                checked={isChecked}
+                onChange={handleCheckboxChange}
+              ></input>
+            </div>
+            <div className="container__detalle__descargar">
+              Temperatura &nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="checkbox"
+                id="cbox1"
+                value="first_checkbox"
+                checked={isCheckedt}
+                onChange={handleCheckboxChanget}
+              ></input>
+            </div>
+            <div className="container__detalle__descargar">
+              Humedad
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input
+                type="checkbox"
+                id="cbox1"
+                value="first_checkbox"
+                checked={isCheckedh}
+                onChange={handleCheckboxChangeh}
+              ></input>
+            </div>
+            <div
+              className="container__detalle__descargar"
+              style={{
+                paddingTop: "20px",
+                paddingBottom: "30px",
+                textAlign: "center",
+              }}
+            >
+              <button
+                onClick={handleMostrar}
+                style={{
+                  backgroundColor: "#7EDAE5",
+                  display: "flex",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  color: "#2086D8",
+                  fontSize: "20px",
+                  fontWeight: "500",
+                  borderColor: "#2086D8",
+                  borderRadius: "20px",
+                  padding: "10px 20px 10px 20px",
+                  cursor: "pointer",
+                }}
+              >
+                Descargar CSV&nbsp;&nbsp; <CloudDownloadIcon />
+              </button>
+            </div>
           </div>
         </div>
-
-        <div
-          className="container__grafico__rangos__tipos__gases__"
-          style={{
-            boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)",
-            borderRadius: "2px 2px 5px 5px",
-          }}
-        >
-          <div className="container__tipos__gases__cai">
-            {dat.map((gas) => {
-              return (
+        <div className="container__detalle__ca__right">
+          <div
+            className="container__estado__cai"
+            style={{
+              boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)",
+              borderRadius: "2px 2px 5px 5px",
+              background: `${data.color}`,
+            }}
+          >
+            <div className="container__valor__tipo">
+              <div className="container__indice__tipo">
                 <div
-                  key={gas.nombre}
-                  onClick={() => handleOpcion2(gas.nombre)}
-                  className={opcion === gas.nombre ? "seleccionado" : ""}
+                  className="indice"
+                  style={{
+                    fontSize: "2rem",
+                    fontWeight: "700",
+                    color: "#000000",
+                    textTransform: "uppercase",
+                  }}
                 >
-                  {gas.nombre}
+                  {id}
                 </div>
-              );
-            })}
-          </div>
-          <div className="container__rango__tiempo">
-            <div
-              className={seleccionado === 0 ? "tiempo__seleccionado" : ""}
-              onClick={() => Seleccionar(0)}
-            >
-              EN VIVO
+                <div
+                  className="tipo"
+                  style={{ fontSize: "1.5rem", color: "#000000" }}
+                >
+                  Calidad del aire: {data.estado}
+                </div>
+              </div>
             </div>
-            <div
-              className={seleccionado === 1 ? "tiempo__seleccionado" : ""}
-              onClick={() => Seleccionar(1)}
-            >
-              DIA
+            <div className="logo__imagen">
+              <img src={data.imagen} alt="logo-happy" />
             </div>
           </div>
-          <div className="container__grafico">
-            {Graficar(seleccionado, opcion)}
+
+          <div
+            className="container__grafico__rangos__tipos__gases__"
+            style={{
+              boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)",
+              borderRadius: "2px 2px 5px 5px",
+            }}
+          >
+            <div className="container__tipos__gases__cai">
+              {dat.map((gas) => {
+                return (
+                  <div
+                    key={gas.nombre}
+                    onClick={() => handleOpcion2(gas.nombre)}
+                    className={opcion === gas.nombre ? "seleccionado" : ""}
+                  >
+                    {gas.nombre}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="container__rango__tiempo">
+              <div
+                className={seleccionado === 0 ? "tiempo__seleccionado" : ""}
+                onClick={() => Seleccionar(0)}
+              >
+                EN VIVO
+              </div>
+              <div
+                className={seleccionado === 1 ? "tiempo__seleccionado" : ""}
+                onClick={() => Seleccionar(1)}
+              >
+                DIA
+              </div>
+            </div>
+            <div className="container__grafico">
+              {Graficar(seleccionado, opcion)}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
     </div>
   );
 }
