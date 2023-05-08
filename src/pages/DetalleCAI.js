@@ -226,6 +226,12 @@ export default function DetalleCAI() {
   }
 
   return (
+    <div className="container__detalle__ca__main__">
+      <div className="forma">
+        <span className="forma__titulo__lugar">CTIC</span> <br></br>
+        <span className="forma__subtitulo">Calidad del aire en interiores</span> <br></br>
+        <span className="forma__linea">aaaaaaaaaaaaa</span>
+      </div>
     <div className="container__detalle__ca__main">
       <div className="container__detalle__ca__left">
         <div
@@ -436,6 +442,8 @@ export default function DetalleCAI() {
           </div>
         </div>
       </div>
+    </div>
+
     </div>
   );
 }
