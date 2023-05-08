@@ -32,7 +32,7 @@ function App() {
     { title: "Dashboard", spacing: true, icon: <RiDashboardFill/>, link: "/" },
     {
       title: "Calidad del aire Interiores",
-      icon: <SiWindicss/>,
+      icon: <MdCo2/>,
       spacing: true,
       submenu: true,
       submenuItems: [
@@ -42,7 +42,7 @@ function App() {
     },
     {
       title: "Calidad del aire Exteriores",
-      icon: <MdCo2/>,
+      icon: <SiWindicss/>,
       submenu: true,
       submenuItems: [
         { title: "CTIC", link: "/calidad-del-aire-exteriores?id=ctic" },
