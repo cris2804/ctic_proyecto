@@ -13,6 +13,7 @@ import { GiWindow } from "react-icons/gi";
 import { MdMasks } from "react-icons/md";
 import { MdOutlineWindPower } from "react-icons/md";
 import { MdOutlineSportsHandball } from "react-icons/md";
+import { MdLocationPin } from "react-icons/md";
 //, MdWaterDrop
 
 const gases = [
@@ -173,6 +174,12 @@ export default function DetalleCA() {
     setCheckboxes({ ...checkboxes, [name]: checked });
   }
 
+  //para el select
+  function handleChange(event) {
+    const url = event.target.value;
+    window.location.href = url;
+  }
+
   return (
     <div className="container__detalle__ca">
       <div className="forma">
@@ -273,6 +280,31 @@ export default function DetalleCA() {
                 Aqui podra descargar distintos datos de nuestra plataforma,
                 podra escoger el rango de fechas y los sensores a analizar.
               </div>
+            </div>
+            <div
+              className="selector__de__lugar__cai"
+              style={{ marginTop: "20px" }}
+            >
+              <div className="container__icon__ubi__ofi">
+                {" "}
+                <MdLocationPin style={{ fontSize: "2rem", color: "#1cbacc" }} />
+                Ubicación Actual:{" "}
+              </div>
+              <select
+                value={"/calidad-del-aire-exteriores?id="+id}
+                onChange={handleChange}
+                className="container__select__paginas__cai"
+              >
+                <option value="/calidad-del-aire-exteriores?id=ctic">
+                  CTIC
+                </option>
+                <option value="/calidad-del-aire-exteriores?id=puerta 3">
+                  Puerta 3
+                </option>
+                <option value="/calidad-del-aire-exteriores?id=puerta 5">
+                  Puerta 5
+                </option>
+              </select>
             </div>
             <div
               className="container__detalle__descargar container__rango__fecha__descargar"

@@ -10,6 +10,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { MdLocationPin } from "react-icons/md";
+import { BsFillBuildingFill } from "react-icons/bs";
 
 const gases = [
   {
@@ -244,24 +245,6 @@ export default function DetalleCAI() {
           >
             <div className="container__detalle__descargar cdd">
               <div
-                className="selector__de__lugar__cai"
-                style={{ marginTop: "20px" }}
-              >
-                <MdLocationPin style={{ fontSize: "2rem", color: "#1cbacc" }} />
-                <select
-                  value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración"
-                  onChange={handleChange}
-                  className="container__select__paginas__cai"
-                >
-                  <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración">
-                    CTIC
-                  </option>
-                  <option value="/calidad-del-aire-interiores-comedor-universitario">
-                    Comedor Universitario
-                  </option>
-                </select>
-              </div>
-              <div
                 style={{
                   color: "#198CFF",
                   paddingBottom: "4px",
@@ -282,7 +265,36 @@ export default function DetalleCAI() {
                 analizar.
               </div>
             </div>
+            <div
+              className="selector__de__lugar__cai"
+              style={{ marginTop: "20px" }}
+            >
+              <div className="container__icon__ubi__ofi">
+                {" "}
+                <MdLocationPin style={{ fontSize: "2rem", color: "#1cbacc" }} />
+                Ubicación Actual:{" "}
+              </div>
+              <select
+                value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración"
+                onChange={handleChange}
+                className="container__select__paginas__cai"
+              >
+                <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración">
+                  CTIC
+                </option>
+                <option value="/calidad-del-aire-interiores-comedor-universitario">
+                  Comedor Universitario
+                </option>
+              </select>
+            </div>
             <div className="selector__de__lugar__cai">
+              <div className="container__icon__ubi__ofi">
+                {" "}
+                <BsFillBuildingFill
+                  style={{ fontSize: "1.5rem", color: "#1cbacc" }}
+                />
+                Oficina Actual:{" "}
+              </div>
               <select
                 value={"/calidad-del-aire-interiores-ctic?id=" + id}
                 onChange={handleChange}
@@ -380,10 +392,7 @@ export default function DetalleCAI() {
                 onChange={handleCheckboxChangeh}
               ></input>
             </div>
-            <div
-              className="container__detalle__descargar__btn"
-              
-            >
+            <div className="container__detalle__descargar__btn">
               <button
                 onClick={handleMostrar}
                 style={{
