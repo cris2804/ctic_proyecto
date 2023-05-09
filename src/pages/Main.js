@@ -2,8 +2,6 @@ import "./css/Main.css";
 import { ubicaciones } from "../assets/ubicaciones";
 import { ubicacionesCV } from "../assets/ubicacionesCV";
 import { useState } from "react";
-//import calidad from "../assets/calidad.png";
-//import carga from "../assets/carga.png";
 import {SiWindicss} from 'react-icons/si';
 import {MdCo2} from 'react-icons/md';
 import {AiOutlineCheck} from 'react-icons/ai';
@@ -11,7 +9,6 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { Marker } from "react-leaflet";
 import L from "leaflet";
-//import logoclose from "./images/logoclose.png";
 import {RiCloseCircleFill} from "react-icons/ri";
 import Detalles from "../components/Detalles";
 import AyudaCAE from "../components/AyudaCAE";
@@ -20,6 +17,7 @@ import DetallesI from "../components/DetallesI";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import { rangoscae } from "../assets/rangoscae";
 import { rangoscai } from "../assets/rangoscai";
+import DetallesIC from "../components/DetallesIC";
 
 const ubiCentro = ["-12.020381", "-77.049178"];
 
@@ -28,7 +26,7 @@ function changeOption(i, id, estado) {
     return <Detalles id={id} />;
   } else if (i === 1) {
     if (id === "cv-ctic") return <DetallesI id={id} />;
-    else return "comedor universitario";
+    else return <DetallesIC id={id} />;
   } else if (i === 2) {
     if (estado) return <AyudaCAE />;
     else return <AyudaCAI />;
