@@ -32,6 +32,7 @@
 .forma__linea{
   color: #1cbacc;
   border-bottom: solid 2px #fff;
+  user-select: none;
 }
 .container__gota__agua{
   text-align: center;

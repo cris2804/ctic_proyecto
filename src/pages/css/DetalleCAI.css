@@ -8,14 +8,14 @@
 
 .selector__de__lugar__cai {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
   margin-bottom: 30px;
-  height: 35px;
+  padding-left: 10px;
+  gap: 10px;
 }
-
 .container__select__paginas__cai {
-  width: 300px;
+  width: 280px;
   padding: 5px 20px 5px 20px;
   background-color: #fff;
   border: solid 1px #000;
@@ -24,7 +24,10 @@
 .container__select__paginas__cai:hover {
   cursor: pointer;
 }
-
+.container__icon__ubi__ofi{
+  display: flex;
+  align-items: center;
+}
 /*--------------------*/
 .container__estado__cai {
   display: flex;
