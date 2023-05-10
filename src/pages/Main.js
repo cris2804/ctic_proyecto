@@ -53,24 +53,28 @@ function Main() {
     setUbi(ubicaciones);
     setRangos(rangoscae);
 
+    //para que podamos ver si estamos en cae
     if (estadoCA === false && estadoCV === true) {
       setEstadoCA(true);
       setEstadoCV(false);
     }
     //se oculta el panel cuando pasamos de cae a cai
-    if (i !== 2) setBol(false);
+    //if (i !== 2) setBol(false);
+    if(i !== 2) setId("ca-ctic")
     setI(i);
   };
   const handleCambiarCV = (i) => {
     setUbi(ubicacionesCV);
     setRangos(rangoscai);
 
+    //para que podamos ver si estamos en cai
     if (estadoCV === false && estadoCA === true) {
       setEstadoCV(true);
       setEstadoCA(false);
     }
     //se oculta el panel cuando pasamos de cai a cae
-    if (i !== 2) setBol(false);
+    //if (i !== 2) setBol(false);
+    if(i !== 2) setId("cv-ctic")
     setI(i);
   };
 
