@@ -39,8 +39,8 @@ function Main() {
   const [estadoCA, setEstadoCA] = useState(true);
   const [estadoCV, setEstadoCV] = useState(false);
   /*--- */
-  const [id, setId] = useState("");
-  const [bol, setBol] = useState(false);
+  const [id, setId] = useState("ca-ctic");
+  const [bol, setBol] = useState(true);
 
   /*--- */
   const [i, setI] = useState(0);
