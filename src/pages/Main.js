@@ -2,14 +2,14 @@ import "./css/Main.css";
 import { ubicaciones } from "../assets/ubicaciones";
 import { ubicacionesCV } from "../assets/ubicacionesCV";
 import { useState } from "react";
-import {SiWindicss} from 'react-icons/si';
-import {MdCo2} from 'react-icons/md';
-import {AiOutlineCheck} from 'react-icons/ai';
+import { SiWindicss } from "react-icons/si";
+import { MdCo2 } from "react-icons/md";
+import { AiOutlineCheck } from "react-icons/ai";
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { Marker } from "react-leaflet";
 import L from "leaflet";
-import {RiCloseCircleFill} from "react-icons/ri";
+import { RiCloseCircleFill } from "react-icons/ri";
 import Detalles from "../components/Detalles";
 import AyudaCAE from "../components/AyudaCAE";
 import AyudaCAI from "../components/AyudaCAI";
@@ -58,9 +58,9 @@ function Main() {
       setEstadoCA(true);
       setEstadoCV(false);
     }
-    //se oculta el panel cuando pasamos de cae a cai
+    //se oculta el panel cuando pasamos de cai a cae
     //if (i !== 2) setBol(false);
-    if(i !== 2) setId("ca-ctic")
+    if (i !== 2) setId("ca-ctic");
     setI(i);
   };
   const handleCambiarCV = (i) => {
@@ -72,9 +72,9 @@ function Main() {
       setEstadoCV(true);
       setEstadoCA(false);
     }
-    //se oculta el panel cuando pasamos de cai a cae
+    //se oculta el panel cuando pasamos de cae a cai
     //if (i !== 2) setBol(false);
-    if(i !== 2) setId("cv-ctic")
+    if (i !== 2) setId("cv-ctic");
     setI(i);
   };
 
@@ -125,18 +125,18 @@ function Main() {
             onClick={() => handleCambiarCA(0)}
           >
             {/*<img src={calidad} alt="logo calidad del aire" />*/}
-            <SiWindicss/>
+            <SiWindicss />
             <span>Calidad del Aire en Exteriores</span>
-            {estadoCA ? <AiOutlineCheck/> : ""}
+            {estadoCA ? <AiOutlineCheck /> : ""}
           </div>
           <div
             className={estadoCV ? "ca-cv-2" : "ca-cv"}
             onClick={() => handleCambiarCV(1)}
           >
             {/*<img src={carga} alt="carga viral" />*/}
-            <MdCo2/>
+            <MdCo2 />
             <span>Calidad del Aire en Interiores</span>
-            {estadoCV ? <AiOutlineCheck/> : ""}
+            {estadoCV ? <AiOutlineCheck /> : ""}
           </div>
         </div>
 
@@ -154,7 +154,7 @@ function Main() {
                 {rangos.map((rang, i) => {
                   return (
                     <div
-                    key={i}
+                      key={i}
                       style={{
                         flex: "1 1 0%",
                         borderRight: `solid 1px #dedede`,
@@ -168,7 +168,7 @@ function Main() {
                 {rangos.map((rang, i) => {
                   return (
                     <div
-                    key={i}
+                      key={i}
                       class="type-body-4"
                       style={{
                         flex: "1 1 0%",
@@ -213,7 +213,7 @@ function Main() {
         >
           <div className="container__logo__close">
             {/*<img src={logoclose} alt="logo-close" onClick={handleCerrar} />*/}
-            <RiCloseCircleFill className="img" onClick={handleCerrar}/>
+            <RiCloseCircleFill className="img" onClick={handleCerrar} />
           </div>
           {changeOption(i, id, estadoCA)}
         </div>

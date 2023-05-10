@@ -16,10 +16,12 @@
 .container__main__{
     width: 100%; /*width: calc(100% - 300px);*/
     transition: 0.4s;
+    position: relative;
 }
 .container__main__nx{
     width: 100%; /*width: calc(100% - 85px);*/
     transition: 0.4s;
+    position: relative;
 }
 .sidebar{
     top: 0;

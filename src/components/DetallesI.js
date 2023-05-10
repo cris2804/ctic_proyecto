@@ -32,7 +32,9 @@ export default function DetallesI({ id }) {
   useEffect(() => {
     const fetchData = async () => {
       const promises = results.map((d) => {
-        return fetch(`http://192.168.52.232:9090/api/v1/carga-viral/${d.idb}?last=1`)
+        return fetch(
+          `http://192.168.52.232:9090/api/v1/carga-viral/${d.idb}?last=1`
+        )
           .then((response) => response.json())
           .then((data) => {
             let col = "";
@@ -80,11 +82,11 @@ export default function DetallesI({ id }) {
   const handleInputChange = (event) => {
     const value = event.target.value;
     setInputValue(value);
-    if(!value){
+    if (!value) {
       setResults(dat);
-    }else{
-      const filteredResults = dat.filter(
-        (item) => item.lugar.toLowerCase().includes(inputValue.toLowerCase())
+    } else {
+      const filteredResults = dat.filter((item) =>
+        item.lugar.toLowerCase().includes(inputValue.toLowerCase())
       );
       setResults(filteredResults);
     }
@@ -93,7 +95,7 @@ export default function DetallesI({ id }) {
   const handleButtonClick = () => {
     //console.log(inputValue);
     //const filteredResults = dat.filter(
-      //(item) => item.lugar.toLowerCase().includes(inputValue.toLowerCase())
+    //(item) => item.lugar.toLowerCase().includes(inputValue.toLowerCase())
     //);
     //setResults(filteredResults);
   };

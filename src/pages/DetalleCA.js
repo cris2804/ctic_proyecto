@@ -216,8 +216,7 @@ export default function DetalleCA() {
                 CLIMA
               </div>
               <div style={{ marginLeft: "10px", fontSize: "20px" }}>
-                ¿Cuál es el clima actual en el laboratorio Calidad de Aire
-                (CTIC)?
+                ¿Cuál es el clima actual en {obtenerNombre(id)}?
               </div>
             </div>
             <div
@@ -448,9 +447,9 @@ export default function DetalleCA() {
             <div
               className="container__detalle__descargar__btn"
               style={{
-                paddingTop: "20px",
-                paddingBottom: "30px",
-                textAlign: "center",
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "30px"
               }}
             >
               <button
