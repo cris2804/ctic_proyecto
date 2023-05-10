@@ -449,7 +449,8 @@ export default function DetalleCA() {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                marginTop: "30px"
+                marginTop: "30px",
+                marginBottom: "30px"
               }}
             >
               <button
