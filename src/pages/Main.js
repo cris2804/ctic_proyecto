@@ -146,7 +146,7 @@ function Main() {
               <div className="map-legend-title">
                 <span class="type-subtitle-3 text-smoke-120">
                   {" "}
-                  {estadoCA ? "INCA" : "ppm"}{" "}
+                  {estadoCA ? "INCA" : "CO2 (ppm)"}{" "}
                 </span>
                 {/*<span class="type-subtitle-3 text-smoke-60"> Mediciones más recientes</span>*/}
               </div>

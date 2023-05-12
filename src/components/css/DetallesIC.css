@@ -2,3 +2,44 @@
     text-transform: uppercase;
     font-size: 1.5rem;
 }
+.item2{
+    color: black;
+    background-color: #F0F0F0;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+.container__datos__cvthbg{
+    border-radius: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.container__datos__c img{
+    height: 120px;
+}
+.container__datos__vth{
+    display: flex;
+    flex-direction: column;
+}
+.container__th{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+}
+.container__datos__v{
+    background-color: white;
+    width: 200px;
+    height: 50px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container__datos__b{
+    font-size: 1.1rem;
+}
+
+.container__btn__vermas{
+    margin-top: 30px;
+}
