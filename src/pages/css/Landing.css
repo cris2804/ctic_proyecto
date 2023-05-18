@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+
+.container__all__landing {
+  font-family: "Space Grotesk", sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  background: white;
+}
+.container__landing {
+  height: 100vh;
+}
+.container__header {
+  padding-top: 20px;
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+.container__header img {
+  height: 50px;
+}
+.container__landing .container__titulo {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+/**/
+.container__footer {
+  background: #21242d;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.container__footer .container__logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  color: #fff;
+  font-size: 1.2rem;
+}
+.container__footer .container__logos li {
+  list-style: none;
+}
+
+.container__texto__ {
+  text-align: center;
+  color: white;
+  font-size: 0.8rem;
+}
+
+/*
+    .contenedor{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }*/
+.contenedor {
+  margin-top: 50px;
+  display: flex;
+  gap: 2%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.contenedor a{
+    width: 20%;
+    margin-bottom: 50px;
+}
+.contenedor figure {
+  position: relative;
+  height: 250px;
+  cursor: pointer;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+}
+.contenedor figure img {
+  width: 100%;
+  height: 100%;
+  transition: all 400ms ease-out;
+  will-change: transform;
+}
+.contenedor figure .capa {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 103, 123, 0.7);
+  transition: all 400ms ease-out;
+  opacity: 0;
+  visibility: hidden;
+  text-align: center;
+}
+.contenedor figure:hover > .capa {
+  opacity: 1;
+  visibility: visible;
+}
+.contenedor figure:hover > .capa h3 {
+  margin-top: 70px;
+  margin-bottom: 15px;
+}
+.contenedor figure:hover > img {
+  transform: scale(1.3);
+}
+.contenedor figure .capa h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 120px;
+  transition: all 400ms ease-out;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+.contenedor figure .capa p {
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  width: 100%;
+  max-width: 220px;
+  margin: auto;
+}

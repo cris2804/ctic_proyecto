@@ -16,7 +16,7 @@ import FaqCAE from "./pages/FaqCAE";
 import Grafico3 from "./components/Grafico3";
 import DetalleCAI from "./pages/DetalleCAI";
 import ComedorCAI from "./pages/ComedorCAI";
-
+import Landing from "./pages/Landing";
 import { BsArrowLeftShort, BsChevronDown } from "react-icons/bs";
 import { RiDashboardFill } from "react-icons/ri";
 import icono from "./favicon.ico";
@@ -28,7 +28,7 @@ function App() {
   const [submenuOpen, setSubmenuOpen] = useState(0);
 
   const Menus = [
-    { title: "Dashboard", spacing: true, icon: <RiDashboardFill />, link: "/" },
+    { title: "Dashboard", spacing: true, icon: <RiDashboardFill />, link: "/calidad-del-aire" },
     {
       title: "Calidad del aire Interiores",
       icon: <MdCo2 />,
@@ -161,7 +161,8 @@ function App() {
       <div className={open ? "container__main__" : "container__main__nx"}>
         <Router>
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<Landing/>}/>
+            <Route path="/calidad-del-aire" element={<Main />} />
             <Route
               path="/calidad-del-aire-exteriores"
               element={<DetalleCA />}
