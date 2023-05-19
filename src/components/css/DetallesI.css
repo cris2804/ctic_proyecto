@@ -142,7 +142,6 @@
     margin-top: 20px;
     font-size: .9rem;
     line-height: 1.42;
-    padding: 5px 30px;
     font-weight: normal;
     border-width: 2px;
     border-style: solid;
@@ -157,11 +156,12 @@
     justify-content: center;
 }
 .container__btn__ver__mas a{
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     color: white;
+    padding: 5px 30px;
 }
 .container__btn__ver__mas a:hover{
     cursor: pointer;
