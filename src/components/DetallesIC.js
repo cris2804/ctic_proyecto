@@ -20,18 +20,18 @@ export default function DetallesIC({ id }) {
       <div className="item2">
         <div className="contenido show">
           <div
-            className="container__datos__cvthbg"
+            className="container__datos__cvthbg2"
             style={{ background: "#9AD64D" }}
           >
             {/*style={{ background: `${item.color}` }}
                 >*/}
             <div className="container__datos__cvthb">
-              <div className="container__datos__c">
+              <div className="container__datos__c2">
                 <img src={happy} alt="logo" />
               </div>
               <div className="container__datos__vthb">
-                <div className="container__datos__vth">
-                  <div className="container__th">
+                <div className="container__datos__vth2">
+                  <div className="container__th2">
                     <div className="container__datos__t">
                       <DeviceThermostatIcon className="icon__t" />{" "}
                       {/*item.temperatura*/} 25 ºC
@@ -41,16 +41,16 @@ export default function DetallesIC({ id }) {
                       {/*item.humedad*/} 20 %
                     </div>
                   </div>
-                  <div className="container__datos__v">
+                  <div className="container__datos__v2">
                     CO2: {/*item.co2*/} 1201 ppm
                   </div>
-                  <div className="container__datos__b">
+                  <div className="container__datos__b2">
                     Calidad del aire: Buena {/*item.estado*/}
                   </div>
                 </div>
               </div>
             </div>
-            <div className="container__btn__vermas">
+            <div className="container__btn__vermas2">
               <div className="container__btn__ver__mas">
                 <a href="/calidad-del-aire-interiores-comedor-universitario">
                   <BarChartSharpIcon /> VER GRAFICA
