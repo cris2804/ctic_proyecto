@@ -54,7 +54,7 @@
   color: #fffdfe;
   backdrop-filter: blur(0px);
   background-blend-mode: multiply;
-  background-image: linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.2));
+  background-image: linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.4));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,8 +63,9 @@
 }
 .container__landing .container__titulo p{
   font-size: 1.3rem;
-  font-weight: 500;
-  color: #02EEE9;
+  font-weight: 500;/*
+  color: #02EEE9;*/
+  color: white;
 }
 
 .container__pregunta{
