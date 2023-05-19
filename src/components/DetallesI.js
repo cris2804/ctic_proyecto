@@ -101,7 +101,7 @@ export default function DetallesI({ id }) {
   };
 
   //acordeon
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState(0);
   const toggle = (i) => {
     if (selected === i) {
       setSelected(null);
