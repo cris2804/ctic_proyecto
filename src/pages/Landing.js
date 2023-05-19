@@ -1,6 +1,7 @@
 import "./css/Landing.css";
 import { BsFacebook, BsTwitter, BsLinkedin, BsTiktok } from "react-icons/bs";
 import logouni from "./images/logouni.png";
+import Fade from 'react-reveal/Fade'
 
 const smartcampus = [
   {
@@ -73,19 +74,21 @@ export default function Landing() {
             className="imagen__fondo"
           />
           <div className="container__header">
-            <img src={logouni} alt="logo uni" />
+          <Fade left delay ={200}><img src={logouni} alt="logo uni" /></Fade>
             <div className="container__nombre__uni">
-              UNIVERSIDAD NACIONAL DE INGENIERIA
+            <Fade right delay ={200}>UNIVERSIDAD NACIONAL DE INGENIERIA</Fade>
             </div>
           </div>
           <div className="container__titulo">
-            <span>SMART CAMPUS</span>
-            <p>Innovación educativa en un entorno conectado. Descubre un <br></br>campus inteligente, donde la tecnología redefine la experiencia<br></br> universitaria. Bienvenido al futuro de la educación.</p>
+            <span>
+            <Fade bottom delay ={500}>SMART CAMPUS</Fade>
+            </span>
+            <p><Fade bottom delay ={800}>Innovación educativa en un entorno conectado. Descubre un</Fade> <Fade bottom delay ={1100}>campus inteligente, donde la tecnología redefine la experiencia</Fade> <Fade bottom delay ={1200}>universitaria. Bienvenido al futuro de la educación.</Fade></p>
           </div>
         </div>
 
         <div className="container__pregunta">
-          ¿Qué encontrarás en el Smart Campus?
+        <Fade top delay ={1500}>¿Qué encontrarás en el Smart Campus?</Fade>
         </div>
 
         <div class="contenedor">
