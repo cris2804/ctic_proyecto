@@ -78,11 +78,14 @@ export default function Landing() {
               UNIVERSIDAD NACIONAL DE INGENIERIA
             </div>
           </div>
-          <div className="container__titulo">SMART CAMPUS</div>
+          <div className="container__titulo">
+            <span>SMART CAMPUS</span>
+            <p>Innovación educativa en un entorno conectado. Descubre un <br></br>campus inteligente, donde la tecnología redefine la experiencia<br></br> universitaria. Bienvenido al futuro de la educación.</p>
+          </div>
         </div>
 
         <div className="container__pregunta">
-            ¿Qué encontrarás en el Smart Campus?
+          ¿Qué encontrarás en el Smart Campus?
         </div>
 
         <div class="contenedor">
