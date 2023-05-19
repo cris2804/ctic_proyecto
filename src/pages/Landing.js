@@ -1,7 +1,7 @@
 import "./css/Landing.css";
 import { BsFacebook, BsTwitter, BsLinkedin, BsTiktok } from "react-icons/bs";
 import logouni from "./images/logouni.png";
-import Fade from 'react-reveal/Fade'
+import Fade from "react-reveal/Fade";
 
 const smartcampus = [
   {
@@ -74,39 +74,62 @@ export default function Landing() {
             className="imagen__fondo"
           />
           <div className="container__header">
-          <Fade left delay ={200}><img src={logouni} alt="logo uni" /></Fade>
+            <Fade left delay={200}>
+              <img src={logouni} alt="logo uni" />
+            </Fade>
             <div className="container__nombre__uni">
-            <Fade right delay ={200}>UNIVERSIDAD NACIONAL DE INGENIERIA</Fade>
+              <Fade right delay={200}>
+                UNIVERSIDAD NACIONAL DE INGENIERIA
+              </Fade>
             </div>
           </div>
           <div className="container__titulo">
             <span>
-            <Fade bottom delay ={500}>SMART CAMPUS</Fade>
+              <Fade bottom delay={500}>
+                SMART CAMPUS
+              </Fade>
             </span>
-            <p><Fade bottom delay ={800}>Innovación educativa en un entorno conectado. Descubre un</Fade> <Fade bottom delay ={1100}>campus inteligente, donde la tecnología redefine la experiencia</Fade> <Fade bottom delay ={1200}>universitaria. Bienvenido al futuro de la educación.</Fade></p>
+            <p>
+              <Fade bottom delay={800}>
+                Innovación educativa en un entorno conectado. Descubre un
+              </Fade>{" "}
+              <Fade bottom delay={1100}>
+                campus inteligente, donde la tecnología redefine la experiencia
+              </Fade>{" "}
+              <Fade bottom delay={1200}>
+                universitaria. Bienvenido al futuro de la educación.
+              </Fade>
+            </p>
           </div>
         </div>
 
         <div className="container__pregunta">
-        <Fade top delay ={1500}>¿Qué encontrarás en el Smart Campus?</Fade>
+          <Fade top delay={1500}>
+            ¿Qué encontrarás en el Smart Campus?
+          </Fade>
         </div>
 
         <div class="contenedor">
           {smartcampus.map((sc, index) => {
+            const tiempo = 1500 + 200*(index+1)
             return (
-              <a
-                href={sc.link}
-                target={index === 0 ? `_blank` : "_self"}
-                rel="noopener noreferrer"
-              >
-                <figure>
-                  <img src={sc.imagen} alt="imagen-ca" />
-                  <div class="capa">
-                    <h3>{sc.titulo}</h3>
-                    <p>{sc.descripcion}</p>
-                  </div>
-                </figure>
-              </a>
+              <>
+                <Fade right delay={tiempo}>
+                  <a
+                    href={sc.link}
+                    target={index === 0 ? `_blank` : "_self"}
+                    rel="noopener noreferrer"
+                  >
+                    <figure>
+                      <img src={sc.imagen} alt="imagen-ca" />
+                      <div class="capa">
+                        <h3>{sc.titulo}</h3>
+                        <p>{sc.descripcion}</p>
+                      </div>
+                    </figure>
+                  </a>
+                </Fade>
+              </>
             );
           })}
         </div>
