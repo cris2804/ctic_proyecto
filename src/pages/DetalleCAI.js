@@ -27,15 +27,16 @@ const gases = [
   },
 ];
 
-function Graficar(opc, nom) {
+function Graficar(opc, nom, id) {
   const datos = Array.from({ length: 20 }, () => {
     return {
       time: new Date().toLocaleTimeString(),
       value: Math.floor(Math.random() * 500),
     };
   });
+
   if (opc === 0) {
-    return <Grafico nombre={nom} datos={datos} />;
+    return <Grafico nombre={nom} datos={datos} id= {id} />;
   } else if (opc === 1) {
     return <Grafico2 cantidad={96} nombre={nom} />;
   }
@@ -183,7 +184,7 @@ export default function DetalleCAI() {
 
   const handleOpcion2 = (opc) => {
     setOpcion(opc);
-    console.log(opc);
+    //console.log(opc);
   };
 
   //para el select
@@ -485,7 +486,7 @@ export default function DetalleCAI() {
               </div>*/}
             </div>
             <div className="container__grafico">
-              {Graficar(0, opcion)} {/*en vez de 0 va seleccionado */}
+              {Graficar(0, opcion, retornaidb(id))} {/*en vez de 0 va seleccionado */}
             </div>
           </div>
         </div>

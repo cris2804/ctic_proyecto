@@ -123,7 +123,7 @@ export default function ComedorCAI() {
   const [showCalendar1, setShowCalendar1] = useState(false);
   const [showCalendar2, setShowCalendar2] = useState(false);
   //const [selectedOption, setSelectedOption] = useState('');
-  const [dat, setDat] = useState(gases);
+  //const [dat, setDat] = useState(gases);
 
   /*--- */
   const [isChecked, setIsChecked] = useState(false);
@@ -200,33 +200,33 @@ export default function ComedorCAI() {
   /*--- */
   function handleCheckboxChange(event) {
     setIsChecked(event.target.checked);
-    if (isChecked) {
+    /*if (isChecked) {
       const newArray = dat.filter((obj) => obj.key !== 1);
       setDat(newArray);
     } else {
       const newArray = dat;
       newArray.unshift({ key: 1, nombre: "Co2" });
-    }
+    }*/
   }
   function handleCheckboxChanget(event) {
     setIsCheckedt(event.target.checked);
-    if (isCheckedt) {
+    /*if (isCheckedt) {
       const newArray = dat.filter((obj) => obj.key !== 2);
       setDat(newArray);
     } else {
       const newArray = dat;
       newArray.push({ key: 2, nombre: "Temperatura" });
-    }
+    }*/
   }
   function handleCheckboxChangeh(event) {
     setIsCheckedh(event.target.checked);
-    if (isCheckedh) {
+    /*if (isCheckedh) {
       const newArray = dat.filter((obj) => obj.key !== 3);
       setDat(newArray);
     } else {
       const newArray = dat;
       newArray.push({ key: 3, nombre: "Humedad" });
-    }
+    }*/
   }
 
   return (
