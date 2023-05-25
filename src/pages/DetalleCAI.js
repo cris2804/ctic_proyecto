@@ -368,7 +368,8 @@ export default function DetalleCAI() {
                 id="cbox1"
                 value="first_checkbox"
                 onChange={handleCheckboxChange}
-              ></input> {/*checked={isCheckedt}*/}
+              ></input>{" "}
+              {/*checked={isCheckedt}*/}
             </div>
             <div className="container__detalle__descargar">
               Temperatura &nbsp;&nbsp;&nbsp;&nbsp;
@@ -377,7 +378,8 @@ export default function DetalleCAI() {
                 id="cbox1"
                 value="first_checkbox"
                 onChange={handleCheckboxChanget}
-              ></input> {/*checked={isCheckedt}*/}
+              ></input>{" "}
+              {/*checked={isCheckedt}*/}
             </div>
             <div className="container__detalle__descargar">
               Humedad
@@ -387,7 +389,8 @@ export default function DetalleCAI() {
                 id="cbox1"
                 value="first_checkbox"
                 onChange={handleCheckboxChangeh}
-              ></input> {/*checked={isCheckedt}*/}
+              ></input>{" "}
+              {/*checked={isCheckedt}*/}
             </div>
             <div className="container__detalle__descargar__btn">
               <button
@@ -472,7 +475,8 @@ export default function DetalleCAI() {
                 {/*className={seleccionado === 0 ? "tiempo__seleccionado" : ""}
                 onClick={() => Seleccionar(0)} */}
                 EN VIVO
-              </div>{/*
+              </div>
+              {/*
               <div
                 className={seleccionado === 1 ? "tiempo__seleccionado" : ""}
                 onClick={() => Seleccionar(1)}
