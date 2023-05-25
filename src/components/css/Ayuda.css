@@ -1,0 +1,52 @@
+.container__detalles{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.container__titulo__detalles{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.container__subtitulo{
+    text-align: center;
+    margin-top: 10px;
+    color: #BFBEBE;
+    font-weight: 600;
+}
+
+.container__hora__fecha{
+    text-align: center;
+    color: #BFBEBE;
+    font-weight: 600;
+}
+
+.container__parrafo{
+    text-align:left;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container__btn__mas__detalles{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container__btn{
+    border: solid 1px #ffffff;
+    padding: 8px 35px 8px 35px;
+}
+
+.container__btn:hover{
+    cursor: pointer;
+}
+
+.container__btn a{
+    text-decoration: none;
+    color: #ffffff;
+}

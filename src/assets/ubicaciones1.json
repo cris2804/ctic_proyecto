@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "CTIC",
+        "logo": "/Bien.png"
+    },
+    {
+        "nombre": "Puerta 5",
+        "logo": "/Moderado.png"
+    },
+    {
+        "nombre": "Puerta 3",
+        "logo": "/PerjudicialSensibles.png"
+    }
+]
