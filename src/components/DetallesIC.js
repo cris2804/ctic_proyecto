@@ -129,7 +129,7 @@ export default function DetallesIC({ id }) {
             </div>
             <div className="container__btn__vermas2">
               <div className="container__btn__ver__mas">
-                <a href="/calidad-del-aire-interiores-comedor-universitario">
+                <a href="/calidad-del-aire-interiores-comedor-universitario?id=sensor 1">
                   <BarChartSharpIcon /> VER GRAFICA
                 </a>
               </div>

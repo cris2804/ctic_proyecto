@@ -149,8 +149,8 @@ export default function DetallesI({ id }) {
                     <div className="container__datos__vthb">
                       <div className="container__datos__vth">
                         <div className="container__datos__v">
-                          CO2: {item.co2} ppm
-                        </div>
+                          CO₂: {item.co2} ppm
+                        </div>{/*}
                         <div className="container__datos__t">
                           <DeviceThermostatIcon className="icon__t" />{" "}
                           {item.temperatura} ºC
@@ -158,7 +158,7 @@ export default function DetallesI({ id }) {
                         <div className="container__datos__h">
                           <OpacitySharpIcon className="icon__h" />{" "}
                           {item.humedad} %
-                        </div>
+                        </div>*/}
                       </div>
                       <div className="container__datos__b">
                         Calidad del aire: {item.estado}

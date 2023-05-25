@@ -41,7 +41,7 @@ function App() {
         },
         {
           title: "Comedor",
-          link: "/calidad-del-aire-interiores-comedor-universitario",
+          link: "/calidad-del-aire-interiores-comedor-universitario?id=sensor 1",
         },
       ],
     },

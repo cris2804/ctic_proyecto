@@ -119,9 +119,9 @@ export default function DetalleCAI() {
   const [dat, setDat] = useState(gases);
 
   /*--- */
-  const [isChecked, setIsChecked] = useState(true);
-  const [isCheckedt, setIsCheckedt] = useState(true);
-  const [isCheckedh, setIsCheckedh] = useState(true);
+  const [isChecked, setIsChecked] = useState(false);
+  const [isCheckedt, setIsCheckedt] = useState(false);
+  const [isCheckedh, setIsCheckedh] = useState(false);
 
   const onChange1 = (date) => {
     setDate1(date);
@@ -282,7 +282,7 @@ export default function DetalleCAI() {
                 <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración">
                   CTIC
                 </option>
-                <option value="/calidad-del-aire-interiores-comedor-universitario">
+                <option value="/calidad-del-aire-interiores-comedor-universitario?id=sensor 1">
                   Comedor Universitario
                 </option>
               </select>
@@ -367,9 +367,9 @@ export default function DetalleCAI() {
                 type="checkbox"
                 id="cbox1"
                 value="first_checkbox"
+                checked={isChecked}
                 onChange={handleCheckboxChange}
               ></input>{" "}
-              {/*checked={isCheckedt}*/}
             </div>
             <div className="container__detalle__descargar">
               Temperatura &nbsp;&nbsp;&nbsp;&nbsp;
@@ -377,9 +377,9 @@ export default function DetalleCAI() {
                 type="checkbox"
                 id="cbox1"
                 value="first_checkbox"
+                checked={isCheckedt}
                 onChange={handleCheckboxChanget}
               ></input>{" "}
-              {/*checked={isCheckedt}*/}
             </div>
             <div className="container__detalle__descargar">
               Humedad
@@ -388,9 +388,9 @@ export default function DetalleCAI() {
                 type="checkbox"
                 id="cbox1"
                 value="first_checkbox"
+                checked={isCheckedh}
                 onChange={handleCheckboxChangeh}
               ></input>{" "}
-              {/*checked={isCheckedt}*/}
             </div>
             <div className="container__detalle__descargar__btn">
               <button
