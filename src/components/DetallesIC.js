@@ -119,7 +119,7 @@ export default function DetallesIC({ id }) {
                     </div>
                   </div>
                   <div className="container__datos__v2">
-                    CO2: {data ? data[9].co2 : ""} ppm
+                    CO₂: {data ? data[9].co2 : ""} ppm
                   </div>
                   <div className="container__datos__b2">
                     Calidad del aire: {data ? data[9].estado : ""}
