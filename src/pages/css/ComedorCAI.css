@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
 .container__caic__banner{
+    font-family: 'Space Grotesk', sans-serif;
     display: flex;
     margin-top: 20px;
     margin-left: 5%;
@@ -7,13 +9,24 @@
     align-items: center;
     font-size: 1.4rem;
     padding: 5px;
+    font-weight: 500;
 }
 .container__caic__banner .imagen img{
     height: 70px;
 }
 
 .container__imagen__sensores{
+    position: relative;
     margin-top: 20px;
     margin-left: 5%;
     margin-right: 5%;
+    border: solid 1px red;
+}
+
+.container__imagen__sensores .container__rango{
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    top: 0;
+    background-color: red;
 }

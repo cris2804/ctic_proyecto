@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
 .container__card{
+    font-family: 'Space Grotesk', sans-serif;
     width: 130px;
     padding: 8px;
     display: flex;
@@ -6,7 +8,7 @@
     gap: 5px;
 }
 .container__card div:nth-child(1){
-    background: #fff;
+    /*background: #fff;*/
     padding: 5px;
 }
 .container__card div:nth-child(2){

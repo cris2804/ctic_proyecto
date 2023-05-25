@@ -1,8 +1,7 @@
 import "./css/ComedorCAI.css";
 import happy from '../components/images/happy.png';
-import serio from '../components/images/serio.png';
-import triste from '../components/images/triste.png';
-//import Card from "../components/Card";
+//import serio from '../components/images/serio.png';
+//import triste from '../components/images/triste.png';
 import PlanoComedor from "../components/comedor/PlanoComedor";
 
 export default function ComedorCAI() {
@@ -24,6 +23,12 @@ export default function ComedorCAI() {
       </div>
       <div className="container__imagen__sensores">
         <PlanoComedor/>
+
+        <div className="container__rango">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
       </div>
     </div>
   );

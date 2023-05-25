@@ -110,7 +110,7 @@ export default function DetalleCAI() {
   }, [id]);
 
   const [seleccionado, setSeleccionado] = useState(0);
-  const [opcion, setOpcion] = useState(null);
+  const [opcion, setOpcion] = useState("Co2");
   const [date1, setDate1] = useState(new Date());
   const [date2, setDate2] = useState(new Date());
   const [showCalendar1, setShowCalendar1] = useState(false);
@@ -367,9 +367,8 @@ export default function DetalleCAI() {
                 type="checkbox"
                 id="cbox1"
                 value="first_checkbox"
-                checked={isChecked}
                 onChange={handleCheckboxChange}
-              ></input>
+              ></input> {/*checked={isCheckedt}*/}
             </div>
             <div className="container__detalle__descargar">
               Temperatura &nbsp;&nbsp;&nbsp;&nbsp;
@@ -377,9 +376,8 @@ export default function DetalleCAI() {
                 type="checkbox"
                 id="cbox1"
                 value="first_checkbox"
-                checked={isCheckedt}
                 onChange={handleCheckboxChanget}
-              ></input>
+              ></input> {/*checked={isCheckedt}*/}
             </div>
             <div className="container__detalle__descargar">
               Humedad
@@ -388,9 +386,8 @@ export default function DetalleCAI() {
                 type="checkbox"
                 id="cbox1"
                 value="first_checkbox"
-                checked={isCheckedh}
                 onChange={handleCheckboxChangeh}
-              ></input>
+              ></input> {/*checked={isCheckedt}*/}
             </div>
             <div className="container__detalle__descargar__btn">
               <button
@@ -458,7 +455,7 @@ export default function DetalleCAI() {
             }}
           >
             <div className="container__tipos__gases__cai">
-              {dat.map((gas) => {
+              {gases.map((gas) => {
                 return (
                   <div
                     key={gas.nombre}
@@ -471,18 +468,17 @@ export default function DetalleCAI() {
               })}
             </div>
             <div className="container__rango__tiempo">
-              <div
-                className={seleccionado === 0 ? "tiempo__seleccionado" : ""}
-                onClick={() => Seleccionar(0)}
-              >
+              <div>
+                {/*className={seleccionado === 0 ? "tiempo__seleccionado" : ""}
+                onClick={() => Seleccionar(0)} */}
                 EN VIVO
-              </div>
+              </div>{/*
               <div
                 className={seleccionado === 1 ? "tiempo__seleccionado" : ""}
                 onClick={() => Seleccionar(1)}
               >
                 DIA
-              </div>
+              </div>*/}
             </div>
             <div className="container__grafico">
               {Graficar(seleccionado, opcion)}
