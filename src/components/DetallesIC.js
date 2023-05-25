@@ -1,8 +1,8 @@
 import "./css/DetallesIC.css";
 import { obtenerhora } from "./obtenerhora";
 import { obtenerfecha } from "./obtenerfecha";
-import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
-import OpacitySharpIcon from "@mui/icons-material/OpacitySharp";
+//import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
+//import OpacitySharpIcon from "@mui/icons-material/OpacitySharp";
 import BarChartSharpIcon from "@mui/icons-material/BarChartSharp";
 import happy from "./images/happy.png";
 import { useState, useEffect } from "react";

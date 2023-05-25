@@ -11,7 +11,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { MdLocationPin } from "react-icons/md";
-import { BsFillBuildingFill } from "react-icons/bs";
+//import { BsFillBuildingFill } from "react-icons/bs";
 import { FcElectricalSensor } from "react-icons/fc";
 
 const gases = [
@@ -116,7 +116,7 @@ export default function ComedorCAI() {
     fetchData();
   }, [id]);
 
-  const [seleccionado, setSeleccionado] = useState(0);
+  //const [seleccionado, setSeleccionado] = useState(0);
   const [opcion, setOpcion] = useState("Co2");
   const [date1, setDate1] = useState(new Date());
   const [date2, setDate2] = useState(new Date());
@@ -183,9 +183,9 @@ export default function ComedorCAI() {
         console.error("Error al llamar a la API:", error);
       });
   };
-  const Seleccionar = (indice) => {
+  /*const Seleccionar = (indice) => {
     setSeleccionado(indice);
-  };
+  };*/
 
   const handleOpcion2 = (opc) => {
     setOpcion(opc);
@@ -525,7 +525,7 @@ export default function ComedorCAI() {
               </div>*/}
             </div>
             <div className="container__grafico">
-              {Graficar(seleccionado, opcion)}
+              {Graficar(0, opcion)}
             </div>
           </div>
         </div>
