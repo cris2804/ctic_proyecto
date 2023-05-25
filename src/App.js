@@ -22,6 +22,7 @@ import { RiDashboardFill } from "react-icons/ri";
 import icono from "./favicon.ico";
 import { SiWindicss } from "react-icons/si";
 import { MdCo2 } from "react-icons/md";
+import Plano from "./components/comedor/PlanoComedor";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -203,6 +204,8 @@ function App() {
             />
             <Route path="/smart-parking" element={<SmartParking />} />
             <Route path="/localización/101" element={<SmartParking />} />
+            <Route path="/temporal"
+            element={<Plano/>} />
           </Routes>
         </Router>
       </div>
