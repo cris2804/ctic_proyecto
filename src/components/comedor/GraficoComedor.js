@@ -35,7 +35,7 @@ export default function GraficoComedor() {
         fetchData(type);
         timer = setInterval(async()=>{
             fetchData(type);
-        },600000);
+        },60000);
         return () =>{clearInterval(timer)};
     },[type]);
     

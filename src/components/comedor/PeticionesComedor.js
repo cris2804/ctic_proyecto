@@ -3,7 +3,7 @@ var requestOptions = {
     redirect: 'follow'
 };
 const url_basic = "http://192.168.52.232:9090/api/v1/carga-viral/";
-const comedirIds = [2201,2002,2203,2004,2205,2208,2209,2210,2212,2213];
+const comedirIds = [2201,2202,2203,2204,2205,2208,2209,2210,2212,2213];
 const cantidad = 25;
 function formatTimestamp(timestamp) {
     const date = new Date(timestamp);
