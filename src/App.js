@@ -24,6 +24,7 @@ import { SiWindicss } from "react-icons/si";
 import { MdCo2 } from "react-icons/md";
 
 import GraficoComedor from './components/comedor/GraficoComedor';
+import Grafico2 from "./components/Grafico2";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -206,6 +207,7 @@ function App() {
             <Route path="/smart-parking" element={<SmartParking />} />
             <Route path="/localización/101" element={<SmartParking />} />
             <Route path="/temporal" element={<GraficoComedor/>}/>
+            <Route path="prueba-grafico" element={<Grafico2/>}/>
           </Routes>
         </Router>
       </div>
