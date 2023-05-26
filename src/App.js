@@ -24,7 +24,7 @@ import { SiWindicss } from "react-icons/si";
 import { MdCo2 } from "react-icons/md";
 
 import GraficoComedor from './components/comedor/GraficoComedor';
-import Grafico2 from "./components/Grafico2";
+import Grafico2 from "./components/comedor/Grafico2";
 
 function App() {
   const [open, setOpen] = useState(false);
