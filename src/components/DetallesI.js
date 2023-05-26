@@ -75,6 +75,12 @@ export default function DetallesI({ id }) {
     };
 
     fetchData();
+    const interval = setInterval(fetchData, 60000); // Llama a la función fetchData cada 8 minutos
+
+    // Limpia el intervalo al desmontar el componente
+    return () => {
+      clearInterval(interval);
+    };
   }, [results]);
 
   const [inputValue, setInputValue] = useState("");

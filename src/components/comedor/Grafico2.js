@@ -1,61 +1,28 @@
-import React from "react";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import React from 'react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceArea } from 'recharts';
 
-const data1 = [
-  { name: "A", value: 10 },
-  { name: "B", value: 15 },
-  { name: "C", value: null },
-  { name: "D", value: 12 },
+const data = [
+  { time: '10:00:00', value: 200 },
+  { time: '10:04:00', value: 900 },
+  { time: '10:08:00', value: 1100 },
   // ...
 ];
 
-const data2 = [
-  { name: "A", value: null },
-  { name: "B", value: 25 },
-  { name: "C", value: 18 },
-  { name: "D", value: 20 },
-  // ...
-];
-
-const Grafico2 = () => {
+const LineChartExample = () => {
   return (
-    <div className="grafico">
-      <ResponsiveContainer width="100%" aspect={3}>
-        <LineChart width={500} height={300}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="value"
-            data={data1}
-            stroke="blue"
-            name="Line 1"
-            connectNulls={true}
-          />
-          <Line
-            type="monotone"
-            dataKey="value"
-            data={data2}
-            stroke="red"
-            name="Line 2"
-            connectNulls={true}
-          />
-        </LineChart>
-      </ResponsiveContainer>
-    </div>
+    <LineChart width={500} height={300} data={data}>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="time" />
+      <YAxis  domain={[0,1500]}/>
+      <Tooltip />
+      <Legend />
+      <Line type="monotone" dataKey="value" stroke="blue" name="Line 1" connectNulls={true} />
+
+      <ReferenceArea y1={0} y2={800} fill="green" fillOpacity={0.3} />
+      <ReferenceArea y1={800} y2={1000} fill="orange" fillOpacity={0.3} />
+      <ReferenceArea y1={1000} y2={1500} fill="red" fillOpacity={0.3} />
+    </LineChart>
   );
 };
 
-export default Grafico2;
+export default LineChartExample;
