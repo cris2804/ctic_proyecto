@@ -108,6 +108,12 @@ export default function DetalleCAI() {
     };
 
     fetchData();
+    const interval = setInterval(fetchData, 60000); // Llama a la función fetchData cada 8 minutos
+
+    // Limpia el intervalo al desmontar el componente
+    return () => {
+      clearInterval(interval);
+    };
   }, [id]);
 
   //const [seleccionado, setSeleccionado] = useState(0);

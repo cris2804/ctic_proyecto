@@ -14,7 +14,7 @@ import "./css/Grafico.css";
 const Grafico = ({ nombre, datos, id }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-/*
+  /*
   useEffect(() => {
     setData(datos);
   }, [datos]);*/
@@ -53,10 +53,10 @@ const Grafico = ({ nombre, datos, id }) => {
           y={cy - 5}
           width={10}
           height={10}
-          fill="#F88F48"
+          fill="#FF4242"
           viewBox="0 0 10 10"
         >
-          <circle cx={5} cy={5} r={5} fill="#F88F48" />
+          <circle cx={5} cy={5} r={5} fill="#FF4242" />
         </svg>
       );
     }
@@ -85,13 +85,18 @@ const Grafico = ({ nombre, datos, id }) => {
         const newData = data.map((item) => {
           const time = new Date(item.time_index);
           //const hourMinuteSecond = time.toISOString().substring(11, 19); // Captura la parte de la cadena con hora:minuto:segundo
-          const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+          const options = {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false,
+          };
           const hourMinuteSecond = time.toLocaleTimeString([], options);
 
           let val = 0;
-          if(nombre === "Co2") val = item.dioxido_de_carbono;
-          else if(nombre === "Temperatura") val = item.temperatura;
-          else if(nombre === "Humedad") val = item.humedad;
+          if (nombre === "Co2") val = item.dioxido_de_carbono;
+          else if (nombre === "Temperatura") val = item.temperatura;
+          else if (nombre === "Humedad") val = item.humedad;
           return {
             dioxido_de_carbono: val,
             time_index: hourMinuteSecond,
@@ -100,13 +105,19 @@ const Grafico = ({ nombre, datos, id }) => {
 
         setData(newData);
         setLoading(false);
-        //console.log(data);
+        console.log("hola")
       } catch (error) {
         console.error(error);
       }
     };
 
     fetchData();
+    const interval = setInterval(fetchData, 60000); // Llama a la función fetchData cada 8 minutos
+
+    // Limpia el intervalo al desmontar el componente
+    return () => {
+      clearInterval(interval);
+    };
   }, [id, nombre]);
   if (loading) {
     return <div>Cargando...</div>; // O cualquier indicador de carga que desees mostrar
@@ -130,7 +141,8 @@ const Grafico = ({ nombre, datos, id }) => {
           <XAxis dataKey="time_index" reversed={true}>
             <Label value="Fecha" offset={0} position="bottom" fill="#000" />
           </XAxis>
-          <YAxis >{/*domain={[0, 1200]} */}
+          <YAxis>
+            {/*domain={[0, 1200]} */}
             <Label
               value={nombre}
               offset={5}
