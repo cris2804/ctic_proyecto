@@ -13,9 +13,11 @@ import "./css/Grafico.css";
 
 const Grafico = ({ nombre, datos, id }) => {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+/*
   useEffect(() => {
     setData(datos);
-  }, [datos]);
+  }, [datos]);*/
 
   const CustomDot = ({ cx, cy, stroke, fill, payload, value }) => {
     if (value < 50 && value > 0) {
@@ -99,7 +101,7 @@ const Grafico = ({ nombre, datos, id }) => {
     }
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     const interval = setInterval(() => {
       // Genera un nuevo punto aleatorio
       const newPoint = {
@@ -110,7 +112,7 @@ const Grafico = ({ nombre, datos, id }) => {
     }, 50000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, []);*/
 
   useEffect(() => {
     const fetchData = async () => {
@@ -130,6 +132,7 @@ const Grafico = ({ nombre, datos, id }) => {
         });
 
         setData(newData);
+        setLoading(false);
         console.log(data);
       } catch (error) {
         console.error(error);
@@ -138,6 +141,9 @@ const Grafico = ({ nombre, datos, id }) => {
 
     fetchData();
   }, [id]);
+  if (loading) {
+    return <div>Cargando...</div>; // O cualquier indicador de carga que desees mostrar
+  }
 
   return (
     <div className="grafico">
@@ -154,7 +160,7 @@ const Grafico = ({ nombre, datos, id }) => {
           }}
         >
           <CartesianGrid stroke="#eee" />
-          <XAxis dataKey="time" reversed={false}>
+          <XAxis dataKey="time_index" reversed={false}>
             <Label value="Fecha" offset={0} position="bottom" fill="#000" />
           </XAxis>
           <YAxis domain={[0, 600]}>
