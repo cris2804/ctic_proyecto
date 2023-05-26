@@ -1,5 +1,5 @@
 import React from 'react'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'; //Legend,
 import { pedirSensores,comedirIds } from './PeticionesComedor';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -9,12 +9,12 @@ const styleContainer = {
     height:'50vh',
     position:'relative'
 }
-const styleFondo = {
+/*const styleFondo = {
     //background: "rgb(245,255,0)",
     //background: "linear-gradient(0deg, rgba(245,255,0,0.6) 0%, rgba(245,255,0,0.6) 20%, rgba(29,201,26,0.6) 50%, rgba(134,66,66,0.6) 70%, rgba(255,0,0,0.6) 100%)",
     width:'calc(100% - 110px)',height:'calc(100% - 40px)',position:'absolute',
     top:5,right:30
-}
+}*/
 const lineColors = ['#8884d8', '#82ca9d', '#ff0000', '#00ff00', '#0000ff', '#ff00ff', '#00ffff', '#ffff00', '#ffa500', '#800080'];
 let timer;
 export default function GraficoComedor() {

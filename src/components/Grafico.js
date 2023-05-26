@@ -84,24 +84,30 @@ const Grafico = ({ nombre, datos, id }) => {
         const data = await response.json();
         const newData = data.map((item) => {
           const time = new Date(item.time_index);
-          const hourMinuteSecond = time.toISOString().substring(11, 19); // Captura la parte de la cadena con hora:minuto:segundo
+          //const hourMinuteSecond = time.toISOString().substring(11, 19); // Captura la parte de la cadena con hora:minuto:segundo
+          const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+          const hourMinuteSecond = time.toLocaleTimeString([], options);
 
+          let val = 0;
+          if(nombre === "Co2") val = item.dioxido_de_carbono;
+          else if(nombre === "Temperatura") val = item.temperatura;
+          else if(nombre === "Humedad") val = item.humedad;
           return {
-            dioxido_de_carbono: item.dioxido_de_carbono,
+            dioxido_de_carbono: val,
             time_index: hourMinuteSecond,
           };
         });
 
         setData(newData);
         setLoading(false);
-        console.log(data);
+        //console.log(data);
       } catch (error) {
         console.error(error);
       }
     };
 
     fetchData();
-  }, [id]);
+  }, [id, nombre]);
   if (loading) {
     return <div>Cargando...</div>; // O cualquier indicador de carga que desees mostrar
   }
@@ -121,10 +127,10 @@ const Grafico = ({ nombre, datos, id }) => {
           }}
         >
           <CartesianGrid stroke="#eee" />
-          <XAxis dataKey="time_index" reversed={false}>
+          <XAxis dataKey="time_index" reversed={true}>
             <Label value="Fecha" offset={0} position="bottom" fill="#000" />
           </XAxis>
-          <YAxis domain={[0, 1200]}>
+          <YAxis >{/*domain={[0, 1200]} */}
             <Label
               value={nombre}
               offset={5}

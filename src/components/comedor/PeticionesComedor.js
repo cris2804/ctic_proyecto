@@ -30,7 +30,7 @@ const pedirSensores = async (type = "dioxido_de_carbono") =>{
     });
     
     const allResults = await Promise.all(fetchPromises)
-    const resultado = allResults.filter(e => (e.length!=0));
+    const resultado = allResults.filter(e => (e.length!==0));
     
     const n_res = resultado.length;
     let suma = 0;
