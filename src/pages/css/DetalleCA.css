@@ -208,10 +208,10 @@
 }
 .tiempo__seleccionado {
   border-bottom: solid 2px blue;
-}
+}/*
 .container__rango__tiempo div:hover {
   cursor: pointer;
-}
+}*/
 
 /*----------------*/
 .container__tipos__gases__ca {

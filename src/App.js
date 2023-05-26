@@ -24,6 +24,8 @@ import { SiWindicss } from "react-icons/si";
 import { MdCo2 } from "react-icons/md";
 import Plano from "./components/comedor/PlanoComedor";
 
+import GraficoComedor from './components/comedor/GraficoComedor';
+
 function App() {
   const [open, setOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(0);
@@ -42,7 +44,7 @@ function App() {
         },
         {
           title: "Comedor",
-          link: "/calidad-del-aire-interiores-comedor-universitario",
+          link: "/calidad-del-aire-interiores-comedor-universitario?id=sensor 1",
         },
       ],
     },

@@ -84,7 +84,7 @@
 }
 .container__datos__cvthb{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around; /*antes era space-between*/
 }
 .container__datos__c img{
     height: 60px;

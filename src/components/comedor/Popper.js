@@ -1,7 +1,10 @@
 import React from 'react'
+import Card from '../Card'
 
 export default function Popper({content}) {
   return (
-    <div>Popper {content}</div>
+    <div>
+      <Card/>
+    </div>
   )
 }

@@ -1,8 +1,8 @@
 import "./css/DetallesIC.css";
 import { obtenerhora } from "./obtenerhora";
 import { obtenerfecha } from "./obtenerfecha";
-import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
-import OpacitySharpIcon from "@mui/icons-material/OpacitySharp";
+//import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
+//import OpacitySharpIcon from "@mui/icons-material/OpacitySharp";
 import BarChartSharpIcon from "@mui/icons-material/BarChartSharp";
 import happy from "./images/happy.png";
 import { useState, useEffect } from "react";
@@ -98,10 +98,10 @@ export default function DetallesIC({ id }) {
       <div className="container__hora__fecha">{`${obtenerhora()}, ${obtenerfecha()}`}</div>
       <div className="item2">
         <div className="contenido show">
-          <div className="container__datos__cvthbg2"
+          <div
+            className="container__datos__cvthbg2"
             style={{ background: `${data ? data[9].color : ""}` }}
           >
-
             <div className="container__datos__cvthb">
               <div className="container__datos__c2">
                 <img src={data ? data[9].imagen : ""} alt="logo" />
@@ -109,17 +109,17 @@ export default function DetallesIC({ id }) {
               <div className="container__datos__vthb">
                 <div className="container__datos__vth2">
                   <div className="container__th2">
-                    <div className="container__datos__t">
+                    {/*<div className="container__datos__t">
                       <DeviceThermostatIcon className="icon__t" />{" "}
                       {data ? data[9].temperatura : ""} ºC
                     </div>
                     <div className="container__datos__h">
                       <OpacitySharpIcon className="icon__h" /> {data ? data[9].humedad : ""}{" "}
                       %
-                    </div>
+  </div>*/}
                   </div>
                   <div className="container__datos__v2">
-                    CO2: {data ? data[9].co2 : ""} ppm
+                    CO₂: {data ? data[9].co2 : ""} ppm
                   </div>
                   <div className="container__datos__b2">
                     Calidad del aire: {data ? data[9].estado : ""}
@@ -129,7 +129,7 @@ export default function DetallesIC({ id }) {
             </div>
             <div className="container__btn__vermas2">
               <div className="container__btn__ver__mas">
-                <a href="/calidad-del-aire-interiores-comedor-universitario">
+                <a href="/calidad-del-aire-interiores-comedor-universitario?id=sensor 1">
                   <BarChartSharpIcon /> VER GRAFICA
                 </a>
               </div>

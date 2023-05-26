@@ -27,15 +27,16 @@ const gases = [
   },
 ];
 
-function Graficar(opc, nom) {
+function Graficar(opc, nom, id) {
   const datos = Array.from({ length: 20 }, () => {
     return {
       time: new Date().toLocaleTimeString(),
       value: Math.floor(Math.random() * 500),
     };
   });
+
   if (opc === 0) {
-    return <Grafico nombre={nom} datos={datos} />;
+    return <Grafico nombre={nom} datos={datos} id= {id} />;
   } else if (opc === 1) {
     return <Grafico2 cantidad={96} nombre={nom} />;
   }
@@ -107,21 +108,27 @@ export default function DetalleCAI() {
     };
 
     fetchData();
+    const interval = setInterval(fetchData, 60000); // Llama a la función fetchData cada 8 minutos
+
+    // Limpia el intervalo al desmontar el componente
+    return () => {
+      clearInterval(interval);
+    };
   }, [id]);
 
-  const [seleccionado, setSeleccionado] = useState(0);
-  const [opcion, setOpcion] = useState(null);
+  //const [seleccionado, setSeleccionado] = useState(0);
+  const [opcion, setOpcion] = useState("Co2");
   const [date1, setDate1] = useState(new Date());
   const [date2, setDate2] = useState(new Date());
   const [showCalendar1, setShowCalendar1] = useState(false);
   const [showCalendar2, setShowCalendar2] = useState(false);
   //const [selectedOption, setSelectedOption] = useState('');
-  const [dat, setDat] = useState(gases);
+  //const [dat, setDat] = useState(gases);
 
   /*--- */
-  const [isChecked, setIsChecked] = useState(true);
-  const [isCheckedt, setIsCheckedt] = useState(true);
-  const [isCheckedh, setIsCheckedh] = useState(true);
+  const [isChecked, setIsChecked] = useState(false);
+  const [isCheckedt, setIsCheckedt] = useState(false);
+  const [isCheckedh, setIsCheckedh] = useState(false);
 
   const onChange1 = (date) => {
     setDate1(date);
@@ -177,13 +184,13 @@ export default function DetalleCAI() {
         console.error("Error al llamar a la API:", error);
       });
   };
-  const Seleccionar = (indice) => {
+  /*const Seleccionar = (indice) => {
     setSeleccionado(indice);
-  };
+  };*/
 
   const handleOpcion2 = (opc) => {
     setOpcion(opc);
-    console.log(opc);
+    //console.log(opc);
   };
 
   //para el select
@@ -191,36 +198,36 @@ export default function DetalleCAI() {
     const url = event.target.value;
     window.location.href = url;
   }
-  /*--- */
+
   function handleCheckboxChange(event) {
     setIsChecked(event.target.checked);
-    if (isChecked) {
+    /*if (isChecked) {
       const newArray = dat.filter((obj) => obj.key !== 1);
       setDat(newArray);
     } else {
       const newArray = dat;
       newArray.unshift({ key: 1, nombre: "Co2" });
-    }
+    }*/
   }
   function handleCheckboxChanget(event) {
     setIsCheckedt(event.target.checked);
-    if (isCheckedt) {
+    /*if (isCheckedt) {
       const newArray = dat.filter((obj) => obj.key !== 2);
       setDat(newArray);
     } else {
       const newArray = dat;
       newArray.push({ key: 2, nombre: "Temperatura" });
-    }
+    }*/
   }
   function handleCheckboxChangeh(event) {
     setIsCheckedh(event.target.checked);
-    if (isCheckedh) {
+    /*if (isCheckedh) {
       const newArray = dat.filter((obj) => obj.key !== 3);
       setDat(newArray);
     } else {
       const newArray = dat;
       newArray.push({ key: 3, nombre: "Humedad" });
-    }
+    }*/
   }
 
   return (
@@ -282,7 +289,7 @@ export default function DetalleCAI() {
                 <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración">
                   CTIC
                 </option>
-                <option value="/calidad-del-aire-interiores-comedor-universitario">
+                <option value="/calidad-del-aire-interiores-comedor-universitario?id=sensor 1">
                   Comedor Universitario
                 </option>
               </select>
@@ -369,7 +376,7 @@ export default function DetalleCAI() {
                 value="first_checkbox"
                 checked={isChecked}
                 onChange={handleCheckboxChange}
-              ></input>
+              ></input>{" "}
             </div>
             <div className="container__detalle__descargar">
               Temperatura &nbsp;&nbsp;&nbsp;&nbsp;
@@ -379,7 +386,7 @@ export default function DetalleCAI() {
                 value="first_checkbox"
                 checked={isCheckedt}
                 onChange={handleCheckboxChanget}
-              ></input>
+              ></input>{" "}
             </div>
             <div className="container__detalle__descargar">
               Humedad
@@ -390,7 +397,7 @@ export default function DetalleCAI() {
                 value="first_checkbox"
                 checked={isCheckedh}
                 onChange={handleCheckboxChangeh}
-              ></input>
+              ></input>{" "}
             </div>
             <div className="container__detalle__descargar__btn">
               <button
@@ -458,7 +465,7 @@ export default function DetalleCAI() {
             }}
           >
             <div className="container__tipos__gases__cai">
-              {dat.map((gas) => {
+              {gases.map((gas) => {
                 return (
                   <div
                     key={gas.nombre}
@@ -471,21 +478,21 @@ export default function DetalleCAI() {
               })}
             </div>
             <div className="container__rango__tiempo">
-              <div
-                className={seleccionado === 0 ? "tiempo__seleccionado" : ""}
-                onClick={() => Seleccionar(0)}
-              >
+              <div>
+                {/*className={seleccionado === 0 ? "tiempo__seleccionado" : ""}
+                onClick={() => Seleccionar(0)} */}
                 EN VIVO
               </div>
+              {/*
               <div
                 className={seleccionado === 1 ? "tiempo__seleccionado" : ""}
                 onClick={() => Seleccionar(1)}
               >
                 DIA
-              </div>
+              </div>*/}
             </div>
             <div className="container__grafico">
-              {Graficar(seleccionado, opcion)}
+              {Graficar(0, opcion, retornaidb(id))} {/*en vez de 0 va seleccionado */}
             </div>
           </div>
         </div>
