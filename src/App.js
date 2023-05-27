@@ -25,7 +25,7 @@ import { MdCo2 } from "react-icons/md";
 import Plano from "./components/comedor/PlanoComedor";
 
 import GraficoComedor from './components/comedor/GraficoComedor';
-import CanvasComedor from "./components/comedor/CanvasComedor";
+import Grafico2 from "./components/comedor/Grafico2";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -207,8 +207,7 @@ function App() {
             />
             <Route path="/smart-parking" element={<SmartParking />} />
             <Route path="/localización/101" element={<SmartParking />} />
-            <Route path="/temporal"
-            element={<CanvasComedor />} />
+            <Route path="/temporal" element={<GraficoComedor/>}/>
           </Routes>
         </Router>
       </div>
