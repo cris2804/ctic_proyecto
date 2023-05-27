@@ -2,7 +2,7 @@ var requestOptions = {
     method: 'GET',
     redirect: 'follow'
 };
-const url_basic = "http://192.168.52.232:9090/api/v1/carga-viral/";
+const url_basic = "http://181.176.48.200:9090/api/v1/carga-viral/";
 const comedirIds = [2201,2202,2203,2204,2205,2208,2209,2210,2212,2213];
 const cantidad = 25;
 function formatTimestamp(timestamp) {
@@ -52,4 +52,29 @@ const pedirSensores = async (type = "dioxido_de_carbono") =>{
     return tratado;
     
 }
-export {pedirSensores,comedirIds,formatTimestamp};
+const pedirSensoresTratar = async (type = "dioxido_de_carbono") =>{
+    //dioxido_de_carbono humedad temperatura
+    const fetchPromises = comedirIds.map((e) => {
+        return fetch(`${url_basic}${e}?last=${cantidad}&columns=001001111`, requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                return result;
+            });
+    });
+    
+    const allResults = await Promise.all(fetchPromises)
+    const resultado = allResults.filter(e => (e.length!==0));
+    
+    const tratadoSensor = resultado.map((resSensor)=>{
+        const rSensor = resSensor.map((es)=>{
+            const dataObject = new Date(es.time_index);
+            const timestamp = dataObject.getTime();
+            const value = es[type];
+            return {timestamp: timestamp,value:value};
+        });
+        return rSensor;
+    })
+    return tratadoSensor;
+    
+}
+export {pedirSensores,comedirIds,formatTimestamp,pedirSensoresTratar};
