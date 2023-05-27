@@ -4,7 +4,7 @@ var requestOptions = {
 };
 const url_basic = "http://181.176.48.200:9090/api/v1/carga-viral/";
 const comedirIds = [2201,2202,2203,2204,2205,2208,2209,2210,2212,2213];
-const cantidad = 25;
+const cantidad = 100;
 function formatTimestamp(timestamp) {
     const date = new Date(timestamp);
     const hours = date.getHours();

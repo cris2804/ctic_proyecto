@@ -26,6 +26,7 @@ import Plano from "./components/comedor/PlanoComedor";
 
 import GraficoComedor from './components/comedor/GraficoComedor';
 import Grafico2 from "./components/comedor/Grafico2";
+import CanvasComedor from "./components/comedor/CanvasComedor";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -207,7 +208,7 @@ function App() {
             />
             <Route path="/smart-parking" element={<SmartParking />} />
             <Route path="/localización/101" element={<SmartParking />} />
-            <Route path="/temporal" element={<GraficoComedor/>}/>
+            <Route path="/temporal" element={<CanvasComedor/>}/>
           </Routes>
         </Router>
       </div>
