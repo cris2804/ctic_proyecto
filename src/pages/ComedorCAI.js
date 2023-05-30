@@ -359,7 +359,7 @@ export default function ComedorCAI() {
             </div>
             <div
               className="container__detalle__descargar container__rango__fecha__descargar"
-              style={{ fontWeight: "500" }}
+              style={{ fontWeight: "500", marginTop: "50px" }}
             >
               <div>Fecha Inicial: </div>
               <div>
