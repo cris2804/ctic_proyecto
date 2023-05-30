@@ -27,41 +27,61 @@ const dat = [
   { idb: "2213" },
 ];
 
+const getLastHourToTimestamp = (horas) => {
+  const now = new Date();
+  const fourHoursAgo = new Date(now.getTime() - horas * 60 * 60 * 1000);
+  const timestamp = fourHoursAgo.getTime();
+  return timestamp;
+};
+
 export default function DetallesIC({ id }) {
   const [data, setData] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
-      let sumaco2 = 0,
-        sumatemperatura = 0,
-        sumahumedad = 0;
+      let sumaco2 = [],
+        //sumatemperatura = 0,
+        //sumahumedad = 0,
+        cont = 0;
+      const timestamp = getLastHourToTimestamp(2 / 15);
       const promises = dat.map((d) => {
         return fetch(
-          `http://192.168.52.232:9090/api/v1/carga-viral/${d.idb}?last=1`
+          `http://192.168.52.232:9090/api/v1/carga-viral/${d.idb}?minDate=${timestamp}&columns=001001111`
         )
           .then((response) => response.json())
           .then((data) => {
-            sumaco2 = sumaco2 + data[0].dioxido_de_carbono;
-            sumatemperatura = sumatemperatura + data[0].temperatura;
-            sumahumedad = sumahumedad + data[0].humedad;
-
+            if (data.length !== 0) {
+              let temp = 0;
+              for(let i = 0; i < data.length; i ++){
+                temp = temp + data[i].dioxido_de_carbono;
+              }
+              temp = temp / data.length;
+              //sumaco2 = sumaco2 + data[0].dioxido_de_carbono;
+              //sumatemperatura = sumatemperatura + data[0].temperatura;
+              //sumahumedad = sumahumedad + data[0].humedad;
+              sumaco2.push(temp);
+              //console.log(data)
+            }
+          
             let d2 = null;
 
             if (d.idb === "2213") {
-              sumaco2 = sumaco2 / 10;
-              sumatemperatura = sumatemperatura / 10;
-              sumahumedad = sumahumedad / 10;
+              //sumaco2 = sumaco2 / 10;
+              //sumatemperatura = sumatemperatura / 10;
+              //sumahumedad = sumahumedad / 10;
+              const suma = sumaco2.reduce((acc, num) => acc + num, 0);
+              const promedio = suma / sumaco2.length;
               let col = "";
               let est = "";
               let imag = "";
-              if (sumaco2 < 800) {
+              if (promedio< 800) {
                 col = "#9AD64D";
                 est = "Buena";
                 imag = happy;
-              } else if (sumaco2 > 800 && sumaco2 < 1000) {
+              } else if (promedio > 800 && promedio < 1000) {
                 col = "orange";
                 est = "Moderada";
                 imag = serio;
-              } else if (sumaco2 > 1000) {
+              } else if (promedio > 1000) {
                 col = "#FF4242";
                 est = "Perjudicial";
                 imag = triste;
@@ -69,9 +89,9 @@ export default function DetallesIC({ id }) {
 
               d2 = {
                 lugar: d.lugar,
-                co2: Math.round(sumaco2),
-                temperatura: Math.round(sumatemperatura),
-                humedad: Math.round(sumahumedad),
+                co2: Math.round(promedio),
+                //temperatura: Math.round(sumatemperatura),
+                //humedad: Math.round(sumahumedad),
                 estado: est,
                 color: col,
                 imagen: imag,
@@ -89,6 +109,12 @@ export default function DetallesIC({ id }) {
     };
 
     fetchData();
+    const interval = setInterval(fetchData, 60000); // Llama a la función fetchData cada 8 minutos
+
+    // Limpia el intervalo al desmontar el componente
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   return (
