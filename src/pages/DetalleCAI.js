@@ -189,7 +189,7 @@ export default function DetalleCAI() {
   };*/
 
   const handleOpcion2 = (opc) => {
-    setOpcion(opc);
+    setOpcion("Co2"); 
     //console.log(opc);
   };
 

@@ -8,6 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
   Label,
+  ReferenceArea,
 } from "recharts";
 import "./css/Grafico.css";
 
@@ -105,7 +106,7 @@ const Grafico = ({ nombre, datos, id }) => {
 
         setData(newData);
         setLoading(false);
-        console.log("hola")
+        console.log("hola");
       } catch (error) {
         console.error(error);
       }
@@ -141,10 +142,9 @@ const Grafico = ({ nombre, datos, id }) => {
           <XAxis dataKey="time_index" reversed={true}>
             <Label value="Fecha" offset={0} position="bottom" fill="#000" />
           </XAxis>
-          <YAxis>
-            {/*domain={[0, 1200]} */}
+          <YAxis domain={[0, 1600]}>
             <Label
-              value={nombre}
+              value={`${nombre}(ppm)`}
               offset={5}
               angle={-90}
               position="insideLeft"
@@ -155,10 +155,13 @@ const Grafico = ({ nombre, datos, id }) => {
             type="monotone"
             dataKey="dioxido_de_carbono"
             stroke="#000"
-            strokeWidth={1}
+            strokeWidth={0.5}
             dot={<CustomDot />}
             isAnimationActive={false}
           />
+          <ReferenceArea y1={0} y2={800} fill="green" fillOpacity={0.2} />
+          <ReferenceArea y1={800} y2={1000} fill="orange" fillOpacity={0.2} />
+          <ReferenceArea y1={1000} y2={1600} fill="red" fillOpacity={0.2} />
           <Tooltip />
           {/*<Legend />*/}
         </LineChart>
