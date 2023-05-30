@@ -11,7 +11,7 @@ const Grafico2 = ({cantidad, nombre}) => {
       return { time: new Date().toLocaleTimeString(), value: Math.floor(Math.random() * 500) }
     });
     setData(newData);
-  }, [cantidad]);
+  }, [cantidad,nombre]);
 
   const CustomDot = ({ cx, cy, stroke, fill, payload, value }) => {
     if (value < 50 && value > 0) {

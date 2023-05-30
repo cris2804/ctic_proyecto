@@ -422,7 +422,7 @@ export default function DetalleCAI() {
             </div>
           </div>
         </div>
-        <div className="container__detalle__ca__right">
+        <div className="container__detalle__ca__right cdcar">
           <div
             className="container__estado__cai"
             style={{
