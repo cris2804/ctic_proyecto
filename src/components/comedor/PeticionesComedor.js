@@ -2,15 +2,15 @@ var requestOptions = {
     method: 'GET',
     redirect: 'follow'
 };
-const now = new Date();
+const getLastHourToTimestamp = (horas)=>{
+    const now = new Date();
+    const fourHoursAgo = new Date(now.getTime() - ( horas * 60 * 60 * 1000));
+    const timestamp = fourHoursAgo.getTime();
+    return timestamp;
+}
+    
 
-// Restar 4 horas a la fecha y hora actual
-const fourHoursAgo = new Date(now.getTime() - ( 3 * 60 * 60 * 1000));
 
-// Obtener el timestamp en milisegundos
-const timestamp = fourHoursAgo.getTime();
-
-console.log(timestamp);
 
 const url_basic = "http://181.176.48.200:9090/api/v1/carga-viral/";
 const comedirIds = [2201,2202,2203,2204,2205,2208,2209,2210,2212,2213];
@@ -67,7 +67,7 @@ const pedirSensores = async (type = "dioxido_de_carbono") =>{
 const pedirSensoresTratar = async (type = "dioxido_de_carbono") =>{
     //dioxido_de_carbono humedad temperatura
     //return fetch(`${url_basic}${e}?last=${cantidad}&columns=001001111`, requestOptions)
-    
+    const timestamp = getLastHourToTimestamp(3);
     const fetchPromises = comedirIds.map((e) => {
         return fetch(`${url_basic}${e}?minDate=${timestamp}&columns=001001111`, requestOptions)
             .then(response => response.json())
