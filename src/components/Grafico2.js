@@ -2,16 +2,29 @@ import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Label } from 'recharts';
 import './css/Grafico.css';
 
-const Grafico2 = ({cantidad, nombre}) => {
-  const [data, setData] = useState([]);
-
+const Grafico2 = ({datos, nombre}) => {
+  const [data, setData] = useState(datos);
+/*
   useEffect(() => {
     // Genera datos aleatorios para la gráfica
     const newData = Array.from({ length: cantidad }, () => {
       return { time: new Date().toLocaleTimeString(), value: Math.floor(Math.random() * 500) }
     });
     setData(newData);
-  }, [cantidad,nombre]);
+  }, [cantidad,nombre]);*/
+
+   useEffect(() => {
+    const interval = setInterval(() => {
+      // Genera un nuevo punto aleatorio
+      const newPoint = {
+        time: new Date().toLocaleTimeString(),
+        value: Math.floor(Math.random() * 500),
+      };
+      setData((prevData) => [...prevData.slice(-19), newPoint]);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const CustomDot = ({ cx, cy, stroke, fill, payload, value }) => {
     if (value < 50 && value > 0) {
@@ -68,7 +81,7 @@ const Grafico2 = ({cantidad, nombre}) => {
           }}
         >
         <XAxis dataKey="time" reversed={false}>
-          <Label value="Fecha" offset={0} position="bottom" fill="#000" />
+          <Label value="Tiempo" offset={0} position="bottom" fill="#000" />
         </XAxis>
         <YAxis>
           <Label

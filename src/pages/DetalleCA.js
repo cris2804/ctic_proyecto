@@ -57,7 +57,7 @@ function Graficar(opc, nom) {
     };
   });
   if (opc === 0) {
-    return <Grafico2 cantidad={20} nombre={nom} />;
+    return <Grafico2 datos={datos} nombre={nom} />;
   } else if (opc === 1) {
     return <Grafico2 cantidad={96} nombre={nom} />;
   } else if (opc === 2) {
