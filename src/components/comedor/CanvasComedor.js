@@ -20,7 +20,7 @@ const stylePopper = {
   position:'absolute',
   display:'none'
 }
-const lineColors = ['#56a64b', '#e0b400', '#5794f2', '#fa6400', '#e02f44', '#a352cc', '#c15c17', '#890f02', '#0a437c', '#800080'];
+const lineColors = ['#56a64b', '#e0b400', '#5794f2', '#fa6400', '#e02f44', '#3274d9', '#a352cc', '#890f02', '#0a437c', '#800080'];
 const ncolors = lineColors.length;
 const graficarRecta = (context,pos1,pos2,color="red",grosor = 2)=>{
   context.save();
