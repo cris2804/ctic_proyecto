@@ -4,8 +4,8 @@ import serio from '../components/images/serio.png';
 import triste from '../components/images/triste.png';
 import "./css/DetalleCAI.css";
 import { useState, useEffect } from "react";
-import Grafico from "../components/Grafico";
-import Grafico2 from "../components/Grafico2";
+//import Grafico from "../components/Grafico";
+//import Grafico2 from "../components/Grafico2";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -30,7 +30,7 @@ const gases = [
   },
 ];
 
-function Graficar(opc, nom) {
+/*function Graficar(opc, nom) {
   const datos = Array.from({ length: 20 }, () => {
     return {
       time: new Date().toLocaleTimeString(),
@@ -42,7 +42,7 @@ function Graficar(opc, nom) {
   } else if (opc === 1) {
     return <Grafico2 cantidad={96} nombre={nom} />;
   }
-}
+}*/
 
 function retornaidb(id) {
   let idb = "";

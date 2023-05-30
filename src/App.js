@@ -22,10 +22,10 @@ import { RiDashboardFill } from "react-icons/ri";
 import icono from "./favicon.ico";
 import { SiWindicss } from "react-icons/si";
 import { MdCo2 } from "react-icons/md";
-import Plano from "./components/comedor/PlanoComedor";
+//import Plano from "./components/comedor/PlanoComedor";
 
-import GraficoComedor from './components/comedor/GraficoComedor';
-import Grafico2 from "./components/comedor/Grafico2";
+//import GraficoComedor from './components/comedor/GraficoComedor';
+//import Grafico2 from "./components/comedor/Grafico2";
 import CanvasComedor from "./components/comedor/CanvasComedor";
 
 function App() {
