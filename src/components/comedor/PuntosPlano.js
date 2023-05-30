@@ -40,6 +40,7 @@ class Punto{
                             <Popper type={this.content.type}
                             time = {this.content.time}
                             value= {this.content.value}
+                            idb= {this.content.idb}
                             />);
         const {width,height} = popper.getBoundingClientRect();
         let npxPopper = this.x;

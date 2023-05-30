@@ -5,7 +5,7 @@ var requestOptions = {
 const now = new Date();
 
 // Restar 4 horas a la fecha y hora actual
-const fourHoursAgo = new Date(now.getTime() - (3 * 60 * 60 * 1000));
+const fourHoursAgo = new Date(now.getTime() - ( 3 * 60 * 60 * 1000));
 
 // Obtener el timestamp en milisegundos
 const timestamp = fourHoursAgo.getTime();

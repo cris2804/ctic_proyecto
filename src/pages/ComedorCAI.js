@@ -13,6 +13,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { MdLocationPin } from "react-icons/md";
 //import { BsFillBuildingFill } from "react-icons/bs";
 import { FcElectricalSensor } from "react-icons/fc";
+import CanvasComedor from "../components/comedor/CanvasComedor";
 
 const gases = [
   {
@@ -525,7 +526,7 @@ export default function ComedorCAI() {
               </div>*/}
             </div>
             <div className="container__grafico">
-              {Graficar(0, opcion)}
+              <CanvasComedor/>
             </div>
           </div>
         </div>

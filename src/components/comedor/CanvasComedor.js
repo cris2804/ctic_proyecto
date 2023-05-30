@@ -52,9 +52,10 @@ const compararObject = (a,b,atributo='x')=>{
 const transformCords = ([min1,max1],[min2,max2], t) =>{
   return(t -min1 )/(max1 - min1)*(max2-min2)+ min2;
 }
+let timer;
 export default function () {
   const graficoCanvas = useRef(null);
-  const [type,setType] = useState("temperatura");
+  const [type,setType] = useState("dioxido_de_carbono");
 
   const divCanvas = useRef(null);
   //const [context1,setContext1] = useContext(null);
@@ -79,9 +80,22 @@ export default function () {
         return sensorData.map(sd =>{
           const x = transformCords([minx,maxx],[padX+2,distX+2],sd.timestamp);
           const y = transformCords([maxy,miny],[padTop,distY-padTop],sd.value );
-          return new Punto({x:x,y:y,radio:5,content:{value:sd.value,time:sd.timestamp,type:type}});
+          return new Punto({x:x,y:y,radio:5,content:{value:sd.value,time:sd.timestamp,type:type,idb:sd.idb}});
         })
       });
+      context.clearRect(0,0,dimx,dimy);
+      graficarRecta(context,{x:padX-20,y:dimy-padY},{x:dimx-30,y:dimy-padY},'#555d',3);
+      graficarRecta(context,{x:padX,y:0},{x:padX,y:dimy-10},'#555d',3);
+      const lw = dimx/150;
+      for(let i=0;i<lw-1;i++){
+        graficarRecta(context,{x:padX + i*150 + 50,y:0},{x:padX + i*150 + 50,y:dimy-padY},'#5554');
+      }
+      const lh = dimy/50;
+      for(let i=0;i<lh-1;i++){
+        graficarRecta(context,{x:padX,y:25 + i*50 },{x:dimx-30,y:25+i*50},'#5554');
+      }
+
+
       transData.forEach((sensorData,i)=>{
         //lineColors[i%ncolors]
         plotPuntos(context,sensorData,lineColors[i%ncolors],1);
@@ -92,7 +106,7 @@ export default function () {
           sp.graficarPunto(context,colorSen);
         });
       });
-      const lw = dimx/150;
+      
       const dx = (maxx - minx)/lw;
       context.save();
       for(let i=0;i<lw-1;i++){
@@ -106,7 +120,7 @@ export default function () {
         
       }
       context.restore();
-      const lh = dimy/50;
+     
       context.save();
       for(let i=0;i<lh-1;i++){
         const posy = 25 + i*50;
@@ -155,19 +169,32 @@ export default function () {
     //context.fillRect(0,0,width,height);
     
     setGraph(context);
-    const padX = 60;
-    const padY = 30;
-    graficarRecta(context,{x:padX-20,y:height-padY},{x:width-30,y:height-padY},'#555d',3);
-    graficarRecta(context,{x:padX,y:0},{x:padX,y:height-10},'#555d',3);
-    const lw = width/150;
-    for(let i=0;i<lw-1;i++){
-      graficarRecta(context,{x:padX + i*150 + 50,y:0},{x:padX + i*150 + 50,y:height-padY},'#5554');
+    
+
+    fetchData(context,width,height,type);
+    timer = setInterval(()=>{
+      fetchData(context,width,height,type);
+
+      console.log("Hola");
+    },60*1000)
+    return ()=>{
+      clearInterval(timer);
     }
-    const lh = height/50;
-    for(let i=0;i<lh-1;i++){
-      graficarRecta(context,{x:padX,y:25 + i*50 },{x:width-30,y:25+i*50},'#5554');
-    }
-    //const Puntos = crearPuntos(width,height,20,3);
+  },[]);
+  
+  return (
+    <div className='ctn-grafico'>
+      <div className='ctn-container-name-y txt-grafico'>{type}</div>
+      <div className='ctn-container-grafico'  ref={divCanvas}>
+          <canvas ref={graficoCanvas}></canvas>
+          <div ref={popperElement} style={stylePopper}>hola</div>
+      </div>
+      <div className='ctn-container-name-x txt-grafico'>Tiempo</div>
+    </div>
+  )
+}
+/**
+     //const Puntos = crearPuntos(width,height,20,3);
     //Puntos.sort(compararObject);
     //plotPuntos(context,Puntos, 'cyan',2);
     //const Puntos1 = crearPuntos(width,height,20,3);
@@ -180,16 +207,4 @@ export default function () {
     //Puntos.forEach((p)=>{
     //  p.graficarPunto(context,'blue');
     //});
-    fetchData(context,width,height,type);
-  },[]);
-  return (
-    <div className='ctn-grafico'>
-      <div className='ctn-container-name-y txt-grafico'>{type}</div>
-      <div className='ctn-container-grafico'  ref={divCanvas}>
-          <canvas ref={graficoCanvas}></canvas>
-          <div ref={popperElement} style={stylePopper}>hola</div>
-      </div>
-      <div className='ctn-container-name-x txt-grafico'>Tiempo</div>
-    </div>
-  )
-}
+ */

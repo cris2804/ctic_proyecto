@@ -1,11 +1,12 @@
 import React from 'react'
 import Card from '../Card'
 import {formatTimestamp} from './PeticionesComedor';
-export default function Popper({value,type,time}) {
+export default function Popper({value,type,time,idb}) {
   return (
-    <div className="container__card" style={{background: "#9AD64D"}}>
+    <div  style={{background: "#9AD64D",padding:'10px',borderRadius:'10px'}}>
+        <div style={{textAlign:'center'}}><strong>Sensor {idb}</strong></div>
         <div >{type}: {value}</div>
-        <div>time: {formatTimestamp(time)}</div>
+        <div>Time: {formatTimestamp(time)}</div>
         {/*<div>Zona: Buena</div>*/}
     </div>
   )

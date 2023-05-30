@@ -3,11 +3,16 @@
     grid-template-columns: 30px 1fr;
     grid-template-rows: 1fr 30px;
     height: 100%;
+    width: 100%;
 }
 .ctn-container-name-y{
     
     writing-mode: vertical-lr; /* Establece el modo de escritura vertical */
     transform: rotate(-180deg);
+}
+.ctn-container-grafico{
+    position: relative;
+    background-color:'#fff5';
 }
 .txt-grafico{
     display: flex;
