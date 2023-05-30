@@ -503,7 +503,7 @@ export default function ComedorCAI() {
                 return (
                   <div
                     key={gas.nombre}
-                    onClick={() => handleOpcion2(gas.nombre)}
+                    onClick={() => handleOpcion2("Co2")}
                     className={opcion === gas.nombre ? "seleccionado" : ""}
                   >
                     {gas.nombre}

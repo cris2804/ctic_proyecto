@@ -20,7 +20,7 @@ const stylePopper = {
   position:'absolute',
   display:'none'
 }
-const lineColors = ['#8884d8', '#82ca9d', '#ff0000', '#00ff00', '#0000ff', '#ff00ff', '#00ffff', '#ffff00', '#ffa500', '#800080'];
+const lineColors = ['#56a64b', '#e0b400', '#5794f2', '#fa6400', '#e02f44', '#a352cc', '#c15c17', '#890f02', '#0a437c', '#800080'];
 const ncolors = lineColors.length;
 const graficarRecta = (context,pos1,pos2,color="red",grosor = 2)=>{
   context.save();
@@ -84,15 +84,15 @@ export default function () {
         })
       });
       context.clearRect(0,0,dimx,dimy);
-      graficarRecta(context,{x:padX-20,y:dimy-padY},{x:dimx-30,y:dimy-padY},'#555d',3);
-      graficarRecta(context,{x:padX,y:0},{x:padX,y:dimy-10},'#555d',3);
+      graficarRecta(context,{x:padX-5,y:dimy-padY},{x:dimx-30,y:dimy-padY},'#7f7f7f',3);
+      graficarRecta(context,{x:padX,y:0},{x:padX,y:dimy-25},'#7f7f7f',2);
       const lw = dimx/150;
       for(let i=0;i<lw-1;i++){
-        graficarRecta(context,{x:padX + i*150 + 50,y:0},{x:padX + i*150 + 50,y:dimy-padY},'#5554');
+        graficarRecta(context,{x:padX + i*150 + 50,y:0},{x:padX + i*150 + 50,y:dimy-padY},'#e5e7eb');
       }
       const lh = dimy/50;
       for(let i=0;i<lh-1;i++){
-        graficarRecta(context,{x:padX,y:25 + i*50 },{x:dimx-30,y:25+i*50},'#5554');
+        graficarRecta(context,{x:padX,y:25 + i*50 },{x:dimx-30,y:25+i*50},'#e5e7eb');
       }
 
 
@@ -165,7 +165,7 @@ export default function () {
     canvas.height = height;
     canvas.width = width;
     const context = canvas.getContext("2d");
-    context.fillStyle = "black";
+    context.fillStyle = "#666666";
     //context.fillRect(0,0,width,height);
     
     setGraph(context);

@@ -149,6 +149,7 @@ const Grafico = ({ nombre, datos, id }) => {
               angle={-90}
               position="insideLeft"
               fill="#000"
+              text
             />
           </YAxis>
           <Line
