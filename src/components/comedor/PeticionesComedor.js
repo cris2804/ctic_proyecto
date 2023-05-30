@@ -2,9 +2,19 @@ var requestOptions = {
     method: 'GET',
     redirect: 'follow'
 };
+const now = new Date();
+
+// Restar 4 horas a la fecha y hora actual
+const fourHoursAgo = new Date(now.getTime() - (3 * 60 * 60 * 1000));
+
+// Obtener el timestamp en milisegundos
+const timestamp = fourHoursAgo.getTime();
+
+console.log(timestamp);
+
 const url_basic = "http://181.176.48.200:9090/api/v1/carga-viral/";
 const comedirIds = [2201,2202,2203,2204,2205,2208,2209,2210,2212,2213];
-const cantidad = 100;
+const cantidad = 200;
 function formatTimestamp(timestamp) {
     const date = new Date(timestamp);
     const hours = date.getHours();
@@ -21,6 +31,7 @@ function formatTimestamp(timestamp) {
   }
 const pedirSensores = async (type = "dioxido_de_carbono") =>{
     //dioxido_de_carbono humedad temperatura
+    //last=${cantidad}
     const fetchPromises = comedirIds.map((e) => {
         return fetch(`${url_basic}${e}?last=${cantidad}&columns=001001111`, requestOptions)
             .then(response => response.json())
@@ -29,7 +40,8 @@ const pedirSensores = async (type = "dioxido_de_carbono") =>{
             });
     });
     
-    const allResults = await Promise.all(fetchPromises)
+    const allResults = await Promise.all(fetchPromises);
+    console.log(allResults);
     const resultado = allResults.filter(e => (e.length!==0));
     
     const n_res = resultado.length;
@@ -54,8 +66,10 @@ const pedirSensores = async (type = "dioxido_de_carbono") =>{
 }
 const pedirSensoresTratar = async (type = "dioxido_de_carbono") =>{
     //dioxido_de_carbono humedad temperatura
+    //return fetch(`${url_basic}${e}?last=${cantidad}&columns=001001111`, requestOptions)
+    
     const fetchPromises = comedirIds.map((e) => {
-        return fetch(`${url_basic}${e}?last=${cantidad}&columns=001001111`, requestOptions)
+        return fetch(`${url_basic}${e}?minDate=${timestamp}&columns=001001111`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 return result;
@@ -64,13 +78,13 @@ const pedirSensoresTratar = async (type = "dioxido_de_carbono") =>{
     
     const allResults = await Promise.all(fetchPromises)
     const resultado = allResults.filter(e => (e.length!==0));
-    
+    console.log("XD",resultado);
     const tratadoSensor = resultado.map((resSensor)=>{
         const rSensor = resSensor.map((es)=>{
             const dataObject = new Date(es.time_index);
             const timestamp = dataObject.getTime();
             const value = es[type];
-            return {timestamp: timestamp,value:value};
+            return {timestamp: timestamp,value:value,idb:es.idb};
         });
         return rSensor;
     })

@@ -1,0 +1,22 @@
+.ctn-grafico{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    grid-template-rows: 1fr 30px;
+    height: 100%;
+}
+.ctn-container-name-y{
+    
+    writing-mode: vertical-lr; /* Establece el modo de escritura vertical */
+    transform: rotate(-180deg);
+}
+.txt-grafico{
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    font-weight: bold;
+    user-select: none;
+}
+.ctn-container-name-x{
+    grid-column: 2;
+    grid-row: 2;
+}

@@ -21,11 +21,11 @@ class Punto{
         context.beginPath();
         context.arc(0,0,this.radio,0,2*Math.PI);
         context.fill();
-        context.lineWidth = 1;
-        context.strokeStyle = 'black';
-        context.beginPath();
-        context.arc(0,0,this.radio,0,2*Math.PI);
-        context.stroke();
+        //context.lineWidth = 1;
+        //context.strokeStyle = 'black';
+        //context.beginPath();
+        //context.arc(0,0,this.radio,0,2*Math.PI);
+        //context.stroke();
         
         context.restore();
     }

@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useRef } from 'react'
 
-
+import "./canvasGrafico.css";
 import { crearPuntos,mousePosition,Punto} from './PuntosPlano';
 import { pedirSensoresTratar,formatTimestamp } from './PeticionesComedor';
 
@@ -16,7 +16,7 @@ const styleContainer = {
   height:400,
 }
 const stylePopper = {
-  
+  pointerEvents:'none',
   position:'absolute',
   display:'none'
 }
@@ -54,11 +54,13 @@ const transformCords = ([min1,max1],[min2,max2], t) =>{
 }
 export default function () {
   const graficoCanvas = useRef(null);
+  const [type,setType] = useState("temperatura");
+
   const divCanvas = useRef(null);
   //const [context1,setContext1] = useContext(null);
   const [graph,setGraph] = useState(null);
   const popperElement = useRef(null);
-  const fetchData = async (context,dimx,dimy,type = "humedad") => {
+  const fetchData = async (context,dimx,dimy,type = "temperatura") => {
     try {
       const padX = 60;
       const padY = 30;
@@ -72,16 +74,17 @@ export default function () {
       console.log("MM :",minx,maxx, maxx-minx);
       const distX = dimx - padX;
       const distY = dimy - padY;
-      const padTop = 15;
+      const padTop = 50;
       const transData = newData.map(sensorData =>{
         return sensorData.map(sd =>{
           const x = transformCords([minx,maxx],[padX+2,distX+2],sd.timestamp);
           const y = transformCords([maxy,miny],[padTop,distY-padTop],sd.value );
-          return new Punto({x:x,y:y,radio:4,content:{value:sd.value,time:sd.timestamp,type:type}});
+          return new Punto({x:x,y:y,radio:5,content:{value:sd.value,time:sd.timestamp,type:type}});
         })
       });
       transData.forEach((sensorData,i)=>{
-        plotPuntos(context,sensorData,lineColors[i%ncolors]);
+        //lineColors[i%ncolors]
+        plotPuntos(context,sensorData,lineColors[i%ncolors],1);
       });
       transData.forEach((sensorData,i)=>{
         const colorSen = lineColors[i%ncolors]
@@ -91,7 +94,6 @@ export default function () {
       });
       const lw = dimx/150;
       const dx = (maxx - minx)/lw;
-      console.log("DX",dx);
       context.save();
       for(let i=0;i<lw-1;i++){
         const posx = padX + i*150 +50;
@@ -101,11 +103,11 @@ export default function () {
         context.textAlign = 'center';
         context.textBaseline = 'top';
         context.fillText(formatTimestamp(valx),pos.x,pos.y);
-        console.log("VALS",valx)
         
       }
       context.restore();
       const lh = dimy/50;
+      context.save();
       for(let i=0;i<lh-1;i++){
         const posy = 25 + i*50;
         const posx = padX/2;
@@ -115,7 +117,8 @@ export default function () {
         context.textBaseline = 'conter';
         context.fillText(valY,posx,posy+5);
       }
-
+      context.restore();
+      
       const Puntos = transData.flatMap(e => e);
       const canvas = graficoCanvas.current;
       
@@ -154,15 +157,15 @@ export default function () {
     setGraph(context);
     const padX = 60;
     const padY = 30;
-    graficarRecta(context,{x:0,y:height-padY},{x:width,y:height-padY});
-    graficarRecta(context,{x:padX,y:0},{x:padX,y:height});
+    graficarRecta(context,{x:padX-20,y:height-padY},{x:width-30,y:height-padY},'#555d',3);
+    graficarRecta(context,{x:padX,y:0},{x:padX,y:height-10},'#555d',3);
     const lw = width/150;
     for(let i=0;i<lw-1;i++){
-      graficarRecta(context,{x:padX + i*150 + 50,y:0},{x:padX + i*150 + 50,y:height-padY},'#555d');
+      graficarRecta(context,{x:padX + i*150 + 50,y:0},{x:padX + i*150 + 50,y:height-padY},'#5554');
     }
     const lh = height/50;
     for(let i=0;i<lh-1;i++){
-      graficarRecta(context,{x:padX,y:25 + i*50 },{x:width,y:25+i*50},'#555d');
+      graficarRecta(context,{x:padX,y:25 + i*50 },{x:width-30,y:25+i*50},'#5554');
     }
     //const Puntos = crearPuntos(width,height,20,3);
     //Puntos.sort(compararObject);
@@ -177,13 +180,16 @@ export default function () {
     //Puntos.forEach((p)=>{
     //  p.graficarPunto(context,'blue');
     //});
-    fetchData(context,width,height);
+    fetchData(context,width,height,type);
   },[]);
   return (
-    <div style={styleContainer}  ref={divCanvas}>
-        <canvas ref={graficoCanvas}></canvas>
-        <div ref={popperElement} style={stylePopper}>hola</div>
-
+    <div className='ctn-grafico'>
+      <div className='ctn-container-name-y txt-grafico'>{type}</div>
+      <div className='ctn-container-grafico'  ref={divCanvas}>
+          <canvas ref={graficoCanvas}></canvas>
+          <div ref={popperElement} style={stylePopper}>hola</div>
+      </div>
+      <div className='ctn-container-name-x txt-grafico'>Tiempo</div>
     </div>
   )
 }
