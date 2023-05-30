@@ -57,7 +57,7 @@ function Graficar(opc, nom) {
     };
   });
   if (opc === 0) {
-    return <Grafico nombre={nom} datos={datos} />;
+    return <Grafico2 cantidad={20} nombre={nom} />;
   } else if (opc === 1) {
     return <Grafico2 cantidad={96} nombre={nom} />;
   } else if (opc === 2) {
@@ -475,7 +475,7 @@ export default function DetalleCA() {
             </div>
           </div>
         </div>
-        <div className="container__detalle__ca__right">
+        <div className="container__detalle__ca__right1">
           <div
             style={{
               boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)",
