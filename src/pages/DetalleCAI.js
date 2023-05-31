@@ -59,7 +59,11 @@ export default function DetalleCAI() {
   const id = searchParams.get("id");
   //para obtener la url
   const fullUrl = window.location.href;
-  const host = "http://"+window.location.host;
+  let host = window.location.host;
+
+  if(host.includes("beegons")) host = "http://181.176.48.200:9090";
+  else host = "http://192.168.52.232:9090"; 
+  
   console.log(host);
 
   const [data, setData] = useState({});
