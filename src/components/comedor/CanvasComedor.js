@@ -5,7 +5,8 @@ import { useRef } from 'react'
 import "./canvasGrafico.css";
 import { crearPuntos,mousePosition,Punto} from './PuntosPlano';
 import { pedirSensoresTratar,formatTimestamp } from './PeticionesComedor';
-
+import { CanvasControllerComedor } from './ControllerGrafico';
+import { getMetadataSensor,formatMetadataSensor } from './MetadaGrafico';
 import { useState } from 'react';
 
 
@@ -53,6 +54,7 @@ const transformCords = ([min1,max1],[min2,max2], t) =>{
   return(t -min1 )/(max1 - min1)*(max2-min2)+ min2;
 }
 let timer;
+let grafico = null;
 export default function () {
   const graficoCanvas = useRef(null);
   const [type,setType] = useState("dioxido_de_carbono");
@@ -63,22 +65,39 @@ export default function () {
   const popperElement = useRef(null);
   const fetchData = async (context,dimx,dimy,type = "temperatura") => {
     try {
+      const metadataSensor = getMetadataSensor(type);
+      const rangoY = metadataSensor?.rangoY;
       const padX = 60;
       const padY = 30;
       const newData = await pedirSensoresTratar(type);
       const datatime = newData.flatMap(e => e.map(s => s.timestamp));
       const datavalues = newData.flatMap(e =>e.map(sv => sv.value));
+      
+      
       const minx = Math.min(...datatime);
       const maxx = Math.max(...datatime);
-      const miny = Math.min(...datavalues);
-      const maxy = Math.max(...datavalues);
+      
+      //const miny = Math.min(...datavalues);
+      //const maxy = Math.max(...datavalues);
+      let miny;
+      let maxy;
+      let padTop = 0;
+      if(rangoY){
+        miny = rangoY[0];
+        maxy = rangoY[1];
+      }else{
+        miny = Math.min(...datavalues);
+        maxy = Math.max(...datavalues);
+        padTop = 50;
+      }
+      
       console.log("MM :",minx,maxx, maxx-minx);
       const distX = dimx - padX;
       const distY = dimy - padY;
-      const padTop = 50;
+      
       const transData = newData.map(sensorData =>{
         return sensorData.map(sd =>{
-          const x = transformCords([minx,maxx],[padX+2,distX+2],sd.timestamp);
+          const x = transformCords([minx,maxx],[padX+10,distX+10],sd.timestamp);
           const y = transformCords([maxy,miny],[padTop,distY-padTop],sd.value );
           return new Punto({x:x,y:y,radio:5,content:{value:sd.value,time:sd.timestamp,type:type,idb:sd.idb}});
         })
@@ -111,7 +130,7 @@ export default function () {
       context.save();
       for(let i=0;i<lw-1;i++){
         const posx = padX + i*150 +50;
-        const valx = Math.floor(transformCords([padX+2,distX+2],[minx,maxx],posx));
+        const valx = Math.floor(transformCords([padX+10,distX+10],[minx,maxx],posx));
         const pos = {x:posx,y:dimy-padY+5};
         context.font = '15px Arial';
         context.textAlign = 'center';
@@ -125,10 +144,10 @@ export default function () {
       for(let i=0;i<lh-1;i++){
         const posy = 25 + i*50;
         const posx = padX/2;
-        const valY = transformCords([padTop,distY-padTop],[maxy,miny],posy ).toFixed(3);
+        const valY = transformCords([padTop,distY-padTop],[maxy,miny],posy ).toFixed(2);
         context.font = '15px Arial';
         context.textAlign = 'center';
-        context.textBaseline = 'conter';
+        context.textBaseline = 'center';
         context.fillText(valY,posx,posy+5);
       }
       context.restore();
@@ -169,8 +188,8 @@ export default function () {
     //context.fillRect(0,0,width,height);
     
     setGraph(context);
-    
-
+    grafico = new CanvasControllerComedor({context:context,dim:{x:width,y:height},pad : {x:60,y:30}});
+    console.log(grafico);
     fetchData(context,width,height,type);
     timer = setInterval(()=>{
       fetchData(context,width,height,type);
@@ -184,7 +203,7 @@ export default function () {
   
   return (
     <div className='ctn-grafico'>
-      <div className='ctn-container-name-y txt-grafico'>{type}</div>
+      <div className='ctn-container-name-y txt-grafico'>{formatMetadataSensor(getMetadataSensor(type))}</div>
       <div className='ctn-container-grafico'  ref={divCanvas}>
           <canvas ref={graficoCanvas}></canvas>
           <div ref={popperElement} style={stylePopper}>hola</div>
