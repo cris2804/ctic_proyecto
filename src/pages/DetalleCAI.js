@@ -58,7 +58,6 @@ export default function DetalleCAI() {
   const searchParams = new URLSearchParams(window.location.search);
   const id = searchParams.get("id");
   //para obtener la url
-  const fullUrl = window.location.href;
   let host = window.location.host;
 
   if(host.includes("beegons")) host = "http://181.176.48.200:9090";
@@ -122,7 +121,7 @@ export default function DetalleCAI() {
     return () => {
       clearInterval(interval);
     };
-  }, [id]);
+  }, [id,host]);
 
   //const [seleccionado, setSeleccionado] = useState(0);
   const [opcion, setOpcion] = useState("Co2");
