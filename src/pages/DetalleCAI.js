@@ -59,7 +59,7 @@ export default function DetalleCAI() {
   const id = searchParams.get("id");
   //para obtener la url
   const fullUrl = window.location.href;
-  const host = window.location.host;
+  const host = "http://"+window.location.host;
   console.log(host);
 
   const [data, setData] = useState({});
@@ -68,7 +68,7 @@ export default function DetalleCAI() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://192.168.52.232:9090/api/v1/carga-viral/${retornaidb(
+          `${host}/api/v1/carga-viral/${retornaidb(
             id
           )}?last=1`
         );
