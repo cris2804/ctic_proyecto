@@ -57,6 +57,10 @@ export default function DetalleCAI() {
   // para obtener el id de la ruta donde nos encontramos
   const searchParams = new URLSearchParams(window.location.search);
   const id = searchParams.get("id");
+  //para obtener la url
+  const fullUrl = window.location.href;
+  const host = window.location.host;
+  console.log(host);
 
   const [data, setData] = useState({});
 
