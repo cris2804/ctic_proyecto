@@ -13,7 +13,7 @@ const getLastHourToTimestamp = (horas)=>{
 
 
 //const url_basic = "http://192.168.52.232:9090/api/v1/carga-viral/";
-const url_basic = "http://181.176.48.200:9090/api/v1/carga-viral/";
+const url_basic = "http://192.168.52.232:9090/api/v1/carga-viral/";
 
 const comedirIds = [2201,2202,2203,2204,2205,2208,2209,2210,2212,2213];
 const cantidad = 200;
