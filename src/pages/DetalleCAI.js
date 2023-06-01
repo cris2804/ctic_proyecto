@@ -11,6 +11,7 @@ import "react-calendar/dist/Calendar.css";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { MdLocationPin } from "react-icons/md";
 import { BsFillBuildingFill } from "react-icons/bs";
+import { Getip } from "../server/Getip";
 
 const gases = [
   {
@@ -59,11 +60,11 @@ export default function DetalleCAI() {
   const id = searchParams.get("id");
   //para obtener la url
   let host = window.location.host;
+  console.log(Getip(host))
 
   if(host.includes("beegons")) host = "http://181.176.48.200:9090";
   else host = "http://192.168.52.232:9090"; 
   
-  console.log(host);
 
   const [data, setData] = useState({});
 
