@@ -14,6 +14,7 @@ import { MdLocationPin } from "react-icons/md";
 //import { BsFillBuildingFill } from "react-icons/bs";
 import { FcElectricalSensor } from "react-icons/fc";
 import CanvasComedor from "../components/comedor/CanvasComedor";
+import { Getip } from "../server/Getip";
 
 const gases = [
   {
@@ -64,6 +65,8 @@ export default function ComedorCAI() {
   // para obtener el id de la ruta donde nos encontramos
   const searchParams = new URLSearchParams(window.location.search);
   const id = searchParams.get("id");
+  let host = window.location.host; //para obtener la ip
+
 
   const [data, setData] = useState({});
 
@@ -71,7 +74,7 @@ export default function ComedorCAI() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://192.168.52.232:9090/api/v1/carga-viral/${retornaidb(
+          `${Getip(host)}/api/v1/carga-viral/${retornaidb(
             id
           )}?last=1`
         );
@@ -160,7 +163,7 @@ export default function ComedorCAI() {
     else t = 0;
 
     fetch(
-      `http://192.168.52.232:9090/api/v1/carga-viral/descargar/${retornaidb(
+      `${Getip(host)}/api/v1/carga-viral/descargar/${retornaidb(
         id
       )}?maxDate=${Number(date2)}&minDate=${Number(
         date1

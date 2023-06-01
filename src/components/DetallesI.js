@@ -11,6 +11,7 @@ import BarChartSharpIcon from "@mui/icons-material/BarChartSharp";
 import happy from "./images/happy.png";
 import serio from "./images/serio.png";
 import triste from "./images/triste.png";
+import { Getip } from "../server/Getip";
 
 const dat = [
   { idb: "1102", lugar: "Oficina de Administración" },
@@ -28,12 +29,13 @@ const nombrelugar = (e) => {
 export default function DetallesI({ id }) {
   const [data, setData] = useState([]);
   const [results, setResults] = useState(dat);
+  let host = window.location.host; //para obtener la ip
 
   useEffect(() => {
     const fetchData = async () => {
       const promises = results.map((d) => {
         return fetch(
-          `http://192.168.52.232:9090/api/v1/carga-viral/${d.idb}?last=1`
+          `${Getip(host)}/api/v1/carga-viral/${d.idb}?last=1`
         )
           .then((response) => response.json())
           .then((data) => {

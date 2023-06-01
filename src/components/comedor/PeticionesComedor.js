@@ -66,12 +66,12 @@ const pedirSensores = async (type = "dioxido_de_carbono") =>{
     return tratado;
     
 }
-const pedirSensoresTratar = async (type = "dioxido_de_carbono") =>{
+const pedirSensoresTratar = async (type = "dioxido_de_carbono", host) =>{
     //dioxido_de_carbono humedad temperatura
     //return fetch(`${url_basic}${e}?last=${cantidad}&columns=001001111`, requestOptions)
     const timestamp = getLastHourToTimestamp(3);
     const fetchPromises = comedirIds.map((e) => {
-        return fetch(`${url_basic}${e}?minDate=${timestamp}&columns=001001111`, requestOptions)
+        return fetch(`${host}/api/v1/carga-viral/${e}?minDate=${timestamp}&columns=001001111`, requestOptions)
             .then(response => response.json())
             .then(result => {
                 return result;

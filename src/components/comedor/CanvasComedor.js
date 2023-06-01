@@ -8,6 +8,7 @@ import { pedirSensoresTratar,formatTimestamp } from './PeticionesComedor';
 import { CanvasControllerComedor } from './ControllerGrafico';
 import { getMetadataSensor,formatMetadataSensor } from './MetadaGrafico';
 import { useState } from 'react';
+import { Getip } from '../../server/Getip';
 
 
 
@@ -58,6 +59,7 @@ let grafico = null;
 export default function () {
   const graficoCanvas = useRef(null);
   const [type,setType] = useState("dioxido_de_carbono");
+  let host = window.location.host;
 
   const divCanvas = useRef(null);
   //const [context1,setContext1] = useContext(null);
@@ -69,7 +71,7 @@ export default function () {
       const rangoY = metadataSensor?.rangoY;
       const padX = 60;
       const padY = 30;
-      const newData = await pedirSensoresTratar(type);
+      const newData = await pedirSensoresTratar(type,Getip(host));
       const datatime = newData.flatMap(e => e.map(s => s.timestamp));
       const datavalues = newData.flatMap(e =>e.map(sv => sv.value));
       
