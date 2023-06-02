@@ -26,6 +26,7 @@ class CanvasControllerComedor{
         this.padTop = 0;
         this.transformX = (t)=>{return t};
         this.transformY = (t)=>{return t};
+        this.sep = {x:100,y:100};
     }
 
     graficar(){
@@ -37,11 +38,11 @@ class CanvasControllerComedor{
         this.getPuntos();
         this.graficarEjeX();
         this.graficarEjeY();
-        //this.puntos.forEach((sensor,i)=>{
-        //    sensor.forEach(sp => {
-        //        sp.graficarPunto(context,lineColors[i%ncolors]);
-        //    })
-        //});
+        this.puntos.forEach((sensor,i)=>{
+            sensor.forEach(sp => {
+                sp.graficarPunto(context,lineColors[i%ncolors]);
+            })
+        });
         //console.log(this.rangeX);
         //const x = this.transformX(this.rangeX[0]);
         //const y = this.transformY(this.rangeY[0]);
@@ -58,7 +59,7 @@ class CanvasControllerComedor{
         const lpos = {x:lx, y: espaceY};
         const rpos = {x:rx, y : espaceY};
         graficarRecta(context,lpos,rpos,'#7f7f7f',3);
-
+        
     }
     graficarEjeX(){
         const context = this.context;
@@ -68,7 +69,8 @@ class CanvasControllerComedor{
         const tpos = {x:espaceX,y:ty};
         const bpos = {x:espaceX,y:by};
         graficarRecta(context,tpos,bpos,'#7f7f7f',2);
-        const lw = 0;
+        const lw = (this.dim.y - this.pad.y)/100;
+        
     }
     getRangeY(){
         if(!this.defaultY){

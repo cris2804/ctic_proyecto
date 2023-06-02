@@ -105,10 +105,10 @@ export default function () {
         })
       });
       context.clearRect(0,0,dimx,dimy);
-      //grafico.setRangeY([0,2000]);
-      //grafico.setData(newData);
-      graficarRecta(context,{x:padX-5,y:dimy-padY},{x:dimx-30,y:dimy-padY},'#7f7f7f',3);
-      graficarRecta(context,{x:padX,y:0},{x:padX,y:dimy-25},'#7f7f7f',2);
+      grafico.setRangeY([0,2000]);
+      grafico.setData(newData);
+      //graficarRecta(context,{x:padX-5,y:dimy-padY},{x:dimx-30,y:dimy-padY},'#7f7f7f',3);
+      //graficarRecta(context,{x:padX,y:0},{x:padX,y:dimy-25},'#7f7f7f',2);
       const lw = dimx/150;
       for(let i=0;i<lw-1;i++){
         graficarRecta(context,{x:padX + i*150 + 50,y:0},{x:padX + i*150 + 50,y:dimy-padY},'#e5e7eb');
