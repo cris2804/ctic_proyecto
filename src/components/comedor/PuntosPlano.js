@@ -9,8 +9,8 @@ function mousePosition(element,evt){
 }
 class Punto{
     constructor({x,y,radio=5,content=''}){
-        this.x = x-radio;
-        this.y = y-radio;
+        this.x = x;
+        this.y = y;
         this.radio = radio;
         this.content = content
     }
