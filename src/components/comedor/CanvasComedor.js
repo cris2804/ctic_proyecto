@@ -67,96 +67,12 @@ export default function () {
     try {
       const metadataSensor = getMetadataSensor(type);
       const rangoY = metadataSensor?.rangoY;
-      const padX = 60;
-      const padY = 30;
       const newData = await pedirSensoresTratar(type);
-      
-
-      const datatime = newData.flatMap(e => e.map(s => s.timestamp));
-      const datavalues = newData.flatMap(e =>e.map(sv => sv.value));
-      
-      
-      const minx = Math.min(...datatime);
-      const maxx = Math.max(...datatime);
-      
-      //const miny = Math.min(...datavalues);
-      //const maxy = Math.max(...datavalues);
-      let miny;
-      let maxy;
-      let padTop = 0;
-      if(rangoY){
-        miny = rangoY[0];
-        maxy = rangoY[1];
-      }else{
-        miny = Math.min(...datavalues);
-        maxy = Math.max(...datavalues);
-        padTop = 50;
-      }
-      
-      console.log("MM :",minx,maxx, maxx-minx);
-      const distX = dimx - padX;
-      const distY = dimy - padY;
-      
-      const transData = newData.map(sensorData =>{
-        return sensorData.map(sd =>{
-          const x = transformCords([minx,maxx],[padX+10,distX+10],sd.timestamp);
-          const y = transformCords([maxy,miny],[padTop,distY-padTop],sd.value );
-          return new Punto({x:x,y:y,radio:5,content:{value:sd.value,time:sd.timestamp,type:type,idb:sd.idb}});
-        })
-      });
-      context.clearRect(0,0,dimx,dimy);
       grafico.setRangeY([0,2000]);
       grafico.setData(newData);
-      //graficarRecta(context,{x:padX-5,y:dimy-padY},{x:dimx-30,y:dimy-padY},'#7f7f7f',3);
-      //graficarRecta(context,{x:padX,y:0},{x:padX,y:dimy-25},'#7f7f7f',2);
-      const lw = dimx/150;
-      for(let i=0;i<lw-1;i++){
-        graficarRecta(context,{x:padX + i*150 + 50,y:0},{x:padX + i*150 + 50,y:dimy-padY},'#e5e7eb');
-      }
-      const lh = dimy/50;
-      for(let i=0;i<lh-1;i++){
-        graficarRecta(context,{x:padX,y:25 + i*50 },{x:dimx-30,y:25+i*50},'#e5e7eb');
-      }
-
-
-      transData.forEach((sensorData,i)=>{
-        //lineColors[i%ncolors]
-        plotPuntos(context,sensorData,lineColors[i%ncolors],1);
-      });
-      transData.forEach((sensorData,i)=>{
-        const colorSen = lineColors[i%ncolors]
-        sensorData.forEach(sp =>{
-          sp.graficarPunto(context,colorSen);
-        });
-      });
       
-      const dx = (maxx - minx)/lw;
-      context.save();
-      for(let i=0;i<lw-1;i++){
-        const posx = padX + i*150 +50;
-        const valx = Math.floor(transformCords([padX+10,distX+10],[minx,maxx],posx));
-        const pos = {x:posx,y:dimy-padY+5};
-        context.font = '15px Arial';
-        context.textAlign = 'center';
-        context.textBaseline = 'top';
-        context.fillText(formatTimestamp(valx),pos.x,pos.y);
-        
-      }
-      context.restore();
-     
-      context.save();
-      for(let i=0;i<lh-1;i++){
-        const posy = 25 + i*50;
-        const posx = padX/2;
-        const valY = transformCords([padTop,distY-padTop],[maxy,miny],posy ).toFixed(2);
-        context.font = '15px Arial';
-        context.textAlign = 'center';
-        context.textBaseline = 'center';
-        context.fillText(valY,posx,posy+5);
-      }
-      context.restore();
       
-      const Puntos = transData.flatMap(e => e);
+      const Puntos = grafico.puntos.flatMap(e => e);
       const canvas = graficoCanvas.current;
       
       canvas.onmousemove = (evt)=>{
@@ -174,7 +90,7 @@ export default function () {
         }
         Puntos[punto].showPopper(popperElement.current,dimx);
       } 
-      //console.log(allPoints); 
+      
       
     } catch (error) {
       console.log('Error fetching data:', error);

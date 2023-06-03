@@ -1,4 +1,5 @@
 import { Punto } from "./PuntosPlano";
+import { formatTimestamp } from "./PeticionesComedor";
 const transformCords = ([min1,max1],[min2,max2]) =>{
     return (t)=>(t -min1 )/(max1 - min1)*(max2-min2)+ min2;
 }
@@ -13,6 +14,19 @@ const graficarRecta = (context,pos1,pos2,color="red",grosor = 2)=>{
     context.restore();
   
 }
+const plotPuntos = (context,puntos,color="red",grosor = 2) =>{
+    if(puntos.length < 1) return;
+    context.save();
+    context.strokeStyle = color;
+    context.lineWidth = grosor;
+    context.beginPath();
+    context.moveTo(puntos[0].x,puntos[0].y);
+    for(let i = 0;i<puntos.length;i++){
+      context.lineTo(puntos[i].x, puntos[i].y);
+    }
+    context.stroke();
+    context.restore();
+  }
 const lineColors = ['#56a64b', '#e0b400', '#5794f2', '#fa6400', '#e02f44', '#3274d9', '#a352cc', '#890f02', '#0a437c', '#800080'];
 const ncolors = lineColors.length;
 class CanvasControllerComedor{
@@ -31,25 +45,24 @@ class CanvasControllerComedor{
 
     graficar(){
         const context = this.context;
+        context.clearRect(0,0,this.dim.x,this.dim.y);
         this.getRangeX();
         this.getRangeY();
         this.obtainTransformX();
         this.obtainTransformY();
+        this.obtainInvertX();
+        this.obtainInvertY();
         this.getPuntos();
         this.graficarEjeX();
         this.graficarEjeY();
+        this.puntos.forEach((sensorData,i)=>{
+            plotPuntos(context,sensorData,lineColors[i%ncolors],1);
+        })
         this.puntos.forEach((sensor,i)=>{
             sensor.forEach(sp => {
                 sp.graficarPunto(context,lineColors[i%ncolors]);
             })
         });
-        //console.log(this.rangeX);
-        //const x = this.transformX(this.rangeX[0]);
-        //const y = this.transformY(this.rangeY[0]);
-        //const point = new Punto({x:x,y:100+y});
-        //console.log(x,y)
-        //point.graficarPunto(context,'blue');
-        //console.log(point);
     }
     graficarEjeY(){
         const context = this.context;
@@ -58,8 +71,23 @@ class CanvasControllerComedor{
         const rx = this.dim.x - 30;
         const lpos = {x:lx, y: espaceY};
         const rpos = {x:rx, y : espaceY};
+        const distX = this.dim.x - this.pad.x;
+        const lh = (this.dim.y - this.padTop)/50;
+        for(let i=0;i<lh;i++){
+            graficarRecta(context,{x:this.pad.x,y:25+i*50},{x:this.dim.x-30, y: 25 + i*50},'#e5e7eb');
+        }
         graficarRecta(context,lpos,rpos,'#7f7f7f',3);
-        
+        context.save();
+        for(let i=0;i<lh-1;i++){
+            const posy = 25 + i*50;
+            const posx = this.pad.x/2;
+            const valY = this.transformInvertY(posy).toFixed(2);
+            context.font = '15px Arial';
+            context.textAlign = 'center';
+            context.textBaseline = 'center';
+            context.fillText(valY,posx,posy+5);
+        }
+        context.restore();
     }
     graficarEjeX(){
         const context = this.context;
@@ -68,9 +96,26 @@ class CanvasControllerComedor{
         const by = this.dim.y - 25;
         const tpos = {x:espaceX,y:ty};
         const bpos = {x:espaceX,y:by};
-        graficarRecta(context,tpos,bpos,'#7f7f7f',2);
-        const lw = (this.dim.y - this.pad.y)/100;
         
+        const distY = this.dim.y - this.pad.y;
+        const lw = (this.dim.x - this.pad.x)/150;
+        console.log(lw,"asdfsdafasdf");
+        
+        for(let i = 0;i<lw-1;i++){
+            graficarRecta(context,{x:this.pad.x + i*150 + 50,y:0},{x:this.pad.x + i*150 + 50,y:distY},'#e5e7eb');
+        }
+        graficarRecta(context,tpos,bpos,'#7f7f7f',2);
+        context.save();
+        for(let i = 0;i<lw-1;i++){
+            const posx = this.pad.x + i*150 + 50;
+            const valx = Math.floor(this.transformInvertX(posx));
+            const pos = {x:posx, y: this.dim.y - this.pad.y +5};
+            context.font = '15px Arial';
+            context.textAlign = 'center';
+            context.textBaseline = 'top';
+            context.fillText(formatTimestamp(valx),pos.x,pos.y);
+        }
+        context.restore();
     }
     getRangeY(){
         if(!this.defaultY){
@@ -90,11 +135,24 @@ class CanvasControllerComedor{
         this.rangeCanvasX = [padX,distX];
         this.transformX = transformCords(this.rangeX,this.rangeCanvasX);
     }
+    obtainInvertX(){
+        const padX = this.pad.x ;
+        const distX = this.dim.x - padX ;
+        this.rangeCanvasX = [padX,distX];
+        this.transformInvertX = transformCords(this.rangeCanvasX,this.rangeX);
+    }
     obtainTransformY(){
         const padTop = this.padTop;
-        const distY = this.dim.y - this.pad.x;
+        const distY = this.dim.y - this.pad.y;
         this.rangeCanvasY = [padTop,distY];
         this.transformY  = transformCords(this.rangeY.reverse(),this.rangeCanvasY );
+    }
+    obtainInvertY(){
+        const padTop = this.padTop;
+        const distY = this.dim.y - this.pad.y;
+        this.rangeCanvasY = [padTop,distY];
+        this.transformInvertY  = transformCords(this.rangeCanvasY,this.rangeY);
+
     }
     getPuntos(){
         const type = 'dioxido_de_carbono';
