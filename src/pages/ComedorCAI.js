@@ -264,7 +264,7 @@ export default function ComedorCAI() {
           <div
             style={{
               backgroundColor: "white",
-              height: "90vh",
+              paddingBottom: "50px",
               boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)",
               borderRadius: "2px 2px 10px 10px",
             }}
@@ -530,6 +530,9 @@ export default function ComedorCAI() {
             </div>
             <div className="container__grafico">
               <CanvasComedor/>
+            </div>
+            <div className="container__grafico">
+              <CanvasComedor/> {/*Aqui va gráfica del promedio */}
             </div>
           </div>
         </div>

@@ -41,17 +41,17 @@
   width: 65%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
+  /*justify-content: space-between;*/
 }
 .cdd {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #f3f7fb;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   font-size: 15px;
-  height: 25vh;
 }
 .container__tipos__gases__cai {
   display: flex;
@@ -78,7 +78,7 @@
 }
 .container__grafico__rangos__tipos__gases__ {
   margin-bottom: none;
-  height: 70vh;
+  /*height: 70vh;*/
   display: flex;
   flex-direction: column;
 }
