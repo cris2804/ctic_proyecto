@@ -13,6 +13,12 @@ const smartcampus = [
       "https://images.pexels.com/photos/1528361/pexels-photo-1528361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
+    titulo: "Metaverso",
+    descripcion: "descripción del metaverso",
+    link: "/#",
+    imagen: "https://cdn.pixabay.com/photo/2022/06/09/08/44/metaverse-7252038_1280.jpg"
+  },
+  {
     titulo: "Comedor Universitario",
     descripcion: "Página web del menú, balance nutricional y para sacar turno.",
     link: "/#",
