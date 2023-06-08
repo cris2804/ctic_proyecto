@@ -6,6 +6,7 @@ import { obtenerhora } from "./obtenerhora";
 import { obtenerfecha } from "./obtenerfecha";
 import { useState, useEffect } from "react";
 import {BsThermometerHalf, BsSunFill} from 'react-icons/bs';
+import { Getip } from "../server/Getip";
 
 const nombrelugar = (e) => {
   if (e === "ca-ctic") return "ctic";
@@ -21,12 +22,13 @@ const obtenerid = (e) => {
 
 export default function Detalles(props) {
   const [data, setData] = useState(null);
+  let host = window.location.host;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://192.168.52.232:9090/api/v1/calidad-de-aire/${obtenerid(
+          `${Getip(host)}/api/v1/calidad-de-aire/${obtenerid(
             props.id
           )}?last=1`
         );

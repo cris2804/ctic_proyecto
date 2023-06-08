@@ -14,7 +14,7 @@ import { MdMasks } from "react-icons/md";
 import { MdOutlineWindPower } from "react-icons/md";
 import { MdOutlineSportsHandball } from "react-icons/md";
 import { MdLocationPin } from "react-icons/md";
-//, MdWaterDrop
+import { Getip } from "../server/Getip";
 
 const gases = [
   {
@@ -77,6 +77,7 @@ function retornaidb(id) {
 export default function DetalleCA() {
   const searchParams = new URLSearchParams(window.location.search);
   const id = searchParams.get("id");
+  let host = window.location.host; //para obtener la ip
 
   const [isHovered, setIsHovered] = useState(false);
   //const [seleccionado, setSeleccionado] = useState(0);
@@ -104,9 +105,9 @@ export default function DetalleCA() {
 
   const handleMostrar = () => {
     fetch(
-      `http://192.168.52.232:9090/api/v1/calidad-de-aire/descargar/${retornaidb(
+      `${Getip(host)}/api/v1/calidad-de-aire/descargar/${retornaidb(
         id
-      )}?maxDate=${Number(date2)}&minDate=${Number(date1)}&columns=00000${
+      )}?maxDate=${Number(date2)}&minDate=${Number(date1)}&columns=0000${
         checkboxes.Humedad ? "1" : "0"
       }00000${checkboxes.PM10 ? "1" : "0"}00${checkboxes.PM25 ? "1" : "0"}${
         checkboxes.Viento ? "1" : "0"

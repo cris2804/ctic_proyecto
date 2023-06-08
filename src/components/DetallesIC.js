@@ -8,6 +8,7 @@ import happy from "./images/happy.png";
 import { useState, useEffect } from "react";
 import serio from "./images/serio.png";
 import triste from "./images/triste.png";
+import { Getip } from "../server/Getip";
 
 const nombrelugar = (e) => {
   if (e === "cv-comedor") return "Comedor Universitario";
@@ -36,6 +37,8 @@ const getLastHourToTimestamp = (horas) => {
 
 export default function DetallesIC({ id }) {
   const [data, setData] = useState(null);
+  let host = window.location.host; //para obtener la ip
+
   useEffect(() => {
     const fetchData = async () => {
       let sumaco2 = [],
@@ -45,7 +48,7 @@ export default function DetallesIC({ id }) {
       const timestamp = getLastHourToTimestamp(2 / 15);
       const promises = dat.map((d) => {
         return fetch(
-          `http://192.168.52.232:9090/api/v1/carga-viral/${d.idb}?minDate=${timestamp}&columns=001001111`
+          `${Getip(host)}/api/v1/carga-viral/${d.idb}?minDate=${timestamp}&columns=001001111`
         )
           .then((response) => response.json())
           .then((data) => {
