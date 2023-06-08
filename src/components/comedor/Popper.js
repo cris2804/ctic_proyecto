@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from '../Card'
+//import Card from '../Card'
 import {formatTimestamp} from './PeticionesComedor';
 
 export default function Popper({value,type,time,idb}) {

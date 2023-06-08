@@ -116,7 +116,7 @@ export default function ComedorCAI() {
     };
 
     fetchData();
-  }, [id]);
+  }, [id, host]);
 
   //const [seleccionado, setSeleccionado] = useState(0);
   const [opcion, setOpcion] = useState("Co2");
