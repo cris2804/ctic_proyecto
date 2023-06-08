@@ -13,8 +13,8 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { MdLocationPin } from "react-icons/md";
 //import { BsFillBuildingFill } from "react-icons/bs";
 import { FcElectricalSensor } from "react-icons/fc";
-import CanvasComedor from "../components/comedor/CanvasComedor";
 import { Getip } from "../server/Getip";
+import GraficosComedor from "../components/comedor/GraficosComedor";
 
 const gases = [
   {
@@ -528,12 +528,7 @@ export default function ComedorCAI() {
                 DIA
               </div>*/}
             </div>
-            <div className="container__grafico">
-              <CanvasComedor/>
-            </div>
-            <div className="container__grafico">
-              <CanvasComedor/> {/*Aqui va gráfica del promedio */}
-            </div>
+            <GraficosComedor/>
           </div>
         </div>
       </div>

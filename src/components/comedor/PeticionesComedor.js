@@ -13,7 +13,7 @@ const getLastHourToTimestamp = (horas)=>{
 
 
 //const url_basic = "http://192.168.52.232:9090/api/v1/carga-viral/";
-const url_basic = "http://192.168.52.232:9090/api/v1/carga-viral/";
+const url_basic = "http://181.176.48.200:9090/api/v1/carga-viral/";
 
 const comedirIds = [2201,2202,2203,2204,2205,2208,2209,2210,2212,2213];
 const cantidad = 200;
@@ -66,7 +66,7 @@ const pedirSensores = async (type = "dioxido_de_carbono") =>{
     return tratado;
     
 }
-const pedirSensoresTratar = async (type = "dioxido_de_carbono", host) =>{
+const pedirSensoresTratar = async (type = "dioxido_de_carbono", host = "http://181.176.48.200:9090") =>{
     //dioxido_de_carbono humedad temperatura
     //return fetch(`${url_basic}${e}?last=${cantidad}&columns=001001111`, requestOptions)
     const timestamp = getLastHourToTimestamp(3);
@@ -80,7 +80,7 @@ const pedirSensoresTratar = async (type = "dioxido_de_carbono", host) =>{
     
     const allResults = await Promise.all(fetchPromises)
     const resultado = allResults.filter(e => (e.length!==0));
-    console.log("XD",resultado);
+    //console.log("XD",resultado);
     const tratadoSensor = resultado.map((resSensor)=>{
         const rSensor = resSensor.map((es)=>{
             const dataObject = new Date(es.time_index);

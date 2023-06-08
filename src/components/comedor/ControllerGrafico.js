@@ -1,4 +1,4 @@
-import { Punto } from "./PuntosPlano";
+import { Punto, mousePosition } from "./PuntosPlano";
 import { formatTimestamp } from "./PeticionesComedor";
 import { findOptimalK } from "./Kmeans";
 const transformCords = ([min1,max1],[min2,max2]) =>{
@@ -30,11 +30,12 @@ const plotPuntos = (context,puntos,color="red",grosor = 2) =>{
   }
 const lineColors = ['#56a64b', '#e0b400', '#5794f2', '#fa6400', '#e02f44', '#3274d9', '#a352cc', '#890f02', '#0a437c', '#800080'];
 const ncolors = lineColors.length;
-const colorsRange = ['#fecccb','#ffedcc','cce6cb'];
+const colorsRange = ['#cce6cb','#fff3cc','#fecccb'];
+//const colorsRange = ['red','blue','green'];
 const rangos = [800,1000,2000];
 const ncrange = colorsRange.length;
 class CanvasControllerComedor{
-    constructor({context,dim={x:0,y:0},pad={x:0,y:0},data=[]}){
+    constructor({context,canvas,popper,dim={x:0,y:0},pad={x:0,y:0},data=[]}){
         this.context = context;
         this.dim = dim; //dimension de la grafica incluye[los ejes]
         this.pad = pad; //Referido a los bordes
@@ -45,8 +46,10 @@ class CanvasControllerComedor{
         this.transformX = (t)=>{return t};
         this.transformY = (t)=>{return t};
         this.sep = {x:100,y:100};
+        this.canvas = canvas;
+        this.popper = popper;
     }
-
+    
     graficar(){
         const context = this.context;
         context.clearRect(0,0,this.dim.x,this.dim.y);
@@ -71,46 +74,31 @@ class CanvasControllerComedor{
                 sp.graficarPunto(context,lineColors[i%ncolors]);
             })
         });
-        const puntos = this.data.flatMap(e=>{
-            return e.map(s=>{return [s.timestamp,s.value]})
-        });
-        puntos.sort((a,b)=>a[0]-b[0]);
-        const intervals = []
-        let cant = 0;
-        let timeT = 0;
-        let valueT = 0;
-        const cantPuntos = puntos.length;
-        const fourMinutes = 4*60*1000;
-        for(let i = 0;i<cantPuntos;i++){
-            cant++;
-            timeT += puntos[i][0];
-            valueT += puntos[i][1];
-            const next = Math.min(i+1,cantPuntos-1)
-            //console.log(puntos[i][0]-puntos[next][0]);
-            if(puntos[next][0]- puntos[i][0]>fourMinutes){
-                intervals.push([timeT/cant,valueT/cant]);
-                console.log(cant);
-                timeT = 0;
-                valueT=0;
-                cant = 0;
-            }
-            if(i==next){
-                intervals.push([timeT/cant,valueT/cant]);
-                cant = 0;
-            }
-        }
-        console.log(intervals,"ASDFasdfas");
-        const pIntervals = intervals.map(e=>{
-            const x = this.transformX(e[0]);
-            const y = this.transformY(e[1]);
-            return new Punto({x:x,y:y,radio:this.radio});
-        })
-        plotPuntos(context,pIntervals,'red',4);
-        pIntervals.forEach(e=>{
-            e.graficarPunto(context,"red");
-        })
+        this.puntosFlat = this.puntos.flatMap(e=>e);
+        this.addAbovePoint();
     }
-    graficarEjeY(){
+    addAbovePoint(){
+        const canvas = this.canvas;
+        const Puntos = this.puntosFlat;
+        const popperElement = this.popper;
+        canvas.onmousemove = (evt)=>{
+            const pos = mousePosition(canvas,evt);
+            let punto = -1;
+            for(let i=0;i<Puntos.length;i++){
+                if(Puntos[i].isTouch(pos,50)){
+                    punto = i;
+                    break;
+                }
+            }
+            if(punto === -1) {
+                popperElement.style.display = 'none';
+                return;
+            }
+            Puntos[punto].showPopper(popperElement,this.dim.x);
+        }
+        
+    }
+    graficarEjeY(colorLine = '#e5e7eb'){
         const context = this.context;
         const espaceY = this.dim.y - this.pad.y;
         const lx = this.pad.x - 5;
@@ -120,7 +108,8 @@ class CanvasControllerComedor{
         const distX = this.dim.x - this.pad.x;
         const lh = (this.dim.y - this.padTop)/50;
         for(let i=0;i<lh;i++){
-            graficarRecta(context,{x:this.pad.x,y:25+i*50},{x:this.dim.x-30, y: 25 + i*50},'#e5e7eb');
+            graficarRecta(context,{x:this.pad.x,y:25+i*50},
+                {x:this.dim.x-30, y: 25 + i*50},colorLine);
         }
         graficarRecta(context,lpos,rpos,'#7f7f7f',3);
         context.save();
@@ -135,7 +124,7 @@ class CanvasControllerComedor{
         }
         context.restore();
     }
-    graficarEjeX(){
+    graficarEjeX(colorLine = '#e5e7eb'){
         const context = this.context;
         const espaceX = this.pad.x;
         const ty = 0;
@@ -145,10 +134,10 @@ class CanvasControllerComedor{
         
         const distY = this.dim.y - this.pad.y;
         const lw = (this.dim.x - this.pad.x)/150;
-        console.log(lw,"asdfsdafasdf");
         
         for(let i = 0;i<lw;i++){
-            graficarRecta(context,{x:this.pad.x + i*150 + 50,y:0},{x:this.pad.x + i*150 + 50,y:distY},'#e5e7eb');
+            graficarRecta(context,{x:this.pad.x + i*150 + 50,y:0},
+                {x:this.pad.x + i*150 + 50,y:distY},colorLine);
         }
         graficarRecta(context,tpos,bpos,'#7f7f7f',2);
         context.save();
@@ -225,4 +214,81 @@ class CanvasControllerComedor{
         this.graficar();
     }
 }
-export  {CanvasControllerComedor}
+class CanvasControllerComedorPromedio extends CanvasControllerComedor{
+    graficar(){
+        const context = this.context;
+        context.clearRect(0,0,this.dim.x,this.dim.y);
+        this.getRangeX();
+        this.getRangeY();
+        this.obtainTransformX();
+        this.obtainTransformY();
+        this.obtainInvertX();
+        this.obtainInvertY();
+        this.graficarRangosY();
+        this.graficarEjeX('#6662');
+        this.graficarEjeY('#6662');
+        const puntos = this.data.flatMap(e=>{
+            return e.map(s=>{return [s.timestamp,s.value]})
+        });
+        puntos.sort((a,b)=>a[0]-b[0]);
+        const intervals = []
+        let cant = 0;
+        let timeT = 0;
+        let valueT = 0;
+        const cantPuntos = puntos.length;
+        const fourMinutes = 4*60*1000;
+        for(let i = 0;i<cantPuntos;i++){
+            cant++;
+            timeT += puntos[i][0];
+            valueT += puntos[i][1];
+            const next = Math.min(i+1,cantPuntos-1)
+            if(puntos[next][0]- puntos[i][0]>fourMinutes){
+                intervals.push([timeT/cant,valueT/cant]);
+                //console.log(cant);
+                timeT = 0;
+                valueT=0;
+                cant = 0;
+            }
+            if(i==next){
+                intervals.push([timeT/cant,valueT/cant]);
+                cant = 0;
+            }
+        }
+        const type = 'dioxido_de_carbono';
+        const pIntervals = intervals.map(e=>{
+            const x = this.transformX(e[0]);
+            const y = this.transformY(e[1]);
+            return new Punto({x:x,y:y,radio:this.radio,
+                        content:{value:e[1].toFixed(2),time:e[0],type:type,idb:"Promedio"}});
+        });
+        this.puntos = pIntervals;
+
+        plotPuntos(context,pIntervals,'orange',4);
+        pIntervals.forEach(e=>{
+            e.graficarPunto(context,"orange");
+        });
+        this.puntosFlat = pIntervals;
+        this.addAbovePoint();
+    }
+    graficarRangosY(){
+        const context = this.context;
+        let miny = this.rangeY[1];
+       
+        context.save();
+        rangos.forEach((r,i)=>{
+            const y1 = this.transformY(miny);
+            const y2 = this.transformY(r);
+            const pos1 = {x:this.pad.x,y:y1};
+            const pos2 = {x:this.dim.x-30,y:y2};
+            context.fillStyle= colorsRange[i%ncrange];
+            context.fillRect(pos1.x,pos1.y,pos2.x-pos1.x,pos2.y-pos1.y);
+            miny = r;
+        })
+        context.restore();
+    }
+    setData(data){
+        this.data = data;
+        this.graficar();
+    }
+}
+export  {CanvasControllerComedor,CanvasControllerComedorPromedio}
