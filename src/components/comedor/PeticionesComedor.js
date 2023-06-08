@@ -66,7 +66,7 @@ const pedirSensores = async (type = "dioxido_de_carbono") =>{
     return tratado;
     
 }
-const pedirSensoresTratar = async (type = "dioxido_de_carbono", host = "http://181.176.48.200:9090") =>{
+const pedirSensoresTratar = async (type = "dioxido_de_carbono", host) =>{
     //dioxido_de_carbono humedad temperatura
     //return fetch(`${url_basic}${e}?last=${cantidad}&columns=001001111`, requestOptions)
     const timestamp = getLastHourToTimestamp(3);

@@ -528,7 +528,7 @@ export default function ComedorCAI() {
                 DIA
               </div>*/}
             </div>
-            <GraficosComedor/>
+            <GraficosComedor host={Getip(host)}/>
           </div>
         </div>
       </div>

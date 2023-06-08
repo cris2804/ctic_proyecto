@@ -5,11 +5,11 @@ import { useState } from 'react'
 import { CanvasControllerComedor, CanvasControllerComedorPromedio } from './ControllerGrafico';
 import { useEffect } from 'react';
 let timer = null;
-export default function GraficosComedor() {
+export default function GraficosComedor({host}) {
     const [newData,setNewData] = useState([]);
     const [type,setType] = useState("dioxido_de_carbono");
     const fetchData = async(type="temperatura") =>{
-        const newData1 = await pedirSensoresTratar(type);
+        const newData1 = await pedirSensoresTratar(type, host);
         setNewData(newData1);
     }
     useEffect(()=>{
