@@ -68,6 +68,7 @@ export default function () {
       const metadataSensor = getMetadataSensor(type);
       const rangoY = metadataSensor?.rangoY;
       const newData = await pedirSensoresTratar(type);
+      console.log("new Data",newData);
       grafico.setRangeY([0,2000]);
       grafico.setData(newData);
       

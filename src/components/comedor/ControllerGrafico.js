@@ -1,5 +1,6 @@
 import { Punto } from "./PuntosPlano";
 import { formatTimestamp } from "./PeticionesComedor";
+import { findOptimalK } from "./Kmeans";
 const transformCords = ([min1,max1],[min2,max2]) =>{
     return (t)=>(t -min1 )/(max1 - min1)*(max2-min2)+ min2;
 }
@@ -29,6 +30,9 @@ const plotPuntos = (context,puntos,color="red",grosor = 2) =>{
   }
 const lineColors = ['#56a64b', '#e0b400', '#5794f2', '#fa6400', '#e02f44', '#3274d9', '#a352cc', '#890f02', '#0a437c', '#800080'];
 const ncolors = lineColors.length;
+const colorsRange = ['#fecccb','#ffedcc','cce6cb'];
+const rangos = [800,1000,2000];
+const ncrange = colorsRange.length;
 class CanvasControllerComedor{
     constructor({context,dim={x:0,y:0},pad={x:0,y:0},data=[]}){
         this.context = context;
@@ -50,6 +54,10 @@ class CanvasControllerComedor{
         this.getRangeY();
         this.obtainTransformX();
         this.obtainTransformY();
+        //context.save();
+        //context.fillStyle = "#fecccb";
+        //context.fillRect(this.rangeCanvasX[0],0,this.rangeCanvasX[1],100);
+        //context.restore();
         this.obtainInvertX();
         this.obtainInvertY();
         this.getPuntos();
@@ -63,6 +71,44 @@ class CanvasControllerComedor{
                 sp.graficarPunto(context,lineColors[i%ncolors]);
             })
         });
+        const puntos = this.data.flatMap(e=>{
+            return e.map(s=>{return [s.timestamp,s.value]})
+        });
+        puntos.sort((a,b)=>a[0]-b[0]);
+        const intervals = []
+        let cant = 0;
+        let timeT = 0;
+        let valueT = 0;
+        const cantPuntos = puntos.length;
+        const fourMinutes = 4*60*1000;
+        for(let i = 0;i<cantPuntos;i++){
+            cant++;
+            timeT += puntos[i][0];
+            valueT += puntos[i][1];
+            const next = Math.min(i+1,cantPuntos-1)
+            //console.log(puntos[i][0]-puntos[next][0]);
+            if(puntos[next][0]- puntos[i][0]>fourMinutes){
+                intervals.push([timeT/cant,valueT/cant]);
+                console.log(cant);
+                timeT = 0;
+                valueT=0;
+                cant = 0;
+            }
+            if(i==next){
+                intervals.push([timeT/cant,valueT/cant]);
+                cant = 0;
+            }
+        }
+        console.log(intervals,"ASDFasdfas");
+        const pIntervals = intervals.map(e=>{
+            const x = this.transformX(e[0]);
+            const y = this.transformY(e[1]);
+            return new Punto({x:x,y:y,radio:this.radio});
+        })
+        plotPuntos(context,pIntervals,'red',4);
+        pIntervals.forEach(e=>{
+            e.graficarPunto(context,"red");
+        })
     }
     graficarEjeY(){
         const context = this.context;
@@ -101,12 +147,12 @@ class CanvasControllerComedor{
         const lw = (this.dim.x - this.pad.x)/150;
         console.log(lw,"asdfsdafasdf");
         
-        for(let i = 0;i<lw-1;i++){
+        for(let i = 0;i<lw;i++){
             graficarRecta(context,{x:this.pad.x + i*150 + 50,y:0},{x:this.pad.x + i*150 + 50,y:distY},'#e5e7eb');
         }
         graficarRecta(context,tpos,bpos,'#7f7f7f',2);
         context.save();
-        for(let i = 0;i<lw-1;i++){
+        for(let i = 0;i<lw;i++){
             const posx = this.pad.x + i*150 + 50;
             const valx = Math.floor(this.transformInvertX(posx));
             const pos = {x:posx, y: this.dim.y - this.pad.y +5};
