@@ -1,7 +1,7 @@
 import "./css/ComedorCAI.css";
 import happy from "../components/images/happy.png";
-import serio from '../components/images/serio.png';
-import triste from '../components/images/triste.png';
+import serio from "../components/images/serio.png";
+import triste from "../components/images/triste.png";
 import "./css/DetalleCAI.css";
 import { useState, useEffect } from "react";
 //import Grafico from "../components/Grafico";
@@ -15,6 +15,7 @@ import { MdLocationPin } from "react-icons/md";
 import { FcElectricalSensor } from "react-icons/fc";
 import { Getip } from "../server/Getip";
 import GraficosComedor from "../components/comedor/GraficosComedor";
+import Verificar from "../components/Verificar";
 
 const gases = [
   {
@@ -67,16 +68,13 @@ export default function ComedorCAI() {
   const id = searchParams.get("id");
   let host = window.location.host; //para obtener la ip
 
-
   const [data, setData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `${Getip(host)}/api/v1/carga-viral/${retornaidb(
-            id
-          )}?last=1`
+          `${Getip(host)}/api/v1/carga-viral/${retornaidb(id)}?last=1`
         );
         const data = await response.json();
 
@@ -149,11 +147,14 @@ export default function ComedorCAI() {
   const toggleCalendar2 = () => {
     setShowCalendar2(!showCalendar2);
   };
+
+  const [verificar, setVerificar] = useState(false);
   const handleMostrar = () => {
     //const currentUrl = window.location.href;
 
     //console.log(currentUrl)
     //181.176.48.200:9090
+    setVerificar(true);
     let c, t, h;
     if (isChecked) c = 1;
     else c = 0;
@@ -413,7 +414,6 @@ export default function ComedorCAI() {
                 checked={isChecked}
                 onChange={handleCheckboxChange}
               ></input>{" "}
-              
             </div>
             <div className="container__detalle__descargar">
               Temperatura &nbsp;&nbsp;&nbsp;&nbsp;
@@ -457,6 +457,13 @@ export default function ComedorCAI() {
                 Descargar CSV&nbsp;&nbsp; <CloudDownloadIcon />
               </button>
             </div>
+            {verificar && <Verificar
+              date1={date1.toLocaleDateString()}
+              date2={date2.toLocaleDateString()}
+              isChecked={isChecked}
+              isCheckedt={isCheckedt}
+              isCheckedh={isCheckedh}
+            />}
           </div>
         </div>
         <div className="container__detalle__ca__right">
@@ -528,7 +535,7 @@ export default function ComedorCAI() {
                 DIA
               </div>*/}
             </div>
-            <GraficosComedor host={Getip(host)}/>
+            <GraficosComedor host={Getip(host)} />
           </div>
         </div>
       </div>
