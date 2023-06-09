@@ -14,7 +14,7 @@ const smartcampus = [
   },
   {
     titulo: "Metaverso",
-    descripcion: "descripción del metaverso",
+    descripcion: "Aquí encontraremos una virtualización de la UNI, divierte",
     link: "/#",
     imagen: "https://cdn.pixabay.com/photo/2022/06/09/08/44/metaverse-7252038_1280.jpg"
   },
