@@ -1,0 +1,67 @@
+.container__main__cuenta__personas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+}
+
+.container__left__cuenta__personas{
+    position: fixed;
+    top: 10vh;
+    left: 50px;
+    height: 80vh;
+    width: 20%;
+    background-color: #081A51;
+    color: #fff;
+}
+.container__left__cuenta__personas .container__div{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    font-size: 2rem;
+    font-weight: 700;
+}/*
+.div1{
+    border: solid 1px red;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    font-size: 3rem;
+    font-weight: 700;
+}*/
+.container__div .container__valor{
+    font-size: 8rem;
+}
+
+.container__right__cuenta__personas{
+    position: relative;
+    width: calc(80% - 90px);
+    margin-left: calc(20% + 50px);
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.666%;
+}
+
+.container__right__cuenta__personas .container__popupzoom{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+}
+
+.container__popupzoom__{
+    display: none;
+}
