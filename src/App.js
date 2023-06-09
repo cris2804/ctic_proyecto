@@ -22,6 +22,7 @@ import { RiDashboardFill } from "react-icons/ri";
 import icono from "./favicon.ico";
 import { SiWindicss } from "react-icons/si";
 import { MdCo2 } from "react-icons/md";
+import Cuentapersonas from "./pages/Cuentapersonas";
 //import Plano from "./components/comedor/PlanoComedor";
 
 //import GraficoComedor from './components/comedor/GraficoComedor';
@@ -180,6 +181,8 @@ function App() {
               path="/calidad-del-aire-interiores-comedor-universitario"
               element={<ComedorCAI />}
             />
+
+            <Route path="/cuenta-personas" element={<Cuentapersonas/>} />
 
             <Route path="/faq-carga-viral" element={<FaqCAI />} />
             <Route path="/faq-calidad-de-aire" element={<FaqCAE />} />

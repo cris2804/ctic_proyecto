@@ -9,19 +9,29 @@ const smartcampus = [
     descripcion:
       "Plataforma web de la calidad del aire en interiores y exteriores de la UNI.",
     link: "/calidad-del-aire",
+    blank: true,
     imagen:
       "https://images.pexels.com/photos/1528361/pexels-photo-1528361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
+    titulo: "Cuenta Personas",
+    descripcion: "Control de las personas que ingresan a determinado ambiente.",
+    link: "/cuenta-personas",
+    blank: true,
+    imagen: "https://www.mobotix.com/sites/default/files/styles/facebook/public/2020-06/backontrack_1_930x550.jpg?h=c4a9cdb7&itok=p09sYf8W"
+  },
+  {
     titulo: "Metaverso",
-    descripcion: "descripción del metaverso",
+    descripcion: "Aquí encontraremos una virtualización de la UNI, divierte",
     link: "/#",
+    blank: false,
     imagen: "https://cdn.pixabay.com/photo/2022/06/09/08/44/metaverse-7252038_1280.jpg"
   },
   {
     titulo: "Comedor Universitario",
     descripcion: "Página web del menú, balance nutricional y para sacar turno.",
     link: "/#",
+    blank: false,
     imagen:
       "https://1.bp.blogspot.com/-LJ1jyLSwlnU/XfPW8rk0U2I/AAAAAAAAPGc/s87z5i3bvIMnSu1ocH1N4jUdwg8-9ML_wCNcBGAsYHQ/s1600/IMG_9696.CR2",
   },
@@ -37,6 +47,7 @@ const smartcampus = [
     titulo: "Laboratorios De Investigación",
     descripcion: "Conozca los diferentes laboratorios que hay en CTIC.",
     link: "/#",
+    blank: false,
     imagen:
       "https://images.pexels.com/photos/8438993/pexels-photo-8438993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
@@ -44,6 +55,7 @@ const smartcampus = [
     titulo: "App Smart Campus",
     descripcion: "Aplicación del smart campus de la UNI",
     link: "/#",
+    blank: false,
     imagen:
       "https://res.cloudinary.com/slee-dw/image/upload/v1597941457/meta-tutoriales_vbnc37.png",
   },
@@ -51,12 +63,14 @@ const smartcampus = [
     titulo: "Bolsa De Trabajo",
     descripcion: "Página web de registro de ofertas laborales",
     link: "/#",
+    blank: false,
     imagen: "https://www.ceupe.pe/images/easyblog_articles/296/720.jpg",
   },
   {
     titulo: "Biblioteca",
     descripcion: "Página web para ver el aforo en la biblioteca",
     link: "/#",
+    blank: false,
     imagen:
       "https://4.bp.blogspot.com/-JsmbNBRtZtQ/UMdkaE3az4I/AAAAAAAAKjE/nPJKeu8ZoOw/s1600/B1.jpg",
   },
@@ -123,7 +137,7 @@ export default function Landing() {
                 <Fade right delay={tiempo}>
                   <a
                     href={sc.link}
-                    target={index === 0 ? `_blank` : "_self"}
+                    target={sc.blank ? `_blank` : "_self"}
                     rel="noopener noreferrer"
                   >
                     <figure>
