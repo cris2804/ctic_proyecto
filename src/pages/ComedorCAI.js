@@ -457,6 +457,7 @@ export default function ComedorCAI() {
                 Descargar CSV&nbsp;&nbsp; <CloudDownloadIcon />
               </button>
             </div>
+            <div style={{width: '100%', height: '50px'}}>
             {verificar && <Verificar
               date1={date1.toLocaleDateString()}
               date2={date2.toLocaleDateString()}
@@ -464,6 +465,7 @@ export default function ComedorCAI() {
               isCheckedt={isCheckedt}
               isCheckedh={isCheckedh}
             />}
+            </div>
           </div>
         </div>
         <div className="container__detalle__ca__right">

@@ -26,7 +26,7 @@ function restarFechas(fecha1, fecha2, co2, temp, hum) {
 export default function Verificar({date1, date2, isChecked, isCheckedt, isCheckedh}){    
 
     return(
-        <div style={{color: 'red', textAlign: 'center'}}>
+        <div style={{color: 'red', textAlign: 'center', fontSize: '0.9rem', height: '50px'}}>
             {restarFechas(date1, date2, isChecked, isCheckedt, isCheckedh)}
         </div>
     )
