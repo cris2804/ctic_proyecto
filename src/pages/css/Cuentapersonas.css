@@ -25,7 +25,7 @@
     justify-content: center;
     align-items: center;
     gap: 1vh;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
 }/*
 .div1{
@@ -37,7 +37,7 @@
     font-weight: 700;
 }*/
 .container__div .container__valor{
-    font-size: 8rem;
+    font-size: 6rem;
 }
 
 .container__right__cuenta__personas{

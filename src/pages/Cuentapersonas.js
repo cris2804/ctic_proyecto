@@ -3,6 +3,7 @@ import PopupZoom from "../components/PopupZoom";
 import Popup from "../components/Popup";
 import data from "../assets/data";
 import { useEffect, useState } from "react";
+import perfil from '../components/images/perfil.png';
 
 export default function Cuentapersonas() {
   const [show, setShow] = useState(false);
@@ -17,7 +18,7 @@ export default function Cuentapersonas() {
         setCount(prevCount => prevCount + 1);
       }
       setShow(prevShow => !prevShow);
-    }, 3000);
+    }, 5000);
 
     return () => {
       clearInterval(interval);
@@ -39,13 +40,13 @@ export default function Cuentapersonas() {
       </div>
       <div className="container__right__cuenta__personas">
         {datactual.map((d, i) => {
-          return <Popup firstname={d.firstname} lastname={d.lastname} />;
+          return <Popup firstname={d.firstname} lastname={d.lastname} perfil={perfil}/>;
         })}
 
         <div
           className={show ? `container__popupzoom` : "container__popupzoom__"}
         >
-          <PopupZoom />
+          <PopupZoom perfil={perfil}/>
         </div>
       </div>
     </div>
