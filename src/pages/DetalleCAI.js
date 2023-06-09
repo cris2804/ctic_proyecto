@@ -12,6 +12,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { MdLocationPin } from "react-icons/md";
 import { BsFillBuildingFill } from "react-icons/bs";
 import { Getip } from "../server/Getip";
+import Verificar from "../components/Verificar";
 
 const gases = [
   {
@@ -147,12 +148,13 @@ export default function DetalleCAI() {
   const toggleCalendar2 = () => {
     setShowCalendar2(!showCalendar2);
   };
-
+  const [verificar, setVerificar] = useState(false);
   const handleMostrar = () => {
     //const currentUrl = window.location.href;
 
     //console.log(currentUrl)
     //181.176.48.200:9090
+    setVerificar(true);
     let c, t, h;
     if (isChecked) c = 1;
     else c = 0;
@@ -421,6 +423,15 @@ export default function DetalleCAI() {
               >
                 Descargar CSV&nbsp;&nbsp; <CloudDownloadIcon />
               </button>
+            </div>
+            <div style={{width: '100%', height: '50px'}}>
+            {verificar && <Verificar
+              date1={date1.toLocaleDateString()}
+              date2={date2.toLocaleDateString()}
+              isChecked={isChecked}
+              isCheckedt={isCheckedt}
+              isCheckedh={isCheckedh}
+            />}
             </div>
           </div>
         </div>
