@@ -15,7 +15,12 @@ export default function Cuentapersonas() {
       if (show) {
         const nuevoObjeto = { firstname: 'Juan Fernando', lastname: "Pérez del Corral" };
         setDatactual(prevData => [nuevoObjeto, ...prevData]);
-        setCount(prevCount => prevCount + 1);
+        if(count < 150){ 
+          setCount(prevCount => prevCount + 1);
+        }else{
+          setDatactual(data);
+          setCount(5);
+        }
       }
       setShow(prevShow => !prevShow);
     }, 5000);
