@@ -28,7 +28,7 @@ export default function Cuentapersonas() {
     return () => {
       clearInterval(interval);
     };
-  }, [show]);
+  }, [show, count]);
 
 
   return (
