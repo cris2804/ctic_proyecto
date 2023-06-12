@@ -12,7 +12,10 @@ export default function Cuentapersonas() {
   const [datactual, setDatactual] = useState(data);
   const [count, setCount] = useState(5);
 
-  var socket = io("http://192.168.52.232:9090")
+ // var socket = io("http://192.168.52.232:9090")
+  var socket = io("http://192.168.52.232:9090",{
+    transports: ['websocket'],
+});
 
   socket.on('rec_fac/rec_fac:rec_fac02', (data) => {
     console.log("dataa", data)
