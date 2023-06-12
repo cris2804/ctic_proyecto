@@ -23,7 +23,7 @@ export default function Cuentapersonas() {
         }
       }
       setShow(prevShow => !prevShow);
-    }, 5000);
+    }, 50000);
 
     return () => {
       clearInterval(interval);
