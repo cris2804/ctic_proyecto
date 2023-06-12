@@ -11,6 +11,7 @@ export default function Cuentapersonas() {
   const [show, setShow] = useState(false);
   const [datactual, setDatactual] = useState(data);
   const [count, setCount] = useState(5);
+  const [newData, setNewdata] = useState(null);
 
  // var socket = io("http://192.168.52.232:9090")
   var socket = io("http://192.168.52.232:9090",{
@@ -18,7 +19,8 @@ export default function Cuentapersonas() {
 });
 
   socket.on('rec_fac/rec_fac:rec_fac02', (data) => {
-    console.log("dataa", data)
+    setNewdata(data);
+    console.log("dataa", data.nombres)
 });
 
   useEffect(() => {
