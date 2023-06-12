@@ -2,7 +2,7 @@ import "./css/DetalleCA.css";
 import happy from "../components/images/happy.png";
 import { useState } from "react";
 import { Ica } from "../assets/Ica";
-import Grafico from "../components/Grafico";
+//import Grafico from "../components/Grafico";
 import Grafico2 from "../components/Grafico2";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Calendar from "react-calendar";

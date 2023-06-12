@@ -7,7 +7,7 @@ const sensores=[
     vista:'Humedad(%)'}
 ]
 const getMetadataSensor =  (name) =>{
-    return sensores.filter(e=>e.name == name)[0] || {};
+    return sensores.filter(e=>e.name === name)[0] || {};
 }
 const formatMetadataSensor = (metada) =>{
     return `${metada.name.replaceAll("_"," ")}(${metada.unidad})`;
