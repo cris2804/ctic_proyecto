@@ -4,11 +4,19 @@ import Popup from "../components/Popup";
 import data from "../assets/data";
 import { useEffect, useState } from "react";
 import perfil from '../components/images/perfil.png';
+import io from 'socket.io-client';
+
 
 export default function Cuentapersonas() {
   const [show, setShow] = useState(false);
   const [datactual, setDatactual] = useState(data);
   const [count, setCount] = useState(5);
+
+  var socket = io("http://192.168.52.232:9090")
+
+  socket.on('rec_fac/rec_fac:rec_fac02', (data) => {
+    console.log("dataa", data)
+});
 
   useEffect(() => {
     const interval = setInterval(() => {
