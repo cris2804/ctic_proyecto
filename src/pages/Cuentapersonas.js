@@ -6,6 +6,7 @@ import { useEffect, useState, useRef } from "react";
 //import perfil from "../components/images/perfil.png";
 import io from "socket.io-client";
 import { Getip } from "../server/Getip";
+import Base64_jpg from "../components/Base64_jpg";
 
 
 const obtenerTurno = () => {
@@ -22,13 +23,6 @@ const obtenerTurno = () => {
   } else {
     return 'Fuera de turno';
   }
-};
-
-
-function base64ToImage(base64String){
-  const image = new Image();
-  image.src = `data:image/png;base64,${base64String}`;
-  return image;
 };
 
 
@@ -66,7 +60,7 @@ export default function Cuentapersonas() {
 
               setGetData({
                 nombres: data.nombres,
-                img: base64ToImage(data.img),
+                img: Base64_jpg(data.img),
               });
               console.log(data);
             })
@@ -98,9 +92,9 @@ export default function Cuentapersonas() {
       }
     });
 
-    return () => {
+    /*return () => {
       socket.disconnect();
-    };
+    };*/
   }, [cargando, host, getData]);
 
   return (
