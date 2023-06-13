@@ -45,7 +45,7 @@ export default function Cuentapersonas() {
     return () => {
       socket.disconnect();
     };
-  }, [cargando]);
+  }, [cargando, host]);
 
   return (
     <div className="container__main__cuenta__personas">
