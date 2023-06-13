@@ -5,6 +5,7 @@ import Popup from "../components/Popup";
 import { useEffect, useState, useRef } from "react";
 import perfil from "../components/images/perfil.png";
 import io from "socket.io-client";
+import { Getip } from "../server/Getip";
 
 export default function Cuentapersonas() {
 
@@ -13,9 +14,10 @@ export default function Cuentapersonas() {
   const [count, setCount] = useState(0);
   const [cargando, setCargando] = useState(false);
   const newDataRef = useRef(null);
+  let host = window.location.host;
 
   useEffect(() => {
-    const socket = io('http://192.168.52.232:9090', {
+    const socket = io(Getip(host), {
       transports: ['websocket'],
     });
 
