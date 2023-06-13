@@ -17,8 +17,18 @@
     background-color: #081A51;
     color: #fff;
 }
+.container__left__cuenta__personas .container__div__1{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
 .container__left__cuenta__personas .container__div{
-    height: 50%;
+    height: 40%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -69,5 +79,14 @@
 @media (min-width: 768px) and (max-width: 1300px) {
     .container__right__cuenta__personas{
         gap: 2.5%;
+    }
+    .container__left__cuenta__personas .container__div__1{
+        font-size: 1rem;
+    }
+    .container__left__cuenta__personas .container__div{
+        font-size: 1rem;
+    }
+    .container__div .container__valor{
+        font-size: 4rem;
     }
 }

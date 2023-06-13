@@ -7,6 +7,24 @@ import { useEffect, useState, useRef } from "react";
 import io from "socket.io-client";
 import { Getip } from "../server/Getip";
 
+
+const obtenerTurno = () => {
+  const fechaLocal = new Date();
+  const horaLocal = fechaLocal.getHours();
+
+
+  if (horaLocal >= 7 && horaLocal <= 11) {
+    return 'Turno desayuno';
+  } else if (horaLocal >= 12 && horaLocal <= 14) {
+    return 'Turno almuerzo';
+  } else if (horaLocal >= 16 && horaLocal <= 18) {
+    return 'Turno cena';
+  } else {
+    return 'Fuera de turno';
+  }
+};
+
+
 function base64ToImage(base64String){
   const image = new Image();
   image.src = `data:image/png;base64,${base64String}`;
@@ -33,7 +51,7 @@ export default function Cuentapersonas() {
       if (!cargando) {
         newDataRef.current = data.nombres.value;
 
-        const enviarDatos = () => {
+        //const enviarDatos = () => {
           const url = "localhost:5000";
 
           fetch(url, {
@@ -55,7 +73,7 @@ export default function Cuentapersonas() {
             .catch((error) => {
               console.error(error);
             });
-        };
+        //};
 
         setShow(true);
         setCargando(true);
@@ -88,6 +106,9 @@ export default function Cuentapersonas() {
   return (
     <div className="container__main__cuenta__personas">
       <div className="container__left__cuenta__personas">
+        <div className="container__div__1">
+          {obtenerTurno()}
+        </div>
         <div className="container__div div1">
           <div>AFORO</div>
           <div className="container__valor">150</div>
