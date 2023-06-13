@@ -65,3 +65,9 @@
 .container__popupzoom__{
     display: none;
 }
+
+@media (min-width: 768px) and (max-width: 1300px) {
+    .container__right__cuenta__personas{
+        gap: 2.5%;
+    }
+}
