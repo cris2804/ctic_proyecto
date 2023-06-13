@@ -32,3 +32,8 @@
     font-size: 2rem;
     font-weight: 700;
 }
+@media (min-width: 768px) and (max-width: 1300px) {
+  .container__popup__zoom {
+    width: 50%;
+  }
+}
