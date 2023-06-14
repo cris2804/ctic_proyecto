@@ -1,28 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-function Base64_jpg(base_64){
-  const [imagenURL, setImagenURL] = useState('');
+function Base64_jpg(base_64) {
+  const [imagenURL, setImagenURL] = useState("");
 
   useEffect(() => {
     const convertirBase64AImagenJPEG = (base64String) => {
       return new Promise((resolve, reject) => {
         const imagen = new Image();
         imagen.onload = () => {
-          const canvas = document.createElement('canvas');
+          const canvas = document.createElement("canvas");
           canvas.width = imagen.width;
           canvas.height = imagen.height;
 
-          const contexto = canvas.getContext('2d');
+          const contexto = canvas.getContext("2d");
           contexto.drawImage(imagen, 0, 0);
 
-          canvas.toBlob((blob) => {
-            const archivoJPEG = new File([blob], 'imagen.jpg', { type: 'image/jpeg' });
-            resolve(URL.createObjectURL(archivoJPEG));
-          }, 'image/jpeg', 1);
+          canvas.toBlob(
+            (blob) => {
+              const archivoJPEG = new File([blob], "imagen.jpg", {
+                type: "image/jpeg",
+              });
+              resolve(URL.createObjectURL(archivoJPEG));
+            },
+            "image/jpeg",
+            1
+          );
         };
 
         imagen.onerror = () => {
-          reject(new Error('Error al cargar la imagen'));
+          reject(new Error("Error al cargar la imagen"));
         };
 
         imagen.src = `data:image/png;base64,${base64String}`;
@@ -43,9 +49,9 @@ function Base64_jpg(base_64){
     return () => {
       // Código de limpieza (opcional) a ejecutar cuando el componente se desmonta
     };
-  }, []);
+  }, [base_64]);
 
   return imagenURL;
-};
+}
 
 export default Base64_jpg;
