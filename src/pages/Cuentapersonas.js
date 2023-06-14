@@ -1,9 +1,8 @@
-import "./css/Conteo.css";
+import "./css/Cuentapersonas.css";
 import PopupZoom from "../components/PopupZoom";
 import Popup from "../components/Popup";
 import { useEffect,useState,useRef } from "react";
 //import perfil from '../components/images/perfil.png';
-import Base64_jpg from "../components/Base64_jpg";
 import io from "socket.io-client";
 import {Getip} from '../server/Getip';
 
@@ -24,11 +23,8 @@ const obtenerTurno = (horaLocal) => {
   }
 };
 
-
-
-
 export default function Cuentapersonas() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [datactual, setDatactual] = useState([]);
   const [count, setCount] = useState(0);
   const [cargando, setCargando] = useState(false);
@@ -63,7 +59,9 @@ export default function Cuentapersonas() {
               ///////////
               setGetData({
                 nombres: data.nombres,
-                img: require('../img/'+newDataRef.current+'.jpg'),//'Base64_jpg(data.img)',
+                msg: data.msg,
+                status: data.status,
+                //img: require('../img/'+newDataRef.current+'.jpg'),//'Base64_jpg(data.img)',
               });
               /////////////
               console.log(data);
@@ -87,7 +85,8 @@ export default function Cuentapersonas() {
           setDatactual((prevData) => [
             {
               nombres: newDataRef.current,
-              img: require('../img/'+newDataRef.current+'.jpg')
+              //img: require('../img/'+newDataRef.current+'.jpg')
+              img: require('../components/images/perfil.png'),
             },
             ...prevData,
           ]);
@@ -130,6 +129,10 @@ export default function Cuentapersonas() {
         >
           {/*<PopupZoom perfil={perfil} nombres={newDataRef.current} />*/}
           <PopupZoom perfil={getData.img} nombres={getData.nombres} />
+
+          <div className={false ? `container__popupzoom2` : "container__popupzoom__"}>
+            el alumno ya desayuno
+          </div>
         </div>
       </div>
     </div>
