@@ -20,23 +20,103 @@ const obtenerTurno = (horaLocal) => {
     return "Fuera de turno";
   }
 };
-let socket;
+
+const host = "http://181.176.48.200:9090/";
+let interval = null;
 export default function Cuentapersonas() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const [datactual, setDatactual] = useState([]);
   const [count, setCount] = useState(0);
   const [cargando, setCargando] = useState(false);
   const newDataRef = useRef(null);
-  const [getData, setGetData] = useState({ nombres: "", img: "" });
-
-  let host = window.location.host;
+  const [getData, setGetData] = useState({ nombres: "", img: "",show:false });
   useEffect(()=>{
-    socket = io(Getip(host), {
+    const socket = io(host, {
       transports: ["websocket"],
     });
-    socket.on("rec_fac/rec_fac:rec_fac02"), async (data)=>{
-      const dataName = data.nombres.value;
+    socket.on("rec_fac/rec_fac:rec_fac02",(data)=>{
+      console.log("Recibido",data);
+      if(interval){
+        clearTimeout(interval);
+      }
+
+      /*
       const url = "http://localhost:5000/image";
+      const dataFetch = await fetch(url,{
+        method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ nombres: dataName })
+      })
+      const dataJson = await dataFetch.json();
+      setGetData({
+        nombres: dataJson.nombres,
+        msg: dataJson.msg,
+        status: dataJson.status,
+        show:true
+      });
+       */
+      setGetData({
+        nombres:"Hola"+datactual.length +1,
+        status: 1,
+        show:true
+      });
+    });
+    return () =>{
+      socket.disconnect();
+    };
+  },[])
+  useEffect(()=>{
+    if(getData.show){
+      setTimeout(()=>{
+        const dataUpdate = {...getData};
+        dataUpdate.show = false;
+        setGetData(dataUpdate);
+        setDatactual((prev)=>[
+          dataUpdate,...prev
+        ])
+      },1000)
+    }
+  },[getData])
+
+
+  return (
+    <div className="container__main__cuenta__personas">
+      <div className="container__left__cuenta__personas">
+        <div className="container__div__1">{obtenerTurno()}</div>
+        <div className="container__div div1">
+          <div>AFORO</div>
+          <div className="container__valor">150</div>
+        </div>
+        <div className="container__div div2">
+          <div>INGRESARON</div>
+          <div className="container__valor">{datactual.length}</div>
+        </div>
+      </div>
+      <div className="container__right__cuenta__personas">
+        {datactual.map((d, i) => {
+          return <Popup nombres={d.nombres} perfil={d.img} key={i} />;
+        })}
+
+        <div className={getData.show ? `container__popupzoom` : "container__popupzoom__"}>
+        <PopupZoom perfil={getData.img} nombres={getData.nombres} />
+
+          <div
+            className={
+              getData.status === 1 || getData.status === 2
+                ? `container__popupzoom2`
+                : "container__popupzoom__"
+            }>
+            {getData.msg}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+/*
+const url = "http://localhost:5000/image";
       const dataFetch = await fetch(url,{
         method: "POST",
           headers: {
@@ -50,6 +130,16 @@ export default function Cuentapersonas() {
         msg: dataJson.msg,
         status: dataJson.status
       });
+*/
+/*
+  
+  useEffect(()=>{
+    
+    socket.on("rec_fac/rec_fac:rec_fac02"), async (data)=>{
+      const dataName = data.nombres.value;
+      newDataRef.current = data.nombres;
+
+      
       setShow(true);
       setCargando(true);
     }
@@ -81,38 +171,4 @@ export default function Cuentapersonas() {
     }
   },[getData])
 
-
-  return (
-    <div className="container__main__cuenta__personas">
-      <div className="container__left__cuenta__personas">
-        <div className="container__div__1">{obtenerTurno()}</div>
-        <div className="container__div div1">
-          <div>AFORO</div>
-          <div className="container__valor">150</div>
-        </div>
-        <div className="container__div div2">
-          <div>INGRESARON</div>
-          <div className="container__valor">{count}</div>
-        </div>
-      </div>
-      <div className="container__right__cuenta__personas">
-        {datactual.map((d, i) => {
-          return <Popup nombres={d.nombres} perfil={d.img} key={i} />;
-        })}
-
-        <div className={show ? `container__popupzoom` : "container__popupzoom__"}>
-          <PopupZoom perfil={getData.img} nombres={getData.nombres} />
-
-          <div
-            className={
-              getData.status === 1 || getData.status === 2
-                ? `container__popupzoom2`
-                : "container__popupzoom__"
-            }>
-            {getData.msg}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+*/
