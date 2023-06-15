@@ -20,7 +20,7 @@ const obtenerTurno = (horaLocal) => {
     return "Fuera de turno";
   }
 };
-
+let socket;
 export default function Cuentapersonas() {
   const [show, setShow] = useState(false);
   const [datactual, setDatactual] = useState([]);
@@ -30,74 +30,57 @@ export default function Cuentapersonas() {
   const [getData, setGetData] = useState({ nombres: "", img: "" });
 
   let host = window.location.host;
-
-  useEffect(() => {
-    const socket = io(Getip(host), {
+  useEffect(()=>{
+    socket = io(Getip(host), {
       transports: ["websocket"],
     });
-
-    socket.on("rec_fac/rec_fac:rec_fac02", (data) => {
-      if (!cargando) {
-        newDataRef.current = data.nombres.value;
-        console.log(newDataRef.current);
-
-        const url = "http://localhost:5000/image";
-        console.log("antes de fetch");
-
-        fetch(url, {
-          method: "POST",
+    socket.on("rec_fac/rec_fac:rec_fac02"), async (data)=>{
+      const dataName = data.nombres.value;
+      const url = "http://localhost:5000/image";
+      const dataFetch = await fetch(url,{
+        method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ nombres: newDataRef.current }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log("estoy en data");
-            ///////////
-            setGetData({
-              nombres: data.nombres,
-              msg: data.msg,
-              status: data.status,
-            });
-            /////////////
-            console.log(data);
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-
-        console.log("sali de fetch");
-        setShow(true);
-        setCargando(true);
-
-        const interval = setTimeout(() => {
-          setShow(false);
-          setCargando(false);
-          setCount((prevCount) => prevCount + 1);
-
-          if (getData.status === 0) {
-            setDatactual((prevData) => [
-              {
-                nombres: newDataRef.current,
-                //img: require('../img/'+newDataRef.current+'.jpg')
-                img: require("../components/images/perfil.png"),
-              },
-              ...prevData,
-            ]);
-          }
-        }, 2000);
-
-        return () => {
-          clearTimeout(interval);
-        };
-      }
-    });
-
+          body: JSON.stringify({ nombres: dataName })
+      })
+      const dataJson = await dataFetch.json();
+      setGetData({
+        nombres: dataJson.nombres,
+        msg: dataJson.msg,
+        status: dataJson.status
+      });
+      setShow(true);
+      setCargando(true);
+    }
     return () => {
       socket.disconnect();
     };
-  }, [cargando, host, getData]);
+  },[]);
+  useEffect(()=>{
+    let intervalo;
+    if(getData?.status !== 0){
+      intervalo = setTimeout(()=>{
+        setShow(false);
+        setCargando(false);
+        setCount((prevCount) => prevCount + 1);
+        if (getData.status === 0) {
+          setDatactual((prevData) => [
+            {
+              nombres: getData.nombres,
+              //img: require('../img/'+newDataRef.current+'.jpg')
+              img: require("../components/images/perfil.png"),
+            },
+            ...prevData,
+          ]);
+        }
+      },2000)
+    }
+    return () =>{
+      clearInterval(intervalo);
+    }
+  },[getData])
+
 
   return (
     <div className="container__main__cuenta__personas">
