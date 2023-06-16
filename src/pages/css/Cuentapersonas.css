@@ -57,7 +57,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2.666%;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
 }
 
 .container__right__cuenta__personas .container__popupzoom{

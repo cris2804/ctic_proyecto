@@ -21,7 +21,7 @@ const obtenerTurno = (horaLocal) => {
   }
 };
 
-const host = "http://181.176.48.200:9090/";
+const host = "http://192.168.52.232:9090";
 let interval = null;
 export default function Cuentapersonas() {
   const [show, setShow] = useState(true);
@@ -34,34 +34,38 @@ export default function Cuentapersonas() {
     const socket = io(host, {
       transports: ["websocket"],
     });
-    socket.on("rec_fac/rec_fac:rec_fac02",(data)=>{
+    socket.on("rec_fac/rec_fac:rec_fac02",async (data)=>{
       console.log("Recibido",data);
       if(interval){
         clearTimeout(interval);
       }
 
-      /*
-      const url = "http://localhost:5000/image";
+      
+      const url = `http://localhost:5000/image/${data.nombres.value}`;
+      console.log(data.nombres.value);
       const dataFetch = await fetch(url,{
         method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ nombres: dataName })
+          body: JSON.stringify({ nombres: data.nombres.value })
       })
       const dataJson = await dataFetch.json();
+      console.log(dataJson);
       setGetData({
         nombres: dataJson.nombres,
         msg: dataJson.msg,
         status: dataJson.status,
-        show:true
+        show:true,
+        img:`./imagenes/${dataJson.nombres}.jpg`
       });
-       */
-      setGetData({
+       
+
+      /*setGetData({
         nombres:"Hola"+datactual.length +1,
         status: 1,
         show:true
-      });
+      });*/
     });
     return () =>{
       socket.disconnect();
@@ -72,7 +76,9 @@ export default function Cuentapersonas() {
       setTimeout(()=>{
         const dataUpdate = {...getData};
         dataUpdate.show = false;
+        
         setGetData(dataUpdate);
+        if(dataUpdate.status != 0) return 
         setDatactual((prev)=>[
           dataUpdate,...prev
         ])
