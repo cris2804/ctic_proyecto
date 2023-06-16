@@ -33,6 +33,22 @@
   align-items: center;
   padding: 0 10px;
 }
+.container__close{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2px;
+}
+.close{
+  font-size: 1.7rem;
+  color: #e0e0e2;
+  z-index: 50;
+}
+.close:hover{
+  cursor: pointer;
+  color: white;
+}
 
 @media (min-width: 768px) and (max-width: 1300px) {
   .container__popup{

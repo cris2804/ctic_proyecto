@@ -57,6 +57,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2.666%;
+    padding: 20px;
     /*min-height: 100vh;*/
 }
 

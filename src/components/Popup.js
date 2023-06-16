@@ -15,6 +15,7 @@ export default function PopupZoom({firstname, lastname, perfil}){
 }*/
 
 import './css/Popup.css';
+import { RiCloseCircleFill } from "react-icons/ri";
 
 export default function PopupZoom({nombres, perfil}){
     return(
@@ -25,6 +26,7 @@ export default function PopupZoom({nombres, perfil}){
             <div className='container__bottom2'>
                 {nombres}
             </div>
+            <div className='container__close'><RiCloseCircleFill className="close"  /></div>
         </div>
     )
 }
