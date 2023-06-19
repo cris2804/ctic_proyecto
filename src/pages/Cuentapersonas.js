@@ -73,6 +73,13 @@ export default function Cuentapersonas() {
     }
   },[getData])
 
+  const handleRemoveItem = (index) => {
+    const newData = [...datactual];
+    newData.splice(index, 1);
+    setDatactual(newData);
+  }
+  
+
 
   return (
     <div className="container__main__cuenta__personas">
@@ -89,9 +96,9 @@ export default function Cuentapersonas() {
       </div>
       <div className="container__right__cuenta__personas">
         {datactual.map((d, i) => {
-          return <div className='container__popup'>
+          return <div className='container__popup' key={i}>
                     <Popup nombres={d.nombres} perfil={d.img}/>
-                    <div className='container__close'><RiCloseCircleFill className="close"  /></div>
+                    <div className='container__close' onClick={() => handleRemoveItem(i)}><RiCloseCircleFill className="close"  /></div>
                   </div>;
         })}
 
