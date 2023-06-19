@@ -1,5 +1,6 @@
 import "./css/Controlaforo.css";
 import { IoIosPeople } from "react-icons/io";
+import Grafico3 from "../components/Grafico3";
 
 export default function Controlaforo() {
   return (
@@ -47,6 +48,7 @@ export default function Controlaforo() {
 
         <div className="container__historico__aforo container__aforo">
           <div className="titulo__aforo">Histórico</div>
+          <Grafico3/>
         </div>
 
         <div className="circulo">
