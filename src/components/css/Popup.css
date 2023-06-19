@@ -1,10 +1,3 @@
-.container__popup {
-  position: relative;
-  width: 12%;
-  height: 20vh;
-  background: #c2a8cd;
-  margin-bottom: 15px;
-}
 .container__top2 {
   position: absolute;
   width: 100%;
@@ -32,22 +25,6 @@
   justify-content: center;
   align-items: center;
   padding: 0 10px;
-}
-.container__close{
-  position: absolute;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  padding: 2px;
-}
-.close{
-  font-size: 1.7rem;
-  color: #e0e0e2;
-  z-index: 50;
-}
-.close:hover{
-  cursor: pointer;
-  color: white;
 }
 
 @media (min-width: 768px) and (max-width: 1300px) {
