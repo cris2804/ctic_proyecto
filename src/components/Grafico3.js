@@ -107,7 +107,7 @@ export default class Grafico3 extends PureComponent {
           ver Gráfico Sin Zoom
         </button>
 
-        <ResponsiveContainer width="95%" height={300}>
+        <ResponsiveContainer width="95%" height={280}>
           <LineChart
             width={800}
             height={400}
