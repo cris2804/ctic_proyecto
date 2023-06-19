@@ -1,14 +1,6 @@
 import "./App.css";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
-import University from "./pages/University";
-import CargaViralCTIC from "./pages/CargaViralCTIC";
-import CargaViralComedor from "./pages/CargaViralComedor";
-import CalidadAireCTIC from "./pages/CalidadAireCTIC";
-import CalidadAirePuerta5 from "./pages/CalidadAirePuerta5";
-import CalidadAirePuerta3 from "./pages/CalidadAirePuerta3";
-import SmartParking from "./pages/SmartParking";
 import Main from "./pages/Main";
 import DetalleCA from "./pages/DetalleCA";
 import FaqCAI from "./pages/FaqCAI";
@@ -23,11 +15,8 @@ import icono from "./favicon.ico";
 import { SiWindicss } from "react-icons/si";
 import { MdCo2 } from "react-icons/md";
 import Cuentapersonas from "./pages/Cuentapersonas";
-//import Plano from "./components/comedor/PlanoComedor";
-
-//import GraficoComedor from './components/comedor/GraficoComedor';
-//import Grafico2 from "./components/comedor/Grafico2";
 import CanvasComedor from "./components/comedor/CanvasComedor";
+import Controlaforo from "./pages/Controlaforo";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -168,50 +157,24 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Landing/>}/>
+
             <Route path="/calidad-del-aire" element={<Main />} />
-            <Route
-              path="/calidad-del-aire-exteriores"
-              element={<DetalleCA />}
-            />
-            <Route
-              path="/calidad-del-aire-interiores-ctic"
-              element={<DetalleCAI />}
-            />
-            <Route
-              path="/calidad-del-aire-interiores-comedor-universitario"
-              element={<ComedorCAI />}
-            />
-
-            <Route path="/cuenta-personas" element={<Cuentapersonas/>} />
-
+            
+            <Route path="/calidad-del-aire-exteriores" element={<DetalleCA />}/>
+            
+            <Route path="/calidad-del-aire-interiores-ctic" element={<DetalleCAI />}/>
+            <Route path="/calidad-del-aire-interiores-comedor-universitario" element={<ComedorCAI />}/>
+            
             <Route path="/faq-carga-viral" element={<FaqCAI />} />
             <Route path="/faq-calidad-de-aire" element={<FaqCAE />} />
+            
+            <Route path="/cuenta-personas" element={<Cuentapersonas/>} />
+            <Route path="/control-aforo" element={<Controlaforo/>}/>
+
+
+            <Route path="/temporal" element={<CanvasComedor/>}/>
             <Route path="/detalle-carga-viral" element={<DetalleCA />} />
             <Route path="/grafico-semana" element={<Grafico3 />} />
-            {/*<Route path="/csv" element={<CSV />} /> */}
-
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route
-              path="/universidad-nacional-de-ingenieria"
-              element={<University />}
-            />
-            <Route path="/carga-viral-CTIC" element={<CargaViralCTIC />} />
-            <Route
-              path="/carga-viral-comedor-universitario"
-              element={<CargaViralComedor />}
-            />
-            <Route path="/calidad-de-aire-ctic" element={<CalidadAireCTIC />} />
-            <Route
-              path="/calidad-de-aire-puerta-5"
-              element={<CalidadAirePuerta5 />}
-            />
-            <Route
-              path="/calidad-de-aire-puerta-3"
-              element={<CalidadAirePuerta3 />}
-            />
-            <Route path="/smart-parking" element={<SmartParking />} />
-            <Route path="/localización/101" element={<SmartParking />} />
-            <Route path="/temporal" element={<CanvasComedor/>}/>
           </Routes>
         </Router>
       </div>

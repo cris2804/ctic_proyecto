@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+.container__main__control__aforo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.container__main__aforo{
+  background-color: #C8DCDB;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.container__aforo{
+  position: relative;
+  width: calc(50% - 10px);
+  height: calc(50vh - 30px);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.circulo {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #081A51;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+}
+.control{
+  width: 100%;
+  text-transform: uppercase;
+}
+.circulo .icon{
+  width: 100%;
+  font-size: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*--------------------------------------------*/
+
+.container__max__aforo{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.titulo__aforo{
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-top: 10px;
+}
+.cantidad__max{
+  font-size: 6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container__gradient__rango{
+  width: calc(100% - 10px);
+  padding-left: 10px;
+}
+.gradient__div{
+  width: calc(100% - 200px);
+  height: 3vh;
+  background: linear-gradient(to right, #00B628, red);
+}
+.rango__valores{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  width: calc(100% - 200px);
+}
+.rango__valores span:nth-child(1){
+  transform: translateX(-50%);
+}
+.rango__valores span:nth-child(2){
+  transform: translateX(50%);
+}
+
+
+/*-----------------------------*/
+.container__imagen__ctic{
+    overflow: hidden;
+}
+.container__image__ctic img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: solid 1px green;
+}
+
+/*-----------------------------------------------*/
+
+.container__actual__aforo{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cantidad__actual{
+  width: 100%;
+  font-size: 6rem;
+  font-weight: 700;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.valor__aforo__actual{
+  color: #00B628;
+}
+.valor__porcentaje__aforo{
+  color: #00B628;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.container__gradient__rango__ac{
+  width: calc(80%);
+}
+ .container__gradient__rango__ac .gradient__div{
+  position: relative;
+  width: 100%;
+  height: 3vh;
+  background: linear-gradient(to right, #00B628, red);
+}
+.container__gradient__rango__ac .rango__valores{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+.rango__valores span:nth-child(1){
+  transform: translateX(-50%);
+}
+.rango__valores span:nth-child(2){
+  transform: translateX(50%);
+}
