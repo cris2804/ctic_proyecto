@@ -37,9 +37,17 @@ export default function Controlaforo() {
           </div>
           <div className="container__gradient__rango__ac">
             <div className="gradient__div">
-                <div style={{height: '3vh', width:'76.67%', background:'#EAEAEA',position: 'absolute', right:'0'}}></div>
+              <div
+                style={{
+                  height: "3vh",
+                  width: "76.67%",
+                  background: "#EAEAEA",
+                  position: "absolute",
+                  right: "0",
+                }}
+              ></div>
             </div>
-            <div className="rango__valores" style={{width: '23.33%'}}>
+            <div className="rango__valores" style={{ width: "23.33%" }}>
               <span>0</span>
               <span>35</span>
             </div>
@@ -48,7 +56,7 @@ export default function Controlaforo() {
 
         <div className="container__historico__aforo container__aforo">
           <div className="titulo__aforo">Histórico</div>
-          <Grafico3/>
+          <Grafico3 />
         </div>
 
         <div className="circulo">
@@ -59,7 +67,6 @@ export default function Controlaforo() {
             <IoIosPeople />
           </div>
         </div>
-        
       </div>
     </div>
   );
