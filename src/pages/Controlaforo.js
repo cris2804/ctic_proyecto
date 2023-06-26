@@ -2,6 +2,10 @@ import "./css/Controlaforo.css";
 import { IoIosPeople } from "react-icons/io";
 import Grafico3 from "../components/Grafico3";
 
+const aforo_maximo = 150
+const aforo_actual = 35
+const porcentaje = ((aforo_actual/aforo_maximo)*100).toFixed(2)
+
 export default function Controlaforo() {
   return (
     <div className="container__main__control__aforo">
@@ -10,13 +14,13 @@ export default function Controlaforo() {
           <div className="titulo__aforo">Aforo Máximo</div>
           <div className="cantidad__max">
             <IoIosPeople style={{ color: "#D38C00" }} />
-            <div className="valor__aforo__max">150</div>
+            <div className="valor__aforo__max">{aforo_maximo}</div>
           </div>
           <div className="container__gradient__rango">
             <div className="gradient__div"></div>
             <div className="rango__valores">
               <span>0</span>
-              <span>150</span>
+              <span>{aforo_maximo}</span>
             </div>
           </div>
         </div>
@@ -32,24 +36,24 @@ export default function Controlaforo() {
           <div className="titulo__aforo">Aforo Actual</div>
           <div className="cantidad__actual">
             <IoIosPeople style={{ color: "#D38C00" }} />
-            <div className="valor__aforo__actual">35</div>
-            <div className="valor__porcentaje__aforo">23.33%</div>
+            <div className="valor__aforo__actual">{aforo_actual}</div>
+            <div className="valor__porcentaje__aforo">{porcentaje}%</div>
           </div>
           <div className="container__gradient__rango__ac">
             <div className="gradient__div">
               <div
                 style={{
                   height: "3vh",
-                  width: "76.67%",
+                  width: `${100-porcentaje}%`,
                   background: "#EAEAEA",
                   position: "absolute",
                   right: "0",
                 }}
               ></div>
             </div>
-            <div className="rango__valores" style={{ width: "23.33%" }}>
+            <div className="rango__valores" style={{ width: `${porcentaje}%` }}>
               <span>0</span>
-              <span>35</span>
+              <span>{aforo_actual}</span>
             </div>
           </div>
         </div>
