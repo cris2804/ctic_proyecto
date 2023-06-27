@@ -12,12 +12,13 @@ import io from "socket.io-client";
 const aforo_maximo = 150
 const aforo_actual = 35
 const porcentaje = ((aforo_actual/aforo_maximo)*100).toFixed(2)
-//const host = "http://181.176.48.200:9090"
-//const host = "http://192.168.52.232:9090"
-let host = window.location.host;
+
+
 export default function Controlaforo() {
   const [dataPersonas,setDataPersonas] = useState([]);
   const [dataActual,setDataActual] = useState(null);
+  let host = window.location.host;
+
   useEffect(()=>{
     const socket = io(Getip(host),{
       transports: ["websocket"]
@@ -73,24 +74,24 @@ export default function Controlaforo() {
           <div className="titulo__aforo">Aforo Actual</div>
           <div className="cantidad__actual">
             <IoIosPeople style={{ color: "#D38C00" }} />
-            <div className="valor__aforo__actual">{aforo_actual}</div>
-            <div className="valor__porcentaje__aforo">{porcentaje}%</div>
+            <div className="valor__aforo__actual">{dataPersonas.length === 0 ? "0" : dataPersonas[dataPersonas.length - 1].value}</div>
+            <div className="valor__porcentaje__aforo">{dataPersonas.length === 0 ? "0" : ((dataPersonas[dataPersonas.length - 1].value/aforo_maximo)*100).toFixed(2)}%</div>
           </div>
           <div className="container__gradient__rango__ac">
             <div className="gradient__div">
               <div
                 style={{
                   height: "3vh",
-                  width: `${100-porcentaje}%`,
+                  width: `${dataPersonas.length === 0 ? "100" :100-((dataPersonas[dataPersonas.length - 1].value/aforo_maximo)*100).toFixed(2)}%`,
                   background: "#EAEAEA",
                   position: "absolute",
                   right: "0",
                 }}
               ></div>
             </div>
-            <div className="rango__valores" style={{ width: `${porcentaje}%` }}>
+            <div className="rango__valores" style={{ width: `${dataPersonas.length === 0 ? "" : ((dataPersonas[dataPersonas.length - 1].value/aforo_maximo)*100).toFixed(2)}%` }}>
               <span>0</span>
-              <span>{aforo_actual}</span>
+              <span>{dataPersonas.length === 0 ? "" : dataPersonas[dataPersonas.length - 1].value}</span>
             </div>
           </div>
         </div>
