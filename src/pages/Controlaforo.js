@@ -1,12 +1,46 @@
 import "./css/Controlaforo.css";
 import { IoIosPeople } from "react-icons/io";
 import Grafico3 from "../components/Grafico3";
+import { useState } from "react";
+import { CanvasPlotPuntos } from "../components/comedor/ControllerGrafico";
+import CanvasComedor from "../components/comedor/CanvasComedor";
+import { useEffect } from "react";
+
+import io from "socket.io-client";
 
 const aforo_maximo = 150
 const aforo_actual = 35
 const porcentaje = ((aforo_actual/aforo_maximo)*100).toFixed(2)
-
+const host = "http://181.176.48.200:9090"
 export default function Controlaforo() {
+  const [dataPersonas,setDataPersonas] = useState([]);
+  const [dataActual,setDataActual] = useState(null);
+  useEffect(()=>{
+    const socket = io(host,{
+      transports: ["websocket"]
+    })
+    socket.on("CuentaPersonas/CuentaPersonas:labsmartcity",  (data)=>{
+      
+      const str_time = data.TimeInstant.value;
+      const timestamp = new Date(str_time).getTime();
+      const personas = data.total_personas.value;
+      console.log(timestamp,personas);
+      const newTime = {
+        timestamp:timestamp,value:personas
+      }
+      setDataActual(newTime);
+      
+    })
+  },[]);
+  useEffect(()=>{
+    if(dataActual){
+      const newPersonas = [...dataPersonas,dataActual]
+      if(newPersonas.length>20){
+        newPersonas.shift();
+      }
+      setDataPersonas(newPersonas);
+    }
+  },[dataActual])
   return (
     <div className="container__main__control__aforo">
       <div className="container__main__aforo">
@@ -60,9 +94,13 @@ export default function Controlaforo() {
 
         <div className="container__historico__aforo container__aforo">
           <div className="titulo__aforo">Histórico</div>
-          <Grafico3 />
+          <CanvasComedor
+          Clase={CanvasPlotPuntos}
+          data={dataPersonas}
+          rangoY = {[0,aforo_maximo]}
+          type={"personas"}
+          />
         </div>
-
         <div className="circulo">
           <div className="control">
             Control De Aforo<br></br> CTIC
@@ -71,7 +109,18 @@ export default function Controlaforo() {
             <IoIosPeople />
           </div>
         </div>
+        
       </div>
     </div>
   );
 }
+/*
+<div className="circulo">
+          <div className="control">
+            Control De Aforo<br></br> CTIC
+          </div>
+          <div className="icon">
+            <IoIosPeople />
+          </div>
+        </div>
+*/

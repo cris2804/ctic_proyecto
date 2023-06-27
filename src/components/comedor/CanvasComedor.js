@@ -17,7 +17,7 @@ const compararObject = (a,b,atributo='x')=>{
 };
 
 let grafico = null;
-export default function CanvasComedor({data,Clase,type}) {
+export default function CanvasComedor({data,Clase,type,rangoY}) {
   const graficoCanvas = useRef(null);
   const divCanvas = useRef(null);
   const popperElement = useRef(null);
@@ -33,7 +33,11 @@ export default function CanvasComedor({data,Clase,type}) {
     grafico = new Clase({context:context,canvas:graficoCanvas.current,
                   popper:popperElement.current,
                   dim:{x:width,y:height},pad : {x:60,y:30}});
-    grafico.setRangeY([0,2000]);
+    
+    //console.log(defaultY);
+    grafico.setRangeY(rangoY||[0,2000]);
+    //grafico.defaultY = defaultY||false;
+    console.log(data);
     grafico.setData(data);
   },[data]);
   

@@ -4,7 +4,9 @@ const sensores=[
     {name:'temperatura', unidad: '°C',
     vista:'Temperatura(°C)'},
     {name:'humedad', unidad:'%',
-    vista:'Humedad(%)'}
+    vista:'Humedad(%)'},
+    {name:'personas',unidad:'u',
+    vista:'Personas'}
 ]
 const getMetadataSensor =  (name) =>{
     return sensores.filter(e=>e.name === name)[0] || {};

@@ -214,6 +214,7 @@ class CanvasControllerComedor{
         this.graficar();
     }
 }
+
 class CanvasControllerComedorPromedio extends CanvasControllerComedor{
     graficar(){
         const context = this.context;
@@ -291,4 +292,63 @@ class CanvasControllerComedorPromedio extends CanvasControllerComedor{
         this.graficar();
     }
 }
-export  {CanvasControllerComedor,CanvasControllerComedorPromedio}
+class CanvasPlotPuntos extends CanvasControllerComedorPromedio{
+    graficar(){
+        const context = this.context;
+        context.clearRect(0,0,this.dim.x,this.dim.y);
+        this.getRangeX();
+        this.getRangeY();
+        this.obtainTransformX();
+        this.obtainTransformY();
+        this.obtainInvertX();
+        this.obtainInvertY();
+        this.graficarRangosY();
+        this.graficarEjeX('#6662');
+        this.graficarEjeY('#6662');
+        console.log(this.rangeY,this.defaultY);
+        const puntos = this.data.map((d)=>{
+            const x = this.transformX(d.timestamp);
+            const y = this.transformY(d.value);
+            return new Punto({
+                x:x,y:y,radio: this.radio
+            })
+
+       })
+       plotPuntos(context,puntos,"green",1)
+       puntos.forEach(p=>{
+        p.graficarPunto(context,'red');
+       })
+
+    }
+    graficarRangosY(){
+        const rangosPlot = [.5,.7,1];
+        const context = this.context;
+        let miny = this.rangeY[1];
+        const maxy = this.rangeY[0]
+        context.save();
+        rangosPlot.forEach((r,i)=>{
+            const y1 = this.transformY(miny);
+            const y2 = this.transformY(maxy*r);
+            const pos1 = {x:this.pad.x,y:y1};
+            const pos2 = {x:this.dim.x-30,y:y2};
+            context.fillStyle= colorsRange[i%ncrange];
+            context.fillRect(pos1.x,pos1.y,pos2.x-pos1.x,pos2.y-pos1.y);
+            miny = maxy*r;
+        })
+        context.restore();
+    }
+    getRangeY(){
+        if(!this.defaultY){
+            return;
+        }
+        this.padTop= this.padTop===0?20:this.padTop;
+        const datavalues = this.data.map(e  => e.value);
+        this.rangeY = [Math.min(...datavalues),Math.max(...datavalues)];
+        console.log(this.rangeY);
+    }
+    getRangeX(){
+        const datatime = this.data.map(e=> e.timestamp);
+        this.rangeX = [Math.min(...datatime),Math.max(...datatime)];
+    }
+}
+export  {CanvasControllerComedor,CanvasControllerComedorPromedio,CanvasPlotPuntos}
