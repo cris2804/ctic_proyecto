@@ -1,0 +1,137 @@
+.container__main__cuenta__personas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+  }
+  
+  .container__left__cuenta__personas {
+    position: fixed;
+    top: 10vh;
+    left: 50px;
+    height: 80vh;
+    width: 20%;
+    background-color: #081a51;
+    color: #fff;
+  }
+  .container__left__cuenta__personas .container__div__1 {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .container__left__cuenta__personas .container__div {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    font-size: 1.5rem;
+    font-weight: 700;
+  } /*
+  .div1{
+      border: solid 1px red;
+      justify-content: center;
+      align-items: center;
+      gap: 1vh;
+      font-size: 3rem;
+      font-weight: 700;
+  }*/
+  .container__div .container__valor {
+    font-size: 4.5rem;
+  }
+  
+  .container__right__cuenta__personas {
+    position: relative;
+    width: calc(80% - 50px);
+    margin-left: calc(20% + 50px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.666%;
+    padding: 20px;
+    /*min-height: 100vh;*/
+  }
+  
+  .container__right__cuenta__personas .container__popupzoom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container__right__cuenta__personas .container__popupzoom2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 3rem;
+    -webkit-text-stroke: 1px white;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+  
+  .container__popup {
+    position: relative;
+    width: 12%;
+    height: 20vh;
+    background: #c2a8cd;
+    margin-bottom: 15px;
+  }
+  
+  .container__close {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 2px;
+  }
+  .close {
+    font-size: 1.7rem;
+    color: #e0e0e2;
+    z-index: 50;
+  }
+  .close:hover {
+    cursor: pointer;
+    color: white;
+  }
+  
+  .container__popupzoom__ {
+    display: none;
+  }
+  
+  @media (min-width: 768px) and (max-width: 1300px) {
+    .container__right__cuenta__personas {
+      gap: 2.5%;
+    }
+    .container__left__cuenta__personas .container__div__1 {
+      font-size: 1rem;
+    }
+    .container__left__cuenta__personas .container__div {
+      font-size: 1rem;
+    }
+    .container__div .container__valor {
+      font-size: 4rem;
+    }
+  }
+  

@@ -14,7 +14,7 @@ const smartcampus = [
       "https://images.pexels.com/photos/1528361/pexels-photo-1528361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
-    titulo: "Cuenta Personas",
+    titulo: "Reconocimiento Facial",
     descripcion: "Control de las personas que ingresan a determinado ambiente.",
     link: "/cuenta-personas",
     blank: true,

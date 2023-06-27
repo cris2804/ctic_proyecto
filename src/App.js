@@ -14,7 +14,7 @@ import { RiDashboardFill } from "react-icons/ri";
 import icono from "./favicon.ico";
 import { SiWindicss } from "react-icons/si";
 import { MdCo2 } from "react-icons/md";
-import Cuentapersonas from "./pages/Cuentapersonas";
+import ReconocimientoFacial from "./pages/ReconocimientoFacial";
 import CanvasComedor from "./components/comedor/CanvasComedor";
 import Controlaforo from "./pages/Controlaforo";
 
@@ -168,7 +168,7 @@ function App() {
             <Route path="/faq-carga-viral" element={<FaqCAI />} />
             <Route path="/faq-calidad-de-aire" element={<FaqCAE />} />
             
-            <Route path="/cuenta-personas" element={<Cuentapersonas/>} />
+            <Route path="/cuenta-personas" element={<ReconocimientoFacial/>} />
             <Route path="/control-aforo" element={<Controlaforo/>}/>
 
 
