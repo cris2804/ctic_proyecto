@@ -5,18 +5,21 @@ import { useState } from "react";
 import { CanvasPlotPuntos } from "../components/comedor/ControllerGrafico";
 import CanvasComedor from "../components/comedor/CanvasComedor";
 import { useEffect } from "react";
+import { Getip } from "../server/Getip";
 
 import io from "socket.io-client";
 
 const aforo_maximo = 150
 const aforo_actual = 35
 const porcentaje = ((aforo_actual/aforo_maximo)*100).toFixed(2)
-const host = "http://181.176.48.200:9090"
+//const host = "http://181.176.48.200:9090"
+//const host = "http://192.168.52.232:9090"
+let host = window.location.host;
 export default function Controlaforo() {
   const [dataPersonas,setDataPersonas] = useState([]);
   const [dataActual,setDataActual] = useState(null);
   useEffect(()=>{
-    const socket = io(host,{
+    const socket = io(Getip(host),{
       transports: ["websocket"]
     })
     socket.on("CuentaPersonas/CuentaPersonas:labsmartcity",  (data)=>{
