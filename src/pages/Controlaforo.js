@@ -1,6 +1,5 @@
 import "./css/Controlaforo.css";
 import { IoIosPeople } from "react-icons/io";
-import Grafico3 from "../components/Grafico3";
 import { useState } from "react";
 import { CanvasPlotPuntos } from "../components/comedor/ControllerGrafico";
 import CanvasComedor from "../components/comedor/CanvasComedor";
@@ -10,8 +9,8 @@ import { Getip } from "../server/Getip";
 import io from "socket.io-client";
 
 const aforo_maximo = 150
-const aforo_actual = 35
-const porcentaje = ((aforo_actual/aforo_maximo)*100).toFixed(2)
+//const aforo_actual = 35
+//const porcentaje = ((aforo_actual/aforo_maximo)*100).toFixed(2)
 
 
 export default function Controlaforo() {
