@@ -16,10 +16,23 @@ const aforo_maximo = 150
 export default function Controlaforo() {
   const [dataPersonas,setDataPersonas] = useState([]);
   const [dataActual,setDataActual] = useState(null);
-  let host = window.location.host;
+  //let host = window.location.host;Getip(host)
+  let host = "http://181.176.48.200:9090"
+  const fetchInicial = async () =>{
+    const urlDefault  = host + "/api/v1/cuenta-personas/labsmartcity?last=20&columns=001001";
+    const response = await fetch(urlDefault);
+    const data = await response.json();
+    const newData = data.map(d =>{
+      const timestamp = new Date(d.time_index).getTime();
 
+      return {timestamp:timestamp ,value: d.total_personas}
+    });
+    console.log(newData);
+    setDataPersonas(newData.reverse());
+  }
   useEffect(()=>{
-    const socket = io(Getip(host),{
+    fetchInicial();
+    const socket = io(host,{
       transports: ["websocket"]
     })
     socket.on("CuentaPersonas/CuentaPersonas:labsmartcity",  (data)=>{
@@ -31,6 +44,7 @@ export default function Controlaforo() {
       const newTime = {
         timestamp:timestamp,value:personas
       }
+
       setDataActual(newTime);
       
     })
@@ -62,11 +76,19 @@ export default function Controlaforo() {
           </div>
         </div>
 
-        <div className="container__imagen__ctic container__aforo">
+        <div className="container__imagen__ctic container__aforo ctn-relative">
           <img
             src="https://www.ctic.uni.edu.pe/wp-content/uploads/2020/10/foto-ctic-uni.jpg"
             alt="imagen-ctic"
           />
+          <div className="descripcion">
+            <div className="control">
+              Control De Aforo<br></br> CTIC
+            </div>
+            <div className="icon">
+              <IoIosPeople />
+            </div>
+          </div>
         </div>
 
         <div className="container__actual__aforo container__aforo">
@@ -104,14 +126,7 @@ export default function Controlaforo() {
           type={"personas"}
           />
         </div>
-        <div className="circulo">
-          <div className="control">
-            Control De Aforo<br></br> CTIC
-          </div>
-          <div className="icon">
-            <IoIosPeople />
-          </div>
-        </div>
+        
         
       </div>
     </div>

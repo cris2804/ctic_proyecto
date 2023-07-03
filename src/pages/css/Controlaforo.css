@@ -11,7 +11,7 @@
 }
 
 .container__main__aforo{
-  background-color: #C8DCDB;
+  background-color: #ffffff;
   height: 100vh;
   width: 100%;
   position: relative;
@@ -28,7 +28,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
 .circulo {
   width: 300px;
@@ -47,12 +48,9 @@
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
-   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
 }
-.control{
-  width: 100%;
-  text-transform: uppercase;
-}
+
 .circulo .icon{
   width: 100%;
   font-size: 7rem;
@@ -165,4 +163,34 @@
 .container__historico__aforo{
   display: flex;
   justify-content: space-between;
+}
+/*----------------------------------*/
+.ctn-relative{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+}
+.control{
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+.descripcion{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  font-size: 2em;
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.descripcion>.icon{
+  font-size: 4em;
+  margin-right: 10px;
 }
