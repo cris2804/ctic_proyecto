@@ -19,7 +19,7 @@ export default function Controlaforo() {
   let host = window.location.host;Getip(host)
   //let host = "http://181.176.48.200:9090"
   const fetchInicial = async () =>{
-    const urlDefault  = Getip(host) + "/api/v1/cuenta-personas/ctic?last=20&columns=001001";
+    const urlDefault  = Getip(host) + "/api/v1/cuenta-personas/labsmartcity?last=20&columns=001001";
     const response = await fetch(urlDefault);
     const data = await response.json();
     const newData = data.map(d =>{
@@ -35,7 +35,7 @@ export default function Controlaforo() {
     const socket = io(Getip(host),{
       transports: ["websocket"]
     })
-    socket.on("CuentaPersonas/CuentaPersonas:ctic",  (data)=>{
+    socket.on("CuentaPersonas/CuentaPersonas:labsmartcity",  (data)=>{
       
       const str_time = data.TimeInstant.value;
       const timestamp = new Date(str_time).getTime();

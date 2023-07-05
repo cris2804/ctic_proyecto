@@ -17,6 +17,7 @@ import { MdCo2 } from "react-icons/md";
 import ReconocimientoFacial from "./pages/ReconocimientoFacial";
 import CanvasComedor from "./components/comedor/CanvasComedor";
 import Controlaforo from "./pages/Controlaforo";
+import Cuentaspersonas from "./pages/Cuentapersonas";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -170,6 +171,7 @@ function App() {
             
             <Route path="/cuenta-personas" element={<ReconocimientoFacial/>} />
             <Route path="/control-aforo" element={<Controlaforo/>}/>
+            <Route path="/reconocimiento-facial" element={<Cuentaspersonas/>} />
 
 
             <Route path="/temporal" element={<CanvasComedor/>}/>
