@@ -2,7 +2,7 @@ import "./css/DetalleCA.css";
 import happy from "../components/images/happy.png";
 import { useState } from "react";
 import { Ica } from "../assets/Ica";
-//import Grafico from "../components/Grafico";
+import Grafico from "../components/calidadAireExterior/Grafico";
 import Grafico2 from "../components/Grafico2";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Calendar from "react-calendar";
@@ -27,7 +27,7 @@ const gases = [
   },
   {
     key: 3,
-    nombre: "SO2",
+    nombre: "O3",
   },
   {
     key: 4,
@@ -39,7 +39,7 @@ const gases = [
   },
   {
     key: 6,
-    nombre: "NO",
+    nombre: "CO",
   },
 ];
 
@@ -49,7 +49,7 @@ function obtenerNombre(id) {
   else if (id === "puerta 5") return "puerta 5";
 }
 
-function Graficar(opc, nom) {
+function Graficar(opc, nom, idb) {
   const datos = Array.from({ length: 20 }, () => {
     return {
       time: new Date().toLocaleTimeString(),
@@ -57,7 +57,7 @@ function Graficar(opc, nom) {
     };
   });
   if (opc === 0) {
-    return <Grafico2 datos={datos} nombre={nom} />;
+    return <Grafico id={idb} nombre={nom} />;
   } else if (opc === 1) {
     return <Grafico2 cantidad={96} nombre={nom} />;
   } else if (opc === 2) {
@@ -563,7 +563,7 @@ export default function DetalleCA() {
                             <div className={seleccionado === 1 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(1)}>DÍA</div>
                             <div className={seleccionado === 2 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(2)}>SEMANA</div>
                         </div>*/}
-            <div className="container__grafico">{Graficar(0, opcion)}</div>
+            <div className="container__grafico">{Graficar(0, opcion, retornaidb(id))}</div>
 
             <div className="container__contaminante__principal">
               <div className="container__c__p">
