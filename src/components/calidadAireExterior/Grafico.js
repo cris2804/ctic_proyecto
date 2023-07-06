@@ -130,8 +130,9 @@ const Grafico = ({ nombre, id }) => {
           <CartesianGrid stroke="#eee" />
           <XAxis dataKey="time_index" reversed={true}>
             <Label value="Tiempo" offset={0} position="bottom" fill="#000" />
-          </XAxis>
-          <YAxis domain={[0, 60]}>
+          </XAxis>{/*}
+          <YAxis domain={[0, 60]}>*/}
+          <YAxis>
             <Label
               value={`${nombre}( µg/m³ )`}
               offset={5}
