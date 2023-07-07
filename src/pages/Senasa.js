@@ -73,7 +73,7 @@ function Senasa(){
                             porcentajeBateria.map((objeto, index) => {
                                 return (
                                     <div key={index} className="container__vn">
-                                        <Trampa nombre={objeto.nombre} cantidad={objeto.porcentaje} color={colores[index].color}/>
+                                        <Trampa nombre={objeto.nombre} cantidad={objeto.porcentaje+"%"} color={colores[index].color}/>
                                     </div>
                                 )
                             })
