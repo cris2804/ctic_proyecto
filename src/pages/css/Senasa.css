@@ -82,6 +82,8 @@
 .container__trampa__cp .container__vn{
     width: 80%;
     margin-top: 1vh;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 2px;
 }
 
 /*---------------------------------------*/
