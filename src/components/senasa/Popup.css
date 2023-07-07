@@ -66,3 +66,8 @@
     padding: 10px;
     background: #CAF5AF;
 }
+
+.container__boton__senasa:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px #333;
+}
