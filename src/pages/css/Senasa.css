@@ -1,0 +1,85 @@
+.container__all__senasa{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.container__mapa__senasa{
+    position: relative;
+    width: 70%;
+    height: 100vh;
+}
+.leaflet-container{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.container__right__senasa{
+    position: relative;
+    width: 30%;
+    height: 100vh;
+}
+
+.container__icono__sc{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container__icono__sc img{
+    height: 80%;
+}
+
+.container__cantidad__moscas{
+    height: 45vh;
+    width: 100%;
+    display: flex;
+}
+.container__orden__moscas{
+    width: 20%;
+    height: 45vh;
+}
+.container__orden__moscas img{
+    width: 80%;
+    margin-left: 10%;
+}
+
+.container__porcentaje__bateria{
+    height: 45vh;
+    width: 100%;
+    display: flex;
+}
+.container__orden__porcentaje{
+    width: 20%;
+    height: 45vh;
+}
+.container__orden__porcentaje img{
+    width: 100%;
+}
+
+.container__trampa__cp{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container__trampa__cp .container__vn{
+    width: 80%;
+    margin-top: 1vh;
+}
+
+/*---------------------------------------*/
+
+.container__popup__senasa{
+    position: absolute;
+    top: 25vh;
+    right: 1%;
+    z-index: 10;
+    width: 25%;
+    height: 50vh;
+    background-color: rgba(185, 185, 185, 0.6);
+}

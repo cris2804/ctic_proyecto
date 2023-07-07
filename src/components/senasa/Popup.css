@@ -1,0 +1,33 @@
+.container__senasa__titulo{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 1vh;
+}
+.container__depar__pais{
+    text-align: center;
+    font-size: 1.2rem;
+}
+.container__fecha__hora{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/*-----------------------------*/
+
+.container__img__cant__moscas__{
+    margin-top: 1vh;
+}
+.container__img__cant__moscas__2{
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    border: solid 1px blue;
+}
+.container__imagen__popup__senasa img{
+    width: 40%;
+    border: solid 1px red;
+}
+.container__cantidad__moscas__popup{
+    border: solid 1px blue;
+}
