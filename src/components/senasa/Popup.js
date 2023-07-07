@@ -19,25 +19,25 @@ function Popup(){
                 <div className="container__img__cant__moscas__2">
                     <div className="container__imagen__popup__senasa"><img src={iconoMosca} alt="" /></div>
                     <div className="container__cantidad__moscas__popup">
-                        <div>80</div>
-                        <div>moscas</div>
+                        <span>80</span>
+                        <span>moscas</span>
                     </div>
                 </div>
             </div>
-            <div>
+            <div className="container__temp__valor__senasa cthpv">
                 <div>Temperatura:</div>
                 <div>25°C</div>
             </div>
-            <div>
-                <div>Humedad:</div>
+            <div className="container__humedad__valor__senasa cthpv">
+                <div>Humedad:</div >
                 <div>60%</div>
             </div>
-            <div>
+            <div className="container__porcentaje__valor__senasa cthpv">
                 <div>Porcentaje de carga:</div>
                 <div>75%</div>
             </div>
 
-            <div>
+            <div className="container__boton__senasa">
                 Más detalles
             </div>
         </div>
