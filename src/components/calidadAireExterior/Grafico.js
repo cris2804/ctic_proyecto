@@ -12,6 +12,13 @@ import {
 } from "recharts";
 import "../css/Grafico.css";
 
+const getLastHourToTimestamp = (horas)=>{
+  const now = new Date();
+  const fourHoursAgo = new Date(now.getTime() - ( horas * 60 * 60 * 1000));
+  const timestamp = fourHoursAgo.getTime();
+  return timestamp;
+}
+
 const Grafico = ({ nombre, id }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -66,7 +73,7 @@ const Grafico = ({ nombre, id }) => {
       try {
         const response = await fetch(
           //`http://192.168.52.232:9090/api/v1/carga-viral/${id}?last=20`
-          `http://192.168.52.232:9090/api/v1/calidad-de-aire/${id}?last=20`
+          `http://192.168.52.232:9090/api/v1/calidad-de-aire/${id}?minDate=${getLastHourToTimestamp(3)}`
         );
         const data = await response.json();
         const newData = data.map((item) => {

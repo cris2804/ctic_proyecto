@@ -83,19 +83,19 @@ export default function Detalles(props) {
 
       <div className="datos__" style={{ marginTop: "30px" }}>
         <div>NO₂</div>
-        <div>{data ? data.dioxido_de_nitrogeno : ""} µg/m³</div>
+        <div>{data ? (data.dioxido_de_nitrogeno*12180*46/298.15).toFixed(2) : ""} µg/m³</div>
       </div>
       <div className="datos__">
         <div>O₃</div>
-        <div>{data ? data.ozono : ""} µg/m³</div>
+        <div>{data ? (data.ozono*12180*48/298.15).toFixed(2) : ""} µg/m³</div>
       </div>
       <div className="datos__">
         <div>H₂S</div>
-        <div>{data ? data.sulfuro_de_hidrogeno : ""} µg/m³</div>
+        <div>{data ? (data.sulfuro_de_hidrogeno*12180*34/298.15).toFixed(2) : ""} µg/m³</div>
       </div>
       <div className="datos__">
         <div>CO</div>
-        <div>{data ? data.monoxido_de_carbono : ""} µg/m³</div>
+        <div>{data ? (data.monoxido_de_carbono*12180*28/298.15).toFixed(2) : ""} µg/m³</div>
       </div>
       <div className="datos__">
         <div>PM 10</div>
