@@ -15,7 +15,7 @@ import "../css/Grafico.css";
 const Grafico = ({ nombre, id }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-
+/*
   const CustomDot = ({ cx, cy, stroke, fill, payload, value }) => {
     if (value <= 800 && value > 0) {
       return (
@@ -58,7 +58,7 @@ const Grafico = ({ nombre, id }) => {
       );
     }
   };
-
+*/
   console.log(id,nombre)
 
   useEffect(() => {
@@ -66,12 +66,12 @@ const Grafico = ({ nombre, id }) => {
       try {
         const response = await fetch(
           //`http://192.168.52.232:9090/api/v1/carga-viral/${id}?last=20`
-          `http://192.168.52.232:9090/api/v1/calidad-de-aire/${id}?last=10`
+          `http://192.168.52.232:9090/api/v1/calidad-de-aire/${id}?last=20`
         );
         const data = await response.json();
         const newData = data.map((item) => {
           const time = new Date(item.time_index);
-          //const hourMinuteSecond = time.toISOString().substring(11, 19); // Captura la parte de la cadena con hora:minuto:segundo
+          
           const options = {
             hour: "2-digit",
             minute: "2-digit",
@@ -84,12 +84,12 @@ const Grafico = ({ nombre, id }) => {
           //if (nombre === "Co2") val = item.dioxido_de_carbono;
           if (nombre === "PM2.5") val = item.calidad_de_aire;
           else if (nombre === "PM 10") val = item.dioxido_de_carbono;
-          else if (nombre === "O3") val = item.ozono;
-          else if (nombre === "NO2") val = item.dioxido_de_nitrogeno;
-          else if (nombre === "H2S") val = item.sulfuro_de_hidrogeno;
-          else if (nombre === "CO") val = item.monoxido_de_carbono;
+          else if (nombre === "O3") val = item.ozono*12180*48/298.15;
+          else if (nombre === "NO2") val = item.dioxido_de_nitrogeno*12180*46/298.15;
+          else if (nombre === "H2S") val = item.sulfuro_de_hidrogeno*12180*34/298.15;
+          else if (nombre === "CO") val = item.monoxido_de_carbono*12180*28/298.15;
           return {
-            dioxido_de_carbono: val,
+            dioxido_de_carbono: val, //val.toFixed(2)
             time_index: hourMinuteSecond,
           };
         });
@@ -104,7 +104,6 @@ const Grafico = ({ nombre, id }) => {
     fetchData();
     const interval = setInterval(fetchData, 60000); // Llama a la función fetchData cada 8 minutos
 
-    // Limpia el intervalo al desmontar el componente
     return () => {
       clearInterval(interval);
     };
@@ -147,12 +146,13 @@ const Grafico = ({ nombre, id }) => {
             dataKey="dioxido_de_carbono"
             stroke="#000"
             strokeWidth={0.5}
-            dot={<CustomDot />}
+            
             isAnimationActive={false}
           />
-          <ReferenceArea y1={0} y2={800} fill="green" fillOpacity={0.2} />
-          <ReferenceArea y1={800} y2={1000} fill="orange" fillOpacity={0.2} />
-          <ReferenceArea y1={1000} y2={1600} fill="red" fillOpacity={0.2} />
+          {/*dot={<CustomDot />*/}
+          {/*<ReferenceArea y1={0} y2={800} fill="green" fillOpacity={0.2} />
+            <ReferenceArea y1={800} y2={1000} fill="orange" fillOpacity={0.2} />
+            <ReferenceArea y1={1000} y2={1600} fill="red" fillOpacity={0.2} />*/}
           <Tooltip />
           {/*<Legend />*/}
         </LineChart>
