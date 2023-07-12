@@ -19,6 +19,7 @@ import CanvasComedor from "./components/comedor/CanvasComedor";
 import Controlaforo from "./pages/Controlaforo";
 import Cuentaspersonas from "./pages/Cuentapersonas";
 import Senasa from "./pages/Senasa";
+import Bienvenida from "./pages/Bienvenida";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -160,7 +161,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing/>}/>
 
-            <Route path="/calidad-del-aire" element={<Main />} />
+            <Route path="/calidad-del-aire-uni" element={<Main />} />
             
             <Route path="/calidad-del-aire-exteriores" element={<DetalleCA />}/>
             
@@ -175,6 +176,7 @@ function App() {
             <Route path="/reconocimiento-facial" element={<Cuentaspersonas/>} />
 
             <Route path="/senasa" element={<Senasa/>} />
+            <Route path="/calidad-del-aire" element={<Bienvenida/>}/>
 
 
             <Route path="/temporal" element={<CanvasComedor/>}/>
