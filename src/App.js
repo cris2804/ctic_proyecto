@@ -26,7 +26,7 @@ function App() {
   const [submenuOpen, setSubmenuOpen] = useState(0);
 
   const Menus = [
-    { title: "Dashboard", spacing: true, icon: <RiDashboardFill />, link: "/calidad-del-aire" },
+    { title: "Dashboard", spacing: true, icon: <RiDashboardFill />, link: "/calidad-del-aire-uni" },
     {
       title: "Calidad del aire Interiores",
       icon: <MdCo2 />,
