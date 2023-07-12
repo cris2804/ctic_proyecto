@@ -1,14 +1,18 @@
 import "./css/CalidadAgua.css";
-
 import { useEffect, useState } from "react";
 import io from "socket.io-client";
+import { Getip } from "../server/Getip";
 
-const host = "http://192.168.52.232:9090";
+//const host = "http://192.168.52.232:9090";
 export default function CalidadAgua(){
+    // para obtener el id de la ruta donde nos encontramos
+    const searchParams = new URLSearchParams(window.location.search);
+    const id = searchParams.get("id");
+    let host = window.location.host; //para obtener la ip
     const [datactual, setDatactual] = useState(null)
 
     useEffect(()=>{
-        const socket = io(host, {
+        const socket = io(Getip(host), {
           transports: ["websocket"],
         });
         socket.on("calidad_agua/calidad_agua:rak-3272s-o",async (data)=>{
