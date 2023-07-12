@@ -1,8 +1,25 @@
 import "./css/CalidadAgua.css";
 
+import { useEffect, useState } from "react";
+import io from "socket.io-client";
 
+const host = "http://192.168.52.232:9090";
 export default function CalidadAgua(){
+    const [datactual, setDatactual] = useState(null)
 
+    useEffect(()=>{
+        const socket = io(host, {
+          transports: ["websocket"],
+        });
+        socket.on("calidad_agua/calidad_agua:rak-3272s-o",async (data)=>{
+                  
+          setDatactual(data)
+          
+        });
+        return () =>{
+          socket.disconnect();
+        };
+      },[])
 
     return(
         <div className="container__calidad__agua">
@@ -16,7 +33,7 @@ export default function CalidadAgua(){
                         Temperatura
                     </div>
                     <div className="valor">
-                        20 °C
+                        {datactual ? datactual.temperatura.value : ""} °C
                     </div>
                 </div>
                 <div className="container__tpht">
@@ -24,7 +41,7 @@ export default function CalidadAgua(){
                         Ph
                     </div>
                     <div className="valor">
-                        7.0
+                        {datactual ? datactual.ph.value : ""}
                     </div>
                 </div>
                 <div className="container__tpht">
@@ -32,7 +49,7 @@ export default function CalidadAgua(){
                         Turbidez
                     </div>
                     <div className="valor">
-                        40 JTU
+                        {datactual ? datactual.turbidez.value : ""}
                     </div>
                 </div>
             </div>

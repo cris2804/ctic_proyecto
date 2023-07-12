@@ -37,8 +37,6 @@ export default function Bienvenida(){
                    <SiWindicss className="icon"/> Calidad del Aire
                 </a>
             </div>
-
-            
         </div>
     )
 }
