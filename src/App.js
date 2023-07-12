@@ -20,6 +20,7 @@ import Controlaforo from "./pages/Controlaforo";
 import Cuentaspersonas from "./pages/Cuentapersonas";
 import Senasa from "./pages/Senasa";
 import Bienvenida from "./pages/Bienvenida";
+import CalidadAgua from "./pages/CalidadAgua";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -177,6 +178,7 @@ function App() {
 
             <Route path="/senasa" element={<Senasa/>} />
             <Route path="/calidad-del-aire" element={<Bienvenida/>}/>
+            <Route path="/calidad-del-agua" element={<CalidadAgua/>}/>
 
 
             <Route path="/temporal" element={<CanvasComedor/>}/>
