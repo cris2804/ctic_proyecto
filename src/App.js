@@ -96,7 +96,7 @@ function App() {
                   ${menu.spacing ? "mt-9" : "mt-2"}`}
                 >
                   <span className="text-2xl block float-left">
-                    {menu.icon ? menu.icon : <RiDashboardFill />}
+                    <a href={menu.link}>{menu.icon ? menu.icon : <RiDashboardFill />}</a>
                   </span>
                   <span
                     className={`text-base font-medium flex-1 ${
