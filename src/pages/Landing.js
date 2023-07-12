@@ -21,6 +21,13 @@ const smartcampus = [
     imagen: "https://www.mobotix.com/sites/default/files/styles/facebook/public/2020-06/backontrack_1_930x550.jpg?h=c4a9cdb7&itok=p09sYf8W"
   },
   {
+    titulo: "Calidad del Agua",
+    descripcion: "Plataforma web para control de la calidad del agua",
+    link: "/calidad-del-agua",
+    blank: true,
+    imagen: "https://diarioresponsable.com/images/CALIDAD_AGUA_DR_copy.jpg"
+  },
+  {
     titulo: "Metaverso",
     descripcion: "Aquí encontraremos una virtualización de la UNI, divierte",
     link: "https://www.spatial.io/s/Sergio-Munoz-Suarezs-3D-Room-6475545a8284f96bc422289d?share=4242366686113477634",
