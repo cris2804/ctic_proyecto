@@ -23,9 +23,14 @@ export default function CalidadAgua(){
 
     return(
         <div className="container__calidad__agua">
-            <div className="titulo__calidad__agua">
-                Calidad del Agua
+            <div className="forma">
+                <span className="forma__titulo__lugar">Calidad del Agua</span> <br></br>{/*}
+                <span className="forma__subtitulo">Calidad del aire en exteriores</span> <br></br>*/}
+                <span className="forma__linea">aaaaaaaaaaaaa</span>
             </div>
+            {/*<div className="titulo__calidad__agua">
+                Calidad del Agua
+            </div>*/}
 
             <div className="container__datos__tpht">
                 <div className="container__tpht">
