@@ -4,7 +4,7 @@
     left: 0;
     z-index: 50;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: white;
 }
 
@@ -25,25 +25,36 @@
   }*/
 .container__titulo__bienvenida{
     position: absolute;
-    top: 3vh;
+    top: 5vh;
     margin-left: 10%;
     z-index: 10;
-    font-size: 6rem;
+    font-size: 3rem;
     font-weight: 700;
 }
-
+.container__titulo__bienvenida img{
+    height: 5vh;
+}
 .container__boton__bienvenida{
-    position: absolute;
+    /*position: absolute;
     bottom: 10vh;
     z-index: 10;
-    margin-left: 10%;
-    display: block;
+    margin-left: 10%;*/
+    width: 250px;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #00a271;
     padding: 15px 30px;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 1.3rem;
     box-shadow: 0 1px 1px -1px rgb(255 255 255 / 80%) inset, 0 40px 20px -20px rgb(255 255 255 / 8%) inset, 0 -1px 1px -1px rgb(255 255 255 / 70%) inset, 0 -40px 20px -20px rgb(255 255 255 / 6%) inset, 0 11px 8px -3px rgb(255 255 255 / 40%), 0 4px 2px -2px rgb(0 0 0 / 30%), 0 1px 6px 1px rgb(0 0 0 / 50%);
 }
-
+.container__boton__bienvenida .icon{
+    margin-right: 5px;
+    color: white;
+    font-size: 1.5rem;
+}
 .container__boton__bienvenida:hover{
     box-shadow: 0 1px 1px -1px rgb(255 255 255 / 80%) inset, 0 40px 20px -20px rgb(255 255 255 / 8%) inset, 0 -1px 1px -1px rgb(0 0 0 / 70%) inset, 0 -40px 20px -20px rgb(0 0 0 / 6%) inset, 0 11px 8px -3px rgb(0 0 0 / 40%), 0 4px 2px -2px rgb(0 0 0 / 30%), 0 1px 6px 1px rgb(0 0 0 / 50%);
 }
@@ -62,7 +73,10 @@
 
 .container__frase{
     position: absolute;
-    top: 17vh;
-    margin-left: 10%;
-    margin-right: 10%;
+    top: 15vh;
+    background-color: white;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5vh;
 }

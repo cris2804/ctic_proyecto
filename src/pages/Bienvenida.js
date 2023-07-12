@@ -1,4 +1,5 @@
 import "./css/Bienvenida.css";
+import { SiWindicss } from "react-icons/si";
 
 export default function Bienvenida(){
 
@@ -6,7 +7,9 @@ export default function Bienvenida(){
     return (
         <div className="container__bienvenida">
             {/*<img src="https://e.rpp-noticias.io/xlarge/2023/01/18/475647_1376757.jpg" alt="" />*/}
-            <div className="container__titulo__bienvenida">CTIC</div>
+            <div className="container__titulo__bienvenida">
+                < img src="https://www.ctic.uni.edu.pe/wp-content/uploads/2020/10/logo-ctic-1@2x.png"/>
+            </div>
             {/*<div className="container__introduccion"></div>*/}
 
             <div className="container__frase">
@@ -26,12 +29,16 @@ export default function Bienvenida(){
                 <p>
                     Es un honor tener la oportunidad de trabajar bajo su dirección y poder aprender de su experiencia y sabiduría. Sus contribuciones son invaluables y han dejado una marca duradera en la Universidad Nacional de Ingeniería. Estamos seguros de que su influencia positiva continuará impulsando a más estudiantes a alcanzar su máximo potencial y a convertirse en profesionales exitosos.
                 </p>
-                <p>    
+                <p>                                                                                             
                     En nombre de toda la comunidad estudiantil y del equipo de trabajo, le extendemos nuestro más sincero agradecimiento y reconocimiento por su labor sobresaliente. ¡Su dedicación y pasión por la tecnología han sido una fuente de inspiración para todos nosotros!
                 </p>
+
+                <a href="/calidad-del-aire-uni" className="container__boton__bienvenida">
+                   <SiWindicss className="icon"/> Calidad del Aire
+                </a>
             </div>
 
-            <a href="/calidad-del-aire-uni" className="container__boton__bienvenida">Calidad del Aire</a>
+            
         </div>
     )
 }
