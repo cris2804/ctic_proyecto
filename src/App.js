@@ -73,7 +73,7 @@ function App() {
             src={icono}
             alt="icono"
             style={{ height: "30px" }}
-            className={`bg-amber-300 p-1 rounded cursor-pointer block float-left mr-2 duration-700 ${
+            className={`bg-amber-300 p-1 rounded block float-left mr-2 duration-700 ${
               open && "rotate-[360deg]"
             }`}
           />
