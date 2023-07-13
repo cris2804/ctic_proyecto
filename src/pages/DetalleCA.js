@@ -49,7 +49,7 @@ function obtenerNombre(id) {
   else if (id === "puerta 5") return "puerta 5";
 }
 
-function Graficar(opc, nom, idb) {
+function Graficar(opc, nom, idb, ipurl) {
   const datos = Array.from({ length: 20 }, () => {
     return {
       time: new Date().toLocaleTimeString(),
@@ -57,7 +57,7 @@ function Graficar(opc, nom, idb) {
     };
   });
   if (opc === 0) {
-    return <Grafico id={idb} nombre={nom} />;
+    return <Grafico id={idb} nombre={nom} ipurl={ipurl}/>;
   } else if (opc === 1) {
     return <Grafico2 cantidad={96} nombre={nom} />;
   } else if (opc === 2) {
@@ -563,7 +563,7 @@ export default function DetalleCA() {
                             <div className={seleccionado === 1 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(1)}>DÍA</div>
                             <div className={seleccionado === 2 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(2)}>SEMANA</div>
                         </div>*/}
-            <div className="container__grafico">{Graficar(0, opcion, retornaidb(id))}</div>
+            <div className="container__grafico">{Graficar(0, opcion, retornaidb(id), Getip(host))}</div>
 
             <div className="container__contaminante__principal">
               <div className="container__c__p">
