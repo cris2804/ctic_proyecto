@@ -19,7 +19,7 @@ const getLastHourToTimestamp = (horas)=>{
   return timestamp;
 }
 
-const Grafico = ({ nombre, id }) => {
+const Grafico = ({ nombre, id, ipurl }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 /*
@@ -73,7 +73,7 @@ const Grafico = ({ nombre, id }) => {
       try {
         const response = await fetch(
           //`http://192.168.52.232:9090/api/v1/carga-viral/${id}?last=20`
-          `http://192.168.52.232:9090/api/v1/calidad-de-aire/${id}?minDate=${getLastHourToTimestamp(3)}`
+          `${ipurl}/api/v1/calidad-de-aire/${id}?minDate=${getLastHourToTimestamp(3)}`
         );
         const data = await response.json();
         const newData = data.map((item) => {
