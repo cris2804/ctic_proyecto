@@ -1,6 +1,6 @@
 import "./css/DetalleCA.css";
 import happy from "../components/images/happy.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Ica } from "../assets/Ica";
 import Grafico from "../components/calidadAireExterior/Grafico";
 import Grafico2 from "../components/Grafico2";
@@ -15,6 +15,7 @@ import { MdOutlineWindPower } from "react-icons/md";
 import { MdOutlineSportsHandball } from "react-icons/md";
 import { MdLocationPin } from "react-icons/md";
 import { Getip } from "../server/Getip";
+import unidaddv from "../assets/unidaddv";
 
 const gases = [
   {
@@ -189,6 +190,27 @@ export default function DetalleCA() {
     window.location.href = url;
   }
 
+
+  /* ------ para obtener datos de viento, temperatura, sonido */
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `${Getip(host)}/api/v1/calidad-de-aire/${retornaidb(id)}?last=1`
+        );
+        const jsonData = await response.json();
+
+        const d2 = jsonData[0];
+        setData(d2);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="container__detalle__ca">
       <div className="forma">
@@ -234,25 +256,29 @@ export default function DetalleCA() {
                 borderRadius: "0px 0px 10px 10px",
                 paddingBottom: "30px",
               }}
-            >
+            >{/*}
               <div
                 className="container__prop__valor"
                 style={{ paddingTop: "30px" }}
               >
                 <div style={{ color: "#3c3c3c" }}>CLIMA</div>
                 <div style={{ fontWeight: "500" }}>Parcialmente nublado</div>
-              </div>
+              </div>*/}
               <div className="container__prop__valor">
                 <div style={{ color: "#3c3c3c" }}>TEMPERATURA</div>
-                <div style={{ fontWeight: "500" }}>26 ºC</div>
+                <div style={{ fontWeight: "500" }}>{data ? Math.round(data.temperatura_2) : ""} ªC</div>
               </div>
               <div className="container__prop__valor">
-                <div style={{ color: "#3c3c3c" }}>VIENTO</div>
-                <div style={{ fontWeight: "500" }}>12.6 km/h</div>
+                <div style={{ color: "#3c3c3c" }}>VELOCIDAD DEL VIENTO</div>
+                <div style={{ fontWeight: "500" }}>{data ? data.velocidad_del_viento : ""} km/h</div>
               </div>
               <div className="container__prop__valor">
-                <div style={{ color: "#3c3c3c" }}>PRESIÓN</div>
-                <div style={{ fontWeight: "500" }}>1014 mbar</div>
+                <div style={{ color: "#3c3c3c" }}>DIRECCIÓN DEL VIENTO</div>
+                <div style={{ fontWeight: "500" }}>{data ? unidaddv(data.direccion_del_viento) : ""} </div>
+              </div>
+              <div className="container__prop__valor">
+                <div style={{ color: "#3c3c3c" }}>INTENSIDAD DE SONIDO</div>
+                <div style={{ fontWeight: "500" }}>{data ? data.intensidad_de_sonido : ""}</div>
               </div>
             </div>
           </div>
