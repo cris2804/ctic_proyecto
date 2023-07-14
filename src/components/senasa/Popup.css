@@ -1,0 +1,73 @@
+.container__senasa__titulo{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 1vh;
+    margin-top: 2vh;
+}
+.container__depar__pais{
+    text-align: center;
+    font-size: 1.2rem;
+}
+.container__fecha__hora{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/*-----------------------------*/
+
+.container__img__cant__moscas__{
+    margin-top: 1vh;
+}
+.container__img__cant__moscas__2{
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    background: #ff8181;
+    padding: 5px;
+}
+.container__imagen__popup__senasa{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container__imagen__popup__senasa img{
+    width: 70%;
+}
+.container__cantidad__moscas__popup{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+.container__cantidad__moscas__popup span:nth-child(1){
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+.cthpv{
+    display: flex;
+    margin-top: 1vh;
+    width: 90%;
+    margin-left: 5%;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+/*-------------------------------------------------------*/
+.container__boton__senasa{
+    position: absolute;
+    width: 60%;
+    bottom: 2vh;
+    margin-left: 20%;
+    text-align: center;
+    padding: 10px;
+    background: #CAF5AF;
+}
+
+.container__boton__senasa:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px #333;
+}

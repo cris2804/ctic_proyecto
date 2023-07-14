@@ -17,13 +17,17 @@ import { MdCo2 } from "react-icons/md";
 import ReconocimientoFacial from "./pages/ReconocimientoFacial";
 import CanvasComedor from "./components/comedor/CanvasComedor";
 import Controlaforo from "./pages/Controlaforo";
+import Cuentaspersonas from "./pages/Cuentapersonas";
+import Senasa from "./pages/Senasa";
+import Bienvenida from "./pages/Bienvenida";
+import CalidadAgua from "./pages/CalidadAgua";
 
 function App() {
   const [open, setOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(0);
 
   const Menus = [
-    { title: "Dashboard", spacing: true, icon: <RiDashboardFill />, link: "/calidad-del-aire" },
+    { title: "Dashboard", spacing: true, icon: <RiDashboardFill />, link: "/calidad-del-aire-uni" },
     {
       title: "Calidad del aire Interiores",
       icon: <MdCo2 />,
@@ -71,7 +75,7 @@ function App() {
             src={icono}
             alt="icono"
             style={{ height: "30px" }}
-            className={`bg-amber-300 p-1 rounded cursor-pointer block float-left mr-2 duration-700 ${
+            className={`bg-amber-300 p-1 rounded block float-left mr-2 duration-700 ${
               open && "rotate-[360deg]"
             }`}
           />
@@ -94,7 +98,7 @@ function App() {
                   ${menu.spacing ? "mt-9" : "mt-2"}`}
                 >
                   <span className="text-2xl block float-left">
-                    {menu.icon ? menu.icon : <RiDashboardFill />}
+                    <a href={menu.link}>{menu.icon ? menu.icon : <RiDashboardFill />}</a>
                   </span>
                   <span
                     className={`text-base font-medium flex-1 ${
@@ -158,7 +162,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing/>}/>
 
-            <Route path="/calidad-del-aire" element={<Main />} />
+            <Route path="/calidad-del-aire-uni" element={<Main />} />
             
             <Route path="/calidad-del-aire-exteriores" element={<DetalleCA />}/>
             
@@ -170,6 +174,11 @@ function App() {
             
             <Route path="/cuenta-personas" element={<ReconocimientoFacial/>} />
             <Route path="/control-aforo" element={<Controlaforo/>}/>
+            <Route path="/reconocimiento-facial" element={<Cuentaspersonas/>} />
+
+            <Route path="/senasa" element={<Senasa/>} />
+            <Route path="/calidad-del-aire" element={<Bienvenida/>}/>
+            <Route path="/calidad-del-agua" element={<CalidadAgua/>}/>
 
 
             <Route path="/temporal" element={<CanvasComedor/>}/>

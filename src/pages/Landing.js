@@ -14,11 +14,18 @@ const smartcampus = [
       "https://images.pexels.com/photos/1528361/pexels-photo-1528361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
-    titulo: "Reconocimiento Facial",
-    descripcion: "Control de las personas que ingresan a determinado ambiente.",
-    link: "/cuenta-personas",
+    titulo: "Cuenta Personas",
+    descripcion: "Control de la cantidad de personas dentro del ambiente de CTIC.",
+    link: "/control-aforo",
     blank: true,
     imagen: "https://www.mobotix.com/sites/default/files/styles/facebook/public/2020-06/backontrack_1_930x550.jpg?h=c4a9cdb7&itok=p09sYf8W"
+  },
+  {
+    titulo: "Calidad del Agua",
+    descripcion: "Plataforma web para control de la calidad del agua",
+    link: "/calidad-del-agua",
+    blank: true,
+    imagen: "https://diarioresponsable.com/images/CALIDAD_AGUA_DR_copy.jpg"
   },
   {
     titulo: "Metaverso",

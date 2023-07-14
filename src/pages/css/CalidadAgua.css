@@ -1,0 +1,77 @@
+.container__calidad__agua {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  height: 100vh;
+  background-color: #fcfcfc;
+}
+
+.titulo__calidad__agua {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.container__datos__tpht {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2vh;
+}
+
+.container__tpht {
+  font-size: 1.5rem;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;/*
+  background-color: #009af2;*/
+  background-color: #17A589;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 5vh;
+  box-shadow: 0 2px 20px 0 rgb(0 0 0 / 20%);
+  border-radius: 10px;
+}
+
+.container__tpht .valor {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.forma {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  background-color: #1cbacc;
+  clip-path: polygon(0 0, 100% 0, 100% 100px, 50% 100%, 0 100px);
+  text-align: center;
+  color: #ffff;
+  padding-top: 5px;
+}
+
+.forma__titulo__lugar {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.forma__subtitulo {
+  font-size: 1.2rem;
+}
+
+.forma__linea {
+  color: #1cbacc;
+  border-bottom: solid 2px #fff;
+  user-select: none;
+}
+
+.container__gota__agua {
+  text-align: center;
+}
+
+.gota__agua {
+  color: #1cbacc;
+  font-size: 2rem;
+  margin: 0 auto;
+}
+
