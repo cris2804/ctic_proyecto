@@ -15,7 +15,7 @@ export default function CalidadAgua(){
     const fetchData = async () =>{
         //Getip(host)
         const url = "http://localhost:3003/";
-        const data = await fetch(`${url}api/v1/calidad-de-agua?last=1&columns=00000111`);
+        const data = await fetch(`${Getip(host)}/api/v1/calidad-de-agua?last=1&columns=00000111`);
         const dataJson = await data.json();
         setDatactual({
             temperatura:{value:dataJson[0].temperatura},
