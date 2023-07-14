@@ -86,7 +86,7 @@ const Grafico = ({ nombre, id, ipurl }) => {
             hour12: false,
           };
           const hourMinuteSecond = time.toLocaleTimeString([], options);
-
+          console.log(data)
           let val = 0;
           //if (nombre === "Co2") val = item.dioxido_de_carbono;
           if (nombre === "PM2.5") val = item.calidad_de_aire;
@@ -95,6 +95,8 @@ const Grafico = ({ nombre, id, ipurl }) => {
           else if (nombre === "NO2") val = item.dioxido_de_nitrogeno*12180*46/298.15;
           else if (nombre === "H2S") val = item.sulfuro_de_hidrogeno*12180*34/298.15;
           else if (nombre === "CO") val = item.monoxido_de_carbono*12180*28/298.15;
+          else if (nombre === "NO") val = item.oxido_nitrico*12180*30/298.15;
+          else if (nombre === "SO2") val = item.dioxido_de_azufre*12180*64/298.15;
           return {
             dioxido_de_carbono: val, //val.toFixed(2)
             time_index: hourMinuteSecond,

@@ -41,6 +41,14 @@ const gases = [
     key: 6,
     nombre: "CO",
   },
+  {
+    key: 7,
+    nombre: "NO",
+  },
+  {
+    key: 8,
+    nombre: "SO2"
+  }
 ];
 
 function obtenerNombre(id) {
