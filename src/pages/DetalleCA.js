@@ -156,7 +156,7 @@ export default function DetalleCA() {
     window.location.href = url;
   }
 
-
+  /* *************************************************************** */
   /* ------ para obtener datos de viento, temperatura, sonido */
   const [data, setData] = useState(null);
   useEffect(() => {
