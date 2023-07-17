@@ -9,3 +9,4 @@ export const Getip = (host) => {
 
   return hostactual
 }
+

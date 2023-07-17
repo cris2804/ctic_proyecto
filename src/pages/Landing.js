@@ -2,6 +2,7 @@ import "./css/Landing.css";
 import { BsFacebook, BsTwitter, BsLinkedin, BsTiktok } from "react-icons/bs";
 import logouni from "./images/logouni.png";
 import Fade from "react-reveal/Fade";
+import fondosc from "./images/fondosc.jpg"
 
 const smartcampus = [
   {
@@ -96,7 +97,7 @@ export default function Landing() {
       <div className="container__landing">
         <div className="container__fondo">
           <img
-            src="https://2021-3.campusvirtualfim.com/pluginfile.php/1/theme_lambda/slide1image/1682815941/sli01%20%281%29.jpg"
+            src={fondosc}
             alt="imagen uni"
             className="imagen__fondo"
           />

@@ -22,6 +22,7 @@ const obtenerid = (e) => {
 
 export default function Detalles(props) {
   const [data, setData] = useState(null);
+  
   let host = window.location.host;
 
   useEffect(() => {
