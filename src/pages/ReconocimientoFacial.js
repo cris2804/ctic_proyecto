@@ -91,18 +91,10 @@ export default function ReconocimientoFacial() {
         })}
 
         <div className={getData.show ? `container__popupzoom` : "container__popupzoom__"}>
-        <PopupZoom perfil={getData.img} nombres={getData.nombres} hora="15:51"/>
-
-          {/*<div
-            className={
-              getData.status === 1 || getData.status === 2
-                ? `container__popupzoom2`
-                : "container__popupzoom__"
-            }>
-            {getData.msg}
-        </div>*/}
+        <PopupZoom perfil={getData.img} nombres={getData.nombres} hora="15:51:20"/>
         </div>
       </div>
     </div>
   );
 }
+

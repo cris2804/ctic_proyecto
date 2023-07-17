@@ -14,3 +14,4 @@ export default function PopupZoom({perfil, nombres, hora}){
         </div>
     )
 }
+
