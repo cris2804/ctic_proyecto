@@ -151,8 +151,9 @@ export default function Landing() {
                     <figure>
                       <img src={sc.imagen} alt="imagen-ca" />
                       <div className="capa">
-                        <h3>{sc.titulo}</h3>
-                        <p>{sc.descripcion}</p>
+                        <div><h3>{sc.titulo}</h3></div>
+                        <div><p>{sc.descripcion}</p></div>
+                        
                       </div>
                     </figure>
                   </a>
