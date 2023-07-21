@@ -21,6 +21,7 @@ import Cuentaspersonas from "./pages/Cuentapersonas";
 import Senasa from "./pages/Senasa";
 import Bienvenida from "./pages/Bienvenida";
 import CalidadAgua from "./pages/CalidadAgua";
+import ControlAforo from "./pages/CuentaPersonas/ControlAforo";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -184,6 +185,7 @@ function App() {
             <Route path="/temporal" element={<CanvasComedor/>}/>
             <Route path="/detalle-carga-viral" element={<DetalleCA />} />
             <Route path="/grafico-semana" element={<Grafico3 />} />
+            <Route path="/control-aforo-v2" element={<ControlAforo/>} />
           </Routes>
         </Router>
       </div>
