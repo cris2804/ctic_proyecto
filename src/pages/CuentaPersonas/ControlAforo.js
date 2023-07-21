@@ -1,8 +1,21 @@
 import "./ControlAforo.css"
 import iconocp from "./icono-cp.png"
 import {RiDownloadCloudFill} from 'react-icons/ri';
+import { obtenerhora } from "./obtenerhora";
+import { useEffect, useState } from "react";
+import { obtenerfecha } from "./obtenerfecha";
 
 export default function ControlAforo(){
+    const [hora, setHora] = useState(obtenerhora())
+
+    useEffect(()=> {
+        setInterval(() => {
+            setHora(obtenerhora())
+          }, 1000);
+
+        clearInterval();
+    },[])
+
     return (
         <div className="container__control__aforo">
             <img
@@ -47,11 +60,11 @@ export default function ControlAforo(){
                         </div>
                         <div className="container__same">
                             <div>Fecha</div>
-                            <div>21/07/2023</div>
+                            <div>{obtenerfecha()}</div>
                         </div>
-                        <div className="container__same">
+                        <div className="container__same hora">
                             <div>HORA</div>
-                            <div>15:45:23</div>
+                            <div>{hora}</div>
                         </div>
                         <div className="container__same download">
                             <RiDownloadCloudFill/>
