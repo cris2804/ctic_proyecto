@@ -174,3 +174,26 @@
 .container__bottom__ .hora{
     width: 110px;
 }
+
+
+.container__relative{
+    position: relative;
+}
+
+
+/*Popup styles*/
+.container__popup__absolute{
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+}
+.style_popup_v1{
+    background-color: white;
+    color: black;
+    font-size: large;
+    padding: 10px;
+    border-radius: 5px;
+}
+.style_popup_v1>div{
+    white-space:nowrap
+}

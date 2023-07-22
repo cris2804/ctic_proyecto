@@ -2,18 +2,23 @@ import "./ControlAforo.css"
 import iconocp from "./icono-cp.png"
 import {RiDownloadCloudFill} from 'react-icons/ri';
 import { obtenerhora } from "./obtenerhora";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { obtenerfecha } from "./obtenerfecha";
+import PopupDescarga from "./PopupDescarga";
 
 export default function ControlAforo(){
-    const [hora, setHora] = useState(obtenerhora())
+    const [hora, setHora] = useState(obtenerhora());
+    const reloj = useRef(null);
 
     useEffect(()=> {
-        setInterval(() => {
-            setHora(obtenerhora())
+        const timer = setInterval(() => {
+            reloj.current.innerText =  obtenerhora();
           }, 1000);
-
-        clearInterval();
+        return () =>{
+            clearInterval();
+        }
+        
+        
     },[])
 
     return (
@@ -60,14 +65,15 @@ export default function ControlAforo(){
                         </div>
                         <div className="container__same">
                             <div>Fecha</div>
-                            <div>{obtenerfecha()}</div>
+                            <div >{obtenerfecha()}</div>
                         </div>
                         <div className="container__same hora">
                             <div>HORA</div>
-                            <div>{hora}</div>
+                            <div ref={reloj}>{hora}</div>
                         </div>
-                        <div className="container__same download">
-                            <RiDownloadCloudFill/>
+                        <div id="icon_descarga" className="container__same download container__relative">
+                            <RiDownloadCloudFill  />
+                            <PopupDescarga/>
                         </div>
                     </div>
           </div>
