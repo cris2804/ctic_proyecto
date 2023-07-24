@@ -11,10 +11,8 @@
     overflow: hidden;
 }
 
-.container__control__aforo img{
-    width: 100%;
-    min-height: 100%;
-    object-fit: contain;
+.container__control__aforo .container__img__fondo{
+    object-fit: cover;
 }
 
 .container__cp__capa{

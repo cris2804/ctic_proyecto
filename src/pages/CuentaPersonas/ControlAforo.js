@@ -26,6 +26,7 @@ export default function ControlAforo(){
             <img
             src="https://www.ctic.uni.edu.pe/wp-content/uploads/2020/10/foto-ctic-uni.jpg"
             alt="imagen-ctic"
+            className="container__img__fondo"
           />
 
           <div className="container__cp__capa">
