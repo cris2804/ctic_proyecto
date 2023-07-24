@@ -166,9 +166,8 @@
     font-size: 4rem;
     color: #00FFD1;
 }
-.container__bottom__ .download:hover{
+.container__bottom__ .icon:hover{
     cursor: pointer;
-    opacity: 0.9;
 }
 
 .container__bottom__ .hora{
@@ -195,5 +194,30 @@
     border-radius: 5px;
 }
 .style_popup_v1>div{
-    white-space:nowrap
+    white-space:nowrap;    
+}
+
+.container__popup__absolute .container__title__popup{
+    margin-bottom: 10px;
+}
+
+.container__popup__absolute .container__calendar{
+    text-transform: none;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 1rem;
+}
+.container__popup__absolute .container__calendar input{
+    font-size: 1rem;
+}
+
+.container__popup__absolute button{
+    margin-top: 20px;
+    background: #70b0bb;
+    padding: 5px 20px;
+}
+.container__popup__absolute button:hover{
+    opacity: 0.9;
 }

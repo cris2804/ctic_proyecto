@@ -34,10 +34,16 @@ export default function PopupDescarga() {
     <div ref={popup}
         className='container__popup__absolute style_popup_v1'>
         
-        PopupDescarga
-        <div >Fecha incio: <input type='date'/></div>
-        <div>Fecha fin: <input type='date'/></div>
-        <button onClick={descargarDatos}>Descargar</button>
+        <div className='container__title__popup'>Descargar Datos</div>
+        <div className='container__calendar'>
+            <span>Fecha inicio: </span><input type='date'/>
+        </div>
+        <div className='container__calendar'>
+            <span>Fecha fin:</span> <input type='date'/>
+        </div>
+        <button onClick={descargarDatos}>
+            Descargar
+        </button>
 
     </div>
   )

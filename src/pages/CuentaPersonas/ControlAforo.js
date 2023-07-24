@@ -72,7 +72,7 @@ export default function ControlAforo(){
                             <div ref={reloj}>{hora}</div>
                         </div>
                         <div id="icon_descarga" className="container__same download container__relative">
-                            <RiDownloadCloudFill  />
+                            <RiDownloadCloudFill  className="icon"/>
                             <PopupDescarga/>
                         </div>
                     </div>
