@@ -37,8 +37,6 @@ export default function PopupDescarga({ip,id}) {
 
     const [fecha1, setFechaSeleccionada1] = useState('');
     const [fecha2, setFechaSeleccionada2] = useState('');
-    const [fechas1, setFechaSeleccionadas1] = useState('');
-    const [fechas2, setFechaSeleccionadas2] = useState('');
 
     const handleFechaChange1 = (event) => {
         // Obtener el valor del input
@@ -61,7 +59,7 @@ export default function PopupDescarga({ip,id}) {
 
     const descargarDatos = () => {
         fetch(
-            ip + `/api/v1/cuenta-personas/descargar/${id === "ctic" ? "ctic" : "smartcity" }?maxDate=${convertir(fecha2)}&minDate=${convertir(fecha1)}&columns=101`
+            ip + `/api/v1/cuenta-personas/descargar/${id === "ctic" ? "ctic" : "smartcity" }?maxDate=${convertir(fecha2)}&minDate=${convertir(fecha1)}&columns=001001`
         )
           .then((response) => {
             if (response.ok) {
