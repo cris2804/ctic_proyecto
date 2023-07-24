@@ -5,15 +5,19 @@ import { obtenerhora } from "./obtenerhora";
 import { useEffect, useRef, useState } from "react";
 import { obtenerfecha } from "./obtenerfecha";
 import PopupDescarga from "./PopupDescarga";
+import { Getip } from "../../server/Getip";
+import io from "socket.io-client";
 
-
-
-
+const aforo_maximo = 350
 export default function ControlAforo(){
     const [hora, setHora] = useState(obtenerhora());
     const reloj = useRef(null);
     const searchParams = new URLSearchParams(window.location.search);
     const id = searchParams.get("id");
+    
+    const [dataPersonas,setDataPersonas] = useState([]);
+    const [dataActual,setDataActual] = useState(null);
+    let host = window.location.host;
 
     useEffect(()=> {
         const timer = setInterval(() => {
@@ -22,9 +26,48 @@ export default function ControlAforo(){
         return () =>{
             clearInterval();
         }
-        
-        
     },[])
+
+    const fetchInicial = async () =>{
+        const urlDefault  = Getip(host) + `/api/v1/cuenta-personas/${id === "ctic" ? "ctic" : "smartcity" }?last=20&columns=001001`;
+        const response = await fetch(urlDefault);
+        const data = await response.json();
+        const newData = data.map(d =>{
+          const timestamp = new Date(d.time_index).getTime();
+    
+          return {timestamp:timestamp ,value: d.total_personas}
+        });
+        console.log(newData);
+        setDataPersonas(newData.reverse());
+      }
+      useEffect(()=>{
+        fetchInicial();
+        const socket = io(Getip(host),{
+          transports: ["websocket"]
+        })
+        socket.on("CuentaPersonas/CuentaPersonas:ctic",  (data)=>{
+          
+          const str_time = data.TimeInstant.value;
+          const timestamp = new Date(str_time).getTime();
+          const personas = data.total_personas.value;
+          console.log(timestamp,personas);
+          const newTime = {
+            timestamp:timestamp,value:personas
+          }
+    
+          setDataActual(newTime);
+          
+        })
+      },[]);
+      useEffect(()=>{
+        if(dataActual){
+          const newPersonas = [...dataPersonas,dataActual]
+          if(newPersonas.length>20){
+            newPersonas.shift();
+          }
+          setDataPersonas(newPersonas);
+        }
+      },[dataActual])
 
     //para el select
   function handleChange(event) {
@@ -68,7 +111,7 @@ export default function ControlAforo(){
                                     <img src={iconocp} alt="icono__cp"/>
                                 </div>
                                 <div className="container__value">
-                                    35
+                                {dataPersonas.length === 0 ? "0" : dataPersonas[dataPersonas.length - 1].value}
                                 </div>
                             </div>
                             <div className="container__progress__bar">
@@ -77,8 +120,8 @@ export default function ControlAforo(){
                                     <div className="progress__actual"></div>
                                     <div className="container__values">
                                         <span>0</span>
-                                        <span>23.33%</span>
-                                        <span>300</span>
+                                        <span>{dataPersonas.length === 0 ? "0" : ((dataPersonas[dataPersonas.length - 1].value/aforo_maximo)*100).toFixed(2)}%</span>
+                                        <span>{aforo_maximo}</span>
                                     </div>
                                 </div>
                             </div>
