@@ -1,7 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
 import "./ControlAforo.css"
 
-export default function PopupDescarga() {
+
+function convertir(fechaInput){
+    const fecha = new Date(fechaInput);
+    const fechaEnNumero = fecha.getTime();
+
+    return fechaEnNumero
+}
+
+export default function PopupDescarga({ip,id}) {
     const popup = useRef(null);
     const [visible,setVisible] = useState(true);
     useEffect(()=>{
@@ -26,20 +34,63 @@ export default function PopupDescarga() {
         }
         
     },[])
-    const descargarDatos = (evt)=>{
-        console.log("Descargando");
-        
+
+    const [fecha1, setFechaSeleccionada1] = useState('');
+    const [fecha2, setFechaSeleccionada2] = useState('');
+    const [fechas1, setFechaSeleccionadas1] = useState('');
+    const [fechas2, setFechaSeleccionadas2] = useState('');
+
+    const handleFechaChange1 = (event) => {
+        // Obtener el valor del input
+        const fechaInput = event.target.value;
+
+        // Actualizar el estado con la fecha seleccionada
+        setFechaSeleccionada1(fechaInput);
+        console.log(fechaInput)
     };
+
+    const handleFechaChange2 = (event) => {
+        // Obtener el valor del input
+        const fechaInput = event.target.value;
+
+        
+
+        // Actualizar el estado con la fecha seleccionada
+        setFechaSeleccionada2(fechaInput);
+    };
+
+    const descargarDatos = () => {
+        fetch(
+            ip + `/api/v1/cuenta-personas/descargar/${id === "ctic" ? "ctic" : "smartcity" }?maxDate=${convertir(fecha2)}&minDate=${convertir(fecha1)}&columns=101`
+        )
+          .then((response) => {
+            if (response.ok) {
+              return response.blob();
+            } else {
+              throw new Error("Error en la respuesta de la API");
+            }
+          })
+          .then((blob) => {
+            // Crea un enlace de descarga
+            const downloadLink = document.createElement("a");
+            downloadLink.href = URL.createObjectURL(blob);
+            downloadLink.download = "archivo.csv";
+            downloadLink.click();
+          })
+          .catch((error) => {
+            console.error("Error al llamar a la API:", error);
+          });
+      };
   return (
     <div ref={popup}
         className='container__popup__absolute style_popup_v1'>
         
         <div className='container__title__popup'>Descargar Datos</div>
         <div className='container__calendar'>
-            <span>Fecha inicio: </span><input type='date'/>
+            <span>Fecha inicio: </span><input type='date' value={fecha1} onChange={handleFechaChange1}/>
         </div>
         <div className='container__calendar'>
-            <span>Fecha fin:</span> <input type='date'/>
+            <span>Fecha fin:</span> <input type='date' value={fecha2} onChange={handleFechaChange2}/>
         </div>
         <button onClick={descargarDatos}>
             Descargar

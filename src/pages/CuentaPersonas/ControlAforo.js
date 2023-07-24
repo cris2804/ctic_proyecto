@@ -9,6 +9,20 @@ import { Getip } from "../../server/Getip";
 import io from "socket.io-client";
 
 const aforo_maximo = 350
+
+function get_hora(timestamp){
+    //const timestamp = 1688858888905; // Tu timestamp aquí
+    const fecha = new Date(timestamp);
+
+    const horas = fecha.getHours();
+    const minutos = fecha.getMinutes();
+    const segundos = fecha.getSeconds();
+
+    console.log(`Hora: ${horas}:${minutos}:${segundos}`);
+
+    return `${horas}:${minutos}:${segundos}`
+}
+
 export default function ControlAforo(){
     const [hora, setHora] = useState(obtenerhora());
     const reloj = useRef(null);
@@ -75,6 +89,7 @@ export default function ControlAforo(){
     window.location.href = url;
   }
 
+
     return (
         <div className="container__control__aforo">
             <img
@@ -130,7 +145,7 @@ export default function ControlAforo(){
                     <div className="container__bottom__">
                         <div className="container__same">
                             <div>Última Actualización</div>
-                            <div>15:44:20</div>
+                            <div>{dataPersonas.length === 0 ? "0" : get_hora(dataPersonas[dataPersonas.length - 1].timestamp)}</div>
                         </div>
                         <div className="container__same">
                             <div>Fecha</div>
@@ -142,7 +157,7 @@ export default function ControlAforo(){
                         </div>
                         <div id="icon_descarga" className="container__same download container__relative">
                             <RiDownloadCloudFill  className="icon"/>
-                            <PopupDescarga/>
+                            <PopupDescarga ip={Getip(host)} id={id}/>
                         </div>
                     </div>
           </div>
