@@ -11,7 +11,9 @@
     overflow: hidden;
 }
 
-.container__control__aforo .container__img__fondo{
+.container__control__aforo img{
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -61,7 +63,10 @@
     display: flex;
     gap: 10px;
 }
-
+.container__icon__cp{
+    display: flex;
+    align-items: center;
+}
 .container__icon__value .container__icon__cp img{
     height: 7rem;
 }
