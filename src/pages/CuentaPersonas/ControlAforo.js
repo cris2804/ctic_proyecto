@@ -42,11 +42,6 @@ export default function ControlAforo(){
 
           <div className="container__cp__capa">
                     <div className="selector__de__lugar__ca">
-                        {/*<div className="container__icon__ubi__ofi">
-                            {" "}
-                            <MdLocationPin style={{ fontSize: "2rem", color: "#1cbacc" }} />
-                            Ubicación Actual:{" "}
-                        </div>*/}
                         <select
                             value={"/control-aforo?id="+id}
                             onChange={handleChange}
