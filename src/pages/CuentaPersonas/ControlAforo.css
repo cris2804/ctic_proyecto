@@ -44,6 +44,7 @@
     color: white;
     width: 50%;
     text-align: center;
+    text-transform: uppercase;
 }
 .container__all__right{
     display: flex;
@@ -180,6 +181,13 @@
 
 .container__relative{
     position: relative;
+}
+
+/*--------------- selector ----------------*/
+.selector__de__lugar__ca{
+    position: absolute;
+    left: 20px;
+    top: 20px;
 }
 
 

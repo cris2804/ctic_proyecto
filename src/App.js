@@ -16,7 +16,7 @@ import { SiWindicss } from "react-icons/si";
 import { MdCo2 } from "react-icons/md";
 import ReconocimientoFacial from "./pages/ReconocimientoFacial";
 import CanvasComedor from "./components/comedor/CanvasComedor";
-import Controlaforo from "./pages/Controlaforo";
+//import Controlaforo from "./pages/Controlaforo";
 import Cuentaspersonas from "./pages/Cuentapersonas";
 import Senasa from "./pages/Senasa";
 import Bienvenida from "./pages/Bienvenida";
@@ -175,7 +175,7 @@ function App() {
             <Route path="/faq-calidad-de-aire" element={<FaqCAE />} />
             
             <Route path="/cuenta-personas" element={<ReconocimientoFacial/>} />
-            <Route path="/control-aforo" element={<Controlaforo/>}/>
+            {/*<Route path="/control-aforo" element={<Controlaforo/>}/>*/}
             <Route path="/reconocimiento-facial" element={<Cuentaspersonas/>} />
 
             <Route path="/senasa" element={<Senasa/>} />
@@ -186,7 +186,7 @@ function App() {
             <Route path="/temporal" element={<CanvasComedor/>}/>
             <Route path="/detalle-carga-viral" element={<DetalleCA />} />
             <Route path="/grafico-semana" element={<Grafico3 />} />
-            <Route path="/control-aforo-v2" element={<ControlAforo/>} />
+            <Route path="/control-aforo" element={<ControlAforo/>} />
             <Route path="/metaverso" element={<Metaverso/>} />
           </Routes>
         </Router>

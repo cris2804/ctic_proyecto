@@ -18,7 +18,7 @@ const smartcampus = [
   {
     titulo: "Cuenta Personas",
     descripcion: "Control de la cantidad de personas dentro del ambiente de CTIC.",
-    link: "/control-aforo",
+    link: "/control-aforo?id=ctic",
     blank: true,
     imagen: "https://www.mobotix.com/sites/default/files/styles/facebook/public/2020-06/backontrack_1_930x550.jpg?h=c4a9cdb7&itok=p09sYf8W"
   },

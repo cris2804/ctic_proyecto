@@ -6,9 +6,14 @@ import { useEffect, useRef, useState } from "react";
 import { obtenerfecha } from "./obtenerfecha";
 import PopupDescarga from "./PopupDescarga";
 
+
+
+
 export default function ControlAforo(){
     const [hora, setHora] = useState(obtenerhora());
     const reloj = useRef(null);
+    const searchParams = new URLSearchParams(window.location.search);
+    const id = searchParams.get("id");
 
     useEffect(()=> {
         const timer = setInterval(() => {
@@ -21,6 +26,12 @@ export default function ControlAforo(){
         
     },[])
 
+    //para el select
+  function handleChange(event) {
+    const url = event.target.value;
+    window.location.href = url;
+  }
+
     return (
         <div className="container__control__aforo">
             <img
@@ -30,11 +41,30 @@ export default function ControlAforo(){
           />
 
           <div className="container__cp__capa">
+                    <div className="selector__de__lugar__ca">
+                        {/*<div className="container__icon__ubi__ofi">
+                            {" "}
+                            <MdLocationPin style={{ fontSize: "2rem", color: "#1cbacc" }} />
+                            Ubicación Actual:{" "}
+                        </div>*/}
+                        <select
+                            value={"/control-aforo?id="+id}
+                            onChange={handleChange}
+                            className="container__select__paginas__cai"
+                        >
+                            <option value="/control-aforo?id=ctic">
+                            CTIC
+                            </option>
+                            <option value="/control-aforo?id=smart city">
+                            Smart City
+                            </option>
+                        </select>
+                    </div>
                     <div className="container__all__center">
                         <div className="container__tittle">
                             CONTROL<br></br>
                             DE AFORO <br></br>  
-                            CTIC
+                            {id}
                         </div>
                         <div className="container__all__right">
                             <div className="container__aa">AFORO ACTUAL</div>
