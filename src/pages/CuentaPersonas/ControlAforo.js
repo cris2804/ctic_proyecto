@@ -132,7 +132,7 @@ export default function ControlAforo(){
                             <div className="container__progress__bar">
                                 <div className="contianer__bar__v2">
                                     <div className="progress__bar"></div>
-                                    <div className="progress__actual"></div>
+                                    <div className="progress__actual" style={{width: `${dataPersonas.length === 0 ? "100" :((dataPersonas[dataPersonas.length - 1].value/aforo_maximo)*100).toFixed(2)}%`}}></div>
                                     <div className="container__values">
                                         <span>0</span>
                                         <span>{dataPersonas.length === 0 ? "0" : ((dataPersonas[dataPersonas.length - 1].value/aforo_maximo)*100).toFixed(2)}%</span>
