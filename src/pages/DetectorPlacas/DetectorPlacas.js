@@ -1,7 +1,7 @@
 import "./DetectorPlacas.css"
 import placa from "./placa.jpg"
 import Tabla from "./Tabla";
-import fondocarro from "./fondo-carro.png"
+//import fondocarro from "./fondo-carro.png"
 
 
 export default function DetectorPlacas() {
@@ -28,7 +28,7 @@ export default function DetectorPlacas() {
             {/*<img src={fondocarro} alt=""/>*/}
             <div className="container__ingreso__salida">
                 <div>Ingreso: </div>
-                <div>50</div>
+                <div>1500</div>
             </div>
             <div className="container__ingreso__salida">
                 <div>Salida: </div>
@@ -37,7 +37,8 @@ export default function DetectorPlacas() {
         </div>
 
         <div className="container__placa container__grafica__carros">
-            4
+            
+
         </div>
       </div>
     </div>

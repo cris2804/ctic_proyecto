@@ -9,7 +9,6 @@
     background: white;
     font-family: 'Space Grotesk', sans-serif;
 }
-
 .container__main__placas{
     background-color: #1c2028; /*#13161c;*/
     height: 100vh;
@@ -77,6 +76,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5vh;
 }
 .container__cantidad__carros img{
     width: 40%;
@@ -88,6 +88,7 @@
 }
 .container__ingreso__salida div{
     width: 50%;
+    font-weight: 500;
 }
 .container__ingreso__salida div:nth-child(1){
     display: flex;
@@ -101,3 +102,5 @@
 .container__grafica__carros{
     background-color: #cee5cd;
 }
+
+/*---*/
