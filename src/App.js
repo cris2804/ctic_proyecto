@@ -192,7 +192,7 @@ function App() {
 
 
 
-            <Route path="/deteccion-placas" element={<DetectorPlacas/>}/>
+            <Route path="/detector-de-placas" element={<DetectorPlacas/>}/>
           </Routes>
         </Router>
       </div>

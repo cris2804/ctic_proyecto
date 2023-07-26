@@ -18,10 +18,15 @@ const styles = (theme) => ({
     '& .ReactVirtualized__Table__headerRow': {
       flip: false,
       paddingRight: theme.direction === 'rtl' ? '0 !important' : undefined,
+      display: 'flex',
+      justifyContent: 'space-between',
     },
   },
   tableRow: {
-    cursor: 'pointer',
+    //cursor: 'pointer',
+    display: 'flex',
+    justifyContent: 'space-between',
+    borderBottom: '1px solid rgba(224, 224, 224, 1)',
   },
   tableRowHover: {
     '&:hover': {
@@ -170,21 +175,21 @@ export default function Tabla() {
         rowGetter={({ index }) => rows[index]}
         columns={[
           {
-            width: 200,
+            width: '33%',
             label: 'PLACA',
             dataKey: 'dessert',
           },
           {
-            width: 200,
+            width: '33%',
             label: 'FECHA',
             dataKey: 'calories',
-            numeric: true,
+            //numeric: true,
           },
           {
-            width: 200,
+            width: '33%',
             label: 'HORA',
             dataKey: 'fat',
-            numeric: true,
+            //numeric: true,
           },
         ]}
       />
