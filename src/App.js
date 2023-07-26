@@ -23,6 +23,7 @@ import Bienvenida from "./pages/Bienvenida";
 import CalidadAgua from "./pages/CalidadAgua";
 import ControlAforo from "./pages/CuentaPersonas/ControlAforo";
 import Metaverso from "./pages/Metaverso";
+import DetectorPlacas from "./pages/DetectorPlacas/DetectorPlacas";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -188,6 +189,10 @@ function App() {
             <Route path="/grafico-semana" element={<Grafico3 />} />
             <Route path="/control-aforo" element={<ControlAforo/>} />
             <Route path="/metaverso" element={<Metaverso/>} />
+
+
+
+            <Route path="/deteccion-placas" element={<DetectorPlacas/>}/>
           </Routes>
         </Router>
       </div>
