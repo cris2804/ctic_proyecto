@@ -76,10 +76,24 @@
 .container__cantidad__carros{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 5vh;
 }
+.container__cantidad__carros img{
+    width: 50%;
+}
+.container__main__is{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.container__ingreso__salida{
+    display: flex;
+    gap: 1rem;
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+}
+/*
 .container__cantidad__carros img{
     width: 40%;
 }
@@ -102,7 +116,7 @@
     padding-left: 10px;
     font-family: 'Montserrat', sans-serif;
     font-size: 5rem;
-}
+}*/
 
 /*right bottom*/
 .container__grafica__carros{

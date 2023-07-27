@@ -2,7 +2,7 @@ import "./DetectorPlacas.css"
 import placa from "./placa.jpg"
 import Tabla from "./Tabla";
 import { useState } from "react";
-//import fondocarro from "./fondo-carro.png"
+import carro from "./carro.png"
 
 
 export default function DetectorPlacas() {
@@ -19,6 +19,7 @@ export default function DetectorPlacas() {
 
         <div className="container__placa container__imagen__placas">
             <div className="container__img__principal">
+                <div></div>
                 <img src={placa} alt=""/>
             </div>
             <div className="container__imgs__secundarios">
@@ -29,14 +30,16 @@ export default function DetectorPlacas() {
         </div>
 
         <div className="container__placa container__cantidad__carros">
-            {/*<img src={fondocarro} alt=""/>*/}
-            <div className="container__ingreso__salida">
-                <div>Ingreso: </div>
-                <div>50</div>
-            </div>
-            <div className="container__ingreso__salida">
-                <div>Salida: </div>
-                <div>30</div>
+            <img src={carro} alt=""/>
+            <div className="container__main__is">
+              <div className="container__ingreso__salida">
+                  <div>Ingreso: </div>
+                  <div>50</div>
+              </div>
+              <div className="container__ingreso__salida">
+                  <div>Salida: </div>
+                  <div>30</div>
+              </div>
             </div>
         </div>
 
