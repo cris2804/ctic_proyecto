@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 .container__main__detector__placas{
     position: absolute;
     top: 0;
@@ -57,7 +59,7 @@
 }
 .container__img__principal img{
     width: 50%;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
     border-radius: 4px;
 }
 .container__imgs__secundarios{
@@ -67,7 +69,7 @@
 }
 .container__imgs__secundarios img{
     width: 20%;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
 }
 
 /*left bottom*/
@@ -93,14 +95,55 @@
 .container__ingreso__salida div:nth-child(1){
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
 }
 .container__ingreso__salida div:nth-child(2){
     padding-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5rem;
 }
 
 /*right bottom*/
 .container__grafica__carros{
     background-color: #cee5cd;
+    padding: 10px;
 }
 
-/*---*/
+.container__opc__button{
+    display: flex;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #fff;
+    color: black;
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+}
+.container__opc__button div{
+    width: 100px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    z-index: 2;
+    cursor: pointer;
+}
+.container__opc__button span{
+    position: absolute;
+    border-radius: 10px;
+    width: 100px;
+    height: 35px;
+    background-color: #e6eef9;
+    transition: 0.25s ease-out;
+}
+.container__opc__button .selected{
+    color: #185ee0;
+    transition: 0.15s ease-out;
+}
+
+.selected1{
+    transform: translateX(0);
+}
+.selected2{
+    transform: translateX(100%);
+}
