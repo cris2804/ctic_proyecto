@@ -32,7 +32,7 @@
     /*box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);*/
     border-radius: 5px;
 }
-/*left top*/
+/*-------------------- left top ---------------------*/
 .container__tabla__title{
     display: flex;
     flex-direction: column;
@@ -45,34 +45,59 @@
     height: 35vh;
 }
 
-/* right top*/
+/*---------------------- right top ------------------*/
 .container__imagen__placas{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
+
 .container__img__principal{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
+.container__img__ultimo{
+    width: 40%;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+    border-radius: 8px;
+}
+.container__img__ultimo div:nth-child(1){
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.container__img__ultimo img{
+    width: 100%;
+}
+/*
 .container__img__principal img{
     width: 50%;
     box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
     border-radius: 4px;
-}
+}*/
 .container__imgs__secundarios{
     display: flex;
     justify-content: space-around;
     width: 100%;
 }
-.container__imgs__secundarios img{
+.container__imgs__secundarios .container__img__secundario{
     width: 20%;
     box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+.container__imgs__secundarios .container__img__secundario div:nth-child(1){
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.2rem;
 }
 
-/*left bottom*/
+/*-------------- left bottom -------------------*/
 .container__cantidad__carros{
     display: flex;
     flex-direction: column;
@@ -118,7 +143,7 @@
     font-size: 5rem;
 }*/
 
-/*right bottom*/
+/*------------------ right bottom ----------------------*/
 .container__grafica__carros{
     background-color: #cee5cd;
     padding: 10px;

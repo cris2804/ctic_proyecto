@@ -19,13 +19,24 @@ export default function DetectorPlacas() {
 
         <div className="container__placa container__imagen__placas">
             <div className="container__img__principal">
-                <div></div>
-                <img src={placa} alt=""/>
+                <div className="container__img__ultimo">
+                  <div>11:52:20 AM</div>
+                  <img src={placa} alt=""/>
+                </div>
             </div>
             <div className="container__imgs__secundarios">
+              <div className="container__img__secundario">
+                <div>11:48:35 AM</div>
                 <img src={placa} alt=""/>
+              </div>
+              <div className="container__img__secundario">
+                <div>11:47:16 AM</div>
                 <img src={placa} alt=""/>
+              </div>
+              <div className="container__img__secundario">
+                <div>11:20:56 AM</div>
                 <img src={placa} alt=""/>
+              </div>
             </div>
         </div>
 
