@@ -77,6 +77,8 @@
     color: #00B628;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
+
+/*------ container progress bar ------*/
 .container__progress__bar{
     width: 100%;
     position: relative;
@@ -85,13 +87,16 @@
     font-family: 'Space Grotesk', sans-serif;
 }
 .contianer__bar__v2{
+    position: relative;
     width: 70%;
 }
 .progress__bar{
+    position: relative;
     width: 100%;
     height: 30px;
     background-color: white;
     border-radius: 5px;
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
 }
 .container__progress__bar .progress__actual{
     position: absolute;
@@ -116,7 +121,6 @@
     display: flex;
     justify-content: flex-end;
     transform: translateX(50%);
-    border: solid 1px red;
 }
 .max{
     position: absolute;
