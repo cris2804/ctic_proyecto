@@ -72,7 +72,7 @@ export default function PopupDescarga({ip,id}) {
             // Crea un enlace de descarga
             const downloadLink = document.createElement("a");
             downloadLink.href = URL.createObjectURL(blob);
-            downloadLink.download = "archivo.csv";
+            downloadLink.download = `historico${fecha1}_${fecha2}.csv`;
             downloadLink.click();
           })
           .catch((error) => {
