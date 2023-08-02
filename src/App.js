@@ -24,6 +24,7 @@ import CalidadAgua from "./pages/CalidadAgua";
 import ControlAforo from "./pages/CuentaPersonas/ControlAforo";
 import Metaverso from "./pages/Metaverso";
 import DetectorPlacas from "./pages/DetectorPlacas/DetectorPlacas";
+import SmartParking from "./pages/SmartParking/SmartParking";
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -193,6 +194,7 @@ function App() {
 
 
             <Route path="/detector-de-placas" element={<DetectorPlacas/>}/>
+            <Route path="/smart-parking" element={<SmartParking/>}/>
           </Routes>
         </Router>
       </div>
