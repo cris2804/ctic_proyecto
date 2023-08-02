@@ -7,3 +7,9 @@
     z-index: 20;
     width: 100%;
 }
+
+.container__mapa__sp{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
