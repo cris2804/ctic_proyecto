@@ -14,6 +14,7 @@ export default function RealTimeComponentSmartParking() {
                 src :"./SmartParking/SmartParkingCTICFrontis.png" ,
             }
         )
+        console.log(controllerSP.canvas);
     },[])
     return (
     <div ref={container} className='cont-smart-parking-tr'>

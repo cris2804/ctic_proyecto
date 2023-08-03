@@ -39,4 +39,14 @@
     width: 80%;
     height: 90%;
     background-color: red;
+    animation: entradaPopup 0.2s ease-in-out forwards;
+}
+
+@keyframes entradaPopup{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
