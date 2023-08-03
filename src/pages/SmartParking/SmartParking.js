@@ -8,7 +8,6 @@ import RealTimeComponentSmartParking from "./RealTimeComponentSmartParking"
 import iconoverde from "./icon-green.png"
 import iconorojo from "./icon-red.png"
 
-//const ubiCentro = ["-12.020381", "-77.049178"];
 const ubiCentro = [-12.016460,-77.049896]
 
 function SmartParking(){

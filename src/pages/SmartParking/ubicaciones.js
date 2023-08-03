@@ -1,5 +1,5 @@
 //import Icon from "../../assets/icon.svg";
-import Icon from "./icon-green.png"
+import Icon from "./icon-red.png"
 export const ubi = [
     {
         "clave": "sp-ctic",

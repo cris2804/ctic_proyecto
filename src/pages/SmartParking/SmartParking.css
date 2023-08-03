@@ -54,13 +54,13 @@
 }
 .container__leyenda__sp{
     width: 270px;
-    height: 120px;
+    height: 110px;
     position: absolute;
     z-index: 50;
     bottom: 80px;
     left: 20px;
     background-color: white;
-    box-shadow: 0 7px 20px #00000026;
+    box-shadow: 0 7px 20px #00000050;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -69,7 +69,7 @@
 .icono__desc__sp{
     display: flex;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 25px;
     gap: 10px;
 }
 .icono__desc__sp img{
