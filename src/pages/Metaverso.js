@@ -5,7 +5,11 @@ const style_container = {
 }
 export default function Metaverso() {
   return (
-    <iframe style={style_container} src='https://www.spatial.io/s/Sergio-Munoz-Suarezs-3D-Room-6475545a8284f96bc422289d?share=4242366686113477634'>
+    <iframe style={style_container} 
+    src="https://www.spatial.io/s/roams-Immersive-Space-64b9d64eb96368ef9ae52778?share=8145885502253992499"
+    sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+    
+    >
 
     </iframe>
   )

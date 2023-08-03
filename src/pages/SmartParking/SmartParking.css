@@ -13,3 +13,30 @@
     width: 100%;
     height: 100vh;
 }
+.flex-column{
+
+    flex-direction: column;
+}
+.tittle-general{
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+.popup-smart-parking{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.507);
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.cont-smart-parking-tr{
+    width: 80%;
+    height: 90%;
+    background-color: red;
+}
