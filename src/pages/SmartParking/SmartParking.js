@@ -10,9 +10,6 @@ const ubiCentro = [-12.016460,-77.049896]
 function SmartParking(){
 
     const handleMostrar = (e, i) => {
-        //setId(e);
-        //setBol(true);
-        //setI(i);
         console.log(e,i)
       };
 
