@@ -5,7 +5,7 @@ import { Marker } from "react-leaflet"
 import L from "leaflet"
 import { useEffect, useRef, useState } from "react"
 import RealTimeComponentSmartParking from "./RealTimeComponentSmartParking"
-import iconoverde from "./icon-green.png"
+import iconoverde from "./icon-blue.png"
 import iconorojo from "./icon-red.png"
 
 const ubiCentro = [-12.016460,-77.049896]
@@ -42,7 +42,7 @@ function SmartParking(){
                         icon={L.icon({
                         iconUrl: ubicacion.logo,
                         iconRetinaUrl: ubicacion.logo,
-                        iconSize: [40, 60],
+                        iconSize: [45, 55],
                         className: "leaflet-venue-icon",
                         })}
                         eventHandlers={{
