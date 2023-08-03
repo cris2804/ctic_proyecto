@@ -1,4 +1,4 @@
-.contianer__all__sp{
+.container__all__sp{
     position: absolute;
     top: 0;
     left: 0;
@@ -21,6 +21,8 @@
     font-size: 2em;
     text-align: center;
     font-weight: bold;
+    background-color: #081a51;
+    color: white;
 }
 .popup-smart-parking{
     width: 100%;
@@ -39,4 +41,30 @@
     width: 80%;
     height: 90%;
     background-color: red;
+}
+
+
+/*LEYENDA*/
+.container__leyenda__sp{
+    width: 270px;
+    height: 120px;
+    position: absolute;
+    z-index: 50;
+    bottom: 80px;
+    left: 20px;
+    background-color: white;
+    box-shadow: 0 7px 20px #00000026;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.icono__desc__sp{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    gap: 10px;
+}
+.icono__desc__sp img{
+    height: 40px;
 }

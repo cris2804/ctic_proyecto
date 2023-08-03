@@ -5,6 +5,8 @@ import { Marker } from "react-leaflet"
 import L from "leaflet"
 import { useEffect, useRef, useState } from "react"
 import RealTimeComponentSmartParking from "./RealTimeComponentSmartParking"
+import iconoverde from "./icon-green.png"
+import iconorojo from "./icon-red.png"
 
 //const ubiCentro = ["-12.020381", "-77.049178"];
 const ubiCentro = [-12.016460,-77.049896]
@@ -56,6 +58,17 @@ function SmartParking(){
                 </div>
             </div>
             <div className="tittle-general">Smart Parking</div>
+
+            <div className="container__leyenda__sp">
+                <div className="icono__desc__sp">
+                    <img src={iconoverde} alt=""/>
+                    <div>Hay espacio libre</div>
+                </div>
+                <div className="icono__desc__sp">
+                    <img src={iconorojo} alt="" />
+                    <div>No hay espacio libre</div>
+                </div>
+            </div>
         </div>
     )
 }
