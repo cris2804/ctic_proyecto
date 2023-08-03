@@ -14,11 +14,15 @@ export default function RealTimeComponentSmartParking() {
                 src :"./SmartParking/SmartParkingCTICFrontis.png" ,
             }
         )
-        console.log(controllerSP.canvas);
     },[])
     return (
     <div ref={container} className='cont-smart-parking-tr'>
-        
+        <div className='leyenda-popup-hilos'>
+            <div className='item-legend color-disponible'></div>
+            <div>Espacio libre</div>
+            <div className='item-legend color-ocupado'></div>
+            <div>Espacio ocupado</div>
+        </div>
     </div>
   )
 }
