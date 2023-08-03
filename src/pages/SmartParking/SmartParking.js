@@ -41,7 +41,7 @@ function SmartParking(){
                         icon={L.icon({
                         iconUrl: ubicacion.logo,
                         iconRetinaUrl: ubicacion.logo,
-                        iconSize: [40, 40],
+                        iconSize: [40, 60],
                         className: "leaflet-venue-icon",
                         })}
                         eventHandlers={{
