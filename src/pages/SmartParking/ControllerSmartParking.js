@@ -10,6 +10,7 @@ class ControllerSmartParking{
     }
     iniciar(){
         const canvas = document.createElement("canvas");
+        canvas.className ="canvas-container-temp"
         const {width,height} = this.padre.getBoundingClientRect();
         
         canvas.width = width*0.8;
@@ -74,6 +75,20 @@ class ControllerSmartParking{
         const n = 13;
         for(let i = 0;i<n;i++){
             let color = Math.random()>0.5? "#c3e7ff":"#fa8071";
+            this.context.fillStyle = color;
+            const x = (435-this.dw*0.5 + i*20)*this.scala;
+            const y = (400-this.dh*0.5)*this.scala;
+            this.context.fillRect(x, y,20*this.scala,50*this.scala);
+            this.context.strokeStyle = "#444";
+            this.context.strokeRect(x, y,20*this.scala,50*this.scala);
+            
+        }
+    }
+    setArrayState(array){
+        const n = 13;
+        console.log("hola",array,this.scala);
+        for(let i = 0;i<n;i++){
+            let color = array[i]==0? "#c3e7ff":"#fa8071";
             this.context.fillStyle = color;
             const x = (435-this.dw*0.5 + i*20)*this.scala;
             const y = (400-this.dh*0.5)*this.scala;

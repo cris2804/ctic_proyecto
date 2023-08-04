@@ -30,6 +30,13 @@ const smartcampus = [
     imagen: "https://diarioresponsable.com/images/CALIDAD_AGUA_DR_copy.jpg"
   },
   {
+    titulo: "Smart Parking",
+    descripcion: "Plataforma web para el parqueo inteligente",
+    link: "/smart-parking",
+    blank: true,
+    imagen: "https://avatars.mds.yandex.net/get-games/1890793/2a0000017a7330f722220f4437d9dabb4093/orig"
+  },
+  {
     titulo: "Metaverso",
     descripcion: "Aquí encontraremos una virtualización de la UNI, divierte",
     link: "/metaverso",

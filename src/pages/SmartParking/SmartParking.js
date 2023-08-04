@@ -8,6 +8,7 @@ import RealTimeComponentSmartParking from "./RealTimeComponentSmartParking"
 import iconoverde from "./icon-blue.png"
 import iconorojo from "./icon-red.png"
 
+
 const ubiCentro = [-12.016460,-77.049896]
 
 function SmartParking(){
@@ -26,6 +27,12 @@ function SmartParking(){
         
         if(evt.target === popup.current) popup.current.style.display = "none"; 
     }
+
+    /*-----------------------------------------------------*/
+   
+    
+   
+
     return (
         <div className="container__all__senasa flex-column">
             <div className="container__mapa__sp">
@@ -42,7 +49,7 @@ function SmartParking(){
                         icon={L.icon({
                         iconUrl: ubicacion.logo,
                         iconRetinaUrl: ubicacion.logo,
-                        iconSize: [45, 55],
+                        iconSize: [35, 45],
                         className: "leaflet-venue-icon",
                         })}
                         eventHandlers={{
