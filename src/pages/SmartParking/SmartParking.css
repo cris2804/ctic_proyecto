@@ -40,7 +40,6 @@
 .cont-smart-parking-tr{
     width: 80%;
     height: 90%;
-    background-color: red;
     animation: entradaPopup 0.2s ease-in-out forwards;
 }
 
