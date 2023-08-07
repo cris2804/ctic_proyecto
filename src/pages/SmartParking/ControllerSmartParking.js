@@ -1,10 +1,11 @@
 class ControllerSmartParking{
-    constructor({contenedor,src,props}){
+    constructor({contenedor,src,estado_inicial,props}){
         this.contenedor = contenedor;
         this.padre = contenedor.parentNode;
         this.src = src;
         this.props = props;
         this.scala = 1;
+        this.estado_inicial = estado_inicial || [];
         this.iniciar();
         this.chargeImage();
     }
@@ -51,7 +52,8 @@ class ControllerSmartParking{
                 this.context.drawImage(image, 0,0,wi,hi,0,0,wi*scala,hi*scala);
                 this.dw = 0;
                 this.dh = 0;
-                this.iniciarTR();
+                //this.iniciarTR();
+                this.setArrayState(this.estado_inicial);
                 
             }else{
                 console.log(dw,dh);
@@ -61,7 +63,8 @@ class ControllerSmartParking{
                 
                 
                 this.context.drawImage(image, 0,0,wi-Math.min(dw*0.5,0),hi-Math.min(0,dw*0.5),-dw*0.5,-dh*0.5,wi,hi);
-                this.iniciarTR();
+                //this.iniciarTR();
+                this.setArrayState(this.estado_inicial);
             }
             
         }
@@ -88,7 +91,7 @@ class ControllerSmartParking{
         const n = 13;
         console.log("hola",array,this.scala);
         for(let i = 0;i<n;i++){
-            let color = array[i]==0? "#c3e7ff":"#fa8071";
+            let color = (array[i]==0? "#c3e7ff":"#fa8071");
             this.context.fillStyle = color;
             const x = (435-this.dw*0.5 + i*20)*this.scala;
             const y = (400-this.dh*0.5)*this.scala;

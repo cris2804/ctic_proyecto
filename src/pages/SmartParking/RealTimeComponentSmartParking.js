@@ -31,9 +31,10 @@ export default function RealTimeComponentSmartParking() {
                 {
                     contenedor:contenedor,
                     src :"./SmartParking/SmartParkingCTICFrontis.png" ,
+                    estado_inicial: data.estado.value
                 }
             )       
-            controllerSP.setArrayState([1,0,0,0,0,0,0,0,0,0,0,0,0])
+            controllerSP.setArrayState(data.estado.value);
             console.log(data.estado.value)
             
           });
