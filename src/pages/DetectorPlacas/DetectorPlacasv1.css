@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+.container__main__detector__placas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.container__main__placas{
+    background-color: #1c2028; /*#13161c;*/
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.container__placa{
+    position: relative;
+    width: calc(50% - 10px);
+    height: calc(50vh - 30px);
+    background: #CEE4DF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);*/
+    border-radius: 5px;
+}
+/*-------------------- left top ---------------------*/
+.container__tabla__title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #cee5cd;
+    font-size: 1.5rem;
+}
+.container__tabla{
+    width: 75%;
+    height: 35vh;
+}
+
+/*---------------------- right top ------------------*/
+.container__imagen__placas{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.container__img__principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.container__img__ultimo{
+    width: 40%;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+    border-radius: 8px;
+}
+.container__img__ultimo div:nth-child(1){
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.container__img__ultimo img{
+    width: 100%;
+}
+/*
+.container__img__principal img{
+    width: 50%;
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+    border-radius: 4px;
+}*/
+.container__imgs__secundarios{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.container__imgs__secundarios .container__img__secundario{
+    width: 20%;
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+.container__imgs__secundarios .container__img__secundario div:nth-child(1){
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+/*-------------- left bottom -------------------*/
+.container__cantidad__carros{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.container__cantidad__carros img{
+    width: 50%;
+}
+.container__main__is{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.container__ingreso__salida{
+    display: flex;
+    gap: 1rem;
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+}
+/*
+.container__cantidad__carros img{
+    width: 40%;
+}
+.container__ingreso__salida{   
+    width: 100%;
+    display: flex;
+    font-size: 4rem;
+}
+.container__ingreso__salida div{
+    width: 50%;
+    font-weight: 500;
+}
+.container__ingreso__salida div:nth-child(1){
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.container__ingreso__salida div:nth-child(2){
+    padding-left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5rem;
+}*/
+
+/*------------------ right bottom ----------------------*/
+.container__grafica__carros{
+    background-color: #cee5cd;
+    padding: 10px;
+}
+
+.container__opc__button{
+    display: flex;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #fff;
+    color: black;
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+}
+.container__opc__button div{
+    width: 100px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    z-index: 2;
+    cursor: pointer;
+}
+.container__opc__button span{
+    position: absolute;
+    border-radius: 10px;
+    width: 100px;
+    height: 35px;
+    background-color: #e6eef9;
+    transition: 0.25s ease-out;
+}
+.container__opc__button .selected{
+    color: #185ee0;
+    transition: 0.15s ease-out;
+}
+
+.selected1{
+    transform: translateX(0);
+}
+.selected2{
+    transform: translateX(100%);
+}
