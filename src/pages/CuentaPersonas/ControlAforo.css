@@ -147,7 +147,7 @@
     font-size: 1.5rem;
     font-weight: 500;
 }
-
+/*-------------------------------*/
 .container__bottom__{
     position: absolute;
     bottom: 0;
@@ -235,4 +235,34 @@
 }
 .container__popup__absolute button:hover{
     opacity: 0.9;
+}
+
+@media (max-width: 768px){
+    .selector__de__lugar__ca{
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .container__all__center{
+        flex-direction: column;
+        gap: 5vh;
+    }
+    .container__all__center .container__tittle{
+        font-size: 2.5rem;
+    }
+    .container__all__right{
+        width: 100%;
+    }
+    .container__all__right .container__aa{
+        font-size: 1.8rem;
+        width: 100%;
+        text-align: center;
+    }
+    .contianer__bar__v2{
+        width: 80%;
+    }
+    .container__bottom__{
+        font-size: 1rem;
+    }
 }

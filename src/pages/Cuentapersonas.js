@@ -19,7 +19,7 @@ const obtenerTurno = (horaLocal) => {
   }
 };
 
-const host = "http://192.168.52.232:9090";
+const host = "http://192.168.52.232:4000";
 let interval = null;
 export default function Cuentapersonas() {
   const [datactual, setDatactual] = useState([]);

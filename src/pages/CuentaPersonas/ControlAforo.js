@@ -8,7 +8,7 @@ import PopupDescarga from "./PopupDescarga";
 import { Getip } from "../../server/Getip";
 import io from "socket.io-client";
 
-const aforo_maximo = 350
+let aforo_maximo = 350
 
 function get_hora(timestamp){
     //const timestamp = 1688858888905; // Tu timestamp aquí
@@ -86,6 +86,8 @@ export default function ControlAforo(){
     //para el select
   function handleChange(event) {
     const url = event.target.value;
+    if(url.includes("ctic")) aforo_maximo = 350
+    else aforo_maximo = 20
     window.location.href = url;
   }
 
