@@ -23,6 +23,11 @@ function get_hora(timestamp){
     return `${horas}:${minutos}:${segundos}`
 }
 
+function aforo_maximo(id){
+  if(id.includes("ctic")) return 350
+  else return 20
+}
+
 export default function ControlAforo(){
     const [hora, setHora] = useState(obtenerhora());
     const reloj = useRef(null);
@@ -86,8 +91,6 @@ export default function ControlAforo(){
     //para el select
   function handleChange(event) {
     const url = event.target.value;
-    if(url.includes("ctic")) aforo_maximo = 350
-    else aforo_maximo = 20
     window.location.href = url;
   }
 
