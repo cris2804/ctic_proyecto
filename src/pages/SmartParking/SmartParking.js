@@ -12,19 +12,21 @@ import iconorojo from "./icon-red.png"
 const ubiCentro = [-12.016460,-77.049896]
 
 function SmartParking(){
+    const [visible,setVisible] =  useState(false);
     const popup = useRef(null);
     useEffect(()=>{
         if(popup){
             popup.current.style.display = "none";
-          
+            setVisible(false);
         }
     },[])
     const handleMostrar = (e, i) => {
         console.log("hola");
         popup.current.style.display = "flex";
+        setVisible(true);
       };
     const ocultarPopup =(evt) =>{
-        
+        setVisible(false);
         if(evt.target === popup.current) popup.current.style.display = "none"; 
     }
 
@@ -60,7 +62,7 @@ function SmartParking(){
                 })}
                 </MapContainer>
                 <div ref={popup} onClick={ocultarPopup} className="popup-smart-parking">
-                    <RealTimeComponentSmartParking/>
+                    <RealTimeComponentSmartParking visible = {visible}/>
                 </div>
             </div>
             <div className="tittle-general">Smart Parking</div>

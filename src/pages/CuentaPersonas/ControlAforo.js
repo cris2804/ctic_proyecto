@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { obtenerfecha } from "./obtenerfecha";
 import PopupDescarga from "./PopupDescarga";
 import { Getip } from "../../server/Getip";
+import { endpointTR } from "../../server/MetadataTR";
 import io from "socket.io-client";
 
 //let aforo_maximo = 350
@@ -48,7 +49,7 @@ export default function ControlAforo(){
     },[])
 
     const fetchInicial = async () =>{
-        const urlDefault  = Getip(host) + `/api/v1/cuenta-personas/${id === "ctic" ? "ctic" : "smartcity" }?last=20&columns=001001`;
+        const urlDefault  = Getip(host) + `/api/v1/cuenta-personas/${id === "ctic" ? "ctic" : "labsmartcity" }?last=1&columns=001001`;
         const response = await fetch(urlDefault);
         const data = await response.json();
         const newData = data.map(d =>{
@@ -56,7 +57,7 @@ export default function ControlAforo(){
     
           return {timestamp:timestamp ,value: d.total_personas}
         });
-        console.log(newData);
+        //console.log("Hola",new Date(newData[0].timestamp));
         setDataPersonas(newData.reverse());
       }
       useEffect(()=>{
@@ -64,7 +65,7 @@ export default function ControlAforo(){
         const socket = io(Getip(host),{
           transports: ["websocket"]
         })
-        socket.on("CuentaPersonas/CuentaPersonas:ctic",  (data)=>{
+        socket.on(endpointTR.CuentaPersonas+(id === "ctic" ? "ctic" : "labsmartcity"),  (data)=>{
           
           const str_time = data.TimeInstant.value;
           const timestamp = new Date(str_time).getTime();
@@ -150,7 +151,11 @@ export default function ControlAforo(){
                     <div className="container__bottom__">
                         <div className="container__same">
                             <div>Última Actualización</div>
-                            <div>{dataPersonas.length === 0 ? "0" : get_hora(dataPersonas[dataPersonas.length - 1].timestamp)}</div>
+                            <div>
+                              {console.log("ADS",dataPersonas,dataPersonas.length)}
+                              {dataPersonas.length === 0 ? "0" : 
+                              (new Date(dataPersonas[dataPersonas.length - 1].timestamp)).toISOString()}
+                              </div>
                         </div>
                         <div className="container__same">
                             <div>Fecha</div>
