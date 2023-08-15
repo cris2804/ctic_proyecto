@@ -11,6 +11,7 @@ import {
   ReferenceArea,
 } from "recharts";
 import "./css/Grafico.css";
+import { Getip } from "../server/Getip";
 
 const Grafico = ({ nombre, datos, id }) => {
   const [data, setData] = useState([]);
@@ -80,7 +81,7 @@ const Grafico = ({ nombre, datos, id }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://192.168.52.232:9090/api/v1/carga-viral/${id}?last=20`
+          `${Getip()}/api/v1/carga-viral/${id}?last=20`
         );
         const data = await response.json();
         const newData = data.map((item) => {

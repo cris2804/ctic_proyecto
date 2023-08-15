@@ -4,7 +4,10 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 import { ControllerSmartParking } from './ControllerSmartParking';
 import io from "socket.io-client"
-import { Getip } from "../../server/Getip"
+import { Getip } from "../../server/Getip";
+import { endpointTR } from '../../server/MetadataTR';
+
+
 export default function RealTimeComponentSmartParking({visible}) {
     const container = useRef(null);
     const [hileras,setHileras] = useState({});
@@ -18,9 +21,9 @@ export default function RealTimeComponentSmartParking({visible}) {
             transports: ["websocket"],
           });
           //fetchData();
-        socket.on("smartparking_va/smartparking_va:ctic",async (data)=>{
+        socket.on(endpointTR.SmartParking + "ctic",async (data)=>{
             
-            setHileras([0,1,1,0,0,0]);
+            //setHileras([0,1,1,0,0,0]);
             const h  = data.estado.value.split("");
             setHileras(h.map(e => parseInt(e)));
             

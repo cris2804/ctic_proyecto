@@ -28,7 +28,8 @@ export default function GraficosComedor({host}) {
     <div className="container__grafico">
         <CanvasComedor data={newData} 
             Clase={CanvasControllerComedor}
-            type = {type}/> {/*Aqui va gráfica del promedio */}
+            type = {type}/> 
+            {/*Aqui va gráfica del promedio */}
     </div>
     </>
   )

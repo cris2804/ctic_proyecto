@@ -11,12 +11,12 @@ function convertir(fechaInput){
 
 export default function PopupDescarga({ip,id}) {
     const popup = useRef(null);
-    const [visible,setVisible] = useState(true);
+    const [visible,setVisible] = useState(false);
     useEffect(()=>{
         if(popup?.current){
             const divPopup = popup.current;
             const iconDescarga = document.getElementById("icon_descarga");
-            
+            divPopup.style.display = 'none';
             window.addEventListener('click', (evt)=>{
                 //if(iconDescarga === evt.target) return;
                 //console.log(divPopup,evt.target,iconDescarga);
