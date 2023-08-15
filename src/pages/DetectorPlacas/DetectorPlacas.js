@@ -7,7 +7,7 @@ export default function DetectorPlacas(){
     const [placa, setPlaca] = useState('');
     const [nombre, setNombre] = useState('');
     const [dni, setDni] = useState('');
-    const [condicion, setCondicion] = useState('autorizado'); // Valor por defecto para el radio
+    const [condicion, setCondicion] = useState(''); // Valor por defecto para el radio
     const [destino, setDestino] = useState('');
 
     const handleRegistrarClick = () => {
@@ -22,7 +22,7 @@ export default function DetectorPlacas(){
         <div className="container__main__all__dp">
             <div className="container__left__dp">
                  <div className="container__main__hi__dp">
-                    <div className="container__hora__img_dp">
+                    <div className="container__hora__img_dp" style={{background: "#F55444"}}>
                         <div>
                             <span>12:45:20 PM</span>
                         </div>
