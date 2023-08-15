@@ -15,18 +15,31 @@ function get_hora(timestamp){
     //const timestamp = 1688858888905; // Tu timestamp aquí
     const fecha = new Date(timestamp);
 
+    get_fecha(timestamp)
+
     const horas = fecha.getHours();
     const minutos = fecha.getMinutes();
     const segundos = fecha.getSeconds();
 
-    console.log(`Hora: ${horas}:${minutos}:${segundos}`);
-
     return `${horas}:${minutos}:${segundos}`
+}
+
+function get_fecha(timestamp){
+  //const timestamp = 1692126479006; // Tu timestamp aquí
+
+  const fecha = new Date(timestamp);
+
+  // Para obtener partes específicas de la fecha
+  const año = fecha.getFullYear();
+  const mes = fecha.getMonth() + 1; // Los meses en JavaScript van de 0 a 11
+  const dia = fecha.getDate();
+
+  console.log(`Fecha: ${año}-${mes}-${dia}`);
 }
 
 function aforo_maximo(id){
   if(id.includes("ctic")) return 350
-  else return 20
+  else return 100
 }
 
 export default function ControlAforo(){
