@@ -154,7 +154,8 @@ export default function ControlAforo(){
                             <div>
                               {console.log("ADS",dataPersonas,dataPersonas.length)}
                               {dataPersonas.length === 0 ? "0" : 
-                              (new Date(dataPersonas[dataPersonas.length - 1].timestamp)).toISOString()}
+                              //(new Date(dataPersonas[dataPersonas.length - 1].timestamp)).toISOString()
+                              get_hora(dataPersonas[dataPersonas.length - 1].timestamp)}
                               </div>
                         </div>
                         <div className="container__same">
