@@ -48,6 +48,8 @@
     background-color: #2e425a;
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
 }
+
+/*imagen placa*/
 .container__main__hi__dp{
     width: 80%;
     display: flex;
@@ -153,5 +155,67 @@
     }
     100% {
         transform: translateX(100%); /* Ajusta el valor de acuerdo al ancho del div */
+    }
+}
+
+@media (max-width: 767px){
+    .container__main__all__dp{
+        display: flex;
+        flex-direction: column;
+    }
+    .container__left__dp{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5vh 0 0 0;
+    }
+    .container__main__hi__dp{
+        width: 95%;
+    }
+    .container__left__dp .container__cantidad{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .container__right__dp{
+        border: solid 1px orange;
+        width: 100%;
+        height: auto;
+        padding: 4vh 0;
+    }
+
+    .container__main__form__dp{
+        width: 95%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+    .container__main__all__dp{
+        display: flex;
+        flex-direction: column;
+    }
+    .container__left__dp{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5vh 0 0 0;
+    }
+
+    .container__right__dp{
+        border: solid 1px orange;
+        width: 100%;
+        height: auto;
+        padding: 4vh 0;
+        margin-top: 3vh;
+    }
+
+    .container__main__form__dp{
+        width: 80%;
     }
 }
