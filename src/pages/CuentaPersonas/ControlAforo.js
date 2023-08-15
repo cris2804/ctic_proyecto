@@ -8,7 +8,7 @@ import PopupDescarga from "./PopupDescarga";
 import { Getip } from "../../server/Getip";
 import io from "socket.io-client";
 
-const aforo_maximo = 350
+//let aforo_maximo = 350
 
 function get_hora(timestamp){
     //const timestamp = 1688858888905; // Tu timestamp aquí
@@ -21,6 +21,11 @@ function get_hora(timestamp){
     console.log(`Hora: ${horas}:${minutos}:${segundos}`);
 
     return `${horas}:${minutos}:${segundos}`
+}
+
+function aforo_maximo(id){
+  if(id.includes("ctic")) return 350
+  else return 20
 }
 
 export default function ControlAforo(){
@@ -132,11 +137,11 @@ export default function ControlAforo(){
                             <div className="container__progress__bar">
                                 <div className="contianer__bar__v2">
                                     <div className="progress__bar"></div>
-                                    <div className="progress__actual" style={{width: `${dataPersonas.length === 0 ? "0" :((dataPersonas[dataPersonas.length - 1].value/aforo_maximo)*100).toFixed(2)}%`}}></div>
+                                    <div className="progress__actual" style={{width: `${dataPersonas.length === 0 ? "0" :((dataPersonas[dataPersonas.length - 1].value/aforo_maximo(id))*100).toFixed(2)}%`}}></div>
                                     <div className="container__values">
                                         <span>0</span>
-                                        <span>{dataPersonas.length === 0 ? "0" : ((dataPersonas[dataPersonas.length - 1].value/aforo_maximo)*100).toFixed(2)}%</span>
-                                        <span>{aforo_maximo}</span>
+                                        <span>{dataPersonas.length === 0 ? "0" : ((dataPersonas[dataPersonas.length - 1].value/aforo_maximo(id))*100).toFixed(2)}%</span>
+                                        <span>{aforo_maximo(id)}</span>
                                     </div>
                                 </div>
                             </div>
