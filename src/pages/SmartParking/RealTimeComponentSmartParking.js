@@ -8,6 +8,7 @@ import { Getip } from "../../server/Getip";
 import { endpointTR } from '../../server/MetadataTR';
 
 
+
 export default function RealTimeComponentSmartParking({visible}) {
     const container = useRef(null);
     const [hileras,setHileras] = useState({});
@@ -15,8 +16,17 @@ export default function RealTimeComponentSmartParking({visible}) {
     const searchParams = new URLSearchParams(window.location.search);
     const id = searchParams.get("id");
     let host = window.location.host; 
+    const fetchInicial = async() =>{
+        //console.log(`${Getip()}/api/v1/smart-parking/smartparking_va:ctic?last=1`);
+        const data = await fetch(`${Getip()}/api/v1/smart-parking/smartparking_va:ctic?last=1`);
+        const dataJson = await data.json();
+        //console.log(dataJson,dataJson[0].estado.split("").map(e=> parseInt(e)))
+        setHileras(dataJson[0].estado.split("").map(e=> parseInt(e)));
+        
+    }
 
     useEffect(()=>{
+        fetchInicial();
         const socket = io(Getip(host), {
             transports: ["websocket"],
           });
