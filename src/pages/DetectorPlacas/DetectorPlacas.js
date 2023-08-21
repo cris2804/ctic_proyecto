@@ -22,7 +22,7 @@ export default function DetectorPlacas(){
         <div className="container__main__all__dp">
             <div className="container__left__dp">
                  <div className="container__main__hi__dp">
-                    <div className="container__hora__img_dp" style={{background: "#FF0909"}}>
+                    <div className="container__hora__img_dp" style={{background: "#FF0909"}}> {/* verde:  */}
                         <div>
                             <span>12:45:20 PM</span>
                         </div>
