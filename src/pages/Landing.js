@@ -146,10 +146,10 @@ export default function Landing() {
 
         <div className="contenedor">
           {smartcampus.map((sc, index) => {
-            const tiempo = 1500 + 100*(index+1)
+            const tiempo = 100*(index)
             return (
               <>
-                <Fade right delay={tiempo}>
+                <Fade delay={tiempo}>
                   <a
                     href={sc.link}
                     target={sc.blank ? `_blank` : "_self"}

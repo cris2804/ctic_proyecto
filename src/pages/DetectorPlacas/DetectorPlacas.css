@@ -68,6 +68,9 @@
     padding: 10px;
     border-radius: 8px;
     color: #EDEDED;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
 }
 .container__hora__img_dp img{
     width: 100%;
