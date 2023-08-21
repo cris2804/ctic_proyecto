@@ -130,7 +130,7 @@ class ControllerSmartParking{
         //console.log(this.context);
         for(let i = 0;i<Math.min(array.length,this.cantidad);i++){
             console.log("XD1",array[i]);
-            let color = (array[i]==0? "#fa8071":"#c3e7ff");
+            let color = (array[i]==0?"#c3e7ff":"#fa8071");
             this.context.fillStyle = color;
             const x = (435-this.dw*0.5 + i*20)*this.scala;
             const y = (400-this.dh*0.5)*this.scala;

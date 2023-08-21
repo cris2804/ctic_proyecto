@@ -62,7 +62,7 @@ function SmartParking(){
                 })}
                 </MapContainer>
                 <div ref={popup} onClick={ocultarPopup} className="popup-smart-parking">
-                    <RealTimeComponentSmartParking visible = {visible}/>
+                    <RealTimeComponentSmartParking  visible = {visible}/>
                 </div>
             </div>
             <div className="tittle-general">Smart Parking</div>

@@ -20,6 +20,7 @@ export default function RealTimeComponentSmartParking({visible}) {
         //console.log(`${Getip()}/api/v1/smart-parking/smartparking_va:ctic?last=1`);
         const data = await fetch(`${Getip()}/api/v1/smart-parking/smartparking_va:ctic?last=1`);
         const dataJson = await data.json();
+        console.log(dataJson);
         //console.log(dataJson,dataJson[0].estado.split("").map(e=> parseInt(e)))
         setHileras(dataJson[0].estado.split("").map(e=> parseInt(e)));
         
