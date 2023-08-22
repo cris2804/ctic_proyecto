@@ -1,11 +1,11 @@
 import "./Senasa.css"
 import { MapContainer, TileLayer } from "react-leaflet"
-import logo from "../images/logo_version_grafana.png"
-import iconoMosca from "../images/icono-mosca.png";
-import iconoBateria from "../images/icono-bateria-original.png"
-import { cantidadMoscas, porcentajeBateria, colores } from "../../components/senasa/data";
-import Trampa from "../../components/senasa/Trampa";
-import Popup from "../../components/senasa/Popup";
+import logo from "./logo_version_grafana.png"
+import iconoMosca from "./icono-mosca.png";
+import iconoBateria from "./icono-bateria-original.png"
+import { cantidadMoscas, porcentajeBateria, colores } from "./components/data";
+import Trampa from "./components/Trampa";
+import Popup from "./components/Popup";
 
 
 const ubiCentro = ["-12.020381", "-77.049178"];
