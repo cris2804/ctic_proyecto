@@ -1,4 +1,4 @@
-import './css/FaqCAE.css';
+import '../Exteriores/FaqCAE.css';
 import React, {useState} from 'react';
 
 const dataCollection = [
@@ -43,7 +43,7 @@ export default function Accordion(){
     <div className="container">
         <div>
           {/* <span className="accordion__title">Frequently asked questions</span> */}
-          <h1 className='gradient-title'>Respondamos algunas de tus preguntas sobre la plataforma “Calidad de aire en exteriores"</h1>
+          <h1 className='gradient-title'>Respondamos algunas de tus preguntas sobre la plataforma “Calidad de aire en interiores"</h1>
         </div>
         <div className="accordion__faq">
           { dataCollection.map((item, index) =>

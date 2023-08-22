@@ -1,7 +1,7 @@
-import "./css/CalidadAgua.css";
+import "./CalidadAgua.css";
 import { useEffect, useState } from "react";
 import io from "socket.io-client";
-import { Getip } from "../server/Getip";
+import { Getip } from "../../server/Getip";
 
 export default function CalidadAgua(){
     const searchParams = new URLSearchParams(window.location.search);

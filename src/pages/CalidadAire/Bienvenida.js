@@ -1,4 +1,4 @@
-import "./css/Bienvenida.css";
+import "./Bienvenida.css";
 import { SiWindicss } from "react-icons/si";
 
 export default function Bienvenida(){

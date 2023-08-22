@@ -1,4 +1,5 @@
-import "./DetalleCAI.css";
+import "./DetalleCAI.css"
+import "./ComedorCAI.css"
 import "../Exteriores/DetalleCA.css"
 import happy from "../../../components/images/happy.png";
 import serio from "../../../components/images/serio.png";
