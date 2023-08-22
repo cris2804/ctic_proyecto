@@ -1,18 +1,18 @@
-import "./css/DetalleCAI.css";
-import happy from "../components/images/happy.png";
-import serio from "../components/images/serio.png";
-import triste from "../components/images/triste.png";
+import "./DetalleCAI.css";
+import happy from "../../../components/images/happy.png";
+import serio from "../../../components/images/serio.png";
+import triste from "../../../components/images/triste.png";
 import { useState, useEffect } from "react";
-import Grafico from "../components/Grafico";
-import Grafico2 from "../components/Grafico2";
+import Grafico from "../../../components/Grafico";
+import Grafico2 from "../../../components/Grafico2";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { MdLocationPin } from "react-icons/md";
 import { BsFillBuildingFill } from "react-icons/bs";
-import { Getip } from "../server/Getip";
-import Verificar from "../components/Verificar";
+import { Getip } from "../../../server/Getip";
+import Verificar from "../../../components/Verificar";
 
 const gases = [
   {

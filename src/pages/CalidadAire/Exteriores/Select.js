@@ -1,4 +1,4 @@
-import './css/Select.css';
+import './Select.css';
 
 function Select(props) {
   const { options, value, onChange } = props;

@@ -1,22 +1,22 @@
-import "./css/DetalleCA.css";
-import happy from "../components/images/happy.png";
+import "./DetalleCA.css";
+import happy from "../../../components/images/happy.png";
 import { useState, useEffect } from "react";
-import { Ica } from "../assets/Ica";
-import Grafico from "../components/calidadAireExterior/Grafico";
-import Grafico2 from "../components/Grafico2";
+import { Ica } from "../../../assets/Ica";
+import Grafico from "../../../components/calidadAireExterior/Grafico";
+import Grafico2 from "../../../components/Grafico2";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import Select from "../components/Select";
+import Select from "./Select";
 import { GiWindow } from "react-icons/gi";
 import { MdMasks } from "react-icons/md";
 import { MdOutlineWindPower } from "react-icons/md";
 import { MdOutlineSportsHandball } from "react-icons/md";
 import { MdLocationPin } from "react-icons/md";
-import { Getip } from "../server/Getip";
-import unidaddv from "../assets/unidaddv";
-import gases from "../assets/gases";
+import { Getip } from "../../../server/Getip";
+import unidaddv from "../../../assets/unidaddv";
+import gases from "./gases";
 
 function obtenerNombre(id) {
   if (id === "ctic") return "ctic";
