@@ -1,10 +1,10 @@
-import "./css/Controlaforo.css";
+import "./Controlaforo.css";
 import { IoIosPeople } from "react-icons/io";
 import { useState } from "react";
-import { CanvasPlotPuntos } from "../components/comedor/ControllerGrafico";
-import CanvasComedor from "../components/comedor/CanvasComedor";
+import { CanvasPlotPuntos } from "../../components/comedor/ControllerGrafico";
+import CanvasComedor from "../../components/comedor/CanvasComedor";
 import { useEffect } from "react";
-import { Getip } from "../server/Getip";
+import { Getip } from "../../server/Getip";
 
 import io from "socket.io-client";
 
