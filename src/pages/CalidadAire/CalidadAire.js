@@ -123,9 +123,11 @@ function CalidadAire() {
             
             <Route path="/" element={<Main />} />
             
+            {/* ----- Exteriores ------- */}
             <Route path="exteriores" element={<DetalleCA />}/>
             <Route path="exteriores-ayuda" element={<FaqCAE />} />
             
+            {/* ------- Exteriores -------------- */}
             <Route path="interiores-ctic" element={<DetalleCAI />}/>
             <Route path="interiores-comedor" element={<ComedorCAI />}/>
             <Route path="interiores-ayuda" element={<FaqCAI />} />

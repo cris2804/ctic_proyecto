@@ -21,11 +21,12 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing/>}/>
 
+            {/* -------- Calidad -------------- */}
             <Route path="/calidad-del-aire" element={<Bienvenida/>}/>
             <Route path="/calidad-del-aire-uni/*" element={<CalidadAire/>} />
             <Route path="/calidad-del-agua" element={<CalidadAgua/>}/>
 
-            
+            {/* ------------- Visión ----------- */}
             <Route path="/control-aforo" element={<ControlAforo/>} />
             <Route path="/smart-parking" element={<SmartParking/>}/>
             <Route path="/senasa" element={<Senasa/>} />
