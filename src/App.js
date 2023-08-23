@@ -12,135 +12,26 @@ import ControlAforo from "./pages/CuentaPersonas/ControlAforo";
 import Metaverso from "./pages/Metaverso/Metaverso";
 import DetectorPlacas from "./pages/DetectorPlacas/DetectorPlacas";
 import SmartParking from "./pages/SmartParking/SmartParking";
+
 import CalidadAire from "./pages/CalidadAire/CalidadAire";
+import Bienvenida from "./pages/CalidadAire/Bienvenida/Bienvenida"
 
 function App() {
 
   return (
     <div>
-      {/*<div
-        className={`sidebar bg-dark-purple h-screen p-5 pt-8 ${
-          open ? "w-72" : "w-20"
-        } duration-300  relative`}
-      >
-        <BsArrowLeftShort
-          className={`bg-white text-dark-purple text-3xl 
-          rounded-full absolute -right-3 top-20 border
-          border-dark-purple cursor-pointer ${!open && "rotate-180"}`}
-          onClick={() => setOpen(!open)}
-        />
-
-        <div className="inline-flex">
-          <img
-            src={icono}
-            alt="icono"
-            style={{ height: "30px" }}
-            className={`bg-amber-300 p-1 rounded block float-left mr-2 duration-700 ${
-              open && "rotate-[360deg]"
-            }`}
-          />
-          <h1
-            className={`text-white origin-left font-medium text-2xl duration-300 ${
-              !open && "scale-0"
-            }`}
-          >
-            SmartCity
-          </h1>
-        </div>
-
-        <ul className="pt-2">
-          {Menus.map((menu, index) => {
-            return (
-              <div key={index}>
-                <li
-                  key={index}
-                  className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-light-white rounded-md 
-                  ${menu.spacing ? "mt-9" : "mt-2"}`}
-                >
-                  <span className="text-2xl block float-left">
-                    <a href={menu.link}>{menu.icon ? menu.icon : <RiDashboardFill />}</a>
-                  </span>
-                  <span
-                    className={`text-base font-medium flex-1 ${
-                      !open && "hidden"
-                    }`}
-                    onClick={() => setSubmenuOpen(index)}
-                  >
-                    {menu.submenu ? (
-                      menu.title
-                    ) : (
-                      <a
-                        href={menu.link}
-                        style={{
-                          display: "block",
-                          width: "100%",
-                          height: "100%",
-                        }}
-                      >
-                        {menu.title}
-                      </a>
-                    )}
-                  </span>
-                  {menu.submenu && open && (
-                    <BsChevronDown
-                      className={`${submenuOpen === index && "rotate-180"}`}
-                      onClick={() => setSubmenuOpen(index)}
-                    />
-                  )}
-                </li>
-                {menu.submenu && submenuOpen === index && open && (
-                  <ul>
-                    {menu.submenuItems.map((submenuItem, index) => {
-                      return (
-                        <li
-                          key={index}
-                          className="text-gray-300 text-sm flex items-center gap-x-4
-                      cursor-pointer p-2 px-5 hover:bg-light-white rounded-md"
-                        >
-                          <a
-                            href={submenuItem.link}
-                            style={{
-                              display: "block",
-                              width: "100%",
-                              height: "100%",
-                            }}
-                          >
-                            {submenuItem.title}
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                )}
-              </div>
-            );
-          })}
-        </ul>
-        </div>
-        <div className={open ? "container__main__" : "container__main__nx"}>*/}
-      <div>
         <Router>
           <Routes>
             <Route path="/" element={<Landing/>}/>
-            {/*
-            <Route path="/calidad-del-aire-uni" element={<Main />} />
-            
-            <Route path="/calidad-del-aire-exteriores" element={<DetalleCA />}/>
-            
-            <Route path="/calidad-del-aire-interiores-ctic" element={<DetalleCAI />}/>
-            <Route path="/calidad-del-aire-interiores-comedor-universitario" element={<ComedorCAI />}/>
-            
-            <Route path="/faq-carga-viral" element={<FaqCAI />} />
-            <Route path="/faq-calidad-de-aire" element={<FaqCAE />} />*/}
 
-            <Route path="/calidad-del-aire" element={<CalidadAire/>} />
+            <Route path="/calidad-del-aire" element={<Bienvenida/>}/>
+            <Route path="/calidad-del-aire-uni" element={<CalidadAire/>} />
             
             <Route path="/cuenta-personas" element={<ReconocimientoFacial/>} />
-            {/*<Route path="/control-aforo" element={<Controlaforo/>}/>*/}
             <Route path="/reconocimiento-facial" element={<Cuentaspersonas/>} />
 
-            <Route path="/senasa" element={<Senasa/>} />{/*}
-            <Route path="/calidad-del-aire" element={<Bienvenida/>}/>*/}
+            <Route path="/senasa" element={<Senasa/>} />
+
             <Route path="/calidad-del-agua" element={<CalidadAgua/>}/>
 
 
@@ -156,7 +47,6 @@ function App() {
             <Route path="/smart-parking" element={<SmartParking/>}/>
           </Routes>
         </Router>
-      </div>
     </div>
   );
 }

@@ -1,18 +1,24 @@
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Main from "./pages/CalidadAire/Main/Main";
-import DetalleCA from "./pages/CalidadAire/Exteriores/DetalleCA";
-import FaqCAI from "./pages/CalidadAire/Interiores/FaqCAI";
-import FaqCAE from "./pages/CalidadAire/Exteriores/FaqCAE";
-import DetalleCAI from "./pages/CalidadAire/Interiores/DetalleCAI";
-import ComedorCAI from "./pages/CalidadAire/Interiores/ComedorCAI";
-import Bienvenida from "./pages/CalidadAire/Bienvenida/Bienvenida";
+import "../../App.css";
+import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import Main from "./Main/Main";
+import DetalleCA from "./Exteriores/DetalleCA";
+import FaqCAI from "./Interiores/FaqCAI";
+import FaqCAE from "./Exteriores/FaqCAE";
+import DetalleCAI from "./Interiores/DetalleCAI";
+import ComedorCAI from "./Interiores/ComedorCAI";
+import { Menus } from "./assets/Menus"
+import icono from "./assets/favicon.ico"
+import { BsArrowLeftShort, BsChevronDown } from "react-icons/bs";
+import { RiDashboardFill } from "react-icons/ri";
 
 function CalidadAire() {
+    const [open, setOpen] = useState(false);
+    const [submenuOpen, setSubmenuOpen] = useState(0);
 
   return (
-    <div>
-      {/*<div
+    <div className={`flex duration-300 ${open ? "pl-72" : "pl-20"}`}>
+        <div
         className={`sidebar bg-dark-purple h-screen p-5 pt-8 ${
           open ? "w-72" : "w-20"
         } duration-300  relative`}
@@ -45,7 +51,7 @@ function CalidadAire() {
         <ul className="pt-2">
           {Menus.map((menu, index) => {
             return (
-              <div key={index}>
+              <>
                 <li
                   key={index}
                   className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-light-white rounded-md 
@@ -106,18 +112,16 @@ function CalidadAire() {
                     })}
                   </ul>
                 )}
-              </div>
+              </>
             );
           })}
         </ul>
-        </div>
-        <div className={open ? "container__main__" : "container__main__nx"}>*/}
-      <div>
-        <Router>
+      </div>
+      <div className={open ? "container__main__" : "container__main__nx"}>
+        
           <Routes>
-            <Route path="/calidad-del-aire" element={<Bienvenida/>}/>
             
-            <Route path="/calidad-del-aire-uni" element={<Main />} />
+            <Route path="/" element={<Main />} />
             
             <Route path="/calidad-del-aire-exteriores" element={<DetalleCA />}/>
             <Route path="/faq-calidad-de-aire" element={<FaqCAE />} />
@@ -127,7 +131,7 @@ function CalidadAire() {
             <Route path="/faq-carga-viral" element={<FaqCAI />} />
 
           </Routes>
-        </Router>
+ 
       </div>
     </div>
   );

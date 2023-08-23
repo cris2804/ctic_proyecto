@@ -8,7 +8,7 @@ export default function Bienvenida(){
         <div className="container__bienvenida">
             {/*<img src="https://e.rpp-noticias.io/xlarge/2023/01/18/475647_1376757.jpg" alt="" />*/}
             <div className="container__titulo__bienvenida">
-                < img src="https://www.ctic.uni.edu.pe/wp-content/uploads/2020/10/logo-ctic-1@2x.png"/>
+                < img src="https://www.ctic.uni.edu.pe/wp-content/uploads/2020/10/logo-ctic-1@2x.png" alt=""/>
             </div>
             {/*<div className="container__introduccion"></div>*/}
 
