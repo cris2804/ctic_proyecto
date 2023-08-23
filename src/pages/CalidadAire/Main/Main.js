@@ -1,6 +1,6 @@
 import "./Main.css";
-import { ubicaciones } from "../../assets/ubicaciones";
-import { ubicacionesCV } from "../../assets/ubicacionesCV";
+import { ubicaciones } from "../../../assets/ubicaciones";
+import { ubicacionesCV } from "../../../assets/ubicacionesCV";
 import { useState } from "react";
 import { SiWindicss } from "react-icons/si";
 import { MdCo2 } from "react-icons/md";
@@ -10,15 +10,15 @@ import "leaflet/dist/leaflet.css";
 import { Marker } from "react-leaflet";
 import L from "leaflet";
 import { RiCloseCircleFill } from "react-icons/ri";
-import Detalles from "../../components/Detalles";
-import AyudaCAE from "../../components/AyudaCAE";
-import AyudaCAI from "../../components/AyudaCAI";
-import DetallesI from "../../components/DetallesI";
+import Detalles from "../../../components/Detalles";
+import AyudaCAE from "../../../components/AyudaCAE";
+import AyudaCAI from "../../../components/AyudaCAI";
+import DetallesI from "../../../components/DetallesI";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import { rangoscae } from "../../assets/rangoscae";
-import { rangoscai } from "../../assets/rangoscai";
-import DetallesIC from "../../components/DetallesIC";
-import Sidebar from "./Sidebar/Sidebar";
+import { rangoscae } from "../../../assets/rangoscae";
+import { rangoscai } from "../../../assets/rangoscai";
+import DetallesIC from "../../../components/DetallesIC";
+import Sidebar from "../Sidebar/Sidebar";
 
 const ubiCentro = ["-12.020381", "-77.049178"];
 
