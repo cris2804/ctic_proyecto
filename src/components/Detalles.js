@@ -117,7 +117,7 @@ export default function Detalles(props) {
 
       <div className="container__btn__mas__detalles">
         <div className="container__btn2">
-          <a href={`calidad-del-aire-exteriores?id=${nombrelugar(props.id)}`}>
+          <a href={`/calidad-del-aire-uni/exteriores?id=${nombrelugar(props.id)}`}>
             MÁS DETALLES
           </a>
         </div>

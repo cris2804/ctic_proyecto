@@ -1,4 +1,4 @@
-import "../../App.css";
+import "./CalidadAire.css";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Main from "./Main/Main";

@@ -176,7 +176,7 @@ export default function DetallesI({ id }) {
                   <div className="container__btn__vermas">
                     <div className="container__btn__ver__mas">
                       <a
-                        href={`/calidad-del-aire-interiores-ctic?id=${item.lugar}`}
+                        href={`/calidad-del-aire-uni/interiores-ctic?id=${item.lugar}`}
                       >
                         <BarChartSharpIcon /> VER GRAFICA
                       </a>
