@@ -286,14 +286,14 @@ export default function DetalleCAI() {
                 Ubicación Actual:{" "}
               </div>
               <select
-                value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración"
+                value="/calidad-del-aire-uni/interiores-ctic?id=Oficina de Administración"
                 onChange={handleChange}
                 className="container__select__paginas__cai"
               >
-                <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración">
+                <option value="/calidad-del-aire-uni/interiores-ctic?id=Oficina de Administración">
                   CTIC
                 </option>
-                <option value="/calidad-del-aire-interiores-comedor-universitario?id=sensor 1">
+                <option value="/calidad-del-aire-uni/interiores-comedor?id=sensor 1">
                   Comedor Universitario
                 </option>
               </select>
@@ -307,23 +307,23 @@ export default function DetalleCAI() {
                 Oficina Actual:{" "}
               </div>
               <select
-                value={"/calidad-del-aire-interiores-ctic?id=" + id}
+                value={"/calidad-del-aire-uni/interiores-ctic?id=" + id}
                 onChange={handleChange}
                 className="container__select__paginas__cai"
               >
-                <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración">
+                <option value="/calidad-del-aire-uni/interiores-ctic?id=Oficina de Administración">
                   Oficina de Administración
                 </option>
-                <option value="/calidad-del-aire-interiores-ctic?id=Laboratorio SmartCity">
+                <option value="/calidad-del-aire-uni/interiores-ctic?id=Laboratorio SmartCity">
                   Laboratorio SmartCity
                 </option>
-                <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Calidad Universitaria">
+                <option value="/calidad-del-aire-uni/interiores-ctic?id=Oficina de Calidad Universitaria">
                   Oficina de Calidad Universitaria
                 </option>
-                <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Capacitación">
+                <option value="/calidad-del-aire-uni/interiores-ctic?id=Oficina de Capacitación">
                   Oficina de Capacitación
                 </option>
-                <option value="/calidad-del-aire-interiores-ctic?id=Secretaría">
+                <option value="/calidad-del-aire-uni/interiores-ctic?id=Secretaría">
                   Secretaria
                 </option>
               </select>

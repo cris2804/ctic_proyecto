@@ -54,6 +54,8 @@ export default function DetalleCA() {
   const id = searchParams.get("id");
   let host = window.location.host; //para obtener la ip
 
+  console.log(host)
+
   const [isHovered, setIsHovered] = useState(false);
   //const [seleccionado, setSeleccionado] = useState(0);
   const [opcion, setOpcion] = useState("PM2.5");
@@ -291,17 +293,17 @@ export default function DetalleCA() {
                 Ubicación Actual:{" "}
               </div>
               <select
-                value={"/calidad-del-aire-exteriores?id="+id}
+                value={"/calidad-del-aire-uni/exteriores?id="+id}
                 onChange={handleChange}
                 className="container__select__paginas__cai"
               >
-                <option value="/calidad-del-aire-exteriores?id=ctic">
+                <option value="/calidad-del-aire-uni/exteriores?id=ctic">
                   CTIC
                 </option>
-                <option value="/calidad-del-aire-exteriores?id=puerta 3">
+                <option value="/calidad-del-aire-uni/exteriores?id=puerta 3">
                   Puerta 3
                 </option>
-                <option value="/calidad-del-aire-exteriores?id=puerta 5">
+                <option value="/calidad-del-aire-uni/exteriores?id=puerta 5">
                   Puerta 5
                 </option>
               </select>

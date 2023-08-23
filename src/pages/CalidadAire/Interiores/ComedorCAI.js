@@ -307,7 +307,7 @@ export default function ComedorCAI() {
                 onChange={handleChange}
                 className="container__select__paginas__cai"
               >
-                <option value="/calidad-del-aire-interiores-ctic?id=Oficina de Administración">
+                <option value="/calidad-del-aire-uni/interiores-ctic?id=Oficina de Administración">
                   CTIC
                 </option>
                 <option value="/calidad-del-aire-interiores-comedor-universitario?id=sensor 1">
@@ -325,39 +325,39 @@ export default function ComedorCAI() {
               </div>
               <select
                 value={
-                  "/calidad-del-aire-interiores-comedor-universitario?id=" + id
+                  "/calidad-del-aire-uni/interiores-comedor?id=" + id
                 }
                 onChange={handleChange}
                 className="container__select__paginas__cai"
               >
-                <option value="/calidad-del-aire-interiores-comedor-universitario?id=sensor 1">
+                <option value="/calidad-del-aire-uni/interiores-comedor?id=sensor 1">
                   Sensor 1
                 </option>
-                <option value="/calidad-del-aire-interiores-comedor-universitario?id=sensor 2">
+                <option value="/calidad-del-aire-uni/interiores-comedor?id=sensor 2">
                   Sensor 2
                 </option>
-                <option value="/calidad-del-aire-interiores-comedor-universitario?id=sensor 3">
+                <option value="/calidad-del-aire-uni/interiores-comedor?id=sensor 3">
                   Sensor 3
                 </option>
-                <option value="/calidad-del-aire-interiores-comedor-universitario?id=sensor 4">
+                <option value="/calidad-del-aire-uni/interiores-comedor?id=sensor 4">
                   Sensor 4
                 </option>
-                <option value="/calidad-del-aire-interiores-comedor-universitario?id=sensor 5">
+                <option value="/calidad-del-aire-uni/interiores-comedor?id=sensor 5">
                   Sensor 5
                 </option>
-                <option value="/calidad-del-aire-interiores-comedor-universitario?id=sensor 6">
+                <option value="/calidad-del-aire-uni/interiores-comedor?id=sensor 6">
                   Sensor 6
                 </option>
-                <option value="/calidad-del-aire-interiores-comedor-universitario?id=sensor 7">
+                <option value="/calidad-del-aire-uni/interiores-comedor?id=sensor 7">
                   Sensor 7
                 </option>
-                <option value="/calidad-del-aire-interiores-comedor-universitario?id=sensor 8">
+                <option value="/calidad-del-aire-uni/interiores-comedor?id=sensor 8">
                   Sensor 8
                 </option>
-                <option value="/calidad-del-aire-interiores-comedor-universitario?id=sensor 9">
+                <option value="/calidad-del-aire-uni/interiores-comedor?id=sensor 9">
                   Sensor 9
                 </option>
-                <option value="/calidad-del-aire-interiores-comedor-universitario?id=sensor 10">
+                <option value="/calidad-del-aire-uni/interiores-comedor?id=sensor 10">
                   Sensor 10
                 </option>
               </select>

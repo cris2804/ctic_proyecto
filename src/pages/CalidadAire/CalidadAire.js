@@ -123,12 +123,12 @@ function CalidadAire() {
             
             <Route path="/" element={<Main />} />
             
-            <Route path="/calidad-del-aire-exteriores" element={<DetalleCA />}/>
-            <Route path="/faq-calidad-de-aire" element={<FaqCAE />} />
+            <Route path="exteriores" element={<DetalleCA />}/>
+            <Route path="exteriores-ayuda" element={<FaqCAE />} />
             
-            <Route path="/calidad-del-aire-interiores-ctic" element={<DetalleCAI />}/>
-            <Route path="/calidad-del-aire-interiores-comedor-universitario" element={<ComedorCAI />}/>
-            <Route path="/faq-carga-viral" element={<FaqCAI />} />
+            <Route path="interiores-ctic" element={<DetalleCAI />}/>
+            <Route path="interiores-comedor" element={<ComedorCAI />}/>
+            <Route path="interiores-ayuda" element={<FaqCAI />} />
 
           </Routes>
  

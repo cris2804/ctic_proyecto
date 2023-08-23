@@ -25,7 +25,7 @@ function App() {
             <Route path="/" element={<Landing/>}/>
 
             <Route path="/calidad-del-aire" element={<Bienvenida/>}/>
-            <Route path="/calidad-del-aire-uni" element={<CalidadAire/>} />
+            <Route path="/calidad-del-aire-uni/*" element={<CalidadAire/>} />
             
             <Route path="/cuenta-personas" element={<ReconocimientoFacial/>} />
             <Route path="/reconocimiento-facial" element={<Cuentaspersonas/>} />
