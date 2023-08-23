@@ -18,6 +18,7 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import { rangoscae } from "../../assets/rangoscae";
 import { rangoscai } from "../../assets/rangoscai";
 import DetallesIC from "../../components/DetallesIC";
+import Sidebar from "./Sidebar/Sidebar";
 
 const ubiCentro = ["-12.020381", "-77.049178"];
 
@@ -93,7 +94,9 @@ function Main() {
   };
 
   return (
-    <div className="container__main">
+      <div className="container__main">
+      <Sidebar/>
+
       <div className="cont container__map">
         <MapContainer center={ubiCentro} zoom={16}>
           <TileLayer
@@ -223,3 +226,6 @@ function Main() {
 }
 
 export default Main;
+
+{/*}
+    <div className={`flex duration-300 ${open ? "pl-72 container__main" : "pl-20 container__main"}`}>*/}

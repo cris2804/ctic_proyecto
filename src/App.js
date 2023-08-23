@@ -1,5 +1,4 @@
 import "./App.css";
-import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Main from "./pages/CalidadAire/Main";
 import DetalleCA from "./pages/CalidadAire/Exteriores/DetalleCA";
@@ -9,11 +8,6 @@ import Grafico3 from "./components/Grafico3";
 import DetalleCAI from "./pages/CalidadAire/Interiores/DetalleCAI";
 import ComedorCAI from "./pages/CalidadAire/Interiores/ComedorCAI";
 import Landing from "./pages/LandingPage/Landing";
-import { BsArrowLeftShort, BsChevronDown } from "react-icons/bs";
-import { RiDashboardFill } from "react-icons/ri";
-import icono from "./favicon.ico";
-import { SiWindicss } from "react-icons/si";
-import { MdCo2 } from "react-icons/md";
 import ReconocimientoFacial from "./pages/Test/ReconocimientoFacial";
 import CanvasComedor from "./components/comedor/CanvasComedor";
 //import Controlaforo from "./pages/Controlaforo";
@@ -27,7 +21,7 @@ import DetectorPlacas from "./pages/DetectorPlacas/DetectorPlacas";
 import SmartParking from "./pages/SmartParking/SmartParking";
 
 function App() {
-  const [open, setOpen] = useState(false);
+  /*const [open, setOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(0);
 
   const Menus = [
@@ -58,11 +52,11 @@ function App() {
         { title: "Puerta 5", link: "/calidad-del-aire-exteriores?id=puerta 5" },
       ],
     },
-  ];
+  ];*/
 
   return (
-    <div className={`flex duration-300 ${open ? "pl-72" : "pl-20"}`}>
-      <div
+    <div>
+      {/*<div
         className={`sidebar bg-dark-purple h-screen p-5 pt-8 ${
           open ? "w-72" : "w-20"
         } duration-300  relative`}
@@ -160,8 +154,9 @@ function App() {
             );
           })}
         </ul>
-      </div>
-      <div className={open ? "container__main__" : "container__main__nx"}>
+        </div>
+        <div className={open ? "container__main__" : "container__main__nx"}>*/}
+      <div>
         <Router>
           <Routes>
             <Route path="/" element={<Landing/>}/>
