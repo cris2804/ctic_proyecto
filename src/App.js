@@ -95,7 +95,7 @@ function App() {
         <ul className="pt-2">
           {Menus.map((menu, index) => {
             return (
-              <>
+              <div key={index}>
                 <li
                   key={index}
                   className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-light-white rounded-md 
@@ -156,7 +156,7 @@ function App() {
                     })}
                   </ul>
                 )}
-              </>
+              </div>
             );
           })}
         </ul>
