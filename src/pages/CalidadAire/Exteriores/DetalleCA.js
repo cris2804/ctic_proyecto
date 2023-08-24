@@ -1,5 +1,5 @@
 import "./DetalleCA.css";
-import happy from "../../../components/images/happy.png";
+import happy from "../images/happy.png";
 import { useState, useEffect } from "react";
 import { Ica } from "../assets/Ica";
 import Grafico from "../../../components/calidadAireExterior/Grafico";

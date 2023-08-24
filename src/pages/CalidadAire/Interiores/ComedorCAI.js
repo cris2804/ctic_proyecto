@@ -1,9 +1,9 @@
 import "./DetalleCAI.css"
 import "./ComedorCAI.css"
 import "../Exteriores/DetalleCA.css"
-import happy from "../../../components/images/happy.png";
-import serio from "../../../components/images/serio.png";
-import triste from "../../../components/images/triste.png";
+import happy from "../images/happy.png";
+import serio from "../images/serio.png";
+import triste from "../images/triste.png";
 import { useState, useEffect } from "react";
 //import Grafico from "../components/Grafico";
 //import Grafico2 from "../components/Grafico2";

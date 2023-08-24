@@ -1,4 +1,4 @@
-import './css/Ayuda.css';
+import './Ayuda.css';
 
 export default function Detalles(props){
 

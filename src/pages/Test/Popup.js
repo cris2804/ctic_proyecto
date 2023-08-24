@@ -1,4 +1,4 @@
-import './css/Popup.css';
+import './Popup.css';
 export default function PopupZoom({nombres, perfil}){
     return(
         <div>

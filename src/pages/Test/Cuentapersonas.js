@@ -1,6 +1,6 @@
 import "./Cuentapersonas.css";
-import PopupZoom from "../../components/PopupZoom";
-import Popup from "../../components/Popup";
+import PopupZoom from "./PopupZoom";
+import Popup from "./Popup";
 import { useEffect, useState } from "react";
 import { RiCloseCircleFill } from "react-icons/ri";
 import io from "socket.io-client";

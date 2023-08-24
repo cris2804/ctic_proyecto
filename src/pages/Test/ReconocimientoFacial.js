@@ -1,6 +1,6 @@
 import "./ReconocimientoFacial.css";
-import PopupZoom from "../../components/RecFac/PopupZoom";
-import Popup from "../../components/RecFac/Popup";
+import PopupZoom from "./RecFac/PopupZoom";
+import Popup from "./RecFac/Popup";
 import { useEffect, useState } from "react";
 import { RiCloseCircleFill } from "react-icons/ri";
 import io from "socket.io-client";

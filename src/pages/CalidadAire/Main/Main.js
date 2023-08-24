@@ -10,14 +10,14 @@ import "leaflet/dist/leaflet.css";
 import { Marker } from "react-leaflet";
 import L from "leaflet";
 import { RiCloseCircleFill } from "react-icons/ri";
-import Detalles from "../../../components/Detalles";
-import AyudaCAE from "../../../components/AyudaCAE";
-import AyudaCAI from "../../../components/AyudaCAI";
-import DetallesI from "../../../components/DetallesI";
+import Detalles from "./components/Detalles";
+import AyudaCAE from "./components/AyudaCAE";
+import AyudaCAI from "./components/AyudaCAI";
+import DetallesI from "./components/DetallesI";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import { rangoscae } from "./rangoscae";
 import { rangoscai } from "./rangoscai";
-import DetallesIC from "../../../components/DetallesIC";
+import DetallesIC from "./components/DetallesIC";
 
 const ubiCentro = ["-12.020381", "-77.049178"];
 

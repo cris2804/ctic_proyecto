@@ -1,12 +1,12 @@
-import "./css/Detalles.css";
-import happy from "./images/happy.png";
+import "./Detalles.css";
+import happy from "../../images/happy.png";
 //import serio from './images/serio.png';
 //import triste from './images/triste.png';
-import { obtenerhora } from "./obtenerhora";
-import { obtenerfecha } from "./obtenerfecha";
+import { obtenerhora } from "../../../../components/obtenerhora";
+import { obtenerfecha } from "../../../../components/obtenerfecha";
 import { useState, useEffect } from "react";
 import {BsThermometerHalf, BsSunFill} from 'react-icons/bs';
-import { Getip } from "../server/Getip";
+import { Getip } from "../../../../server/Getip";
 
 const nombrelugar = (e) => {
   if (e === "ca-ctic") return "ctic";

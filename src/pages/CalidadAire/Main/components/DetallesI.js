@@ -1,6 +1,6 @@
-import "./css/DetallesI.css";
-import { obtenerhora } from "./obtenerhora";
-import { obtenerfecha } from "./obtenerfecha";
+import "./DetallesI.css";
+import { obtenerhora } from "../../../../components/obtenerhora";
+import { obtenerfecha } from "../../../../components/obtenerfecha";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { useState, useEffect } from "react";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -8,10 +8,10 @@ import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 //import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
 //import OpacitySharpIcon from "@mui/icons-material/OpacitySharp";
 import BarChartSharpIcon from "@mui/icons-material/BarChartSharp";
-import happy from "./images/happy.png";
-import serio from "./images/serio.png";
-import triste from "./images/triste.png";
-import { Getip } from "../server/Getip";
+import happy from "../../images/happy.png";
+import serio from "../../images/serio.png";
+import triste from "../../images/triste.png";
+import { Getip } from "../../../../server/Getip";
 
 const dat = [
   { idb: "1102", lugar: "Oficina de Administración" },
