@@ -8,7 +8,8 @@ import Trampa from "./components/Trampa";
 import Popup from "./components/Popup";
 
 
-const ubiCentro = ["-12.020381", "-77.049178"];
+//const ubiCentro = ["-12.020381", "-77.049178"];
+const ubiCentro = ["-11.386864", "-74.966514"]
 cantidadMoscas.sort((a, b) => b.cantidad - a.cantidad)
 porcentajeBateria.sort((a, b) => a.porcentaje - b.porcentaje)
 
@@ -17,7 +18,7 @@ function Senasa(){
     return (
         <div className="container__all__senasa">
             <div className="container__mapa__senasa">
-                <MapContainer center={ubiCentro} zoom={16}>
+                <MapContainer center={ubiCentro} zoom={8}>
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
