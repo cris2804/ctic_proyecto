@@ -2,7 +2,7 @@ import "./Popup.css"
 import { fechaFormato2 } from "../../../components/obtenerfecha"
 import { obtenerhora } from "../../../components/obtenerhora"
 
-import iconoMosca from "../icono-mosca.png"
+import iconoMosca from "../img/icono-mosca.png"
 
 function Popup(){
 
