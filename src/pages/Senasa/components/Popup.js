@@ -1,15 +1,15 @@
 import "./Popup.css"
 import { fechaFormato2 } from "../../../components/obtenerfecha"
 import { obtenerhora } from "../../../components/obtenerhora"
-
 import iconoMosca from "../img/icono-mosca.png"
+import { Link } from 'react-router-dom';
 
-function Popup(){
+function Popup({id}){
 
     return(
         <div className="container__component__popup">
             <div className="container__senasa__titulo">
-                TRAMPA 1
+                {id}
             </div>
             <div className="container__depar__pais">
                 Junín, Perú
@@ -40,7 +40,7 @@ function Popup(){
             </div>
 
             <div className="container__boton__senasa">
-                Más detalles
+                <Link to="/senasa/detalles">Más detalles</Link> 
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import Icon from './icon.svg'
+import Icon from '../img/icon.svg'
 
 export const ubicaciones = [
     {
