@@ -1,4 +1,4 @@
-import Icon from '../assets/icon.svg';
+import Icon from './icon.svg';
 
 //const ubicaciones2 = require('./ubicaciones2.json');
 

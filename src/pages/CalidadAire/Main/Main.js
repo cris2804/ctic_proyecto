@@ -1,6 +1,6 @@
 import "./Main.css";
-import { ubicaciones } from "../../../assets/ubicaciones";
-import { ubicacionesCV } from "../../../assets/ubicacionesCV";
+import { ubicaciones } from "./ubicaciones";
+import { ubicacionesCV } from "./ubicacionesCV";
 import { useState } from "react";
 import { SiWindicss } from "react-icons/si";
 import { MdCo2 } from "react-icons/md";
@@ -15,8 +15,8 @@ import AyudaCAE from "../../../components/AyudaCAE";
 import AyudaCAI from "../../../components/AyudaCAI";
 import DetallesI from "../../../components/DetallesI";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import { rangoscae } from "../../../assets/rangoscae";
-import { rangoscai } from "../../../assets/rangoscai";
+import { rangoscae } from "./rangoscae";
+import { rangoscai } from "./rangoscai";
 import DetallesIC from "../../../components/DetallesIC";
 
 const ubiCentro = ["-12.020381", "-77.049178"];

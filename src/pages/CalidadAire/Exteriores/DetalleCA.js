@@ -1,7 +1,7 @@
 import "./DetalleCA.css";
 import happy from "../../../components/images/happy.png";
 import { useState, useEffect } from "react";
-import { Ica } from "../../../assets/Ica";
+import { Ica } from "../assets/Ica";
 import Grafico from "../../../components/calidadAireExterior/Grafico";
 import Grafico2 from "../../../components/Grafico2";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
@@ -15,8 +15,8 @@ import { MdOutlineWindPower } from "react-icons/md";
 import { MdOutlineSportsHandball } from "react-icons/md";
 import { MdLocationPin } from "react-icons/md";
 import { Getip } from "../../../server/Getip";
-import unidaddv from "../../../assets/unidaddv";
-import gases from "./gases";
+import unidaddv from "../assets/unidaddv";
+import gases from "../assets/gases";
 
 function obtenerNombre(id) {
   if (id === "ctic") return "ctic";
