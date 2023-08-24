@@ -11,7 +11,7 @@ import {
   ReferenceArea,
 } from "recharts";
 import "./css/Grafico.css";
-import { Getip } from "../server/Getip";
+import { Getip } from "../../../server/Getip";
 
 const Grafico = ({ nombre, datos, id }) => {
   const [data, setData] = useState([]);

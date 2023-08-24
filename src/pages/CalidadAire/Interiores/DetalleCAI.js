@@ -3,8 +3,8 @@ import happy from "../images/happy.png";
 import serio from "../images/serio.png";
 import triste from "../images/triste.png";
 import { useState, useEffect } from "react";
-import Grafico from "../../../components/Grafico";
-import Grafico2 from "../../../components/Grafico2";
+import Grafico from "../assets/Grafico";
+import Grafico2 from "../assets/Grafico2";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -12,7 +12,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { MdLocationPin } from "react-icons/md";
 import { BsFillBuildingFill } from "react-icons/bs";
 import { Getip } from "../../../server/Getip";
-import Verificar from "../../../components/Verificar";
+import Verificar from "../assets/Verificar";
 
 const gases = [
   {

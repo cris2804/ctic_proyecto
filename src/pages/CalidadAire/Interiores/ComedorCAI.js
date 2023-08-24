@@ -15,8 +15,8 @@ import { MdLocationPin } from "react-icons/md";
 //import { BsFillBuildingFill } from "react-icons/bs";
 import { FcElectricalSensor } from "react-icons/fc";
 import { Getip } from "../../../server/Getip";
-import GraficosComedor from "../../../components/comedor/GraficosComedor";
-import Verificar from "../../../components/Verificar";
+import GraficosComedor from "./comedor/GraficosComedor";
+import Verificar from "../assets/Verificar";
 
 const gases = [
   {
