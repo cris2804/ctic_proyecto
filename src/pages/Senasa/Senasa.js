@@ -12,8 +12,8 @@ cantidadMoscas.sort((a, b) => b.cantidad - a.cantidad)
 porcentajeBateria.sort((a, b) => a.porcentaje - b.porcentaje)
 
 function Senasa(){
-
     const [id, setId] = useState("Trampa1");
+    const [selected, setSelected] = useState(0); //0: moscas, 1: bateria
 
     return (
         <div className="container__all__senasa">
@@ -26,21 +26,23 @@ function Senasa(){
                 </div>
                 <div className="container__cantidad__moscas">
                     <div className="container__orden__moscas">
-                        <img src={iconoMosca} alt="icono-mosca"/>
+                        <img src={iconoMosca} alt="icono-mosca" onClick={()=> setSelected(0)} className={selected === 0 ? "" : "seleccionado"}/>
+                        <img src={iconoBateria} alt="icono bateria" onClick={()=>setSelected(1)} className={selected === 1 ? "" : "seleccionado"}/>
                     </div>
                     <div className="container__trampa__cp">
                         {
-                            cantidadMoscas.map((objeto, index) => {
+                            (selected === 0 ? cantidadMoscas : porcentajeBateria).map((objeto, index) => {
                                 return(
                                     <div key={index} className="container__vn" onClick={() => setId(objeto.nombre)}>
-                                        <Trampa nombre={objeto.nombre} cantidad={objeto.cantidad} color={colores[index].color} />
+                                        {selected === 0 ? <Trampa nombre={objeto.nombre} cantidad={objeto.cantidad} color={colores[index].color} />
+                                        :<Trampa nombre={objeto.nombre} cantidad={objeto.porcentaje+"%"} color={colores[index].color} />}
                                     </div>
                                 )
                             })
                         }
                     </div>
                 </div>
-                <div className="container__porcentaje__bateria">
+                {/*<div className="container__porcentaje__bateria">
                     <div className="container__orden__porcentaje">
                         <img src={iconoBateria} alt="icono bateria"/>
                     </div>
@@ -55,7 +57,7 @@ function Senasa(){
                             })
                         }
                     </div>
-                </div>
+                    </div>*/}
             </div>
 
         </div>

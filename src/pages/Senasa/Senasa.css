@@ -46,11 +46,16 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    gap: 5%;
 }
 .container__orden__moscas img{
     /*width: 80%;
     margin-left: 10%;*/
-    height: 8vh;
+    height: 6vh;
+    cursor: pointer;
+}
+.container__orden__moscas .seleccionado{
+    opacity: 0.4;
 }
 
 .container__porcentaje__bateria{
