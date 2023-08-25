@@ -5,6 +5,7 @@ import iconoBateria from "./img/icono-bateria-original.png"
 import { cantidadMoscas, porcentajeBateria, colores } from "./components/data"
 import Trampa from "./components/Trampa"
 import Mapa from "./components/Mapa"
+import { useState } from "react"
 
 
 cantidadMoscas.sort((a, b) => b.cantidad - a.cantidad)
@@ -12,10 +13,12 @@ porcentajeBateria.sort((a, b) => a.porcentaje - b.porcentaje)
 
 function Senasa(){
 
+    const [id, setId] = useState("Trampa1");
+
     return (
         <div className="container__all__senasa">
-            {/*Mapa*/}
-            <Mapa />
+
+            <Mapa idt={id}/>
             
             <div className="container__right__senasa">
                 <div className="container__icono__sc">
@@ -29,8 +32,8 @@ function Senasa(){
                         {
                             cantidadMoscas.map((objeto, index) => {
                                 return(
-                                    <div key={index} className="container__vn">
-                                        <Trampa nombre={objeto.nombre} cantidad={objeto.cantidad} color={colores[index].color}/>
+                                    <div key={index} className="container__vn" onClick={() => setId(objeto.nombre)}>
+                                        <Trampa nombre={objeto.nombre} cantidad={objeto.cantidad} color={colores[index].color} />
                                     </div>
                                 )
                             })
@@ -45,8 +48,8 @@ function Senasa(){
                         {
                             porcentajeBateria.map((objeto, index) => {
                                 return (
-                                    <div key={index} className="container__vn">
-                                        <Trampa nombre={objeto.nombre} cantidad={objeto.porcentaje+"%"} color={colores[index].color}/>
+                                    <div key={index} className="container__vn" onClick={() => setId(objeto.nombre)}>
+                                        <Trampa nombre={objeto.nombre} cantidad={objeto.porcentaje+"%"} color={colores[index].color} />
                                     </div>
                                 )
                             })

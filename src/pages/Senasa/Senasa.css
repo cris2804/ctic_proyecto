@@ -80,17 +80,22 @@
 .container__trampa__cp .container__vn{
     width: 80%;
     margin-top: 1vh;
-    box-shadow: 0 0 3px #333;
+    box-shadow: 0 5px 5px #00000050;
     border-radius: 2px;
+    cursor: pointer;
+}
+
+.container__trampa__cp .container__vn:hover{
+    box-shadow: 0 0 3px #333;
 }
 
 /*---------------------------------------*/
 
 .container__popup__senasa{
     position: absolute;
-    top: 0;
+    top: 50%;
     right: 1%;
-    transform: translateY(50%);
+    transform: translateY(-50%);
     z-index: 10;
     width: 320px;
     background-color: rgba(185, 185, 185, 0.6);

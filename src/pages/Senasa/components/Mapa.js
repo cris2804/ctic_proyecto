@@ -3,12 +3,16 @@ import { ubicaciones } from "./ubicaciones"
 import L from "leaflet";
 import Popup from "./Popup"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const ubiCentro = ["-12.016565", "-77.049933"]
 
-export default function Mapa(){
+export default function Mapa({idt}){
     const [id, setId] = useState("Trampa 1")
+
+    useEffect(() => {
+        setId(idt)
+    }, [idt])
 
     const handleMostrar = (e) => {
         setId(e)
