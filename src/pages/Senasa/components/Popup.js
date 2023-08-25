@@ -2,7 +2,8 @@ import "./Popup.css"
 import { fechaFormato2 } from "../../../components/obtenerfecha"
 import { obtenerhora } from "../../../components/obtenerhora"
 import iconoMosca from "../img/icono-mosca.png"
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import { BsGraphUp, BsDownload } from "react-icons/bs"
 
 function Popup({id}){
 
@@ -39,8 +40,17 @@ function Popup({id}){
                 <div>75%</div>
             </div>
 
-            <div className="container__boton__senasa">
-                <Link to="/senasa/detalles">Más detalles</Link> 
+            <div className="container__btn__gd">
+                <div className="container__boton__senasa">
+                    <Link to="/senasa/detalles" className="link">
+                        <BsGraphUp/> Gráfico
+                    </Link> 
+                </div>
+                <div className="container__boton__senasa">
+                    <Link to="/senasa/descargar" className="link">
+                        <BsDownload/>Descargar
+                    </Link>
+                </div>
             </div>
         </div>
     )

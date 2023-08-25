@@ -8,17 +8,18 @@
 }
 .container__depar__pais{
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 .container__fecha__hora{
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 /*-----------------------------*/
 
 .container__img__cant__moscas__{
     margin-top: 1vh;
+    margin-bottom: 2vh;
 }
 .container__img__cant__moscas__2{
     width: 90%;
@@ -54,18 +55,29 @@
     width: 90%;
     margin-left: 5%;
     justify-content: space-between;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 /*-------------------------------------------------------*/
+.container__btn__gd{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2vh;
+    font-size: 1rem;
+}
 .container__boton__senasa{
-    width: 60%;
+    width: 45%;
     bottom: 2vh;
-    margin-left: 20%;
     text-align: center;
-    padding: 10px;
+    padding: 10px 0;
     background: #CAF5AF;
     margin-top: 10px;
+}
+.container__boton__senasa .link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .container__boton__senasa:hover{
