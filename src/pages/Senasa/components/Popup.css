@@ -59,13 +59,13 @@
 
 /*-------------------------------------------------------*/
 .container__boton__senasa{
-    position: absolute;
     width: 60%;
     bottom: 2vh;
     margin-left: 20%;
     text-align: center;
     padding: 10px;
     background: #CAF5AF;
+    margin-top: 10px;
 }
 
 .container__boton__senasa:hover{
