@@ -42,22 +42,6 @@ function Senasa(){
                         }
                     </div>
                 </div>
-                {/*<div className="container__porcentaje__bateria">
-                    <div className="container__orden__porcentaje">
-                        <img src={iconoBateria} alt="icono bateria"/>
-                    </div>
-                    <div className="container__trampa__cp">
-                        {
-                            porcentajeBateria.map((objeto, index) => {
-                                return (
-                                    <div key={index} className="container__vn" onClick={() => setId(objeto.nombre)}>
-                                        <Trampa nombre={objeto.nombre} cantidad={objeto.porcentaje+"%"} color={colores[index].color} />
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                    </div>*/}
             </div>
 
         </div>
