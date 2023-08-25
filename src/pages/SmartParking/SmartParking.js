@@ -5,8 +5,8 @@ import { Marker } from "react-leaflet"
 import L from "leaflet"
 import { useEffect, useRef, useState } from "react"
 import RealTimeComponentSmartParking from "./RealTimeComponentSmartParking"
-import iconoverde from "./icon-blue.png"
-import iconorojo from "./icon-red.png"
+import iconoverde from "./images/icon-blue.png"
+import iconorojo from "./images/icon-red.png"
 
 
 const ubiCentro = [-12.016460,-77.049896]
