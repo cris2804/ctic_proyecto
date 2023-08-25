@@ -26,8 +26,8 @@ function Senasa(){
                 </div>
                 <div className="container__cantidad__moscas">
                     <div className="container__orden__moscas">
-                        <img src={iconoMosca} alt="icono-mosca" onClick={()=> setSelected(0)} className={selected === 0 ? "" : "seleccionado"}/>
-                        <img src={iconoBateria} alt="icono bateria" onClick={()=>setSelected(1)} className={selected === 1 ? "" : "seleccionado"}/>
+                        <img src={iconoMosca} alt="icono-mosca" onClick={()=> setSelected(0)} className={selected === 0 ? "selec" : "noselec"}/>
+                        <img src={iconoBateria} alt="icono bateria" onClick={()=>setSelected(1)} className={selected === 1 ? "selec" : "noselec"}/>
                     </div>
                     <div className="container__trampa__cp">
                         {

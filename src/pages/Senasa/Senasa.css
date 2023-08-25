@@ -40,11 +40,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-}/*
-.container__orden__moscas{
-    width: 20%;
-    height: 45vh;
-}*/
+}
 .container__orden__moscas{
     display: flex;
     justify-content: center;
@@ -52,13 +48,14 @@
     gap: 5%;
 }
 .container__orden__moscas img{
-    /*width: 80%;
-    margin-left: 10%;*/
     height: 6vh;
     cursor: pointer;
-}
-.container__orden__moscas .seleccionado{
-    opacity: 0.4;
+}/*
+.container__orden__moscas .selec{
+    
+}*/
+.container__orden__moscas .noselec{
+    opacity: 0.3;
 }
 
 .container__porcentaje__bateria{
