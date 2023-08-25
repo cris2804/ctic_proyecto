@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer, Marker } from "react-leaflet"
 import { ubicaciones } from "./ubicaciones"
-import L from "leaflet";
+import L from "leaflet"
 import Popup from "./Popup"
 
 import { useState, useEffect } from "react"
