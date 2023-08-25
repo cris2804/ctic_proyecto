@@ -16,6 +16,8 @@
     height: 100%;
     z-index: 1;
 }
+
+/* --------------------------------*/
 .container__right__senasa{
     position: relative;
     width: 30%;
@@ -27,6 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 4vh;
 }
 .container__icono__sc img{
     height: 80%;
