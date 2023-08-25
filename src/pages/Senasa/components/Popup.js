@@ -42,7 +42,7 @@ function Popup({id}){
 
             <div className="container__btn__gd">
                 <div className="container__boton__senasa">
-                    <Link to="/senasa/detalles" className="link">
+                    <Link to="/senasa/grafica" className="link">
                         <BsGraphUp/> Gráfico
                     </Link> 
                 </div>
