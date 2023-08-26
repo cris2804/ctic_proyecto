@@ -12,7 +12,7 @@ cantidadMoscas.sort((a, b) => b.cantidad - a.cantidad)
 porcentajeBateria.sort((a, b) => a.porcentaje - b.porcentaje)
 
 function Main(){
-    const [id, setId] = useState("Trampa1");
+    const [id, setId] = useState("Trampa 1");
     const [selected, setSelected] = useState(0); //0: moscas, 1: bateria
 
     return (
