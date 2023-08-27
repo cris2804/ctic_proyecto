@@ -1,22 +1,16 @@
-import "./DetalleCA.css";
-import happy from "../images/happy.png";
-import { useState, useEffect } from "react";
-import { Ica } from "../assets/Ica";
-import Grafico from "./Grafico";
-import Grafico2 from "../assets/Grafico2";
-import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import Select from "./Select";
-import { GiWindow } from "react-icons/gi";
-import { MdMasks } from "react-icons/md";
-import { MdOutlineWindPower } from "react-icons/md";
-import { MdOutlineSportsHandball } from "react-icons/md";
-import { MdLocationPin } from "react-icons/md";
-import { Getip } from "../../../server/Getip";
-import unidaddv from "../assets/unidaddv";
-import gases from "../assets/gases";
+import "./DetalleCA.css"
+import happy from "../images/happy.png"
+import { useState, useEffect } from "react"
+import Grafico from "./Grafico"
+import Grafico2 from "../assets/Grafico2"
+import "react-calendar/dist/Calendar.css"
+import { Getip } from "../../../server/Getip"
+import unidaddv from "../assets/unidaddv"
+import gases from "../assets/gases"
+import Clima from "./components/Clima"
+import Descargar from "./components/Descargar"
+import Estado from "./components/Estado"
+import Contaminante from "./components/Contaminante"
 
 function obtenerNombre(id) {
   if (id === "ctic") return "ctic";
@@ -50,7 +44,6 @@ export default function DetalleCA() {
 
   console.log(host)
 
-  const [isHovered, setIsHovered] = useState(false);
   //const [seleccionado, setSeleccionado] = useState(0);
   const [opcion, setOpcion] = useState("PM2.5");
   const [date1, setDate1] = useState(new Date());
@@ -103,14 +96,6 @@ export default function DetalleCA() {
       .catch((error) => {
         console.error("Error al llamar a la API:", error);
       });
-  };
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
   };
 
   /*---- */
@@ -171,7 +156,7 @@ export default function DetalleCA() {
     };
 
     fetchData();
-  }, []);
+  }, [host,id]);
 
   return (
     <div className="container__detalle__ca">
@@ -180,359 +165,35 @@ export default function DetalleCA() {
         <span className="forma__subtitulo">Calidad del aire en exteriores</span> <br></br>
         <span className="forma__linea">aaaaaaaaaaaaa</span>
       </div>
-      {/*<div className="container__gota__agua"><MdWaterDrop className="gota__agua"/></div>*/}
+
       <div className="container__detalle__ca__main">
         <div className="container__detalle__ca__left">
-          <div
-            style={{
-              boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)",
-              borderRadius: "2px 2px 10px 10px",
-            }}
-          >
-            <div
-              style={{
-                backgroundColor: "#f3f7fb",
-                paddingBottom: "25px",
-                paddingTop: "25px",
-                borderRadius: "2px 2px 0px 0px",
-              }}
-            >
-              <div
-                style={{
-                  color: "#198CFF",
-                  fontSize: "15px",
-                  fontWeight: "500",
-                  paddingBottom: "4px",
-                  marginLeft: "10px",
-                }}
-              >
-                CLIMA
-              </div>
-              <div style={{ marginLeft: "10px", fontSize: "20px" }}>
-                ¿Cuál es el clima actual en {obtenerNombre(id)}?
-              </div>
-            </div>
-            <div
-              style={{
-                backgroundColor: "white",
-                borderRadius: "0px 0px 10px 10px",
-                paddingBottom: "30px",
-              }}
-            >{/*}
-              <div
-                className="container__prop__valor"
-                style={{ paddingTop: "30px" }}
-              >
-                <div style={{ color: "#3c3c3c" }}>CLIMA</div>
-                <div style={{ fontWeight: "500" }}>Parcialmente nublado</div>
-              </div>*/}
-              <div className="container__prop__valor">
-                <div style={{ color: "#3c3c3c" }}>TEMPERATURA</div>
-                <div style={{ fontWeight: "500" }}>{data ? Math.round(data.temperatura_2) : ""} ªC</div>
-              </div>
-              <div className="container__prop__valor">
-                <div style={{ color: "#3c3c3c" }}>VELOCIDAD DEL VIENTO</div>
-                <div style={{ fontWeight: "500" }}>{data ? data.velocidad_del_viento : ""} km/h</div>
-              </div>
-              <div className="container__prop__valor">
-                <div style={{ color: "#3c3c3c" }}>DIRECCIÓN DEL VIENTO</div>
-                <div style={{ fontWeight: "500" }}>{data ? unidaddv(data.direccion_del_viento) : ""} </div>
-              </div>
-              <div className="container__prop__valor">
-                <div style={{ color: "#3c3c3c" }}>INTENSIDAD DE SONIDO</div>
-                <div style={{ fontWeight: "500" }}>{data ? data.intensidad_de_sonido : ""}</div>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              marginTop: "30px",
-              backgroundColor: "white",
-              boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)",
-              borderRadius: "2px 2px 10px 10px",
-            }}
-          >
-            <div
-              className="container__detalle__descargar"
-              style={{
-                backgroundColor: "#f3f7fb",
-                paddingTop: "30px",
-                paddingBottom: "30px",
-                fontSize: "15px",
-                fontWeight: "500",
-              }}
-            >
-              <div style={{ color: "#198CFF", paddingBottom: "4px" }}>
-                DESCARGAR DATOS (CSV)
-              </div>
-              <div
-                style={{
-                  fontSize: "20px",
-                  fontWeight: "400",
-                  paddingRight: "40px",
-                }}
-              >
-                {" "}
-                Aqui podra descargar distintos datos de nuestra plataforma,
-                podra escoger el rango de fechas y los sensores a analizar.
-              </div>
-            </div>
-            <div
-              className="selector__de__lugar__cai"
-              style={{ marginTop: "20px" }}
-            >
-              <div className="container__icon__ubi__ofi">
-                {" "}
-                <MdLocationPin style={{ fontSize: "2rem", color: "#1cbacc" }} />
-                Ubicación Actual:{" "}
-              </div>
-              <select
-                value={"/calidad-del-aire-uni/exteriores?id="+id}
-                onChange={handleChange}
-                className="container__select__paginas__cai"
-              >
-                <option value="/calidad-del-aire-uni/exteriores?id=ctic">
-                  CTIC
-                </option>
-                <option value="/calidad-del-aire-uni/exteriores?id=puerta 3">
-                  Puerta 3
-                </option>
-                <option value="/calidad-del-aire-uni/exteriores?id=puerta 5">
-                  Puerta 5
-                </option>
-              </select>
-            </div>
-            <div
-              className="container__detalle__descargar container__rango__fecha__descargar"
-              style={{ fontWeight: "500" }}
-            >
-              <div>Fecha Inicial: </div>
-              <div>
-                <button
-                  onClick={toggleCalendar1}
-                  className="container__btn__calendar"
-                >
-                  <div>
-                    <CalendarMonthIcon />
-                  </div>
-                  <div>{date1.toLocaleDateString()}</div>
-                </button>
-                {showCalendar1 && (
-                  <Calendar onChange={onChange1} value={date1} />
-                )}
-              </div>
-            </div>
-            <div
-              className="container__detalle__descargar container__rango__fecha__descargar"
-              style={{ fontWeight: "500" }}
-            >
-              <div>Fecha Final: </div>
-              <div>
-                <button
-                  onClick={toggleCalendar2}
-                  className="container__btn__calendar"
-                >
-                  <div>
-                    <CalendarMonthIcon />
-                  </div>
-                  <div>{date2.toLocaleDateString()}</div>
-                </button>
-                {showCalendar2 && (
-                  <Calendar onChange={onChange2} value={date2} />
-                )}
-              </div>
-            </div>
-            <div className="container__eh">
-              <div>Evolución:</div>
-              <Select
-                options={options}
-                value={selectedValue}
-                onChange={handleSelectChange}
-              />
-            </div>
-            <div
-              className="container__detalle__descargar2"
-              style={{ paddingTop: "25px" }}
-            >
-              <div>NO₂ μg/m³</div>
-              <input
-                type="checkbox"
-                name="NO2"
-                checked={checkboxes.NO2}
-                onChange={handleCheckboxChange}
-                id="cbox1"
-                value="first_checkbox"
-              ></input>
-            </div>
-            <div className="container__detalle__descargar2">
-              <div>O₃ μg/m³</div>
-              <input
-                type="checkbox"
-                name="O3"
-                checked={checkboxes.O3}
-                onChange={handleCheckboxChange}
-                id="cbox1"
-                value="first_checkbox"
-              ></input>
-            </div>
-            <div className="container__detalle__descargar2">
-              <div>H₂S μg/m³</div>
-              <input
-                type="checkbox"
-                name="H2S"
-                checked={checkboxes.H2S}
-                onChange={handleCheckboxChange}
-                id="cbox1"
-                value="first_checkbox"
-              ></input>
-            </div>
-            <div className="container__detalle__descargar2">
-              <div>CO μg/m³</div>
-              <input
-                type="checkbox"
-                name="CO"
-                checked={checkboxes.CO}
-                onChange={handleCheckboxChange}
-                id="cbox1"
-                value="first_checkbox"
-              ></input>
-            </div>
-            <div className="container__detalle__descargar2">
-              <div>PM 10 μg/m³</div>
-              <input
-                type="checkbox"
-                name="PM10"
-                checked={checkboxes.PM10}
-                onChange={handleCheckboxChange}
-                id="cbox1"
-                value="first_checkbox"
-              ></input>
-            </div>
-            <div className="container__detalle__descargar2">
-              <div>PM 2.5 μg/m³</div>
-              <input
-                type="checkbox"
-                name="PM25"
-                checked={checkboxes.PM25}
-                onChange={handleCheckboxChange}
-                id="cbox1"
-                value="first_checkbox"
-              ></input>
-            </div>
-            <div className="container__detalle__descargar2">
-              <div>Humedad μg/m³</div>
-              <input
-                type="checkbox"
-                name="Humedad"
-                checked={checkboxes.Humedad}
-                onChange={handleCheckboxChange}
-                id="cbox1"
-                value="first_checkbox"
-              ></input>
-            </div>
-            <div className="container__detalle__descargar2">
-              <div>Viento μg/m³</div>
-              <input
-                type="checkbox"
-                name="Viento"
-                checked={checkboxes.Viento}
-                onChange={handleCheckboxChange}
-                id="cbox1"
-                value="first_checkbox"
-              ></input>
-            </div>
-            <div
-              className="container__detalle__descargar__btn"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                marginTop: "30px",
-                marginBottom: "30px"
-              }}
-            >
-              <button
-                onClick={handleMostrar}
-                style={{
-                  backgroundColor: "#7EDAE5",
-                  display: "flex",
-                  alignItems: "center",
-                  flexWrap: "wrap",
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  color: "#2086D8",
-                  fontSize: "20px",
-                  fontWeight: "500",
-                  borderColor: "#2086D8",
-                  borderRadius: "20px",
-                  padding: "10px 20px 10px 20px",
-                  cursor: "pointer",
-                }}
-              >
-                Descargar CSV&nbsp;&nbsp; <CloudDownloadIcon />
-              </button>
-            </div>
-          </div>
+          
+          <Clima obtenerNombre={obtenerNombre} id={id} data={data} unidaddv={unidaddv}/>
+
+          <Descargar id={id} 
+                    handleChange={handleChange}
+                    toggleCalendar1={toggleCalendar1}
+                    toggleCalendar2={toggleCalendar2}
+                    date1={date1}
+                    showCalendar1={showCalendar1}
+                    showCalendar2={showCalendar2}
+                    onChange1={onChange1}
+                    date2={date2}
+                    onChange2={onChange2}
+                    options={options}
+                    selectedValue={selectedValue}
+                    handleSelectChange={handleSelectChange}
+                    checkboxes={checkboxes}
+                    handleCheckboxChange={handleCheckboxChange}
+                    handleMostrar={handleMostrar} />
+
         </div>
+
+        
         <div className="container__detalle__ca__right1">
-          <div
-            style={{
-              boxShadow: "0 2px 20px 0 rgba(0,0,0,.08)",
-              borderRadius: "2px 2px 5px 5px",
-            }}
-          >
-            {/*<div
-              className="container__lugar__ubicacion"
-              style={{ backgroundColor: "#9AD64D", textAlign: "center" }}
-            >
-              {obtenerNombre(id)}
-            </div>*/}
-            <div
-              className="container__estado__ca"
-              style={{ backgroundColor: "#9AD64D" }}
-            >
-              <div className="container__valor__tipo">
-                <div
-                  className="container__valor"
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  style={{ backgroundColor: "#8ac241" }}
-                >
-                  40
-                </div>
-                <div className="container__indice__tipo">
-                  <div className="indice" style={{ fontSize: "16px" }}>
-                    ÍNDICE ICA EN VIVO
-                  </div>
-                  <div
-                    className="tipo"
-                    style={{ fontSize: "30px", fontWeight: "500" }}
-                  >
-                    Perjudicial Para Grupos Sensibles
-                  </div>
-                </div>
-              </div>
-              <div className="logo__imagen">
-                <img src={happy} alt="logo-happy" />
-              </div>
-              <div
-                className={
-                  isHovered
-                    ? "container__detalles__ica"
-                    : "container__detalles__ica2"
-                }
-              >
-                {Ica.map((element, i) => {
-                  return (
-                    <div className="container__ica__rango__nombre" key={i}>
-                      <div style={{ background: element.color }}>
-                        {element.rango}
-                      </div>
-                      <div>{element.nombre}</div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
+          
+          <Estado happy={happy}/>
 
           <div
             className="container__grafico__rangos__tipos__gases"
@@ -554,64 +215,13 @@ export default function DetalleCA() {
                 );
               })}
             </div>
-            {/*<div className='container__rango__tiempo'>
-                            <div className={seleccionado === 0 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(0)}>EN VIVO</div>
-                            <div className={seleccionado === 1 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(1)}>DÍA</div>
-                            <div className={seleccionado === 2 ? 'tiempo__seleccionado':''} onClick={() => Seleccionar(2)}>SEMANA</div>
-                        </div>*/}
-            <div className="container__grafico">{Graficar(0, opcion, retornaidb(id), Getip(host))}</div>
-
-            <div className="container__contaminante__principal">
-              <div className="container__c__p">
-                <div className="container__c__p__cv">
-                  <div>Contaminantes</div>
-                  <div>PM2.5</div>
-                </div>
-                <div className="container__c__p__b">
-                  <div></div>
-                  <div></div>
-                </div>
-                <div className="container__c__p__cov">
-                  <div>Concentración</div>
-                  <div>36 ug/m3</div>
-                </div>
-              </div>
-              <div className="container__recomendaciones__salud">
-                <div>RECOMENDACIONES DE SALUD</div>
-                <div>¿Cómo protegerse de la contaminación del aire?</div>
-                <div className="container__recomendacion__logo">
-                  <div className="container__2">
-                    <div className="container__rel">
-                      <MdMasks style={{ color: "orange", fontSize: "3em" }} />
-                      <div>
-                        Los grupos sensibles deben usar una máscara al aire
-                        libre
-                      </div>
-                    </div>
-                    <div className="container__rel">
-                      <MdOutlineWindPower
-                        style={{ color: "orange", fontSize: "3em" }}
-                      />
-                      <div>Utilice un purificador de aire</div>
-                    </div>
-                  </div>
-                  <div className="container__2">
-                    <div className="container__rel">
-                      <GiWindow style={{ color: "orange", fontSize: "3em" }} />
-                      <div>
-                        Cierra las ventanas para evitar el aire exterior sucio
-                      </div>
-                    </div>
-                    <div className="container__rel">
-                      <MdOutlineSportsHandball
-                        style={{ color: "orange", fontSize: "3em" }}
-                      />
-                      <div>Reducir el ejercicio al aire libre</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            
+            <div className="container__grafico">
+              {Graficar(0, opcion, retornaidb(id), Getip(host))}
             </div>
+
+            <Contaminante />
+            
           </div>
         </div>
       </div>
