@@ -1,4 +1,4 @@
-import "./DetallesIC.css";
+import "./css/DetallesIC.css";
 import { obtenerhora } from "../../../../components/obtenerhora";
 import { obtenerfecha } from "../../../../components/obtenerfecha";
 //import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
@@ -41,10 +41,9 @@ export default function DetallesIC({ id }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      let sumaco2 = [],
+      let sumaco2 = [];
         //sumatemperatura = 0,
-        //sumahumedad = 0,
-        cont = 0;
+        //sumahumedad = 0, cont = 0;
       const timestamp = getLastHourToTimestamp(2 / 15);
       const promises = dat.map((d) => {
         return fetch(
@@ -118,7 +117,7 @@ export default function DetallesIC({ id }) {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [host]);
 
   return (
     <div className="container__main__detalles__i">
@@ -145,7 +144,7 @@ export default function DetallesIC({ id }) {
                     <div className="container__datos__h">
                       <OpacitySharpIcon className="icon__h" /> {data ? data[9].humedad : ""}{" "}
                       %
-  </div>*/}
+                    </div>*/}
                   </div>
                   <div className="container__datos__v2">
                     CO₂: {data ? data[9].co2 : ""} ppm

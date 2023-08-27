@@ -25,12 +25,6 @@ function obtenerNombre(id) {
 }
 
 function Graficar(opc, nom, idb, ipurl) {
-  const datos = Array.from({ length: 20 }, () => {
-    return {
-      time: new Date().toLocaleTimeString(),
-      value: Math.floor(Math.random() * 500),
-    };
-  });
   if (opc === 0) {
     return <Grafico id={idb} nombre={nom} ipurl={ipurl}/>;
   } else if (opc === 1) {

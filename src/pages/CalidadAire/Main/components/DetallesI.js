@@ -1,4 +1,4 @@
-import "./DetallesI.css";
+import "./css/DetallesI.css";
 import { obtenerhora } from "../../../../components/obtenerhora";
 import { obtenerfecha } from "../../../../components/obtenerfecha";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
@@ -83,7 +83,7 @@ export default function DetallesI({ id }) {
     return () => {
       clearInterval(interval);
     };
-  }, [results]);
+  }, [results, host]);
 
   const [inputValue, setInputValue] = useState("");
 

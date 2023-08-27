@@ -1,4 +1,4 @@
-import "./Detalles.css";
+import "./css/Detalles.css";
 import happy from "../../images/happy.png";
 //import serio from './images/serio.png';
 //import triste from './images/triste.png';
@@ -43,7 +43,7 @@ export default function Detalles(props) {
     };
 
     fetchData();
-  }, [props.id]);
+  }, [props.id, host]);
 
   return (
     <div className="container__detalles">
