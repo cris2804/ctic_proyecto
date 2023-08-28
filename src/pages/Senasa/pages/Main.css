@@ -50,10 +50,7 @@
 .container__orden__moscas img{
     height: 6vh;
     cursor: pointer;
-}/*
-.container__orden__moscas .selec{
-    
-}*/
+}
 .container__orden__moscas .noselec{
     opacity: 0.3;
 }

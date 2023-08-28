@@ -10,8 +10,8 @@ import ComedorCAI from "./Interiores/ComedorCAI"
 import Sidebar from "./Sidebar"
 
 function CalidadAire() {
-    const [open, setOpen] = useState(false);
-    const [submenuOpen, setSubmenuOpen] = useState(0);
+  const [open, setOpen] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(0);
 
   return (
     <div className={`flex duration-300 ${open ? "pl-72" : "pl-20"}`}>
