@@ -1,7 +1,7 @@
 import "./DetalleCA.css"
 import happy from "../images/happy.png"
 import { useState, useEffect } from "react"
-import Grafico from "./Grafico"
+import Grafico from "./components/Grafico"
 import Grafico2 from "../assets/Grafico2"
 import "react-calendar/dist/Calendar.css"
 import { Getip } from "../../../server/Getip"

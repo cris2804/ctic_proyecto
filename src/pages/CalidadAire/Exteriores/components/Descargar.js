@@ -1,7 +1,7 @@
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload"
 import Calendar from "react-calendar"
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth"
-import Select from "../Select"
+import Select from "./Select"
 import { MdLocationPin } from "react-icons/md"
 
 

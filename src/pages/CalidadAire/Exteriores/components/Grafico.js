@@ -10,7 +10,7 @@ import {
   Label,
   ReferenceArea,
 } from "recharts";
-import "../assets/css/Grafico.css";
+import "../../assets/css/Grafico.css";
 
 const getLastHourToTimestamp = (horas)=>{
   const now = new Date();
