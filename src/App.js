@@ -21,6 +21,7 @@ import Metaverso from "./pages/Metaverso/Metaverso"
 /** Test */
 import ReconocimientoFacial from "./pages/Test/ReconocimientoFacial"
 import Cuentaspersonas from "./pages/Test/Cuentapersonas"
+import Test from "./pages/template/Test"
 
 
 
@@ -51,7 +52,7 @@ function App() {
             {/* ------ Test ----- */}
             <Route path="/cuenta-personas" element={<ReconocimientoFacial/>} />
             <Route path="/reconocimiento-facial" element={<Cuentaspersonas/>} />
-
+            <Route path="/test" element={<Test/>}/>
           </Routes>
         </Router>
     </div>

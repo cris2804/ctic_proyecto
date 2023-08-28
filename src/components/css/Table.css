@@ -1,0 +1,13 @@
+.container-table{
+    height: 100%;
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.container-content-table{
+    flex-grow: 1;
+    height: 100%;
+    overflow-y: auto;
+    
+}
