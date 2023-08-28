@@ -10,7 +10,7 @@ function Main(){
     return (
         <div className="container__all__senasa">
 
-            <Mapa idt={id}/>
+            <Mapa id={id} setId={setId}/>
             
             <Trampas setId={setId}/>            
 
