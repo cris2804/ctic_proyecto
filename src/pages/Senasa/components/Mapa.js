@@ -7,12 +7,7 @@ import { useState, useEffect } from "react"
 
 const ubiCentro = ["-12.016565", "-77.049933"]
 
-export default function Mapa({idt}){
-    const [id, setId] = useState("Trampa 1")
-
-    useEffect(() => {
-        setId(idt)
-    }, [idt])
+export default function Mapa({id, setId}){
 
     const handleMostrar = (e) => {
         setId(e)
