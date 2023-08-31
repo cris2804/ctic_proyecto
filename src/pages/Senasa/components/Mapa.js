@@ -3,11 +3,9 @@ import { ubicaciones } from "./ubicaciones"
 import L from "leaflet"
 import Popup from "./Popup"
 
-import { useState, useEffect } from "react"
-
 const ubiCentro = ["-12.016565", "-77.049933"]
 
-export default function Mapa({id, setId}){
+export default function Mapa({id, setId, data}){
 
     const handleMostrar = (e) => {
         setId(e)
@@ -39,7 +37,7 @@ export default function Mapa({id, setId}){
                 })}
                 </MapContainer>
             <div className="container__popup__senasa">
-                <Popup id={id}/>
+                <Popup id={id} d={data[id-1]}/>
             </div>
         </div>
     )
