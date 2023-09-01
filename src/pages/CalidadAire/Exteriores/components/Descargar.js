@@ -184,7 +184,7 @@ export default function Descargar({id, handleChange,toggleCalendar1,toggleCalend
               ></input>
             </div>
             <div className="container__detalle__descargar2">
-              <div>Humedad μg/m³</div>
+              <div>Humedad %</div>
               <input
                 type="checkbox"
                 name="Humedad"
@@ -195,7 +195,7 @@ export default function Descargar({id, handleChange,toggleCalendar1,toggleCalend
               ></input>
             </div>
             <div className="container__detalle__descargar2">
-              <div>Viento μg/m³</div>
+              <div>Viento km/h</div>
               <input
                 type="checkbox"
                 name="Viento"

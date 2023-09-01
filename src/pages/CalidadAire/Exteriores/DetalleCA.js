@@ -71,7 +71,7 @@ export default function DetalleCA() {
     fetch(
       `${Getip(host)}/api/v1/calidad-de-aire/descargar/${retornaidb(
         id
-      )}?maxDate=${Number(date2)}&minDate=${Number(date1)}&columns=0000${
+      )}?maxDate=${Number(date2)}&minDate=${Number(date1)}&columns=00100${
         checkboxes.Humedad ? "1" : "0"
       }00000${checkboxes.PM10 ? "1" : "0"}00${checkboxes.PM25 ? "1" : "0"}${
         checkboxes.Viento ? "1" : "0"
