@@ -13,7 +13,7 @@ function Popup({id, d}){
 
     useEffect(() => {
 
-        //console.log(actual)
+        console.log(actual)
 
     }, [id])
 
