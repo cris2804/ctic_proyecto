@@ -6,8 +6,8 @@ import iconoAdvertencia from "../img/icono-advertencia.png"
 import Trampa from "./Trampa"
 import { diferenciaHoras } from "../../../components/convertirfechahora";
 
-const aux = new Date();
-const actual = aux.toISOString();
+const aux = new Date()
+const actual = aux.toISOString()
 
 export default function Trampas({setId, data, colores}){
     const [selected, setSelected] = useState(0) //0: moscas, 1: bateria
@@ -40,8 +40,12 @@ export default function Trampas({setId, data, colores}){
                             dataActual.map((objeto, index) => {
                             return(
                                 <div key={index} className="container__vn" onClick={() => setId(objeto.nombre)}>
-                                    {selected === 0 ? <Trampa nombre={objeto.nombre} cantidad={objeto.cantidad} color={colores[index].color} />
-                                        :<Trampa nombre={objeto.nombre} cantidad={objeto.porcentaje+"%"} color={colores[index].color} />}
+                                    {selected === 0
+                                        ? 
+                                        <Trampa nombre={objeto.nombre} cantidad={objeto.cantidad} color={colores[index].color} />
+                                        : 
+                                        <Trampa nombre={objeto.nombre} cantidad={selected === 2 ? "" : objeto.porcentaje+"%"} color={colores[index].color} />
+                                    }
                                 </div>
                             )
                         })
