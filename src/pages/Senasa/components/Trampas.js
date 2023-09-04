@@ -42,9 +42,9 @@ export default function Trampas({setId, data, colores}){
                                 <div key={index} className="container__vn" onClick={() => setId(objeto.nombre)}>
                                     {selected === 0
                                         ? 
-                                        <Trampa nombre={objeto.nombre} cantidad={objeto.cantidad} color={colores[index].color} />
+                                        <Trampa nombre={objeto.nombre} cantidad={objeto.cantidad} color={colores[index].color} selected={selected} />
                                         : 
-                                        <Trampa nombre={objeto.nombre} cantidad={selected === 2 ? "" : objeto.porcentaje+"%"} color={colores[index].color} />
+                                        <Trampa nombre={objeto.nombre} cantidad={selected === 2 ? "" : objeto.porcentaje+"%"} color={colores[index].color} selected={selected} />
                                     }
                                 </div>
                             )
