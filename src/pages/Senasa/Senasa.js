@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom"
 import Main from "./pages/Main"
-import Grafica from "./pages/Grafica"
+import Grafica from "./pages/Grafica/Grafica"
 import Descargar from "./pages/Descargar"
 
 function Senasa(){
