@@ -5,7 +5,7 @@ const cantidadMoscas = [
         porcentaje: 25,
         humedad: 15,
         temperatura: 23,
-        tiempo: "2023-09-04T20:43:04.644Z"
+        tiempo: "2023-09-05T17:19:26.430Z"
     },
     {
         nombre: 2,
@@ -29,7 +29,7 @@ const cantidadMoscas = [
         porcentaje: 60,
         humedad: 12,
         temperatura: 24.3,
-        tiempo: "2023-09-01T20:48:30.148Z"
+        tiempo: "2023-09-05T17:19:26.430Z"
     },
     {
         nombre: 5,
@@ -37,7 +37,7 @@ const cantidadMoscas = [
         porcentaje: 10,
         humedad: 10,
         temperatura: 24,
-        tiempo: "2023-08-31T22:19:32.042Z"
+        tiempo: "2023-09-05T17:19:26.430Z"
     }
 ]
 
