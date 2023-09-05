@@ -35,10 +35,9 @@
        display: flex;
        justify-content: center;
        align-items: center;
-       font-size: 2em;
-       border: 2px solid black;
+       font-size: 0.9em;
        width: 78%;
-       height: 17.5em;
+       height: 25.5em;
        margin-left: auto;
        margin-top: -480px;
      }

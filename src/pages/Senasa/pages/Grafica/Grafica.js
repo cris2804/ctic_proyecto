@@ -3,14 +3,18 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../Grafica/Grafica.css'
 
-import logoSmartCity from '../Grafica/logo_version_grafana.png'
+import logoSmartCity from '../../img/logo_version_grafana.png'
+import Grafico from "../../components/Grafico"
+import { data, rango, rangosFondo } from "../../test/data"
+
+
 
 export default function Grafica(){
     const searchParams = new URLSearchParams(window.location.search);
     const id = searchParams.get("id");
 
 
-    const [activeButton,setActiveButton] = useState(null);
+    const [activeButton,setActiveButton] = useState(0);
     const [activeButton1,setActiveButton1] = useState(null);
     const [text, setText] = useState('Grafico');
 
@@ -48,10 +52,10 @@ export default function Grafica(){
             <div className='container-secciones'>
                 <div className='container-section-left'>
                     <div className= 'container-buttons1'>
-                        <button className='button1'
+                        <button 
                         className={`button1 ${activeButton1 === 0 ? 'active-lugares' : ''}`}
                         onClick={() => handleButtonLugaresClick(0)}>Trampa</button>
-                        <button className='button1'
+                        <button 
                         className={`button1 ${activeButton1 === 1 ? 'active-lugares' : ''}`}
                         onClick={() => handleButtonLugaresClick(1)}>Lugar</button>
                     </div>
@@ -59,21 +63,21 @@ export default function Grafica(){
                 </div>
                 <div className='container-section-right'>
                     <div className='container-buttons3'>
-                            <button className='button3' 
+                            <button 
                             className={`button3 ${activeButton === 0 ? 'active' : ''}`}
                             onClick={() => handleButtonOpcionesClick(0)}
                             >
                                 Cantidad de moscas
                             </button>
-                            <button className='button3'  
+                            <button 
                             className={`button3 ${activeButton === 1 ? 'active' : ''}`}
                             onClick={() => handleButtonOpcionesClick(1)}
                             > Temperatura</button>
-                            <button className= 'button3'
+                            <button 
                             className={`button3 ${activeButton === 2 ? 'active' : ''}`}
                             onClick={() => handleButtonOpcionesClick(2)}
                             >Humedad</button>
-                            <button className= 'button3'
+                            <button 
                             className={`button3 ${activeButton === 3 ? 'active' : ''}`}
                             onClick={() => handleButtonOpcionesClick(3)}
                             >% de bateria</button>
@@ -83,8 +87,18 @@ export default function Grafica(){
 
             </div>
             <div className='graficos'>
-                    {text}
-                </div>
+                <Grafico 
+                tlinea="monotone" 
+                vdot={false} 
+                clinea="#00796B" 
+                data={data}
+                nombrex="Tiempo"
+                nombrey={text}
+                rangoy= {rango}
+                fondo={true}
+                rangosFondo= {rangosFondo}
+                />
+            </div>
 
 
             <div className='container-buttons2'>
