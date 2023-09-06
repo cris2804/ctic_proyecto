@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { useEffect } from 'react';
 import { ControllerSmartParking } from './ControllerSmartParking';
 import io from "socket.io-client"
-import { Getip } from "../../server/Getip";
+import { Getip, GetipTR } from "../../server/Getip";
 import { endpointTR } from '../../server/MetadataTR';
 
 
@@ -28,7 +28,7 @@ export default function RealTimeComponentSmartParking({visible}) {
 
     useEffect(()=>{
         fetchInicial();
-        const socket = io(Getip(host), {
+        const socket = io(GetipTR(), {
             transports: ["websocket"],
           });
           //fetchData();
