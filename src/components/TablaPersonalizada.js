@@ -10,7 +10,8 @@ import TableRow from '@mui/material/TableRow';
 import "./css/Table.css";
 
 
-export default function TablaPersonalizada({rows,cols,cantidad,changePage,changePerPage}) {
+export default function TablaPersonalizada({rows,cols,cantidad,changePage,
+  changePerPage,search}) {
     const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
@@ -43,7 +44,8 @@ export default function TablaPersonalizada({rows,cols,cantidad,changePage,change
                 </TableCell>
               ))}
             </TableRow>
-            <TableRow>
+
+            {search?<TableRow>
               {cols.map((column) => (
                 <TableCell
                   key={column.id}
@@ -54,7 +56,7 @@ export default function TablaPersonalizada({rows,cols,cantidad,changePage,change
                   
                 </TableCell>
               ))}
-            </TableRow>
+            </TableRow>:null}
           </TableHead>
           <TableBody>
             {rows
