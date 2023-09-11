@@ -44,7 +44,7 @@ export default function Grafica(){
     return(
         <div className='container-general'>
             <div className='container-header'>
-                <Link to ={'http://localhost:3000/senasa'} className='custom-link' >
+                <Link to ={'/senasa'} className='custom-link' >
                     <img className='logo-SmartCity' src={logoSmartCity} alt='logo'/>
                 </Link>
                 
