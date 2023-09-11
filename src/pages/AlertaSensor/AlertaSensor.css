@@ -1,0 +1,78 @@
+.icon-sensor{
+    background-color: cyan;
+    font-size: 40px;
+}
+.page-sensor-info{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color:white;
+
+}
+.container-info-sensors{
+    padding: 5px;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    overflow-y: auto;
+}
+.container-info-detailed{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+/*----------------*/
+.sensor-alert-info{
+    width: 220px;
+    height: 280px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 3px 3px rgba(0, 0, 0,0.5);
+    border: 2px solid #00000022;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+    position: relative;
+}
+.sensor-alert{
+    width: 180px;
+    height: 200px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 3px 3px rgba(0, 0, 0,0.5);
+    border: 2px solid #00000022;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+}
+.sensor-inactivo {
+    background-color: rgb(255, 0, 0);
+}
+.sensor-activo{
+    background-color: white;
+}
+.sensor-deshabilitado {
+    background-color: yellow;
+}
+.ocultar-info-detalled{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+.container-general{
+    padding: 0;
+}
