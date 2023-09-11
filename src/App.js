@@ -42,7 +42,7 @@ function App() {
 
       
         <Router>
-          <PopupAlerta/>
+          {/*<PopupAlerta/>*/}
           <Routes>
             <Route path="/" element={<Landing/>}/>
 
