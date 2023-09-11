@@ -6,7 +6,7 @@ export const Getip = (host="") => {
   return hostactual
 }
 export const GetipTR = (host = "") =>{
-  const hostactual = "http://localhost:3003"
-  //return "http://3.229.175.160:8060/";
+  //const hostactual = "http://localhost:3003"
+  const hostactual"http://3.229.175.160:8060/";
   return hostactual;
 }
