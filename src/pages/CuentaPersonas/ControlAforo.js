@@ -5,7 +5,7 @@ import { obtenerhora } from "./obtenerhora";
 import { useEffect, useRef, useState } from "react";
 import { obtenerfecha } from "./obtenerfecha";
 import PopupDescarga from "./PopupDescarga";
-import { Getip } from "../../server/Getip";
+import { Getip, GetipTR } from "../../server/Getip";
 import { endpointTR } from "../../server/MetadataTR";
 import io from "socket.io-client";
 
@@ -75,7 +75,7 @@ export default function ControlAforo(){
       }
       useEffect(()=>{
         fetchInicial();
-        const socket = io(Getip(host),{
+        const socket = io(GetipTR(),{
           transports: ["websocket"]
         })
         socket.on(endpointTR.CuentaPersonas+(id === "ctic" ? "ctic" : "labsmartcity"),  (data)=>{

@@ -1,0 +1,41 @@
+.container-general{
+    background-color: red;
+}
+
+.popup-alerta{
+   
+    z-index: 100;
+    bottom: 30px;
+    right: 30px;
+    position: fixed;
+    
+   
+}
+.container-icon-sensor{
+    background-color: red;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    position: relative;
+}
+.cantidad-alert-icon{
+    position: absolute;
+    z-index: 200;
+    top: -10px;
+    right: -15px;
+    background-color: red;
+    border: 2px solid black;
+    font-size: 15px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    user-select: none;
+}

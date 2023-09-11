@@ -22,14 +22,27 @@ import Metaverso from "./pages/Metaverso/Metaverso"
 import ReconocimientoFacial from "./pages/Test/ReconocimientoFacial"
 import Cuentaspersonas from "./pages/Test/Cuentapersonas"
 import Test from "./pages/template/Test"
+import UsuariosSC from "./pages/Proyectos/UsuariosSC"
+import PopupAlerta from "./components/PopupAlertas/PopupAlerta"
+import { AlertaProvider } from "./components/PopupAlertas/AlertasContextProvider"
+import AlertaSensor from "./pages/AlertaSensor/AlertaSensor"
 
 
 
 function App() {
 
   return (
-    <div>
+    <div className="container-general">
+     
+      <AlertaProvider>
+        
+          
+        
+      
+
+      
         <Router>
+          <PopupAlerta/>
           <Routes>
             <Route path="/" element={<Landing/>}/>
 
@@ -48,13 +61,16 @@ function App() {
             {/** ------ Metaverso ------------- */}
             <Route path="/metaverso" element={<Metaverso/>} />
 
+            <Route path="/alerta-sensor" element={<AlertaSensor/>}/>
 
             {/* ------ Test ----- */}
             <Route path="/cuenta-personas" element={<ReconocimientoFacial/>} />
             <Route path="/reconocimiento-facial" element={<Cuentaspersonas/>} />
+            <Route path="/personas-smartcity" element={<UsuariosSC/>}/>
             <Route path="/test" element={<Test/>}/>
           </Routes>
         </Router>
+      </AlertaProvider>
     </div>
   );
 }
