@@ -36,7 +36,7 @@ function SmartParking(){
    
 
     return (
-        <div className="container__all__senasa flex-column">
+        <div className="container__all__sp flex-column">
             <div className="container__mapa__sp">
                 <MapContainer center={ubiCentro} zoom={18}>
                 <TileLayer
