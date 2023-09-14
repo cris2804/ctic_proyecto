@@ -72,6 +72,7 @@
     padding: 10px 0;
     background: #CAF5AF;
     margin-top: 10px;
+    box-shadow: 0 0 4px #333;
 }
 .container__boton__senasa .link{
     display: flex;
@@ -82,7 +83,7 @@
 
 .container__boton__senasa:hover{
     cursor: pointer;
-    box-shadow: 0 0 5px #333;
+    box-shadow: 0 0 7px #333;
 }
 
 @media (min-width: 1024px) and (max-width: 1280px){
