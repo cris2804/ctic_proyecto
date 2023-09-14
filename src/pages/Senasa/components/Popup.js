@@ -1,4 +1,4 @@
-import "./Popup.css"
+import "./css/Popup.css"
 import {get_hora, get_fecha, diferenciaHoras} from "../../../components/convertirfechahora"
 import iconoMosca from "../img/icono-mosca.png"
 import iconoAdvertencia from "../img/icono-advertencia.png"

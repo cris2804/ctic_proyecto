@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import logo from "../img/logo_version_grafana.png"
-import iconoMosca from "../img/icono-mosca.png";
+import iconoMosca from "../img/icono-mosca.png"
 import iconoBateria from "../img/icono-bateria-original.png"
 import iconoAdvertencia from "../img/icono-advertencia.png"
 import Trampa from "./Trampa"
-import { diferenciaHoras } from "../../../components/convertirfechahora";
+import { diferenciaHoras } from "../../../components/convertirfechahora"
+import "./css/Trampas.css"
 
 const aux = new Date()
 const actual = aux.toISOString()

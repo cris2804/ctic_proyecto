@@ -1,4 +1,4 @@
-import "./Trampa.css"
+import "./css/Trampa.css"
 
 function Trampa({nombre, cantidad, color, selected}){
 
