@@ -98,3 +98,34 @@
 .container__footer__senasa .c__b_s{
     width: 500px;
 }
+
+@media (min-width: 1024px) and (max-width: 1280px){
+    .container__tabla__senasa{
+        width: 220px;
+    }
+    .container__header__senasa div:nth-child(2){
+        font-size: 2rem;
+    }
+    .container__header__senasa div:nth-child(3){
+        font-size: 1.3rem;
+    }
+    .c__opc2__senasa div{
+        width: 95px;
+        font-size: 0.9rem;
+        padding: 4px;
+    }
+    .c__opc2__senasa{
+        padding: 8px;
+    }
+    .container__opc__senasa .c__trampa{
+        font-size: 1.3rem;
+    }
+    .container__header__senasa{
+        padding: 10px 50px;
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        background-color: white;
+    }
+}
+
