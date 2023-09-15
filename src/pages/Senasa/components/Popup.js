@@ -1,10 +1,9 @@
-import "./Popup.css"
+import "./css/Popup.css"
 import {get_hora, get_fecha, diferenciaHoras} from "../../../components/convertirfechahora"
 import iconoMosca from "../img/icono-mosca.png"
 import iconoAdvertencia from "../img/icono-advertencia.png"
-import { Link } from 'react-router-dom'
-import { BsGraphUp, BsDownload } from "react-icons/bs"
 import { useEffect } from "react"
+import Botones from "./Botones"
 
 const aux = new Date();
 const actual = aux.toISOString();
@@ -50,18 +49,8 @@ function Popup({id, d}){
                 <div>{d.porcentaje}%</div>
             </div>
 
-            <div className="container__btn__gd">
-                <div className="container__boton__senasa">
-                    <Link to={`/senasa/grafica?id=Trampa ${id}`} className="link">
-                        <BsGraphUp/> Gráfico
-                    </Link> 
-                </div>
-                <div className="container__boton__senasa">
-                    <Link to={`/senasa/descargar?id=Trampa ${id}`} className="link">
-                        <BsDownload/> Descargar
-                    </Link>
-                </div>
-            </div>
+            <Botones id={id} />
+            
         </div>
     )
 }

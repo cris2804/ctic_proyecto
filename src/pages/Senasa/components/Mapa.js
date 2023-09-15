@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer, Marker } from "react-leaflet"
-import { ubicaciones } from "./ubicaciones"
+import { ubicaciones } from "../assets/ubicaciones"
 import L from "leaflet"
 import Popup from "./Popup"
 

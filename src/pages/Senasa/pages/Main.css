@@ -17,82 +17,6 @@
     z-index: 1;
 }
 
-/* --------------------------------*/
-.container__right__senasa{
-    position: relative;
-    width: 30%;
-    background: white;
-}
-
-.container__icono__sc{
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 4vh;
-}
-.container__icono__sc img{
-    height: 80%;
-}
-
-.container__cantidad__moscas{
-    height: 45vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.container__orden__moscas{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 5%;
-}
-.container__orden__moscas img{
-    height: 6vh;
-    cursor: pointer;
-}
-.container__orden__moscas .noselec{
-    opacity: 0.3;
-}
-
-.container__porcentaje__bateria{
-    height: 45vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.container__orden__porcentaje{
-    /*width: 20%;
-    height: 45vh;*/
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.container__orden__porcentaje img{
-    /*width: 100%;*/
-    height: 8vh;
-}
-
-/*********************************/
-
-.container__trampa__cp{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.container__trampa__cp .container__vn{
-    width: 80%;
-    margin-top: 1vh;
-    box-shadow: 0 5px 5px #00000050;
-    border-radius: 2px;
-    cursor: pointer;
-}
-
-.container__trampa__cp .container__vn:hover{
-    box-shadow: 0 0 3px #333;
-}
-
 /*---------------------------------------*/
 
 .container__popup__senasa{
@@ -108,37 +32,11 @@
 }
 
 @media (max-width: 767px){
-    .container__all__senasa{
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    .container__mapa__senasa{
-        width: 100%;
-        height: 57vh;
-    }
-    .container__right__senasa{
-        width: 100%;
-    }
-    .container__cantidad__moscas{
-        height: 35vh;
-    }
+
 }
 
-@media (min-width: 768px) and (max-width: 1023px){
-    .container__all__senasa{
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    .container__mapa__senasa{
-        width: 100%;
-        height: 57vh;
-    }
-    .container__right__senasa{
-        width: 100%;
-    }
-    .container__cantidad__moscas{
-        height: 35vh;
-        width: 60%;
-        margin-left: 20%;
+@media (min-width: 1024px) and (max-width: 1280px){
+    .container__popup__senasa{
+        width: 270px;
     }
 }

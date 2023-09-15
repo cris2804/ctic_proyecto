@@ -72,6 +72,7 @@
     padding: 10px 0;
     background: #CAF5AF;
     margin-top: 10px;
+    box-shadow: 0 0 4px #333;
 }
 .container__boton__senasa .link{
     display: flex;
@@ -80,7 +81,33 @@
     gap: 5px;
 }
 
+.gd__senasa{
+    color: #0069BF;
+    stroke-width: 1.5;
+}
+
 .container__boton__senasa:hover{
     cursor: pointer;
-    box-shadow: 0 0 5px #333;
+    box-shadow: 0 0 7px #333;
+}
+
+@media (min-width: 1024px) and (max-width: 1280px){
+    .container__senasa__titulo{
+        font-size: 1.2rem;
+    }
+    .container__fecha__hora{
+        font-size: 1rem;
+    }
+    .container__cantidad__moscas__popup{
+        font-size: 1.5rem;
+    }
+    .container__cantidad__moscas__popup span:nth-child(1){
+        font-size: 2.3rem;
+    }
+    .cthpv{
+        font-size: 1rem;
+    }
+    .container__btn__gd{
+        font-size: 0.9rem;
+    }
 }

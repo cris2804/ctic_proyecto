@@ -1,0 +1,100 @@
+.container__grafica2__senasa{
+    min-height: 100vh;
+}
+.container__header__senasa{
+    padding: 10px 50px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: white;
+}
+.container__header__senasa img{ 
+    height: 6vh;
+}
+
+.container__header__senasa div:nth-child(2){
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.container__header__senasa div:nth-child(3){
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+.ubicacion__senasa{
+    color: #0069BF;
+    font-size: 1.5rem;
+}
+
+/***********************************/
+.container__body__senasa{
+    display: flex;
+    margin-top: 5vh;
+}
+
+.container__tabla__senasa{
+    border: solid 1px gray;
+    width: 300px;
+    margin-left: 50px;
+    height: 65vh;
+}
+
+/*******************************************/
+.container__grafico__opc__senasa{
+    margin-left: 30px;
+    margin-right: 50px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container__opc__senasa{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.container__opc__senasa .c__trampa{
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-left: 60px;
+}
+.c__opc2__senasa{
+    background: #0069BF;
+    display: flex;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.4), 0 6px 12px 0 rgba(24, 94, 224, 0.4);
+}
+.c__opc2__senasa div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 20px;
+    width: 110px;
+    cursor: pointer;
+}
+.noselec__senasa{
+    color: white;
+}
+.selec__opc__senasa{
+    background-color: white;
+    color: black;
+}
+.container__vista__grafica__senasa{
+    height: 40vh;
+}
+
+
+/**************************************/
+.container__footer__senasa{
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+}
+.container__footer__senasa .c__b_s{
+    width: 500px;
+}
