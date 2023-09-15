@@ -1,4 +1,4 @@
-
+import Botones from "../components/Botones";
 
 export default function Descargar(){
     const searchParams = new URLSearchParams(window.location.search);
@@ -9,6 +9,9 @@ export default function Descargar(){
     return(
         <div>
             descargar
+
+            <Botones id={id} page="descarga"/>
+
         </div>
     )
 }

@@ -63,7 +63,7 @@ export default function Grafica2(){
                     </div>
                     <div className="container__footer__senasa">
                         <div className="c__b_s">
-                            <Botones id={id}/>
+                            <Botones id={id} page = {"grafica"}/>
                         </div>
                     </div>
                 </div>
