@@ -2,12 +2,31 @@
     min-height: 100vh;
 }
 .container__header__senasa{
-    padding: 1vh;
+    padding: 10px 50px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: white;
 }
 .container__header__senasa img{ 
     height: 6vh;
 }
 
+.container__header__senasa div:nth-child(2){
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.container__header__senasa div:nth-child(3){
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+.ubicacion__senasa{
+    color: #0069BF;
+    font-size: 1.5rem;
+}
 
 /***********************************/
 .container__body__senasa{
@@ -34,7 +53,13 @@
 
 .container__opc__senasa{
     display: flex;
-    justify-content:flex-end;
+    justify-content:space-between;
+    align-items: center;
+}
+.container__opc__senasa .c__trampa{
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-left: 60px;
 }
 .c__opc2__senasa{
     background: #0069BF;

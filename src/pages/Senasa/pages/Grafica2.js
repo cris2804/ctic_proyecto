@@ -6,8 +6,11 @@ import { opciones, nombres } from "../assets/ubicaciones"
 import { useState } from "react"
 import Botones from "../components/Botones"
 import { Link } from 'react-router-dom'
+import { MdLocationPin } from "react-icons/md"
 
 export default function Grafica2(){
+    const searchParams = new URLSearchParams(window.location.search);
+    const id = searchParams.get("id");
     const [seleccionado, setSeleccionado] = useState(0)
 
 
@@ -18,6 +21,11 @@ export default function Grafica2(){
                 <Link to="/senasa" className="link">
                     <img src={logo} alt="logo"/>    
                 </Link>
+                <div>SENASA</div>
+                <div>
+                   <MdLocationPin className="ubicacion__senasa"/> 
+                   CTIC
+                </div>
             </div>
             <div className="container__body__senasa">
                 <div className="container__tabla__senasa">
@@ -25,6 +33,7 @@ export default function Grafica2(){
                 </div>
                 <div className="container__grafico__opc__senasa">
                     <div className="container__opc__senasa">
+                        <div className="c__trampa">Trampa 1</div>
                         <div className="c__opc2__senasa">
                             {
                                 opciones.map((opc, index) => {
@@ -54,7 +63,7 @@ export default function Grafica2(){
                     </div>
                     <div className="container__footer__senasa">
                         <div className="c__b_s">
-                            <Botones />
+                            <Botones id={id}/>
                         </div>
                     </div>
                 </div>

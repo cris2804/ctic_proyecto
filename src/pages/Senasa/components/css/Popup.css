@@ -81,6 +81,11 @@
     gap: 5px;
 }
 
+.gd__senasa{
+    color: #0069BF;
+    stroke-width: 1.5;
+}
+
 .container__boton__senasa:hover{
     cursor: pointer;
     box-shadow: 0 0 7px #333;
