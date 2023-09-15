@@ -10,7 +10,7 @@ export default function Descargar(){
         <div>
             descargar
 
-            <Botones id={id} page="descarga"/>
+            <Botones id={id}/>
 
         </div>
     )

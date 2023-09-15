@@ -13,6 +13,8 @@ export default function Grafica2(){
     const id = searchParams.get("id");
     const [seleccionado, setSeleccionado] = useState(0)
 
+    console.log(id)
+
 
     return(
         <div className="container__grafica2__senasa">
@@ -63,7 +65,7 @@ export default function Grafica2(){
                     </div>
                     <div className="container__footer__senasa">
                         <div className="c__b_s">
-                            <Botones id={id} page = {"grafica"}/>
+                            <Botones id={id}/>
                         </div>
                     </div>
                 </div>
