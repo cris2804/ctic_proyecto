@@ -1,16 +1,19 @@
+import "./Descargar.css"
 import Botones from "../components/Botones";
+import { useParams } from 'react-router-dom'
+import { useState } from "react";
 
 export default function Descargar(){
-    const searchParams = new URLSearchParams(window.location.search);
-    const id = searchParams.get("id");
+    const { numero } = useParams();
+    const [seleccionado, setSeleccionado] = useState(0)
 
-    console.log(id)
+    console.log(numero)
     
     return(
         <div>
             descargar
 
-            <Botones id={id}/>
+            <Botones id={numero}/>
 
         </div>
     )

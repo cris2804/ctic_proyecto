@@ -2,7 +2,7 @@ import "./Main.css"
 import Mapa from "../components/Mapa"
 import Trampas from "../components/Trampas";
 import { useState } from "react"
-import { cantidadMoscas, colores } from "../components/data"
+import { cantidadMoscas, colores } from "../assets/data"
 
 
 function Main(){
