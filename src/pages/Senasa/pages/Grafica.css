@@ -39,6 +39,7 @@
     margin-left: 60px;
 }
 .c__opc2__senasa{
+    position: relative;
     background: #0069BF;
     display: flex;
     border-radius: 30px;
@@ -53,14 +54,36 @@
     border-radius: 20px;
     width: 110px;
     cursor: pointer;
+    z-index: 2;
 }
-.noselec__senasa{
+.c__opc2__senasa span{
+    position: absolute;
+    border-radius: 20px;
+    width: 110px;
+    height: calc(100% - 20px);
+    background-color: white;
+    transition: 0.5s ease-out;
+}
+.selec__opc{
+    transition: 0.45s ease-out;
+}
+.selec__no__opc{
     color: white;
 }
-.selec__opc__senasa{
-    background-color: white;
-    color: black;
+.selected0{
+    transform: translateX(0);
 }
+.selected1{
+    transform: translateX(100%);
+}
+.selected2{
+    transform: translateX(200%);
+}
+.selected3{
+    transform: translateX(300%);
+}
+
+/*************************/
 .container__vista__grafica__senasa{
     height: 40vh;
 }

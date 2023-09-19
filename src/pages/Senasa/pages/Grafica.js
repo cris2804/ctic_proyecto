@@ -7,6 +7,13 @@ import Botones from "../components/Botones"
 import { useParams } from 'react-router-dom'
 import Header from "../components/Header"
 
+function getClase(id){
+    if(id === 0) return "selected0"
+    else if(id === 1) return "selected1"
+    else if(id === 2) return "selected2"
+    else if(id === 3) return "selected3"
+}
+
 export default function Grafica(){
     const { numero } = useParams();
     const [seleccionado, setSeleccionado] = useState(0)
@@ -31,13 +38,14 @@ export default function Grafica(){
                                 opciones.map((opc, index) => {
                                     return(
                                         <div key={index} 
-                                             className={seleccionado === index ? "selec__opc__senasa": "noselec__senasa"} 
+                                             className={seleccionado === index ? "selec__opc": "selec__no__opc"} 
                                              onClick={()=>setSeleccionado(index)}>
                                             {opc.opcion}
                                         </div>
                                     )
                                 })
                             }
+                            <span className={getClase(seleccionado)}></span>
                         </div>
                     </div>
                     <div className="container__vista__grafica__senasa">
