@@ -1,0 +1,85 @@
+.container__descarga__senasa{
+    min-height: 100vh;
+    background-color: rgb(245, 245, 245);
+}
+
+/*****************************************/
+
+.container__body__senasa{
+    display: flex;
+    margin-top: 5vh;
+}
+
+.container__tabla__senasa__desc{
+    border: solid 1px gray;
+    width: 300px;
+    margin-left: 50px;
+    height: auto;
+    background-color: white;
+}
+
+/************************************************/
+
+.container__descarga__opc__senasa{
+    margin-left: 30px;
+    margin-right: 50px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container__check__calendar{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+.container__ntrampa__descarga{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+/***********************************************/
+.container__check__calendar__senasa{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1vh;
+}
+.container__chexboxes__all__senasa{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.container__checkboxes__senasa{
+    display: flex;
+    font-size: 1.1rem;
+}
+.container__calendario__senasa{
+    display: flex;
+    gap: 20px;
+}
+
+.container__rango__calendar__senasa{
+    display: flex;
+}
+
+.container__calendar__senasa{
+    border: solid 1px gray;
+    margin-left: 5px;
+}
+
+/**************************************/
+.container__tabla__ver__senasa{
+    border: solid 1px gray;
+    height: 40vh;
+    background: white;
+}
+
+/**************************************/
+.container__footer__senasa{
+    display: flex;
+    justify-content: center;
+}
+.container__footer__senasa .c__b_s{
+    width: 500px;
+}

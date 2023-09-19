@@ -18,18 +18,22 @@ const opciones = [
     {
         id: 1,
         opcion: "Moscas",
+        variable: "mosca"
     },
     {
         id: 2,
         opcion: "Temperatura",
+        variable: "temperatura"
     },
     {
         id: 3,
         opcion: "Humedad",
+        variable: "humedad"
     },
     {
         id: 4,
         opcion: "Batería",
+        variable: "bateria"
     }
 ]
 

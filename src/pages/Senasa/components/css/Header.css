@@ -1,0 +1,26 @@
+.container__header__senasa{
+    padding: 10px 50px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: white;
+}
+.container__header__senasa img{ 
+    height: 6vh;
+}
+
+.container__header__senasa div:nth-child(2){
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.container__header__senasa div:nth-child(3){
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+.ubicacion__senasa{
+    color: #0069BF;
+    font-size: 1.5rem;
+}

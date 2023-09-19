@@ -1,35 +1,26 @@
 import "./Grafica.css"
-import logo from "../img/logo_version_grafana.png"
 import Grafico from "../components/Grafico"
 import {data,rangosFondo,rango} from "../test/data"
 import { opciones, nombres } from "../assets/ubicaciones"
 import { useState } from "react"
 import Botones from "../components/Botones"
-import { Link, useParams } from 'react-router-dom'
-import { MdLocationPin } from "react-icons/md"
+import { useParams } from 'react-router-dom'
+import Header from "../components/Header"
 
-export default function Grafica2(){
+export default function Grafica(){
     const { numero } = useParams();
     const [seleccionado, setSeleccionado] = useState(0)
 
-    console.log(numero)
+    //console.log(numero)
 
 
     return(
-        <div className="container__grafica2__senasa">
+        <div className="container__grafica__senasa">
             
-            <div className="container__header__senasa">
-                <Link to="/senasa" className="link">
-                    <img src={logo} alt="logo"/>    
-                </Link>
-                <div>SENASA</div>
-                <div>
-                   <MdLocationPin className="ubicacion__senasa"/> 
-                   CTIC
-                </div>
-            </div>
+            <Header lugar="CTIC"/>
+            
             <div className="container__body__senasa">
-                <div className="container__tabla__senasa">
+                <div className="container__tabla__senasa__graf">
                     Trampa {numero} junin
                 </div>
                 <div className="container__grafico__opc__senasa">

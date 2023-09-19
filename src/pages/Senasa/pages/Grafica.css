@@ -1,31 +1,6 @@
-.container__grafica2__senasa{
+.container__grafica__senasa{
     min-height: 100vh;
-}
-.container__header__senasa{
-    padding: 10px 50px;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    background-color: white;
-}
-.container__header__senasa img{ 
-    height: 6vh;
-}
-
-.container__header__senasa div:nth-child(2){
-    font-size: 2.5rem;
-    font-weight: 600;
-}
-.container__header__senasa div:nth-child(3){
-    font-size: 1.3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 500;
-}
-.ubicacion__senasa{
-    color: #0069BF;
-    font-size: 1.5rem;
+    background-color: rgb(245, 245, 245);
 }
 
 /***********************************/
@@ -34,11 +9,12 @@
     margin-top: 5vh;
 }
 
-.container__tabla__senasa{
+.container__tabla__senasa__graf{
     border: solid 1px gray;
     width: 300px;
     margin-left: 50px;
-    height: 65vh;
+    height: auto;
+    background-color: white;
 }
 
 /*******************************************/
@@ -49,6 +25,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 1vh;
 }
 
 .container__opc__senasa{
@@ -100,7 +77,7 @@
 }
 
 @media (min-width: 1024px) and (max-width: 1280px){
-    .container__tabla__senasa{
+    .container__tabla__senasa__graf{
         width: 220px;
     }
     .container__header__senasa div:nth-child(2){
