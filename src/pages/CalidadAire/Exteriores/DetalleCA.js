@@ -30,9 +30,9 @@ function Graficar(opc, nom, idb, ipurl) {
 
 function retornaidb(id) {
   let idb = "";
-  if (id === "ctic") idb = "beegons:rak-3272s-e";
-  else if (id === "puerta 3") idb = "beegons:rak-3272s-f";
-  else if (id === "puerta 5") idb = "beegons:rak-3272s-h";
+  if (id === "ctic") idb = "CAE:scuni-007";
+  else if (id === "puerta 3") idb = "CAE:scuni-008";
+  else if (id === "puerta 5") idb = "CAE:scuni-009";
 
   return idb;
 }

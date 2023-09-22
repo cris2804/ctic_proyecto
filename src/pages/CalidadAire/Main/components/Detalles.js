@@ -15,9 +15,9 @@ const nombrelugar = (e) => {
 };
 
 const obtenerid = (e) => {
-  if (e === "ca-ctic") return "beegons:rak-3272s-e";
-  else if (e === "ca-puerta5") return "beegons:rak-3272s-h";
-  else if (e === "ca-puerta3") return "beegons:rak-3272s-f";
+  if (e === "ca-ctic") return "CAE:scuni-007"; //CAE:scuni-007
+  else if (e === "ca-puerta5") return "CAE:scuni-009"; //CAE:scuni-009
+  else if (e === "ca-puerta3") return "CAE:scuni-008"; //CAE:scuni-008 - beegons:rak-3272s-f 
 };
 
 export default function Detalles(props) {

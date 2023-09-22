@@ -59,7 +59,7 @@ export default function PopupDescarga({ip,id}) {
 
     const descargarDatos = () => {
         fetch(
-            ip + `/api/v1/cuenta-personas/descargar/${id === "ctic" ? "ctic" : "smartcity" }?maxDate=${convertir(fecha2)}&minDate=${convertir(fecha1)}&columns=001001`
+            ip + `/api/v1/cuenta-personas/descargar/${id === "ctic" ? "CA:scuni-002" : "CA:scuni-001" }?maxDate=${convertir(fecha2)}&minDate=${convertir(fecha1)}&columns=001001`
         )
           .then((response) => {
             if (response.ok) {

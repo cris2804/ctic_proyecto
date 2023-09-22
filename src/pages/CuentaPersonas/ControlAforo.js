@@ -62,7 +62,7 @@ export default function ControlAforo(){
     },[])
 
     const fetchInicial = async () =>{
-        const urlDefault  = Getip(host) + `/api/v1/cuenta-personas/${id === "ctic" ? "ctic" : "labsmartcity" }?last=1&columns=001001`;
+        const urlDefault  = Getip(host) + `/api/v1/cuenta-personas/${id === "ctic" ? "CA:scuni-002" : "CA:scuni-001" }?last=1&columns=001001`;
         const response = await fetch(urlDefault);
         const data = await response.json();
         const newData = data.map(d =>{
