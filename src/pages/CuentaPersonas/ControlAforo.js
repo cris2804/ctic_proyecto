@@ -34,7 +34,7 @@ function get_fecha(timestamp){
   const mes = fecha.getMonth() + 1; // Los meses en JavaScript van de 0 a 11
   const dia = fecha.getDate();
 
-  console.log(`Fecha: ${año}-${mes}-${dia}`);
+  //console.log(`Fecha: ${año}-${mes}-${dia}`);
 }
 
 function aforo_maximo(id){
@@ -75,6 +75,7 @@ export default function ControlAforo(){
       }
       useEffect(()=>{
         fetchInicial();
+        const intervalId = setInterval( fetchInicial, 1000);
         const socket = io(GetipTR(),{
           transports: ["websocket"]
         })
@@ -83,7 +84,7 @@ export default function ControlAforo(){
           const str_time = data.TimeInstant.value;
           const timestamp = new Date(str_time).getTime();
           const personas = data.total_personas.value;
-          console.log(timestamp,personas);
+          //console.log(timestamp,personas);
           const newTime = {
             timestamp:timestamp,value:personas
           }
@@ -91,6 +92,9 @@ export default function ControlAforo(){
           setDataActual(newTime);
           
         })
+        return () => {
+          clearInterval(intervalId);
+        };
       },[]);
       useEffect(()=>{
         if(dataActual){
@@ -165,7 +169,7 @@ export default function ControlAforo(){
                         <div className="container__same">
                             <div>Última Actualización</div>
                             <div>
-                              {console.log("ADS",dataPersonas,dataPersonas.length)}
+                              {/*console.log("ADS",dataPersonas,dataPersonas.length)*/}
                               {dataPersonas.length === 0 ? "0" : 
                               //(new Date(dataPersonas[dataPersonas.length - 1].timestamp)).toISOString()
                               get_hora(dataPersonas[dataPersonas.length - 1].timestamp)}
